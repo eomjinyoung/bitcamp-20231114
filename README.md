@@ -41,6 +41,7 @@
   - 어셈블리와 C 언어를 사용해 애플리케이션 만드는 과정을 설명할 수 있는가? []
   - Low-level 언어와 High-level 언어의 의미를 설명할 수 있는가? []
   - 자바 애플리케이션을 만드는 방법을 설명할 수 있는가? []
+  - REPL과 jShell 을 설명할 수 있는가? []
   - JVM, JRE, JDK, JavaSE, JavaEE, JavaME를 설명할 수 있는가? []
   - JDK를 설치하고 설정할 수 있는가? []
   - JAVA_HOME, PATH 환경 변수를 설정하는 이유를 알고 있는가? []
@@ -50,8 +51,13 @@
 ### 3일(2023-11-16,목)
 
 - 강의 내용
-  - 소프트웨어 형상관리 개념 및 주요 도구 소개(1)
-    - CVS, SVN, Git 특징
-  - git 사용법
+  - 소프트웨어 형상관리 개념 및 주요 도구 소개(2)
+    - 버전 관리 시스템의 유형 별 특징
+    - CVS, SVN, Git 버전 관리 도구 소개
+  - git 클라이언트 설치 및 설정, 사용법(6)
+    - Windows에서 설치
+    - 저장소 디렉토리 구조: .git/ 폴더와 작업 폴더(working directory)
+    - config, status, clone, add, commit, push, pull, log, checkout 등 깃 명령 사용법
+    - push 할 때 변경 사항이 충돌하는 것을 처리하는 방법
 - 학습 점검 목록
   - 
