@@ -1,0 +1,53 @@
+// Gradle 빌드 도구가 사용할 플러그인 설정
+plugins {
+    // 자바 애플리케이션을 생성하는 플러그인 
+    // 이 플러그인을 추가하면 'java' 플러그인이 자동으로 추가된다.
+    // 따로 'java' 플러그인을 추가할 필요가 없다.
+    id 'application'
+}
+
+// 이 프로젝트에서 사용할 외부 라이브러리를 제공하는 서버를 설정한다.
+// 외부 라이브러리? 
+// - 다른 개발자가 만든 코드를 담고 있는 파일이다.
+repositories {
+    mavenCentral() // Maven 사이트에서 제공하는 라이브러리 서버
+}
+
+// 이 프로젝트에서 사용할 외부 라이브러리를 지정한다.
+// 여기에 다운로드할 외부 라이브러리를 지정한다.
+// 빌드할 때 자동으로 라이브러리를 다운로드할 것이다.
+dependencies {
+    // 단위 테스트 할 때 사용할 라이브러리
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+
+    // 단위 테스트와 관련된 라이브러리
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // 일반적으로 애플리케이션을 개발할 때 많이 사용하는 라이브러리
+    // 구글 개발자들이 만든 라이브러리이다.
+    implementation 'com.google.guava:guava:32.1.1-jre'
+}
+
+// 소스 파일이 어떤 자바 버전으로 되어 있는지 Gradle 에게 알려준다.
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// 'application' 플러그인과 관련된 설정이다.
+application {
+    mainClass = 'Hello' // 'run' 명령을 수행할 때 실행시킬 자바 클래스 이름을 지정
+}
+
+// 단위 테스트를 수행할 때 사용할 설정
+tasks.named('test') {
+    useJUnitPlatform() // 단위 테스트를 수행할 때 JUnit 도구를 사용하도록 지정한다.
+}
+
+// 자바 소스를 컴파일 할 때 적용할 옵션
+tasks.withType(JavaCompile).configureEach {
+    // 프로젝트의 소스 파일 인코딩을 gradle에게 알려준다.
+    // $javac -encoding UTF-8 ..
+    options.encoding = 'UTF-8' 
+}
