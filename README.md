@@ -86,7 +86,7 @@
     - 하이브리드 방식 소개 및 실습: Java 컴파일 및 실행
     - JIT, AOT 컴파일 방식 비교
     - PlayStore에서 앱을 다운로드하여 설치하는 과정: AOP 실행 시점
-  - 빌드과 빌드 도구
+  - 빌드과 빌드 도구(1)
     - 빌드의 개념 
     - 빌드 도구 소개 및 특징
     - 빌드 도구 별 빌드 스크립트 파일
@@ -120,9 +120,19 @@
     - gradle 빌드 도구를 이용하여 자바 프로젝트 디렉토리를 자동 구성하기
     - Maven 표준 자바 프로젝트 폴더 구조 이해
   - Gradle 빌드 스클립트 파일 구조(1)
-  - Gradle 사용법
+  - Gradle 사용법(3)
     - tasks 명령
     - 'java' 플러그인 사용법
-      - compileJava
+      - compileJava, processResources, classes
+      - compileTestJava, processTestResources, testClasses
+      - test, jar, build, clean
+    - 'application' 플러그인 사용법
+      - run 
+      - 운영체제의 로케일 설정
+        - 'intl.cpl' 실행 : 시스템 로케일을 UTF-8을 인식하도록 설정
+  - Java 문법(1)
+    - 기초 문법 소개: 리터럴, 변수, 연산자, 조건문, 반복문
+      - 리터럴
+    - 클래스 블록과 .class
 - 학습 점검 목록
   - 
