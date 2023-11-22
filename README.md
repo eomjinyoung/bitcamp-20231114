@@ -168,8 +168,14 @@
 ### 7일(2023-11-22,수)
 
 - 강의 내용
-  - 복습(1)
-  - Gradle 자바 프로젝트를 Eclipse IDE로 임포트 하는 방법
+  - Gradle 자바 프로젝트를 Eclipse IDE로 임포트 하는 방법(2)
+    - 실습1: 'test-app' Gradle 자바 프로젝트를 생성한 후 Eclipse IDE로 임포트하시오!
+    - 실습2: 'myapp' Gradle 자바 프로젝트를 생성한 후 Eclipse IDE로 임포트하시오!
+      - 패키지명: bitcamp.myapp
+  - IntelliJ IDE 도구 설치 및 설정(2)
+    - 실습1: 'myapp'을 IntelliJ로 임포트하시오!
+  - 프로그래밍 기초
+    - 
   - 기초 문법 소개: 리터럴, 변수, 연산자, 조건문, 반복문
     - 리터럴
 - 학습 점검 목록
