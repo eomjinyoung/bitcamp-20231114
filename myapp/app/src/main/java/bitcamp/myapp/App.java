@@ -16,7 +16,7 @@ public class App {
 
       switch (input) {
         case "1":
-          onAssignment(keyIn);
+          AssignmentMenu.execute(keyIn);
           break;
         case "2":
           BoardMenu.execute(keyIn);
@@ -42,36 +42,6 @@ public class App {
   static String prompt(String title, Scanner keyIn) {
     System.out.printf("%s> ", title);
     return keyIn.nextLine();
-  }
-
-  static void onAssignment(Scanner keyIn) {
-    AssignmentMenu.printMenu();
-
-    while (true) {
-      String input = prompt("메인/과제", keyIn);
-
-      switch (input) {
-        case "1":
-          System.out.println("등록입니다.");
-          break;
-        case "2":
-          System.out.println("조회입니다.");
-          break;
-        case "3":
-          System.out.println("변경입니다.");
-          break;
-        case "4":
-          System.out.println("삭제입니다.");
-          break;
-        case "0":
-          return;
-        case "menu":
-          AssignmentMenu.printMenu();
-          break;
-        default:
-          System.out.println("메뉴 번호가 옳지 않습니다!");
-      }
-    }
   }
 
 
