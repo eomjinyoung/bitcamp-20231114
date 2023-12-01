@@ -18,7 +18,7 @@ public class App {
 
   public static void main(String[] args) {
 
-    printMenu();
+    printMainMenu();
 
     java.util.Scanner keyIn = new java.util.Scanner(System.in);
 
@@ -31,7 +31,7 @@ public class App {
           onAssignment(keyIn);
           break;
         case "2":
-          System.out.println("게시글입니다.");
+          onBoard(keyIn);
           break;
         case "3":
           System.out.println("도움말입니다.");
@@ -42,7 +42,7 @@ public class App {
         case "menu":
           // 코드를 기능 단위로 묶어 메서드로 정의하면
           // 메서드의 이름을 통해 해당 기능을 쉽게 유추할 수 있어 유지보수에 좋다.
-          printMenu();
+          printMainMenu();
           break;
         default:
           System.out.println("메뉴 번호가 옳지 않습니다.");
@@ -52,14 +52,7 @@ public class App {
     keyIn.close();
   }
 
-  static void printMenu() {
-    // ANSI 코드와 App 제목, 메뉴를 저장한 변수를 메서드 안에 두는 대신에
-    // 클래스 블록 안에 두면
-    // printMenu()를 호출할 때마다 변수를 만들기 않기 때문에 실행 속도나 메모리 부분에서
-    // 훨씬 효율적이다.
-    // 보통 메서드 호출될 때 마다 값이 바뀌는 변수가 아니라 고정 값을 갖는 변수인 경우
-    // 메서드 밖에 두는 것이 좋다.
-    //
+  static void printMainMenu() {
     System.out.println(APP_TITLE);
     System.out.println();
     for (String menu : MENUS) {
@@ -73,12 +66,7 @@ public class App {
   }
 
   static void onAssignment(Scanner keyIn) {
-    System.out.println("[과제]");
-    System.out.println("1. 등록");
-    System.out.println("2. 조회");
-    System.out.println("3. 변경");
-    System.out.println("4. 삭제");
-    System.out.println("0. 이전");
+    printAssignmentMenu();
 
     while (true) {
       String input = prompt("메인/과제", keyIn);
@@ -99,17 +87,59 @@ public class App {
         case "0":
           return;
         case "menu":
-          System.out.println("[과제]");
-          System.out.println("1. 등록");
-          System.out.println("2. 조회");
-          System.out.println("3. 변경");
-          System.out.println("4. 삭제");
-          System.out.println("0. 이전");
+          printAssignmentMenu();
           break;
         default:
           System.out.println("메뉴 번호가 옳지 않습니다!");
       }
     }
+  }
+
+  static void printAssignmentMenu() {
+    System.out.println("[과제]");
+    System.out.println("1. 등록");
+    System.out.println("2. 조회");
+    System.out.println("3. 변경");
+    System.out.println("4. 삭제");
+    System.out.println("0. 이전");
+  }
+
+  static void onBoard(Scanner keyIn) {
+    printBoardMenu();
+    while (true) {
+      String input = prompt("메인/게시글", keyIn);
+
+      switch (input) {
+        case "1":
+          System.out.println("등록입니다.");
+          break;
+        case "2":
+          System.out.println("조회입니다.");
+          break;
+        case "3":
+          System.out.println("변경입니다.");
+          break;
+        case "4":
+          System.out.println("삭제입니다.");
+          break;
+        case "0":
+          return;
+        case "menu":
+          printBoardMenu();
+          break;
+        default:
+          System.out.println("메뉴 번호가 옳지 않습니다!");
+      }
+    }
+  }
+
+  static void printBoardMenu() {
+    System.out.println("[게시글]");
+    System.out.println("1. 등록");
+    System.out.println("2. 조회");
+    System.out.println("3. 변경");
+    System.out.println("4. 삭제");
+    System.out.println("0. 이전");
   }
 
 }
