@@ -24,7 +24,7 @@ public class App {
 
     loop:
     while (true) {
-      String input = prompt(keyIn);
+      String input = prompt("메인", keyIn);
 
       switch (input) {
         case "1":
@@ -37,7 +37,7 @@ public class App {
 
           loop2:
           while (true) {
-            input = prompt(keyIn);
+            input = prompt("메인/과제", keyIn);
 
             switch (input) {
               case "1":
@@ -104,8 +104,8 @@ public class App {
     }
   }
 
-  static String prompt(Scanner keyIn) {
-    System.out.print("메인> ");
+  static String prompt(String title, Scanner keyIn) {
+    System.out.printf("%s> ", title);
     return keyIn.nextLine();
   }
 
