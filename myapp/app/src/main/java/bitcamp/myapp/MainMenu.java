@@ -20,4 +20,32 @@ public class MainMenu {
       System.out.println(menu);
     }
   }
+
+  static void execute() {
+    printMenu();
+
+    while (true) {
+      String input = Prompt.input("메인");
+
+      switch (input) {
+        case "1":
+          AssignmentMenu.execute();
+          break;
+        case "2":
+          BoardMenu.execute();
+          break;
+        case "3":
+          System.out.println("도움말입니다.");
+          break;
+        case "4":
+          System.out.println("종료합니다.");
+          return;
+        case "menu":
+          printMenu();
+          break;
+        default:
+          System.out.println("메뉴 번호가 옳지 않습니다.");
+      }
+    }
+  }
 }

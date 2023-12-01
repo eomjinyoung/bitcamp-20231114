@@ -1,7 +1,5 @@
 package bitcamp.myapp;
 
-import java.util.Scanner;
-
 public class AssignmentMenu {
 
   static void printMenu() {
@@ -13,11 +11,11 @@ public class AssignmentMenu {
     System.out.println("0. 이전");
   }
 
-  static void execute(Scanner keyIn) {
-    AssignmentMenu.printMenu();
+  static void execute() {
+    printMenu();
 
     while (true) {
-      String input = App.prompt("메인/과제", keyIn);
+      String input = Prompt.input("메인/과제");
 
       switch (input) {
         case "1":
@@ -35,7 +33,7 @@ public class AssignmentMenu {
         case "0":
           return;
         case "menu":
-          AssignmentMenu.printMenu();
+          printMenu();
           break;
         default:
           System.out.println("메뉴 번호가 옳지 않습니다!");
