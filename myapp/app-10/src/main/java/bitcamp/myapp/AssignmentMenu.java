@@ -1,14 +1,13 @@
 package bitcamp.myapp;
 
-public class BoardMenu {
+public class AssignmentMenu {
 
   static String title;
   static String content;
-  static String writer;
-  static String createdDate;
+  static String deadline;
 
   static void printMenu() {
-    System.out.println("[게시글]");
+    System.out.println("[과제]");
     System.out.println("1. 등록");
     System.out.println("2. 조회");
     System.out.println("3. 변경");
@@ -18,8 +17,9 @@ public class BoardMenu {
 
   static void execute() {
     printMenu();
+
     while (true) {
-      String input = Prompt.input("메인/게시글> ");
+      String input = Prompt.input("메인/과제> ");
 
       switch (input) {
         case "1":
@@ -46,34 +46,33 @@ public class BoardMenu {
   }
 
   static void add() {
-    System.out.println("게시글 등록:");
-    title = Prompt.input("제목? ");
+    System.out.println("과제 등록:");
+    title = Prompt.input("과제명? ");
     content = Prompt.input("내용? ");
-    writer = Prompt.input("작성자? ");
-    createdDate = Prompt.input("작성일? ");
+    deadline = Prompt.input("제출 마감일? ");
+
   }
 
   static void view() {
-    System.out.println("게시글 조회:");
-    System.out.printf("제목: %s\n", title);
+    System.out.println("과제 조회:");
+    System.out.printf("과제명: %s\n", title);
     System.out.printf("내용: %s\n", content);
-    System.out.printf("작성자: %s\n", writer);
-    System.out.printf("작성일: %s\n", createdDate);
+    System.out.printf("제출 마감일: %s\n", deadline);
+
   }
 
   static void modify() {
-    System.out.println("게시글 변경:");
-    title = Prompt.input("제목(%s)? ", title);
+    System.out.println("과제 변경:");
+    title = Prompt.input("과제명(%s)? ", title);
     content = Prompt.input("내용(%s)? ", content);
-    writer = Prompt.input("작성자(%s)? ", writer);
-    createdDate = Prompt.input("작성일(%s)? ", createdDate);
+    deadline = Prompt.input("제출 마감일(%s)? ", deadline);
+
   }
 
   static void delete() {
-    System.out.println("게시글 삭제:");
+    System.out.println("과제 삭제:");
     title = "";
     content = "";
-    writer = "";
-    createdDate = "";
+    deadline = "";
   }
 }
