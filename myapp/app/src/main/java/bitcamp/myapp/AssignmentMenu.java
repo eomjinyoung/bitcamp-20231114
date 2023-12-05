@@ -2,6 +2,10 @@ package bitcamp.myapp;
 
 public class AssignmentMenu {
 
+  static String title;
+  static String content;
+  static String deadline;
+
   static void printMenu() {
     System.out.println("[과제]");
     System.out.println("1. 등록");
@@ -15,7 +19,7 @@ public class AssignmentMenu {
     printMenu();
 
     while (true) {
-      String input = Prompt.input("메인/과제");
+      String input = Prompt.input("메인/과제> ");
 
       switch (input) {
         case "1":
@@ -42,15 +46,27 @@ public class AssignmentMenu {
   }
 
   static void add() {
-    System.out.println("등록입니다.");
+    System.out.println("과제 등록:");
+    title = Prompt.input("과제명? ");
+    content = Prompt.input("내용? ");
+    deadline = Prompt.input("제출 마감일? ");
+
   }
 
   static void view() {
-    System.out.println("조회입니다.");
+    System.out.println("과제 조회:");
+    System.out.printf("과제명: %s\n", title);
+    System.out.printf("내용: %s\n", content);
+    System.out.printf("제출 마감일: %s\n", deadline);
+
   }
 
   static void modify() {
-    System.out.println("변경입니다.");
+    System.out.println("과제 변경:");
+    title = Prompt.input(String.format("과제명(%s)? ", title));
+    content = Prompt.input(String.format("내용(%s)? ", content));
+    deadline = Prompt.input(String.format("제출 마감일(%s)? ", deadline));
+
   }
 
   static void delete() {
