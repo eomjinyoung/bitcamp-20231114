@@ -121,10 +121,11 @@
 - GRASP 패턴: Low Coupling, High Cohesion, Information Expert
 
 
-## 10. 과제 데이터의 CRUD(create, retrieve/read, update, delete) 구현
+## 10. 과제 및 게시글의 데이터에 대해 CRUD(create, retrieve/read, update, delete)를 구현하기
 
-- 과제 데이터를 입력, 조회, 변경, 삭제하는 기능 구현하기
-
+- 과제 및 게시글 데이터의 입력, 조회, 변경, 삭제하는 기능 구현하기
+  - 과제 입출력 항목: 과제명, 내용, 제출 마감일
+  - 게시글 입출력 항목: 제목, 내용, 작성자, 작성일
 
 
 ## 8. 메서드 간에 변수 공유하기 : 스태틱 변수 사용법

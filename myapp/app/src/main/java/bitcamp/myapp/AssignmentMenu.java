@@ -63,13 +63,16 @@ public class AssignmentMenu {
 
   static void modify() {
     System.out.println("과제 변경:");
-    title = Prompt.input(String.format("과제명(%s)? ", title));
-    content = Prompt.input(String.format("내용(%s)? ", content));
-    deadline = Prompt.input(String.format("제출 마감일(%s)? ", deadline));
+    title = Prompt.input("과제명(%s)? ", title);
+    content = Prompt.input("내용(%s)? ", content);
+    deadline = Prompt.input("제출 마감일(%s)? ", deadline);
 
   }
 
   static void delete() {
-    System.out.println("삭제입니다.");
+    System.out.println("과제 삭제:");
+    title = "";
+    content = "";
+    deadline = "";
   }
 }
