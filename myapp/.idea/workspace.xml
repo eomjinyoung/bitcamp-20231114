@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../docs/객체지향프로그래밍1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/객체지향프로그래밍1.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/AssignmentMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/AssignmentMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,18 +59,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_directory_selection": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/java/bitcamp/myapp",
-    "last_opened_file_path": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/test/resources",
-    "settings.editor.selected.configurable": "settings.saveactions"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/java/bitcamp/myapp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/test/resources&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.saveactions&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/test/resources" />
@@ -80,7 +81,7 @@
       <recent name="bitcamp.myapp.AssignmentMenu" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StudentSelector">
+  <component name="RunManager" selected="Gradle.myapp [run]">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bitcamp.myapp.App" />
       <module name="myapp.app.main" />
@@ -179,8 +180,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StudentSelector" />
         <item itemvalue="Gradle.myapp [run]" />
+        <item itemvalue="Application.StudentSelector" />
         <item itemvalue="Application.App" />
         <item itemvalue="Gradle.myapp [build]" />
       </list>

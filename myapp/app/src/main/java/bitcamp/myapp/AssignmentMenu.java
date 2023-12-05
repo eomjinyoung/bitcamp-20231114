@@ -19,16 +19,16 @@ public class AssignmentMenu {
 
       switch (input) {
         case "1":
-          System.out.println("등록입니다.");
+          add();
           break;
         case "2":
-          System.out.println("조회입니다.");
+          view();
           break;
         case "3":
-          System.out.println("변경입니다.");
+          modify();
           break;
         case "4":
-          System.out.println("삭제입니다.");
+          delete();
           break;
         case "0":
           return;
@@ -39,5 +39,21 @@ public class AssignmentMenu {
           System.out.println("메뉴 번호가 옳지 않습니다!");
       }
     }
+  }
+
+  static void add() {
+    System.out.println("등록입니다.");
+  }
+
+  static void view() {
+    System.out.println("조회입니다.");
+  }
+
+  static void modify() {
+    System.out.println("변경입니다.");
+  }
+
+  static void delete() {
+    System.out.println("삭제입니다.");
   }
 }
