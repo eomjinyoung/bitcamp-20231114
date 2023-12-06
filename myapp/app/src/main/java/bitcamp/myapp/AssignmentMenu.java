@@ -11,6 +11,7 @@ public class AssignmentMenu {
     System.out.println("2. 조회");
     System.out.println("3. 변경");
     System.out.println("4. 삭제");
+    System.out.println("5. 목록");
     System.out.println("0. 이전");
   }
 
@@ -33,6 +34,9 @@ public class AssignmentMenu {
         case "4":
           delete();
           break;
+        case "5":
+          list();
+          break;
         case "0":
           return;
         case "menu":
@@ -48,8 +52,18 @@ public class AssignmentMenu {
     System.out.println("과제 등록:");
 
     if (length == assignments.length) {
-      System.out.println("과제를 더이상 등록할 수 없습니다.");
-      return;
+      //System.out.println("과제를 더이상 등록할 수 없습니다.");
+      int oldSize = assignments.length;
+      int newSize = oldSize + (oldSize / 2);
+
+      // 이전 배열에 들어 있는 값을 새 배열에 복사
+      Assignment[] arr = new Assignment[newSize];
+      for (int i = 0; i < oldSize; i++) {
+        arr[i] = assignments[i];
+      }
+
+      // 새 배열을 가리키도록 배열 레퍼런스를 변경
+      assignments = arr;
     }
 
     Assignment assignment = new Assignment();
@@ -61,14 +75,29 @@ public class AssignmentMenu {
     length++;
   }
 
-  static void view() {
-    System.out.println("과제 조회:");
+  static void list() {
+    System.out.println("과제 목록:");
     System.out.printf("%-20s\t%s\n", "과제", "제출마감일");
 
     for (int i = 0; i < length; i++) {
       Assignment assignment = assignments[i];
       System.out.printf("%-20s\t%s\n", assignment.title, assignment.deadline);
     }
+  }
+
+  static void view() {
+    System.out.println("과제 조회:");
+
+    int index = Integer.parseInt(Prompt.input("번호? "));
+    if (index < 0 || index >= length) {
+      System.out.println("과제 번호가 유효하지 않습니다.");
+      return;
+    }
+
+    Assignment assignment = assignments[index];
+    System.out.printf("과제명: %s\n", assignment.title);
+    System.out.printf("내용: %s\n", assignment.content);
+    System.out.printf("제출 마감일: %s\n", assignment.deadline);
   }
 
   static void modify() {
