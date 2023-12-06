@@ -47,6 +47,11 @@ public class AssignmentMenu {
   static void add() {
     System.out.println("과제 등록:");
 
+    if (length == assignments.length) {
+      System.out.println("과제를 더이상 등록할 수 없습니다.");
+      return;
+    }
+
     Assignment assignment = new Assignment();
     assignment.title = Prompt.input("과제명? ");
     assignment.content = Prompt.input("내용? ");
@@ -58,18 +63,23 @@ public class AssignmentMenu {
 
   static void view() {
     System.out.println("과제 조회:");
+    System.out.printf("%-20s\t%s\n", "과제", "제출마감일");
+
     for (int i = 0; i < length; i++) {
       Assignment assignment = assignments[i];
-      System.out.printf("과제명: %s\n", assignment.title);
-      System.out.printf("내용: %s\n", assignment.content);
-      System.out.printf("제출 마감일: %s\n", assignment.deadline);
-      System.out.println("------------------------------------------");
+      System.out.printf("%-20s\t%s\n", assignment.title, assignment.deadline);
     }
   }
 
   static void modify() {
     System.out.println("과제 변경:");
+
     int index = Integer.parseInt(Prompt.input("번호? "));
+    if (index < 0 || index >= length) {
+      System.out.println("과제 번호가 유효하지 않습니다.");
+      return;
+    }
+
     Assignment assignment = assignments[index];
     assignment.title = Prompt.input("과제명(%s)? ", assignment.title);
     assignment.content = Prompt.input("내용(%s)? ", assignment.content);
@@ -78,8 +88,17 @@ public class AssignmentMenu {
 
   static void delete() {
     System.out.println("과제 삭제:");
-//    assignment.title = "";
-//    assignment.content = "";
-//    assignment.deadline = "";
+
+    int index = Integer.parseInt(Prompt.input("번호? "));
+    if (index < 0 || index >= length) {
+      System.out.println("과제 번호가 유효하지 않습니다.");
+      return;
+    }
+
+    for (int i = index; i < (length - 1); i++) {
+      assignments[i] = assignments[i + 1]; // 다음 레퍼런스의 값을 삭제하려는 현재 레퍼런스로 이동
+    }
+    length--;
+    assignments[length] = null;
   }
 }
