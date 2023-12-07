@@ -1,4 +1,7 @@
-package bitcamp.myapp;
+package bitcamp.myapp.menu;
+
+import bitcamp.myapp.vo.Board;
+import bitcamp.util.Prompt;
 
 public class BoardMenu {
 
