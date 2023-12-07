@@ -1,12 +1,12 @@
 package bitcamp.myapp;
 
-public class BoardMenu {
+public class GreetingBoardMenu {
 
-  Board[] boards = new Board[3];
-  int length = 0;
+  static Board[] boards = new Board[3];
+  static int length = 0;
 
   static void printMenu() {
-    System.out.println("[게시글]");
+    System.out.println("[가입인사]");
     System.out.println("1. 등록");
     System.out.println("2. 조회");
     System.out.println("3. 변경");
@@ -15,26 +15,26 @@ public class BoardMenu {
     System.out.println("0. 이전");
   }
 
-  void execute() {
+  static void execute() {
     printMenu();
     while (true) {
-      String input = Prompt.input("메인/게시글> ");
+      String input = Prompt.input("메인/가입인사> ");
 
       switch (input) {
         case "1":
-          this.add();
+          add();
           break;
         case "2":
-          this.view();
+          view();
           break;
         case "3":
-          this.modify();
+          modify();
           break;
         case "4":
-          this.delete();
+          delete();
           break;
         case "5":
-          this.list();
+          list();
           break;
         case "0":
           return;
@@ -47,19 +47,19 @@ public class BoardMenu {
     }
   }
 
-  void add() {
-    System.out.println("게시글 등록:");
+  static void add() {
+    System.out.println("가입인사 등록:");
 
-    if (this.length == this.boards.length) {
-      int oldSize = this.boards.length;
+    if (length == boards.length) {
+      int oldSize = boards.length;
       int newSize = oldSize + (oldSize >> 1);
 
       Board[] arr = new Board[newSize];
       for (int i = 0; i < oldSize; i++) {
-        arr[i] = this.boards[i];
+        arr[i] = boards[i];
       }
 
-      this.boards = arr;
+      boards = arr;
     }
 
     Board board = new Board();
@@ -68,63 +68,63 @@ public class BoardMenu {
     board.writer = Prompt.input("작성자? ");
     board.createdDate = Prompt.input("작성일? ");
 
-    this.boards[this.length++] = board;
+    boards[length++] = board;
   }
 
-  void list() { // 논스태틱 메서드 == 인스턴스 메서드
-    System.out.println("게시글 목록:");
+  static void list() {
+    System.out.println("가입인사 목록:");
     System.out.printf("%-20s\t%10s\t%s\n", "Title", "Writer", "Date");
 
-    for (int i = 0; i < this.length; i++) {
-      Board board = this.boards[i];
+    for (int i = 0; i < length; i++) {
+      Board board = boards[i];
       System.out.printf("%-20s\t%10s\t%s\n", board.title, board.writer, board.createdDate);
     }
   }
 
-  void view() {
-    System.out.println("게시글 조회:");
+  static void view() {
+    System.out.println("가입인사 조회:");
 
     int index = Integer.parseInt(Prompt.input("번호? "));
-    if (index < 0 || index >= this.length) {
-      System.out.println("게시글 번호가 유효하지 않습니다.");
+    if (index < 0 || index >= length) {
+      System.out.println("가입인사 번호가 유효하지 않습니다.");
       return;
     }
 
-    Board board = this.boards[index];
+    Board board = boards[index];
     System.out.printf("제목: %s\n", board.title);
     System.out.printf("내용: %s\n", board.content);
     System.out.printf("작성자: %s\n", board.writer);
     System.out.printf("작성일: %s\n", board.createdDate);
   }
 
-  void modify() {
-    System.out.println("게시글 변경:");
+  static void modify() {
+    System.out.println("가입인사 변경:");
 
     int index = Integer.parseInt(Prompt.input("번호? "));
-    if (index < 0 || index >= this.length) {
-      System.out.println("게시글 번호가 유효하지 않습니다.");
+    if (index < 0 || index >= length) {
+      System.out.println("가입인사 번호가 유효하지 않습니다.");
       return;
     }
 
-    Board board = this.boards[index];
+    Board board = boards[index];
     board.title = Prompt.input("제목(%s)? ", board.title);
     board.content = Prompt.input("내용(%s)? ", board.content);
     board.writer = Prompt.input("작성자(%s)? ", board.writer);
     board.createdDate = Prompt.input("작성일(%s)? ", board.createdDate);
   }
 
-  void delete() {
-    System.out.println("게시글 삭제:");
+  static void delete() {
+    System.out.println("가입인사 삭제:");
 
     int index = Integer.parseInt(Prompt.input("번호? "));
-    if (index < 0 || index >= this.length) {
-      System.out.println("게시글 번호가 유효하지 않습니다.");
+    if (index < 0 || index >= length) {
+      System.out.println("가입인사 번호가 유효하지 않습니다.");
       return;
     }
 
-    for (int i = index; i < (this.length - 1); i++) {
-      this.boards[i] = this.boards[i + 1];
+    for (int i = index; i < (length - 1); i++) {
+      boards[i] = boards[i + 1];
     }
-    this.boards[--this.length] = null;
+    boards[--length] = null;
   }
 }
