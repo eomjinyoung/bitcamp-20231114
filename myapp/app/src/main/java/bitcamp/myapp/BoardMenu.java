@@ -2,11 +2,19 @@ package bitcamp.myapp;
 
 public class BoardMenu {
 
+  String title;
   Board[] boards = new Board[3];
   int length = 0;
 
-  static void printMenu() {
-    System.out.println("[게시글]");
+  // BoardMenu 인스턴스를 생성할 때 반드시 게시판 제목을 설정하도록 강요한다.
+  // 생성자란(constructor)?
+  // => 인스턴스를 사용하기 전에 유효한 상태로 설정하는 작업을 수행하는 메서드
+  public BoardMenu(String title) {
+    this.title = title;
+  }
+
+  void printMenu() {
+    System.out.printf("[%s]\n", this.title);
     System.out.println("1. 등록");
     System.out.println("2. 조회");
     System.out.println("3. 변경");
@@ -16,9 +24,9 @@ public class BoardMenu {
   }
 
   void execute() {
-    printMenu();
+    this.printMenu();
     while (true) {
-      String input = Prompt.input("메인/게시글> ");
+      String input = Prompt.input("메인/%s> ", this.title);
 
       switch (input) {
         case "1":
@@ -39,7 +47,7 @@ public class BoardMenu {
         case "0":
           return;
         case "menu":
-          printMenu();
+          this.printMenu();
           break;
         default:
           System.out.println("메뉴 번호가 옳지 않습니다!");

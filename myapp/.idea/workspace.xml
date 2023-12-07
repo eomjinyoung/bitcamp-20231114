@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app-14/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/java/bitcamp/myapp/Assignment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/java/bitcamp/myapp/AssignmentMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/java/bitcamp/myapp/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/java/bitcamp/myapp/BoardMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/java/bitcamp/myapp/GreetingBoardMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/java/bitcamp/myapp/MainMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/java/bitcamp/myapp/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/java/bitcamp/myapp/MemberMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/java/bitcamp/myapp/Prompt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/main/resources/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/test/java/bitcamp/myapp/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-14/src/test/resources/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/GreetingBoardMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/BoardMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/BoardMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/GreetingBoardMenu.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
