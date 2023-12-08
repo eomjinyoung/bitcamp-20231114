@@ -15,6 +15,7 @@ public class MainMenu {
       "3. 회원",
       "4. 가입인사",
       "5. 도움말",
+      "6. 계산기",
       AnsiEscape.ANSI_RED + "0. 종료" + AnsiEscape.ANSI_CLEAR
   };
 
