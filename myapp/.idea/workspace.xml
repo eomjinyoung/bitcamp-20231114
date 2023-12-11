@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/menu/MenuHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/BoardAddHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/BoardDeleteHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/BoardListHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/BoardModifyHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/BoardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/BoardViewHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/AssignmentMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/AssignmentMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/BoardMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/BoardMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/HelpMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/HelpMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MemberMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MemberMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MenuGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/menu/MenuGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/menu/MenuItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

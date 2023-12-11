@@ -1,5 +1,6 @@
 package bitcamp.myapp.menu;
 
+import bitcamp.menu.Menu;
 import bitcamp.util.AnsiEscape;
 import bitcamp.util.Prompt;
 
