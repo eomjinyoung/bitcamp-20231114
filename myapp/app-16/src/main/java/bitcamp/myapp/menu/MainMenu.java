@@ -15,7 +15,6 @@ public class MainMenu implements Menu {
       "3. 회원",
       "4. 가입인사",
       "5. 도움말",
-      "6. 더하기계산",
       AnsiEscape.ANSI_RED + "0. 종료" + AnsiEscape.ANSI_CLEAR
   };
 
@@ -42,7 +41,6 @@ public class MainMenu implements Menu {
     Menu assignmentMenu = new AssignmentMenu("과제", this.prompt);
     Menu memberMenu = new MemberMenu("회원", this.prompt);
     Menu helpMenu = new HelpMenu("도움말", this.prompt);
-    Menu calculatorMenu = new CalculatorMenu("더하기계산", this.prompt);
 
     printMenu();
 
@@ -64,9 +62,6 @@ public class MainMenu implements Menu {
           break;
         case "5":
           helpMenu.execute();
-          break;
-        case "6":
-          calculatorMenu.execute();
           break;
         case "0":
           System.out.println("종료합니다.");

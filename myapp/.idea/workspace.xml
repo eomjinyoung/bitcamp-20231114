@@ -5,16 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/HelpMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/myapp/menu/AssignmentMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/myapp/menu/BoardMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/myapp/menu/HelpMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/myapp/menu/MainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/myapp/menu/MemberMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/myapp/menu/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/myapp/vo/Assignment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/myapp/vo/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/util/AnsiEscape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/java/bitcamp/util/Prompt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/main/resources/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/test/java/bitcamp/myapp/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-16/src/test/resources/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/CalculatorMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MenuGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MenuItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/AssignmentMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/AssignmentMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/BoardMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/BoardMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MemberMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/menu/MemberMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +56,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
