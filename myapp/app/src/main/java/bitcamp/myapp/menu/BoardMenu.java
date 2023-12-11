@@ -3,7 +3,7 @@ package bitcamp.myapp.menu;
 import bitcamp.myapp.vo.Board;
 import bitcamp.util.Prompt;
 
-public class BoardMenu {
+public class BoardMenu implements Menu {
 
   // 의존 객체(Dependency Object ==> dependency);
   // - 클래스가 작업을 수행할 때 사용하는 객체
@@ -31,7 +31,7 @@ public class BoardMenu {
     System.out.println("0. 이전");
   }
 
-  void execute() {
+  public void execute() {
     this.printMenu();
     while (true) {
       String input = this.prompt.input("메인/%s> ", this.title);

@@ -3,7 +3,7 @@ package bitcamp.myapp.menu;
 import bitcamp.util.AnsiEscape;
 import bitcamp.util.Prompt;
 
-public class MainMenu {
+public class MainMenu implements Menu {
 
   static final String APP_TITLE =
       AnsiEscape.ANSI_BOLD_RED
@@ -15,7 +15,6 @@ public class MainMenu {
       "3. 회원",
       "4. 가입인사",
       "5. 도움말",
-      "6. 계산기",
       AnsiEscape.ANSI_RED + "0. 종료" + AnsiEscape.ANSI_CLEAR
   };
 
@@ -37,10 +36,11 @@ public class MainMenu {
 
   public void execute() {
 
-    BoardMenu boardMenu = new BoardMenu("게시판", this.prompt);
-    BoardMenu greetingMenu = new BoardMenu("가입인사", this.prompt);
-    AssignmentMenu assignmentMenu = new AssignmentMenu("과제", this.prompt);
-    MemberMenu memberMenu = new MemberMenu("회원", this.prompt);
+    Menu boardMenu = new BoardMenu("게시판", this.prompt);
+    Menu greetingMenu = new BoardMenu("가입인사", this.prompt);
+    Menu assignmentMenu = new AssignmentMenu("과제", this.prompt);
+    Menu memberMenu = new MemberMenu("회원", this.prompt);
+    Menu helpMenu = new HelpMenu("도움말", this.prompt);
 
     printMenu();
 
@@ -61,7 +61,7 @@ public class MainMenu {
           greetingMenu.execute();
           break;
         case "5":
-          System.out.println("도움말입니다.");
+          helpMenu.execute();
           break;
         case "0":
           System.out.println("종료합니다.");
