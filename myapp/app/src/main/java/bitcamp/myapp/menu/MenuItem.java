@@ -1,5 +1,7 @@
 package bitcamp.myapp.menu;
 
+import bitcamp.util.Prompt;
+
 // Composite 패턴에서 leaf 역할을 수행하는 클래스
 // Leaf?
 // - 하위 항목을 포함하지 않는 말단 객체
@@ -13,7 +15,12 @@ public class MenuItem implements Menu {
     this.title = title;
   }
 
-  public void execute() {
+  public void execute(Prompt prompt) {
     System.out.printf("[%s]\n", this.title);
+  }
+
+  @Override
+  public String getTitle() {
+    return this.title;
   }
 }

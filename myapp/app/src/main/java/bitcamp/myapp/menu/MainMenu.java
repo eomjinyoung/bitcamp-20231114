@@ -15,7 +15,6 @@ public class MainMenu implements Menu {
       "3. 회원",
       "4. 가입인사",
       "5. 도움말",
-      "6. 더하기계산",
       AnsiEscape.ANSI_RED + "0. 종료" + AnsiEscape.ANSI_CLEAR
   };
 
@@ -35,14 +34,18 @@ public class MainMenu implements Menu {
     }
   }
 
-  public void execute() {
+  @Override
+  public String getTitle() {
+    return null;
+  }
+
+  public void execute(Prompt prompt) {
 
     Menu boardMenu = new BoardMenu("게시판", this.prompt);
     Menu greetingMenu = new BoardMenu("가입인사", this.prompt);
     Menu assignmentMenu = new AssignmentMenu("과제", this.prompt);
     Menu memberMenu = new MemberMenu("회원", this.prompt);
     Menu helpMenu = new HelpMenu("도움말", this.prompt);
-    Menu calculatorMenu = new CalculatorMenu("더하기계산", this.prompt);
 
     printMenu();
 
@@ -51,22 +54,19 @@ public class MainMenu implements Menu {
 
       switch (input) {
         case "1":
-          assignmentMenu.execute();
+          assignmentMenu.execute(prompt);
           break;
         case "2":
-          boardMenu.execute();
+          boardMenu.execute(prompt);
           break;
         case "3":
-          memberMenu.execute();
+          memberMenu.execute(prompt);
           break;
         case "4":
-          greetingMenu.execute();
+          greetingMenu.execute(prompt);
           break;
         case "5":
-          helpMenu.execute();
-          break;
-        case "6":
-          calculatorMenu.execute();
+          helpMenu.execute(prompt);
           break;
         case "0":
           System.out.println("종료합니다.");
