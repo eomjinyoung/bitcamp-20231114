@@ -191,17 +191,19 @@
 - 인터페이스에 정의한 대로 메뉴를 다루는 객체를 실행
 
 
-## 17. GoF의 Composite 패턴을 이용하여 메뉴를 구성하기
+## 17. GoF의 Composite 패턴과 Observer 패턴을 이용하여 메뉴를 구현하기
 
-- 메뉴 간의 연결을 느슨하게 조정하기
-  - MainMenu와 나머지 Menu 객체들 사이에 coupling이 강결합되어 있다.
-    - 메뉴 클래스가 추가되면 MainMenu 클래스를 또 변경해야 한다.
-    - 메뉴 클래스가 추가되더라도 MainMenu 클래스를 변경하지 않을 방법이 필요하다.
-  - 적용 설계 원칙
-    - SOLID 원칙 중에 'OCP(Open/Closed Priciple)' 준수
-    - GRASP 패턴의 'Low Coupling' 책임 할당 원칙 준수
-  - 설계 원칙을 따르는 구현 방법
-    - GoF의 'Composite' 패턴 적용
+- GoF의 Composite 디자인 패턴 적용
+  - 메뉴 간의 연결을 느슨하게 조정하기
+  - 현황:
+    - MainMenu와 나머지 Menu 객체들 사이에 coupling이 강결합되어 있다.
+    - 메뉴 클래스를 추가하면 MainMenu 클래스를 또 변경해야 한다.
+  - 목표:
+    - 메뉴를 추가하더라도 기존 클래스를 변경하지 않을 방법이 필요하다.
+  - 객체지향 설계 원칙
+    - SOLID의 'OCP(Open/Closed Priciple)' 준수
+    - GRASP의 'Low Coupling' 책임 할당 원칙 준수
+
 
 
 

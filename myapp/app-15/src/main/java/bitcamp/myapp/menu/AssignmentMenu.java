@@ -1,4 +1,4 @@
-package bitcamp.myapp.menu;
+package bitcamp.myapp.handler;
 
 import bitcamp.myapp.vo.Assignment;
 import bitcamp.util.Prompt;
