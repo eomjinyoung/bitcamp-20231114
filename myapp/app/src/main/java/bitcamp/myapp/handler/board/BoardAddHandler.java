@@ -23,24 +23,15 @@ public class BoardAddHandler implements MenuHandler {
   public void action(Menu menu) {
     System.out.printf(AnsiEscape.ANSI_BOLD + "[%s]\n" + AnsiEscape.ANSI_CLEAR, menu.getTitle());
 
-    if (this.boardRepository.length == this.boardRepository.boards.length) {
-      int oldSize = this.boardRepository.boards.length;
-      int newSize = oldSize + (oldSize >> 1);
-
-      Board[] arr = new Board[newSize];
-      for (int i = 0; i < oldSize; i++) {
-        arr[i] = this.boardRepository.boards[i];
-      }
-
-      this.boardRepository.boards = arr;
-    }
-
     Board board = new Board();
     board.title = this.prompt.input("제목? ");
     board.content = this.prompt.input("내용? ");
     board.writer = this.prompt.input("작성자? ");
     board.createdDate = this.prompt.input("작성일? ");
 
-    this.boardRepository.boards[this.boardRepository.length++] = board;
+    // 목록에 객체를 추가시키는 코드를 BoardRepository가 감췄다.(캡슐화 했다)
+    // 대신 목록에 객체를 추가시킬 수 있도록 메서드를 제공하고 있다.
+    // 따라서 다음과 같이 BoardRepository가 제공하는 메서드를 사용하여 게시글 객체를 추가하라.
+    boardRepository.add(board);
   }
 }
