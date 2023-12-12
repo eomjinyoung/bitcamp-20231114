@@ -4,6 +4,7 @@ import bitcamp.menu.Menu;
 import bitcamp.menu.MenuHandler;
 import bitcamp.myapp.vo.Board;
 import bitcamp.util.AnsiEscape;
+import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
 // 게시글의 '등록' 메뉴를 선택했을 때 작업을 수행하는 클래스
@@ -12,10 +13,10 @@ import bitcamp.util.Prompt;
 public class BoardAddHandler implements MenuHandler {
 
   Prompt prompt;
-  BoardRepository boardRepository;
+  ObjectRepository objectRepository;
 
-  public BoardAddHandler(BoardRepository boardRepository, Prompt prompt) {
-    this.boardRepository = boardRepository;
+  public BoardAddHandler(ObjectRepository objectRepository, Prompt prompt) {
+    this.objectRepository = objectRepository;
     this.prompt = prompt;
   }
 
@@ -29,9 +30,6 @@ public class BoardAddHandler implements MenuHandler {
     board.writer = this.prompt.input("작성자? ");
     board.createdDate = this.prompt.input("작성일? ");
 
-    // 목록에 객체를 추가시키는 코드를 BoardRepository가 감췄다.(캡슐화 했다)
-    // 대신 목록에 객체를 추가시킬 수 있도록 메서드를 제공하고 있다.
-    // 따라서 다음과 같이 BoardRepository가 제공하는 메서드를 사용하여 게시글 객체를 추가하라.
-    boardRepository.add(board);
+    objectRepository.add(board);
   }
 }

@@ -215,7 +215,11 @@
   - 목록을 다루는 방식을 변경하더라도 외부에 영향을 주지 않는다.
   - 기능을 변경하더라도 다른 클래스에 미치는 영향을 최소화시킬 수 있다.
     
+## 19. 다형성을 이용하여 범용으로 사용할 수 있는 Repository 클래스 만들기
 
+- 목록 관리 범용 클래스 ObjectRepository 정의
+  - 다형성의 polymorphic variable 문법 활용
+- 기존의 Repository 클래스를 ObjectRepository로 대체
 
 
 
