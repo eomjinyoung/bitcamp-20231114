@@ -29,4 +29,50 @@ public class BoardRepository {
 
     this.boards[this.length++] = board;
   }
+
+  public Board remove(int index) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+
+    // 배열에서 삭제하기 전에 임시 보관해 둔다.
+    Board deleted = this.boards[index];
+
+    for (int i = index; i < (this.length - 1); i++) {
+      this.boards[i] = this.boards[i + 1];
+    }
+    this.boards[--this.length] = null;
+
+    // 삭제한 객체를 리턴한다.
+    // 받아서 쓰던가 말던가 호출하는 쪽에서 알아서 할 일이다.
+    return deleted;
+  }
+
+  public Board[] toArray() {
+    Board[] arr = new Board[this.length];
+    for (int i = 0; i < this.length; i++) {
+      arr[i] = this.boards[i];
+    }
+    return arr;
+  }
+
+  public Board get(int index) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+    return this.boards[index];
+  }
+
+  public Board set(int index, Board board) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+
+    Board old = this.boards[index];
+    this.boards[index] = board;
+
+    // 새 객체로 교체하기 전에 이전 객체를 리턴한다.
+    // 호출하는 쪽에서 받아 쓰거나 말거나 알아서 하라고!
+    return old;
+  }
 }
