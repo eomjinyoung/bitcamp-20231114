@@ -238,6 +238,9 @@
   - System.arraycopy() 메서드 사용하기
   - Arrays.copyOf() 메서드 사용하기
 
+## 21. 자바 Collection API 사용하기 - ArrayList 적용
+
+- 목록을 다루는 기존 Repository 클래스를 자바 컬렉션 API 로 교체
 
 
 
@@ -302,9 +305,7 @@
   - static/non-static nested 클래스 문법을 활용하는 방법
   - local/anonymous 클래스 문법을 활용하는 방법
 
-## 26. 자바 Collection API 사용하기
 
-- 목록을 다루는 기존 클래스를 자바 컬렉션 API 로 교체
 
 ## 27. File I/O API를 이용하여 데이터를 바이너리 형식으로 입출력하기
 
