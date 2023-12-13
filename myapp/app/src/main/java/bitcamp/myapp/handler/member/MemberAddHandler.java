@@ -4,15 +4,16 @@ import bitcamp.menu.Menu;
 import bitcamp.menu.MenuHandler;
 import bitcamp.myapp.vo.Member;
 import bitcamp.util.AnsiEscape;
+import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
 public class MemberAddHandler implements MenuHandler {
 
   Prompt prompt;
-  MemberRepository memberRepository;
+  ObjectRepository objectRepository;
 
-  public MemberAddHandler(MemberRepository memberRepository, Prompt prompt) {
-    this.memberRepository = memberRepository;
+  public MemberAddHandler(ObjectRepository objectRepository, Prompt prompt) {
+    this.objectRepository = objectRepository;
     this.prompt = prompt;
   }
 
@@ -26,6 +27,6 @@ public class MemberAddHandler implements MenuHandler {
     member.password = this.prompt.input("암호? ");
     member.createdDate = this.prompt.input("가입일? ");
 
-    this.memberRepository.add(member);
+    this.objectRepository.add(member);
   }
 }

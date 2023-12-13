@@ -23,9 +23,12 @@ public class BoardListHandler implements MenuHandler {
 
     System.out.printf("%-20s\t%10s\t%s\n", "Title", "Writer", "Date");
 
-    for (Object object : objectRepository.toArray()) {
+    for (Object object : this.objectRepository.toArray()) {
       Board board = (Board) object;
-      System.out.printf("%-20s\t%10s\t%s\n", board.title, board.writer, board.createdDate);
+      System.out.printf("%-20s\t%10s\t%s\n",
+          board.title,
+          board.writer,
+          board.createdDate);
     }
   }
 }

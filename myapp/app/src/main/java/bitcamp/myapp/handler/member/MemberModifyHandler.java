@@ -4,15 +4,16 @@ import bitcamp.menu.Menu;
 import bitcamp.menu.MenuHandler;
 import bitcamp.myapp.vo.Member;
 import bitcamp.util.AnsiEscape;
+import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
 public class MemberModifyHandler implements MenuHandler {
 
   Prompt prompt;
-  MemberRepository memberRepository;
+  ObjectRepository objectRepository;
 
-  public MemberModifyHandler(MemberRepository memberRepository, Prompt prompt) {
-    this.memberRepository = memberRepository;
+  public MemberModifyHandler(ObjectRepository objectRepository, Prompt prompt) {
+    this.objectRepository = objectRepository;
     this.prompt = prompt;
   }
 
@@ -21,7 +22,7 @@ public class MemberModifyHandler implements MenuHandler {
     System.out.printf(AnsiEscape.ANSI_BOLD + "[%s]\n" + AnsiEscape.ANSI_CLEAR, menu.getTitle());
 
     int index = this.prompt.inputInt("번호? ");
-    Member old = this.memberRepository.get(index);
+    Member old = (Member) this.objectRepository.get(index);
     if (old == null) {
       System.out.println("회원 번호가 유효하지 않습니다.");
       return;
@@ -33,6 +34,6 @@ public class MemberModifyHandler implements MenuHandler {
     member.password = this.prompt.input("새 암호? ");
     member.createdDate = this.prompt.input("가입일(%s)? ", old.createdDate);
 
-    this.memberRepository.set(index, member);
+    this.objectRepository.set(index, member);
   }
 }
