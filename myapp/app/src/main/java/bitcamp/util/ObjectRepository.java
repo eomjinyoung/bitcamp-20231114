@@ -1,5 +1,7 @@
 package bitcamp.util;
 
+import java.util.Arrays;
+
 public class ObjectRepository<E> {
 
   public int length = 0;
@@ -10,12 +12,11 @@ public class ObjectRepository<E> {
       int oldSize = this.objects.length;
       int newSize = oldSize + (oldSize >> 1);
 
-      Object[] arr = new Object[newSize];
-      for (int i = 0; i < oldSize; i++) {
-        arr[i] = this.objects[i];
-      }
+//      Object[] arr = new Object[newSize];
+//      System.arraycopy(this.objects, 0, arr, 0, oldSize);
 
-      this.objects = arr;
+      this.objects = Arrays.copyOf(this.objects, newSize);
+//      System.out.printf("새 배열 크기: %d\n", this.objects.length);
     }
 
     this.objects[this.length++] = object;
@@ -28,26 +29,23 @@ public class ObjectRepository<E> {
 
     Object deleted = this.objects[index];
 
-    for (int i = index; i < (this.length - 1); i++) {
-      this.objects[i] = this.objects[i + 1];
-    }
+    System.arraycopy(this.objects, index + 1, this.objects, index, this.length - (index + 1));
+
     this.objects[--this.length] = null;
 
     return (E) deleted;
   }
 
   public Object[] toArray() {
-    Object[] arr = new Object[this.length];
-    for (int i = 0; i < this.length; i++) {
-      arr[i] = this.objects[i];
-    }
-    return arr;
+    return Arrays.copyOf(this.objects, this.length);
   }
 
-  public void toArray(E[] arr) {
-    for (int i = 0; i < this.length; i++) {
-      arr[i] = (E) this.objects[i];
+  public E[] toArray(E[] arr) {
+    if (arr.length >= this.length) {
+      System.arraycopy(this.objects, 0, arr, 0, this.length);
+      return arr;
     }
+    return (E[]) Arrays.copyOf(this.objects, this.length, arr.getClass());
   }
 
   public E get(int index) {
