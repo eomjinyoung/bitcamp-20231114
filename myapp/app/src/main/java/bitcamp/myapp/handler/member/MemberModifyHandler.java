@@ -10,9 +10,9 @@ import bitcamp.util.Prompt;
 public class MemberModifyHandler implements MenuHandler {
 
   Prompt prompt;
-  ObjectRepository objectRepository;
+  ObjectRepository<Member> objectRepository;
 
-  public MemberModifyHandler(ObjectRepository objectRepository, Prompt prompt) {
+  public MemberModifyHandler(ObjectRepository<Member> objectRepository, Prompt prompt) {
     this.objectRepository = objectRepository;
     this.prompt = prompt;
   }
@@ -22,7 +22,7 @@ public class MemberModifyHandler implements MenuHandler {
     System.out.printf(AnsiEscape.ANSI_BOLD + "[%s]\n" + AnsiEscape.ANSI_CLEAR, menu.getTitle());
 
     int index = this.prompt.inputInt("번호? ");
-    Member old = (Member) this.objectRepository.get(index);
+    Member old = this.objectRepository.get(index);
     if (old == null) {
       System.out.println("회원 번호가 유효하지 않습니다.");
       return;

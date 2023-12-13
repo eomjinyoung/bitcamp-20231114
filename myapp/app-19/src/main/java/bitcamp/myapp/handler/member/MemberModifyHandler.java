@@ -7,12 +7,12 @@ import bitcamp.util.AnsiEscape;
 import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
-public class MemberViewHandler implements MenuHandler {
+public class MemberModifyHandler implements MenuHandler {
 
   Prompt prompt;
-  ObjectRepository<Member> objectRepository;
+  ObjectRepository objectRepository;
 
-  public MemberViewHandler(ObjectRepository<Member> objectRepository, Prompt prompt) {
+  public MemberModifyHandler(ObjectRepository objectRepository, Prompt prompt) {
     this.objectRepository = objectRepository;
     this.prompt = prompt;
   }
@@ -22,13 +22,18 @@ public class MemberViewHandler implements MenuHandler {
     System.out.printf(AnsiEscape.ANSI_BOLD + "[%s]\n" + AnsiEscape.ANSI_CLEAR, menu.getTitle());
 
     int index = this.prompt.inputInt("번호? ");
-    Member member = this.objectRepository.get(index);
-    if (member == null) {
+    Member old = (Member) this.objectRepository.get(index);
+    if (old == null) {
       System.out.println("회원 번호가 유효하지 않습니다.");
       return;
     }
-    System.out.printf("이메일: %s\n", member.email);
-    System.out.printf("이름: %s\n", member.name);
-    System.out.printf("가입일: %s\n", member.createdDate);
+
+    Member member = new Member();
+    member.email = this.prompt.input("이메일(%s)? ", old.email);
+    member.name = this.prompt.input("이름(%s)? ", old.name);
+    member.password = this.prompt.input("새 암호? ");
+    member.createdDate = this.prompt.input("가입일(%s)? ", old.createdDate);
+
+    this.objectRepository.set(index, member);
   }
 }

@@ -10,9 +10,9 @@ import bitcamp.util.Prompt;
 public class MemberAddHandler implements MenuHandler {
 
   Prompt prompt;
-  ObjectRepository<Member> objectRepository;
+  ObjectRepository objectRepository;
 
-  public MemberAddHandler(ObjectRepository<Member> objectRepository, Prompt prompt) {
+  public MemberAddHandler(ObjectRepository objectRepository, Prompt prompt) {
     this.objectRepository = objectRepository;
     this.prompt = prompt;
   }

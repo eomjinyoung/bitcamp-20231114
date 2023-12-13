@@ -10,10 +10,10 @@ import bitcamp.util.Prompt;
 public class AssignmentAddHandler implements MenuHandler {
 
   Prompt prompt;
-  ObjectRepository objectRepository;
+  ObjectRepository<Assignment> objectRepository;
 
 
-  public AssignmentAddHandler(ObjectRepository objectRepository, Prompt prompt) {
+  public AssignmentAddHandler(ObjectRepository<Assignment> objectRepository, Prompt prompt) {
     this.objectRepository = objectRepository;
     this.prompt = prompt;
   }

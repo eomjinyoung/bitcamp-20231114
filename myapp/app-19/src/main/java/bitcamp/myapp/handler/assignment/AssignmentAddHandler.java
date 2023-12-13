@@ -7,13 +7,13 @@ import bitcamp.util.AnsiEscape;
 import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
-public class AssignmentDeleteHandler implements MenuHandler {
+public class AssignmentAddHandler implements MenuHandler {
 
   Prompt prompt;
-  ObjectRepository<Assignment> objectRepository;
+  ObjectRepository objectRepository;
 
 
-  public AssignmentDeleteHandler(ObjectRepository<Assignment> objectRepository, Prompt prompt) {
+  public AssignmentAddHandler(ObjectRepository objectRepository, Prompt prompt) {
     this.objectRepository = objectRepository;
     this.prompt = prompt;
   }
@@ -22,9 +22,11 @@ public class AssignmentDeleteHandler implements MenuHandler {
   public void action(Menu menu) {
     System.out.printf(AnsiEscape.ANSI_BOLD + "[%s]\n" + AnsiEscape.ANSI_CLEAR, menu.getTitle());
 
-    int index = this.prompt.inputInt("번호? ");
-    if (this.objectRepository.remove(index) == null) {
-      System.out.println("과제 번호가 유효하지 않습니다.");
-    }
+    Assignment assignment = new Assignment();
+    assignment.title = this.prompt.input("과제명? ");
+    assignment.content = this.prompt.input("내용? ");
+    assignment.deadline = this.prompt.input("제출 마감일? ");
+
+    this.objectRepository.add(assignment);
   }
 }

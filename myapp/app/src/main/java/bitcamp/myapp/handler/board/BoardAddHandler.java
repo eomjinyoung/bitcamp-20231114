@@ -13,9 +13,9 @@ import bitcamp.util.Prompt;
 public class BoardAddHandler implements MenuHandler {
 
   Prompt prompt;
-  ObjectRepository objectRepository;
+  ObjectRepository<Board> objectRepository;
 
-  public BoardAddHandler(ObjectRepository objectRepository, Prompt prompt) {
+  public BoardAddHandler(ObjectRepository<Board> objectRepository, Prompt prompt) {
     this.objectRepository = objectRepository;
     this.prompt = prompt;
   }
@@ -31,5 +31,10 @@ public class BoardAddHandler implements MenuHandler {
     board.createdDate = this.prompt.input("작성일? ");
 
     objectRepository.add(board);
+
+    // 레퍼런스를 선언하는 시점에 지정된 타입이 아닌 값을 넣으려고 하면
+    // 컴파일 오류가 발생한다.
+    // 즉 특정 타입만 사용하도록 제한할 수 있는 문법이 제네릭(generic) 이다.
+//    objectRepository.add(new String("Hello"));
   }
 }

@@ -2,16 +2,17 @@ package bitcamp.myapp.handler.board;
 
 import bitcamp.menu.Menu;
 import bitcamp.menu.MenuHandler;
+import bitcamp.myapp.vo.Board;
 import bitcamp.util.AnsiEscape;
 import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
 public class BoardDeleteHandler implements MenuHandler {
 
-  ObjectRepository objectRepository;
+  ObjectRepository<Board> objectRepository;
   Prompt prompt;
 
-  public BoardDeleteHandler(ObjectRepository objectRepository, Prompt prompt) {
+  public BoardDeleteHandler(ObjectRepository<Board> objectRepository, Prompt prompt) {
     this.objectRepository = objectRepository;
     this.prompt = prompt;
   }

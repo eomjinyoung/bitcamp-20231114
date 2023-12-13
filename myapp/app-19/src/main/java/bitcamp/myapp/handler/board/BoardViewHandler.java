@@ -12,10 +12,10 @@ import bitcamp.util.Prompt;
 //
 public class BoardViewHandler implements MenuHandler {
 
-  ObjectRepository<Board> objectRepository;
+  ObjectRepository objectRepository;
   Prompt prompt;
 
-  public BoardViewHandler(ObjectRepository<Board> objectRepository, Prompt prompt) {
+  public BoardViewHandler(ObjectRepository objectRepository, Prompt prompt) {
     this.objectRepository = objectRepository;
     this.prompt = prompt;
   }
@@ -25,7 +25,7 @@ public class BoardViewHandler implements MenuHandler {
     System.out.printf(AnsiEscape.ANSI_BOLD + "[%s]\n" + AnsiEscape.ANSI_CLEAR, menu.getTitle());
 
     int index = this.prompt.inputInt("번호? ");
-    Board board = this.objectRepository.get(index);
+    Board board = (Board) this.objectRepository.get(index);
     if (board == null) {
       System.out.println("게시글 번호가 유효하지 않습니다.");
       return;

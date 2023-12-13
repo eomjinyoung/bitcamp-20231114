@@ -8,10 +8,10 @@ import bitcamp.util.ObjectRepository;
 
 public class AssignmentListHandler implements MenuHandler {
 
-  ObjectRepository<Assignment> objectRepository;
+  ObjectRepository objectRepository;
 
 
-  public AssignmentListHandler(ObjectRepository<Assignment> objectRepository) {
+  public AssignmentListHandler(ObjectRepository objectRepository) {
     this.objectRepository = objectRepository;
   }
 
@@ -20,10 +20,8 @@ public class AssignmentListHandler implements MenuHandler {
     System.out.printf(AnsiEscape.ANSI_BOLD + "[%s]\n" + AnsiEscape.ANSI_CLEAR, menu.getTitle());
     System.out.printf("%-20s\t%s\n", "과제", "제출마감일");
 
-    Assignment[] assignments = new Assignment[this.objectRepository.size()];
-    this.objectRepository.toArray(assignments);
-
-    for (Assignment assignment : assignments) {
+    for (Object object : this.objectRepository.toArray()) {
+      Assignment assignment = (Assignment) object;
       System.out.printf("%-20s\t%s\n", assignment.title, assignment.deadline);
     }
   }

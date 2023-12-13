@@ -1,19 +1,17 @@
-package bitcamp.myapp.handler.assignment;
+package bitcamp.myapp.handler.board;
 
 import bitcamp.menu.Menu;
 import bitcamp.menu.MenuHandler;
-import bitcamp.myapp.vo.Assignment;
 import bitcamp.util.AnsiEscape;
 import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
-public class AssignmentDeleteHandler implements MenuHandler {
+public class BoardDeleteHandler implements MenuHandler {
 
+  ObjectRepository objectRepository;
   Prompt prompt;
-  ObjectRepository<Assignment> objectRepository;
 
-
-  public AssignmentDeleteHandler(ObjectRepository<Assignment> objectRepository, Prompt prompt) {
+  public BoardDeleteHandler(ObjectRepository objectRepository, Prompt prompt) {
     this.objectRepository = objectRepository;
     this.prompt = prompt;
   }
@@ -24,7 +22,7 @@ public class AssignmentDeleteHandler implements MenuHandler {
 
     int index = this.prompt.inputInt("번호? ");
     if (this.objectRepository.remove(index) == null) {
-      System.out.println("과제 번호가 유효하지 않습니다.");
+      System.out.println("게시글 번호가 유효하지 않습니다.");
     }
   }
 }
