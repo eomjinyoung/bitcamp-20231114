@@ -40,9 +40,9 @@ eclipse {
         name = "myapp"
     }
     jdt {
-        sourceCompatibility = 17
-        targetCompatibility = 17
-        javaRuntimeName = "JavaSE-17"
+        sourceCompatibility = 21
+        targetCompatibility = 21
+        javaRuntimeName = "JavaSE-21"
     }
 }
 
