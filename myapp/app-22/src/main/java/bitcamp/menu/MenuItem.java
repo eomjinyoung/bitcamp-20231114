@@ -7,12 +7,13 @@ import bitcamp.util.Prompt;
 // - 하위 항목을 포함하지 않는 말단 객체
 // - 예를들어 파일시스템에서 '파일'에 해당한다.
 //
-public class MenuItem extends AbstractMenu {
+public class MenuItem implements Menu {
 
+  private String title;
   private MenuHandler menuHandler;
 
   public MenuItem(String title) {
-    super(title);
+    this.title = title;
   }
 
   public MenuItem(String title, MenuHandler menuHandler) {
@@ -24,5 +25,10 @@ public class MenuItem extends AbstractMenu {
     if (this.menuHandler != null) {
       this.menuHandler.action(this);
     }
+  }
+
+  @Override
+  public String getTitle() {
+    return this.title;
   }
 }

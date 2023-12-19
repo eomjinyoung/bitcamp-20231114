@@ -242,15 +242,23 @@
 
 - 목록을 다루는 기존 Repository 클래스를 자바 컬렉션 API 로 교체
 
+## 22. 접근 제어 modifier 및 셋터, 겟터 도입하기
 
-
-## 12. 생성자, 셋터, 겟터 도입하기
-
-- 인스턴스 필드를 초기화시키는 방법: 생성자
 - 인스턴스 필드에 직접 접근하는 것을 막는 방법: private
 - 인스턴스 필드에 값을 저장하고 꺼내는 방법: setter/getter
-- 스태틱 필드 및 생성자 활용
-- 스태틱 상수 필드 활용 + GRASP 패턴의 Information Expert
+
+## 23. 상속(generalization)과 추상 클래스/추상 메서드 활용하기
+
+- MenuHandler 구현체의 공통 분모를 추출하여 수퍼 클래스 정의하기
+- 수퍼 클래스를 추상 클래스로 정의하여 직접 사용을 막기
+
+
+
+
+
+
+
+
 
 
 ## 20. LinkedList 자료구조 구현하기
@@ -279,6 +287,12 @@
     - App, BoardHandler, MemberHandler 변경
   - MenuPrompt 클래스에 입력한 명령어의 history 기능을 추가
 
+
+
+
+
+
+
 ## 23. Composite, Command, Observer 디자인 패턴, 추상 클래스/메서드 활용하기
 
 - Composite 패턴을 활용하여 메뉴 구현하기
@@ -294,6 +308,8 @@
 - Generalization(상속) 수행
   - AbstractBoardListener 추상 클래스 정의
     - 추상 메서드 도입
+
+
 
 
 
