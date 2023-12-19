@@ -15,7 +15,7 @@ public class AssignmentListHandler extends AbstractMenuHandler {
   }
 
   @Override
-  public void action() {
+  protected void action() {
     System.out.printf("%-20s\t%s\n", "과제", "제출마감일");
 
     Assignment[] assignments = new Assignment[this.objectRepository.size()];

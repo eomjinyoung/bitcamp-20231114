@@ -18,7 +18,7 @@ public class BoardViewHandler extends AbstractMenuHandler {
   }
 
   @Override
-  public void action() {
+  protected void action() {
     int index = this.prompt.inputInt("번호? ");
     Board board = this.objectRepository.get(index);
     if (board == null) {

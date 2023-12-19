@@ -18,7 +18,7 @@ public class BoardListHandler extends AbstractMenuHandler {
   }
 
   @Override
-  public void action() {
+  protected void action() {
     System.out.printf("%-20s\t%10s\t%s\n", "Title", "Writer", "Date");
 
     Board[] boards = this.objectRepository.toArray(new Board[0]);

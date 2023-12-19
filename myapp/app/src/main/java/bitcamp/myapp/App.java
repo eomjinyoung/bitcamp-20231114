@@ -43,7 +43,7 @@ public class App {
         new MenuItem("변경", new AssignmentModifyHandler(assignmentRepository, prompt)));
     assignmentMenu.add(
         new MenuItem("삭제", new AssignmentDeleteHandler(assignmentRepository, prompt)));
-    assignmentMenu.add(new MenuItem("목록", new AssignmentListHandler(assignmentRepository)));
+    assignmentMenu.add(new MenuItem("목록", new AssignmentListHandler(assignmentRepository, prompt)));
     mainMenu.add(assignmentMenu);
 
     MenuGroup boardMenu = new MenuGroup("게시글");
@@ -51,7 +51,7 @@ public class App {
     boardMenu.add(new MenuItem("조회", new BoardViewHandler(boardRepository, prompt)));
     boardMenu.add(new MenuItem("변경", new BoardModifyHandler(boardRepository, prompt)));
     boardMenu.add(new MenuItem("삭제", new BoardDeleteHandler(boardRepository, prompt)));
-    boardMenu.add(new MenuItem("목록", new BoardListHandler(boardRepository)));
+    boardMenu.add(new MenuItem("목록", new BoardListHandler(boardRepository, prompt)));
     mainMenu.add(boardMenu);
 
     MenuGroup memberMenu = new MenuGroup("회원");
@@ -59,7 +59,7 @@ public class App {
     memberMenu.add(new MenuItem("조회", new MemberViewHandler(memberRepository, prompt)));
     memberMenu.add(new MenuItem("변경", new MemberModifyHandler(memberRepository, prompt)));
     memberMenu.add(new MenuItem("삭제", new MemberDeleteHandler(memberRepository, prompt)));
-    memberMenu.add(new MenuItem("목록", new MemberListHandler(memberRepository)));
+    memberMenu.add(new MenuItem("목록", new MemberListHandler(memberRepository, prompt)));
     mainMenu.add(memberMenu);
 
     MenuGroup greetingMenu = new MenuGroup("가입인사");
@@ -67,10 +67,10 @@ public class App {
     greetingMenu.add(new MenuItem("조회", new BoardViewHandler(greetingRepository, prompt)));
     greetingMenu.add(new MenuItem("변경", new BoardModifyHandler(greetingRepository, prompt)));
     greetingMenu.add(new MenuItem("삭제", new BoardDeleteHandler(greetingRepository, prompt)));
-    greetingMenu.add(new MenuItem("목록", new BoardListHandler(greetingRepository)));
+    greetingMenu.add(new MenuItem("목록", new BoardListHandler(greetingRepository, prompt)));
     mainMenu.add(greetingMenu);
 
-    mainMenu.add(new MenuItem("도움말", new HelpHandler()));
+    mainMenu.add(new MenuItem("도움말", new HelpHandler(prompt)));
 
     mainMenu.execute(prompt);
 

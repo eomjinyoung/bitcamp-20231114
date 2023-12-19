@@ -15,7 +15,7 @@ public class MemberAddHandler extends AbstractMenuHandler {
   }
 
   @Override
-  public void action() {
+  protected void action() {
     Member member = new Member();
     member.setEmail(this.prompt.input("이메일? "));
     member.setName(this.prompt.input("이름? "));

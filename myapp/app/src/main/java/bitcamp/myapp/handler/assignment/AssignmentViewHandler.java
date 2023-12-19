@@ -15,7 +15,7 @@ public class AssignmentViewHandler extends AbstractMenuHandler {
   }
 
   @Override
-  public void action() {
+  protected void action() {
     int index = this.prompt.inputInt("번호? ");
     Assignment assignment = this.objectRepository.get(index);
     if (assignment == null) {

@@ -15,7 +15,7 @@ public class MemberListHandler extends AbstractMenuHandler {
   }
 
   @Override
-  public void action() {
+  protected void action() {
     System.out.printf("%-10s\t%30s\t%s\n", "이름", "이메일", "가입일");
 
     Member[] members = new Member[this.objectRepository.size()];
