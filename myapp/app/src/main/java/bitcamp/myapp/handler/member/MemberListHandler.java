@@ -2,13 +2,15 @@ package bitcamp.myapp.handler.member;
 
 import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.myapp.vo.Member;
+import bitcamp.util.Prompt;
 import java.util.ArrayList;
 
 public class MemberListHandler extends AbstractMenuHandler {
 
   private ArrayList<Member> objectRepository;
 
-  public MemberListHandler(ArrayList<Member> objectRepository) {
+  public MemberListHandler(ArrayList<Member> objectRepository, Prompt prompt) {
+    super(prompt);
     this.objectRepository = objectRepository;
   }
 

@@ -10,12 +10,11 @@ import java.util.ArrayList;
 //
 public class BoardAddHandler extends AbstractMenuHandler {
 
-  private Prompt prompt;
   private ArrayList<Board> objectRepository;
 
   public BoardAddHandler(ArrayList<Board> objectRepository, Prompt prompt) {
+    super(prompt);
     this.objectRepository = objectRepository;
-    this.prompt = prompt;
   }
 
   @Override

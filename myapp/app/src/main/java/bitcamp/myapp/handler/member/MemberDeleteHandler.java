@@ -7,12 +7,11 @@ import java.util.ArrayList;
 
 public class MemberDeleteHandler extends AbstractMenuHandler {
 
-  private Prompt prompt;
   private ArrayList<Member> objectRepository;
 
   public MemberDeleteHandler(ArrayList<Member> objectRepository, Prompt prompt) {
+    super(prompt);
     this.objectRepository = objectRepository;
-    this.prompt = prompt;
   }
 
   @Override

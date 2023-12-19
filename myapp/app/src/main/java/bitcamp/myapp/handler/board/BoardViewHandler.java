@@ -11,11 +11,10 @@ import java.util.ArrayList;
 public class BoardViewHandler extends AbstractMenuHandler {
 
   private ArrayList<Board> objectRepository;
-  private Prompt prompt;
 
   public BoardViewHandler(ArrayList<Board> objectRepository, Prompt prompt) {
+    super(prompt);
     this.objectRepository = objectRepository;
-    this.prompt = prompt;
   }
 
   @Override

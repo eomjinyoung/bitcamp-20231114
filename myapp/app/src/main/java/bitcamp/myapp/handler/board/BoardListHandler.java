@@ -2,6 +2,7 @@ package bitcamp.myapp.handler.board;
 
 import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.myapp.vo.Board;
+import bitcamp.util.Prompt;
 import java.util.ArrayList;
 
 // 게시글의 '목록' 메뉴를 선택했을 때 작업을 수행하는 클래스
@@ -11,7 +12,8 @@ public class BoardListHandler extends AbstractMenuHandler {
 
   private ArrayList<Board> objectRepository;
 
-  public BoardListHandler(ArrayList<Board> objectRepository) {
+  public BoardListHandler(ArrayList<Board> objectRepository, Prompt prompt) {
+    super(prompt);
     this.objectRepository = objectRepository;
   }
 
