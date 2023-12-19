@@ -1,12 +1,10 @@
 package bitcamp.myapp.handler.assignment;
 
-import bitcamp.menu.Menu;
-import bitcamp.menu.MenuHandler;
+import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.myapp.vo.Assignment;
-import bitcamp.util.AnsiEscape;
 import java.util.ArrayList;
 
-public class AssignmentListHandler implements MenuHandler {
+public class AssignmentListHandler extends AbstractMenuHandler {
 
   private ArrayList<Assignment> objectRepository;
 
@@ -15,8 +13,7 @@ public class AssignmentListHandler implements MenuHandler {
   }
 
   @Override
-  public void action(Menu menu) {
-    System.out.printf(AnsiEscape.ANSI_BOLD + "[%s]\n" + AnsiEscape.ANSI_CLEAR, menu.getTitle());
+  public void action() {
     System.out.printf("%-20s\t%s\n", "과제", "제출마감일");
 
     Assignment[] assignments = new Assignment[this.objectRepository.size()];

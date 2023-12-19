@@ -1,7 +1,6 @@
 package bitcamp.myapp.handler.board;
 
 import bitcamp.menu.AbstractMenuHandler;
-import bitcamp.menu.Menu;
 import bitcamp.myapp.vo.Board;
 import bitcamp.util.Prompt;
 import java.util.ArrayList;
@@ -20,9 +19,7 @@ public class BoardViewHandler extends AbstractMenuHandler {
   }
 
   @Override
-  public void action(Menu menu) {
-    super.action(menu);
-
+  public void action() {
     int index = this.prompt.inputInt("번호? ");
     Board board = this.objectRepository.get(index);
     if (board == null) {

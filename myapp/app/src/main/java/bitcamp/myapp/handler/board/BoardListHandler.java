@@ -1,7 +1,6 @@
 package bitcamp.myapp.handler.board;
 
 import bitcamp.menu.AbstractMenuHandler;
-import bitcamp.menu.Menu;
 import bitcamp.myapp.vo.Board;
 import java.util.ArrayList;
 
@@ -17,9 +16,7 @@ public class BoardListHandler extends AbstractMenuHandler {
   }
 
   @Override
-  public void action(Menu menu) {
-    //super.action(menu);
-
+  public void action() {
     System.out.printf("%-20s\t%10s\t%s\n", "Title", "Writer", "Date");
 
     Board[] boards = this.objectRepository.toArray(new Board[0]);
