@@ -588,8 +588,8 @@
 
 - 강의 내용
   - 복습(1)
-  - 객체지향 문법(com.eomcs.oop)
-    - ex09: 인터페이스
+  - 자바 기본 클래스(com.eomcs.basic)
+    - ex01: Object 클래스
 - 학습 점검 목록
 
 
