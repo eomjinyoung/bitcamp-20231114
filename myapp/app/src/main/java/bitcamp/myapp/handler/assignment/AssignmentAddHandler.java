@@ -17,7 +17,6 @@ public class AssignmentAddHandler extends AbstractMenuHandler {
 
   @Override
   protected void action() {
-
     try {
       Assignment assignment = new Assignment();
       assignment.setTitle(this.prompt.input("과제명? "));
