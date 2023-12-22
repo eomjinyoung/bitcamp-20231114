@@ -26,7 +26,7 @@ public class AssignmentModifyHandler extends AbstractMenuHandler {
     Assignment assignment = new Assignment();
     assignment.setTitle(this.prompt.input("과제명(%s)? ", old.getTitle()));
     assignment.setContent(this.prompt.input("내용(%s)? ", old.getContent()));
-    assignment.setDeadline(this.prompt.input("제출 마감일(%s)? ", old.getDeadline()));
+    assignment.setDeadline(this.prompt.inputDate("제출 마감일(%s)? ", old.getDeadline()));
 
     this.objectRepository.set(index, assignment);
   }

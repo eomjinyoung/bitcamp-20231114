@@ -1,11 +1,13 @@
 package bitcamp.myapp.vo;
 
+import java.util.Date;
+
 public class Member {
 
   private String email;
   private String name;
   private String password;
-  private String createdDate;
+  private Date createdDate;
 
   public String getEmail() {
     return email;
@@ -31,11 +33,11 @@ public class Member {
     this.password = password;
   }
 
-  public String getCreatedDate() {
+  public Date getCreatedDate() {
     return createdDate;
   }
 
-  public void setCreatedDate(String createdDate) {
+  public void setCreatedDate(Date createdDate) {
     this.createdDate = createdDate;
   }
 }

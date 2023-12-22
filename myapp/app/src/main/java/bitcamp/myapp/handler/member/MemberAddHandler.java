@@ -4,6 +4,7 @@ import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.myapp.vo.Member;
 import bitcamp.util.Prompt;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MemberAddHandler extends AbstractMenuHandler {
 
@@ -20,7 +21,7 @@ public class MemberAddHandler extends AbstractMenuHandler {
     member.setEmail(this.prompt.input("이메일? "));
     member.setName(this.prompt.input("이름? "));
     member.setPassword(this.prompt.input("암호? "));
-    member.setCreatedDate(this.prompt.input("가입일? "));
+    member.setCreatedDate(new Date());
 
     this.objectRepository.add(member);
   }
