@@ -589,7 +589,8 @@
 - 강의 내용
   - 복습(1)
   - 자바 기본 클래스(com.eomcs.basic)
-    - ex01: Object 클래스
+    - ex01: Object 클래스(계속)
+    - ex02: String 클래스
 - 학습 점검 목록
   - 인스턴스를 복제하는 방법을 구현할 수 있는가? []
   - shallow copy와 deep copy를 설명하고 구현할 수 있는가? []
@@ -599,4 +600,13 @@
   - StringBuffer와 StringBuilder의 차이점을 설명할 수 있는가? []
   - Thread-safe 개념을 설명할 수 있는가? []
 
+### 29일(2023-12-22,금)
 
+- 강의 내용
+  - 복습(1)
+  - IT기업 채용 설명회(1)
+  - 자바 기본 클래스(com.eomcs.basic)
+    - ex02: String(계속)
+- 실습 프로젝트
+  - 24. Date 클래스를 사용하여 날짜 데이터를 다루기
+- 학습 점검 목록
