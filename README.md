@@ -591,5 +591,12 @@
   - 자바 기본 클래스(com.eomcs.basic)
     - ex01: Object 클래스
 - 학습 점검 목록
+  - 인스턴스를 복제하는 방법을 구현할 수 있는가? []
+  - shallow copy와 deep copy를 설명하고 구현할 수 있는가? []
+  - String 클래스의 인스턴스 생성 방법 2가지를 설명할 수 있는가? []
+  - String의 equals() 메서드의 동작을 설명할 수 있는가? []
+  - Immutable 객체와 Mutable 객체를 예를 들어 설명할 수 있는가? []
+  - StringBuffer와 StringBuilder의 차이점을 설명할 수 있는가? []
+  - Thread-safe 개념을 설명할 수 있는가? []
 
 
