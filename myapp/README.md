@@ -264,16 +264,15 @@
 - 예외가 발생했을 때 시스템을 멈추기 않게 하는 방법
 - try ~ catch ~ finally 사용법
 
-
-
-
-
-## 20. LinkedList 자료구조 구현하기
+## 26. LinkedList 자료구조 구현하기
 
 - 목록 관리 범용 클래스 LinkedList 정의
   - LinkedList 구동원리 이해 및 구현
   - 중첩 클래스 활용
-- MemberHandler와 BoardHandler에 적용
+- Handler에 적용
+
+
+
 
 ## 21. 인터페이스를 이용하여 List 사용 규칙 정의하기
 
