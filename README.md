@@ -619,8 +619,27 @@
 
 - 강의 내용
   - 복습(1)
-  - 자바 기본 클래스(com.eomcs.basic)
-    - ex02: String(계속)
+  - 예외처리(com.eomcs.exception)
+    - 예외처리 고전적인 방식과 한계
+    - 예외 상황을 알리는 방법: throw 와 java.lang.Throwable 클래스, throws 
+    - 예외 상황을 받는 방법: try ~ catch ~ finally
+    - 예외 클래스의 유형: Error, Exception, RuntimeException
+    - try-with-resources: 자원해제와 java.lang.AutoCloseable 인터페이스
 - 실습 프로젝트
+  - 26. LinkedList 자료구조 구현하기
+- 학습 점검 목록
+  - 예외처리의 고적적인 방식과 한계를 예를 들어 설명할 수 있는가? []
+  - 예외 상황을 알리는 방법을 설명할 수 있는가? []
+  - Error 클래스와 Exception 클래스, RuntimeException 클래스에 대해 설명할 수 있는가? []
+  - 메서드가 던진 예외를 받는 방법을 설명할 수 있는가? []
+  - 자동 자원 해제를 수행하는 try-with-resources 문법을 설명할 수 있는가? []
+  - 연결리스트의 add()를 구현할 수 있는가? []
+
+### 31일(2023-12-27,수)
+
+- 강의 내용
+  - 복습(1)
   - 
+- 실습 프로젝트
+  - 26. LinkedList 자료구조 구현하기(계속)
 - 학습 점검 목록
