@@ -68,7 +68,18 @@ public class LinkedList {
       throw new IndexOutOfBoundsException("무효한 인덱스입니다.");
     }
 
-    // index가 0일 때,
-    
+    Node node = new Node();
+    node.value = value;
+
+    // index가 0 일 때,
+    node.next = first;
+    first = node;
+    if (last == null) {
+      last = first;
+    }
+
+    // index가 size 일 때,
+
+    size++;
   }
 }
