@@ -83,8 +83,29 @@ public class LinkedList {
       last = node;
 
     } else {
-      
+      int cursor = 0;
+      Node currNode = first;
+      while (++cursor < index) {
+        currNode = currNode.next;
+      }
+      node.next = currNode.next;
+      currNode.next = node;
     }
     size++;
+  }
+
+  public Object remove(int index) {
+    if (index < 0 || index >= size) {
+      throw new IndexOutOfBoundsException("무효한 인덱스입니다.");
+    }
+
+    // 1개 일 때,
+
+    // 맨 앞
+
+    // 맨 뒤
+
+    // 중간
+
   }
 }
