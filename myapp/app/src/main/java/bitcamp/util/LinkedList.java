@@ -99,13 +99,31 @@ public class LinkedList {
       throw new IndexOutOfBoundsException("무효한 인덱스입니다.");
     }
 
-    // 1개 일 때,
+    Object old = null;
 
-    // 맨 앞
+    if (size == 1) {
+      old = first;
+      first = last = null;
 
-    // 맨 뒤
+    } else if (index == 0) {
+      old = first;
+      first = first.next;
 
-    // 중간
+    } else {
+      int cursor = 0;
+      Node currNode = first;
+      while (++cursor < index) {
+        currNode = currNode.next;
+      }
+      old = currNode.next;
+      currNode.next = currNode.next.next;
 
+      if (index == (size - 1)) {
+        last = currNode;
+      }
+    }
+
+    size--;
+    return old;
   }
 }

@@ -12,7 +12,8 @@ public class Test {
     list.remove(2); // aaa, bbb, ddd,
     list.remove(2); // aaa, bbb,
     list.remove(0); // bbb,
-    list.remove(0); // 
+    list.remove(0); //
+
 //    // 맨 앞
 //    list.add(0, new String("xxx")); // xxx, aaa, bbb, ccc, ddd,
 //
