@@ -4,15 +4,24 @@ public class Test {
 
   public static void main(String[] args) {
     LinkedList<String> list = new LinkedList<>();
-    list.add(new String("aaa")); // aaa,
-    list.add(new String("bbb")); // aaa, bbb,
-    list.add(new String("ccc")); // aaa, bbb, ccc,
-    list.add(new String("ddd")); // aaa, bbb, ccc, ddd,
+    list.add("aaa"); // aaa,
+    list.add("bbb"); // aaa, bbb,
+    list.add("ccc"); // aaa, bbb, ccc,
+    list.add("ddd"); // aaa, bbb, ccc, ddd,
 
-    list.remove(2); // aaa, bbb, ddd,
-    list.remove(2); // aaa, bbb,
-    list.remove(0); // bbb,
-    list.remove(0); //
+    System.out.println(list.remove("xxx")); // aaa, bbb, ccc, ddd,
+    System.out.println(list.remove("ccc")); // aaa, bbb, ddd,
+    System.out.println(list.remove("ddd")); // aaa, bbb,
+    System.out.println(list.remove("aaa")); // bbb,
+    System.out.println(list.remove("bbb")); //
+    list.add("xxx"); // xxx,
+    list.add("yyy"); // xxx, yyy,
+    list.add("zzz"); // xxx, yyy, zzz,
+
+//    list.remove(2); // aaa, bbb, ddd,
+//    list.remove(2); // aaa, bbb,
+//    list.remove(0); // bbb,
+//    list.remove(0); //
 
 //    // 맨 앞
 //    list.add(0, new String("xxx")); // xxx, aaa, bbb, ccc, ddd,
