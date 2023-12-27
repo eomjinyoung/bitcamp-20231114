@@ -268,8 +268,9 @@
 
 - 목록 관리 범용 클래스 LinkedList 정의
   - LinkedList 구동원리 이해 및 구현
-  - 중첩 클래스 활용
-- Handler에 적용
+  - 중첩 클래스 활용: static 중첩 클래스 Node 정의
+  - 제네릭 적용
+- MenuGroup에 적용
 
 
 
