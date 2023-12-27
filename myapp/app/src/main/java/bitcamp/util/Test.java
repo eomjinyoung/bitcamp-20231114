@@ -10,6 +10,7 @@ public class Test {
     list.add(new String("ddd"));
 
     list.add(0, new String("xxx"));
+    list.add(5, new String("yyy"));
 
     Object[] arr = list.toArray();
     for (Object value : arr) {

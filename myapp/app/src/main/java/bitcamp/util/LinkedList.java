@@ -71,15 +71,20 @@ public class LinkedList {
     Node node = new Node();
     node.value = value;
 
-    // index가 0 일 때,
-    node.next = first;
-    first = node;
-    if (last == null) {
-      last = first;
+    if (first == null) {
+      first = last = node;
+
+    } else if (index == 0) {
+      node.next = first;
+      first = node;
+
+    } else if (index == size) {
+      last.next = node;
+      last = node;
+
+    } else {
+      
     }
-
-    // index가 size 일 때,
-
     size++;
   }
 }
