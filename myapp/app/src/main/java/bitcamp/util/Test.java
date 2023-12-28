@@ -34,8 +34,8 @@ public class Test {
 //    list.add(3, new String("ttt")); // xxx, mmm, aaa, ttt, bbb, ccc, ddd, yyy,
 //    list.add(7, new String("ppp")); // xxx, mmm, aaa, ttt, bbb, ccc, ddd, ppp, yyy,
 
-    Object[] arr = list.toArray();
-    for (Object value : arr) {
+    String[] arr = list.toArray(new String[0]);
+    for (String value : arr) {
       System.out.printf("%s, ", value);
     }
     System.out.println();

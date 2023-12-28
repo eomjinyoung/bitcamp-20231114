@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/ArrayList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/LinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/Test.java" afterDir="false" />
@@ -107,7 +108,7 @@
       <recent name="bitcamp.myapp" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.myapp [run]">
+  <component name="RunManager" selected="애플리케이션.Test">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bitcamp.myapp.App" />
       <module name="myapp.app.main" />
