@@ -283,16 +283,17 @@
 - Stack과 Queue의 구동원리 이해 및 구현
 - Stack 적용
   - MenuGroup에 Stack을 이용하여 Breadcrumb 구현
-
-  - Prompt 클래스의 서브 클래스 MenuPrompt 정의
-  - MenuPrompt에서 Stack을 이용하여 프롬프트 제목에 breadcrumb 기능을 적용
-- Queue 적용
-  - MenuPrompt 클래스에 메뉴 출력 기능을 추가
-    - App, BoardHandler, MemberHandler 변경
-  - MenuPrompt 클래스에 입력한 명령어의 history 기능을 추가
+- GoF의 "Factory Method" 디자인 패턴 적용
+  - MenuGroup에 적용
 
 
+## 28. Iterator 디자인 패턴을 활용하여 목록 조회 기능을 캡슐화하기
 
+- GoF의 디자인 패턴 중 Iterator 패턴의 동작원리 이해 및 구현
+- ArrayList, LinkedList, Stack, Queue에 적용
+- 중접 클래스 문법을 이용하여 Iterator 구현하기
+  - static/non-static nested 클래스 문법을 활용하는 방법
+  - local/anonymous 클래스 문법을 활용하는 방법
 
 
 
@@ -317,13 +318,7 @@
 
 
 
-## 25. Iterator 디자인 패턴을 활용하여 목록 조회 기능을 캡슐화하기
 
-- GoF의 디자인 패턴 중 Iterator 패턴의 동작원리 이해 및 구현
-- ArrayList, LinkedList, Stack, Queue에 적용
-- 중접 클래스 문법을 이용하여 Iterator 구현하기
-  - static/non-static nested 클래스 문법을 활용하는 방법
-  - local/anonymous 클래스 문법을 활용하는 방법
 
 
 

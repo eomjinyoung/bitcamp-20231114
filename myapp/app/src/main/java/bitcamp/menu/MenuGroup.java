@@ -11,8 +11,13 @@ public class MenuGroup extends AbstractMenu {
 
   private List<Menu> menus = new LinkedList<>();
 
-  public MenuGroup(String title, Stack<String> breadcrumb) {
+  private MenuGroup(String title, Stack<String> breadcrumb) {
     super(title, breadcrumb);
+  }
+
+  // GoF의 Factory Method 디자인패턴!
+  public static MenuGroup getInstance(String title) {
+    return new MenuGroup(title, new Stack<String>());
   }
 
   @Override // 인터페이스나 수퍼 클래스의 메서드를 정의하겠다고 컴파일러에게 알린다.
