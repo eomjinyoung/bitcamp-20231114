@@ -271,17 +271,14 @@
   - 중첩 클래스 활용: static 중첩 클래스 Node 정의
   - 제네릭 적용
 - MenuGroup에 적용
-
-
-
-
-## 21. 인터페이스를 이용하여 List 사용 규칙 정의하기
-
-- 목록 관리 객체의 사용 규칙을 인터페이스 정의
-  - List 인터페이스 정의
-  - ArrayList, LinkedList에 List 인터페이스 적용
-- MemberHandler와 BoardHandler에 적용
+- Handler에 적용
   - List 구현체를 생성자를 통해 주입: DI(Dependency Injection) 적용
+- List 객체 사용 규칙 정의
+  - ArrayList, LinkedList에 List 인터페이스 적용
+- AbstractList 추상 클래스 적용 
+  - ArrayList, LinkedList에 AbstractList 추상 클래스 적용
+
+
 
 ## 22. Stack, Queue 자료구조 구현하기
 

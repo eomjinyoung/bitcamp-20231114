@@ -2,8 +2,8 @@ package bitcamp.myapp.handler.board;
 
 import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.myapp.vo.Board;
+import bitcamp.util.List;
 import bitcamp.util.Prompt;
-import java.util.ArrayList;
 import java.util.Date;
 
 // 게시글의 '등록' 메뉴를 선택했을 때 작업을 수행하는 클래스
@@ -11,9 +11,9 @@ import java.util.Date;
 //
 public class BoardAddHandler extends AbstractMenuHandler {
 
-  private ArrayList<Board> objectRepository;
+  private List<Board> objectRepository;
 
-  public BoardAddHandler(ArrayList<Board> objectRepository, Prompt prompt) {
+  public BoardAddHandler(List<Board> objectRepository, Prompt prompt) {
     super(prompt);
     this.objectRepository = objectRepository;
   }

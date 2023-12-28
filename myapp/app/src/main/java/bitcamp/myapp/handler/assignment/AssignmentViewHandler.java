@@ -2,14 +2,14 @@ package bitcamp.myapp.handler.assignment;
 
 import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.myapp.vo.Assignment;
+import bitcamp.util.List;
 import bitcamp.util.Prompt;
-import java.util.ArrayList;
 
 public class AssignmentViewHandler extends AbstractMenuHandler {
 
-  private ArrayList<Assignment> objectRepository;
+  private List<Assignment> objectRepository;
 
-  public AssignmentViewHandler(ArrayList<Assignment> objectRepository, Prompt prompt) {
+  public AssignmentViewHandler(List<Assignment> objectRepository, Prompt prompt) {
     super(prompt);
     this.objectRepository = objectRepository;
   }

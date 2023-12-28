@@ -1,13 +1,14 @@
 package bitcamp.menu;
 
 import bitcamp.util.LinkedList;
+import bitcamp.util.List;
 import bitcamp.util.Prompt;
 
 // Composite 패턴에서 '복합 객체(composite object)' 역할을 하는 클래스
 // - 다른 Menu 객체를 포함한다.
 public class MenuGroup extends AbstractMenu {
 
-  private LinkedList<Menu> menus = new LinkedList<>();
+  private List<Menu> menus = new LinkedList<>();
 
   public MenuGroup(String title) {
     super(title);
