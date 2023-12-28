@@ -282,6 +282,8 @@
 
 - Stack과 Queue의 구동원리 이해 및 구현
 - Stack 적용
+  - MenuGroup에 Stack을 이용하여 Breadcrumb 구현
+
   - Prompt 클래스의 서브 클래스 MenuPrompt 정의
   - MenuPrompt에서 Stack을 이용하여 프롬프트 제목에 breadcrumb 기능을 적용
 - Queue 적용

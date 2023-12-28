@@ -1,6 +1,7 @@
 package bitcamp.menu;
 
 import bitcamp.util.Prompt;
+import bitcamp.util.Stack;
 
 // Composite 패턴에서 leaf 역할을 수행하는 클래스
 // Leaf?
@@ -11,12 +12,12 @@ public class MenuItem extends AbstractMenu {
 
   private MenuHandler menuHandler;
 
-  public MenuItem(String title) {
-    super(title);
+  public MenuItem(String title, Stack<String> breadcrumb) {
+    super(title, breadcrumb);
   }
 
-  public MenuItem(String title, MenuHandler menuHandler) {
-    this(title);
+  public MenuItem(String title, Stack<String> breadcrumb, MenuHandler menuHandler) {
+    this(title, breadcrumb);
     this.menuHandler = menuHandler;
   }
 

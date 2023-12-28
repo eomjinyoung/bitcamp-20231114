@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/StackTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/Queue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/QueueTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/menu/AbstractMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/menu/AbstractMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/menu/MenuGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/menu/MenuGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/menu/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/menu/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +84,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Gradle.myapp [run].executor": "Run",
+    "Gradle.myapp:app [:app:QueueTest.main()].executor": "Run",
     "Gradle.myapp:app [:app:StackTest.main()].executor": "Run",
     "Gradle.myapp:app [:app:Test.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -109,11 +114,11 @@
       <recent name="bitcamp.myapp" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.StackTest">
-    <configuration name="StackTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Gradle.myapp [run]">
+    <configuration name="QueueTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="bitcamp.util.StackTest" />
+      <option name="MAIN_CLASS_NAME" value="bitcamp.util.QueueTest" />
       <module name="myapp.app.main" />
       <extension name="coverage">
         <pattern>
@@ -125,12 +130,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudentSelector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bitcamp.myapp.StudentSelector" />
+    <configuration name="StackTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="bitcamp.util.StackTest" />
       <module name="myapp.app.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="bitcamp.myapp.vo.*" />
+          <option name="PATTERN" value="bitcamp.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -220,14 +227,15 @@
     <list>
       <item itemvalue="Gradle.myapp [build]" />
       <item itemvalue="Gradle.myapp [run]" />
+      <item itemvalue="애플리케이션.QueueTest" />
       <item itemvalue="애플리케이션.StackTest" />
       <item itemvalue="애플리케이션.Test" />
-      <item itemvalue="애플리케이션.StudentSelector" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.StackTest" />
         <item itemvalue="Gradle.myapp [run]" />
+        <item itemvalue="애플리케이션.QueueTest" />
+        <item itemvalue="애플리케이션.StackTest" />
         <item itemvalue="애플리케이션.Test" />
         <item itemvalue="Gradle.myapp [build]" />
       </list>
