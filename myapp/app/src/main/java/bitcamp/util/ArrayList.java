@@ -69,4 +69,9 @@ public class ArrayList<E> extends AbstractList<E> {
 
     return (E) old;
   }
+
+  @Override
+  public Iterator<E> iterator() {
+    return new ArrayListIterator<>(this);
+  }
 }
