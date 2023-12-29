@@ -181,7 +181,7 @@ public class LinkedList<E> extends AbstractList<E> {
 
   @Override
   public Iterator<E> iterator() {
-    return null;
+    return new LinkedListIterator<>(this);
   }
 
   private static class Node<E> {
