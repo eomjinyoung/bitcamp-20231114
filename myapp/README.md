@@ -298,24 +298,6 @@
 
 
 
-## 23. Composite, Command, Observer 디자인 패턴, 추상 클래스/메서드 활용하기
-
-- Composite 패턴을 활용하여 메뉴 구현하기
-  - BreadcrumbPrompt에 적용
-  - Menu, MenuGroup 클래스 정의
-- Observer 패턴을 활용하여 메뉴 명령 처리하기
-  - ActionListener 인터페이스 정의
-  - Menu와 리스너 객체 연결
-- Command 패턴을 활용하여 메뉴 기능 구현하기
-  - BoardHandler, MemberHandler에 적용
-  - ActionListener 인터페이스 활용
-  - BoardXxxListener, MemberXxxListener 클래스로 분해
-- Generalization(상속) 수행
-  - AbstractBoardListener 추상 클래스 정의
-    - 추상 메서드 도입
-
-
-
 
 
 
