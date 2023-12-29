@@ -102,24 +102,90 @@ public class ArrayList<E> extends AbstractList<E> {
 //    }
 //  }
 
-  // 3) 논스태틱 중첩 클래스를 사용한 경우
+//  // 3) 논스태틱 중첩 클래스를 사용한 경우
+//  // 바깥 클래스의 인스턴스 주소를 두는 코드가 자동으로 추가된다.
+//
+//  @Override
+//  public Iterator<E> iterator() {
+//    return new IteratorImpl<>();
+//  }
+//
+//  private class IteratorImpl<E> implements Iterator<E> {
+//
+//    int cursor;
+//
+//    @Override
+//    public boolean hasNext() {
+//      return cursor >= 0 && cursor < ArrayList.this.size();
+//    }
+//
+//    @Override
+//    public E next() {
+//      return (E) ArrayList.this.get(cursor++);
+//    }
+//  }
+
+//  // 4) 로컬 클래스를 사용한 경우
+//  @Override
+//  public Iterator<E> iterator() {
+//
+//    // 로컬 클래스는 이 메서드 안에서만 사용할 수 있다.
+//    class IteratorImpl<E> implements Iterator<E> {
+//
+//      // 로컬 클래스도 non-static nested 클래스처럼
+//      // 바깥 클래스의 인스턴스 주소를 저장하는 코드가 자동으로 추가된다.
+//      int cursor;
+//
+//      @Override
+//      public boolean hasNext() {
+//        return cursor >= 0 && cursor < ArrayList.this.size();
+//      }
+//
+//      @Override
+//      public E next() {
+//        return (E) ArrayList.this.get(cursor++);
+//      }
+//    }
+//
+//    return new IteratorImpl<>();
+//  }
+
+//  // 5) 익명 클래스를 사용한 경우
+//  @Override
+//  public Iterator<E> iterator() {
+//    // 익명 클래스는 이름이 없기 때문에 정의하는 즉시 인스턴스를 생성해야 한다.
+//    Iterator<E> obj = new Iterator<E>() {
+//      int cursor;
+//
+//      @Override
+//      public boolean hasNext() {
+//        return cursor >= 0 && cursor < ArrayList.this.size();
+//      }
+//
+//      @Override
+//      public E next() {
+//        return (E) ArrayList.this.get(cursor++);
+//      }
+//    };
+//    return obj;
+//  }
+
+  // 6) 익명 클래스를 사용한 경우 - 더 간결하게 표현하기
   @Override
   public Iterator<E> iterator() {
-    return new IteratorImpl<>();
+    return new Iterator<E>() {
+      int cursor;
+
+      @Override
+      public boolean hasNext() {
+        return cursor >= 0 && cursor < ArrayList.this.size();
+      }
+
+      @Override
+      public E next() {
+        return (E) ArrayList.this.get(cursor++);
+      }
+    };
   }
 
-  private class IteratorImpl<E> implements Iterator<E> {
-
-    int cursor;
-
-    @Override
-    public boolean hasNext() {
-      return cursor >= 0 && cursor < ArrayList.this.size();
-    }
-
-    @Override
-    public E next() {
-      return (E) ArrayList.this.get(cursor++);
-    }
-  }
 }
