@@ -186,13 +186,13 @@ public class App {
         in.read(bytes, 0, len);
         member.setPassword(new String(bytes, 0, len, StandardCharsets.UTF_8));
 
-        long date = ((long) in.read()) << 56 |
-            ((long) in.read()) << 42 |
-            ((long) in.read()) << 40 |
-            ((long) in.read()) << 32 |
-            ((long) in.read()) << 24 |
-            ((long) in.read()) << 16 |
-            ((long) in.read()) << 8 |
+        long date = ((long) in.read() << 56) |
+            ((long) in.read() << 42) |
+            ((long) in.read() << 40) |
+            ((long) in.read() << 32) |
+            ((long) in.read() << 24) |
+            ((long) in.read() << 16) |
+            ((long) in.read() << 8) |
             in.read();
         member.setCreatedDate(new java.util.Date(date));
 
