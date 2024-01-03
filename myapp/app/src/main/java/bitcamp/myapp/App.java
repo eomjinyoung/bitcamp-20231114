@@ -43,6 +43,9 @@ public class App {
   App() {
     prepareMenu();
     loadAssignment();
+    loadMember();
+    loadBoard();
+    loadGreeting();
   }
 
   public static void main(String[] args) throws Exception {
@@ -94,6 +97,9 @@ public class App {
       }
     }
     saveAssignment();
+    saveMember();
+    saveBoard();
+    saveGreeting();
   }
 
   void loadAssignment() {
@@ -159,4 +165,99 @@ public class App {
       e.printStackTrace();
     }
   }
+
+  void loadMember() {
+    try (FileInputStream in = new FileInputStream("member.data")) {
+      byte[] bytes = new byte[60000];
+      int size = in.read() << 8 | in.read();
+
+      for (int i = 0; i < size; i++) {
+        Member member = new Member();
+
+        int len = in.read() << 8 | in.read();
+        in.read(bytes, 0, len);
+        member.setName(new String(bytes, 0, len, StandardCharsets.UTF_8));
+
+        len = in.read() << 8 | in.read();
+        in.read(bytes, 0, len);
+        member.setEmail(new String(bytes, 0, len, StandardCharsets.UTF_8));
+
+        len = in.read() << 8 | in.read();
+        in.read(bytes, 0, len);
+        member.setPassword(new String(bytes, 0, len, StandardCharsets.UTF_8));
+
+        long date = ((long) in.read()) << 56 |
+            ((long) in.read()) << 42 |
+            ((long) in.read()) << 40 |
+            ((long) in.read()) << 32 |
+            ((long) in.read()) << 24 |
+            ((long) in.read()) << 16 |
+            ((long) in.read()) << 8 |
+            in.read();
+        member.setCreatedDate(new java.util.Date(date));
+
+        memberRepository.add(member);
+      }
+    } catch (Exception e) {
+      System.out.println("회원 데이터 로딩 중 오류 발생!");
+      e.printStackTrace();
+    }
+  }
+
+  void saveMember() {
+    try (FileOutputStream out = new FileOutputStream("member.data")) {
+
+      out.write(memberRepository.size() >> 8);
+      out.write(memberRepository.size());
+
+      for (Member member : memberRepository) {
+        byte[] bytes = member.getName().getBytes(StandardCharsets.UTF_8);
+        out.write(bytes.length >> 8);
+        out.write(bytes.length);
+        out.write(bytes);
+
+        bytes = member.getEmail().getBytes(StandardCharsets.UTF_8);
+        out.write(bytes.length >> 8);
+        out.write(bytes.length);
+        out.write(bytes);
+
+        bytes = member.getPassword().getBytes(StandardCharsets.UTF_8);
+        out.write(bytes.length >> 8);
+        out.write(bytes.length);
+        out.write(bytes);
+
+        long date = member.getCreatedDate().getTime();
+        out.write((int) (date >> 56));
+        out.write((int) (date >> 48));
+        out.write((int) (date >> 40));
+        out.write((int) (date >> 32));
+        out.write((int) (date >> 24));
+        out.write((int) (date >> 16));
+        out.write((int) (date >> 8));
+        out.write((int) date);
+      }
+
+    } catch (Exception e) {
+      System.out.println("회원 데이터 저장 중 오류 발생!");
+      e.printStackTrace();
+    }
+  }
+
+  void loadBoard() {
+
+  }
+
+  void saveBoard() {
+
+  }
+
+  void loadGreeting() {
+
+  }
+
+  void saveGreeting() {
+
+  }
+
+
 }
