@@ -310,18 +310,18 @@
 - FileInputStream/FileOutputStream 사용법
 - 바이너리 형식으로 데이터를 입출력하는 방법
 
-
-
-
-
-
-
-
-## 28. 상속을 이용하여 primitive type과 String 출력 기능을 추가하기
+## 32. 상속을 이용하여 primitive type과 String 출력 기능을 추가하기
 
 - 상속을 이용하여 바이트 입출력 기능을 확장하기
   - DataInputStream = FileInputStream 클래스 + primitive type/String 값 읽기
   - DataOutputStream = FileOutputStream 클래스 + primitive type/String 값 쓰기
+
+
+
+
+
+
+
 
 ## 29. 입출력 성능을 높이기 위해 버퍼 기능 추가하기
 
