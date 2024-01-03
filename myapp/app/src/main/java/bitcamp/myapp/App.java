@@ -21,8 +21,10 @@ import bitcamp.myapp.vo.Assignment;
 import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.Member;
 import bitcamp.util.Prompt;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.charset.StandardCharsets;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -95,19 +97,56 @@ public class App {
   }
 
   void loadAssignment() {
+    try (FileInputStream in = new FileInputStream("assignment.data")) {
+      byte[] bytes = new byte[60000];
+      int size = in.read() << 8 | in.read();
 
+      for (int i = 0; i < size; i++) {
+        int len = in.read() << 8 | in.read();
+        in.read(bytes, 0, len);
+        String title = new String(bytes, 0, len, StandardCharsets.UTF_8);
+
+        len = in.read() << 8 | in.read();
+        in.read(bytes, 0, len);
+        String content = new String(bytes, 0, len, StandardCharsets.UTF_8);
+
+        in.read(bytes, 0, 10);
+        Date deadline = Date.valueOf(new String(bytes, 0, 10, StandardCharsets.UTF_8));
+
+        Assignment assignment = new Assignment();
+        assignment.setTitle(title);
+        assignment.setContent(content);
+        assignment.setDeadline(deadline);
+
+        assignmentRepository.add(assignment);
+      }
+    } catch (Exception e) {
+      System.out.println("과제 데이터 로딩 중 오류 발생!");
+      e.printStackTrace();
+    }
   }
 
   void saveAssignment() {
     try (FileOutputStream out = new FileOutputStream("assignment.data")) {
+
+      // 저장할 데이터 개수를 2바이트로 출력한다.
+      out.write(assignmentRepository.size() >> 8);
+      out.write(assignmentRepository.size());
+
       for (Assignment assignment : assignmentRepository) {
         // assignment 객체에서 값을 꺼내 바이트 배열로 만든 다음에 출력한다.
         String title = assignment.getTitle();
         byte[] bytes = title.getBytes(StandardCharsets.UTF_8);
+        // 바이트의 개수를 2바이트로 출력한다.
+        out.write(bytes.length >> 8);
+        out.write(bytes.length);
+        // 문자열의 바이트 배열을 출력한다.
         out.write(bytes);
 
         String content = assignment.getContent();
         bytes = content.getBytes(StandardCharsets.UTF_8);
+        out.write(bytes.length >> 8);
+        out.write(bytes.length);
         out.write(bytes);
 
         String deadline = assignment.getDeadline().toString();
@@ -117,7 +156,7 @@ public class App {
 
     } catch (Exception e) {
       System.out.println("과제 데이터 저장 중 오류 발생!");
-
+      e.printStackTrace();
     }
   }
 }
