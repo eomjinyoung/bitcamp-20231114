@@ -1,7 +1,5 @@
 package bitcamp.myapp;
 
-import bitcamp.io.DataInputStream;
-import bitcamp.io.DataOutputStream;
 import bitcamp.menu.MenuGroup;
 import bitcamp.myapp.handler.HelpHandler;
 import bitcamp.myapp.handler.assignment.AssignmentAddHandler;
@@ -105,15 +103,27 @@ public class App {
   }
 
   void loadAssignment() {
-    try (DataInputStream in = new DataInputStream("assignment.data")) {
-
-      int size = in.readShort();
+    try (FileInputStream in = new FileInputStream("assignment.data")) {
+      byte[] bytes = new byte[60000];
+      int size = in.read() << 8 | in.read();
 
       for (int i = 0; i < size; i++) {
+        int len = in.read() << 8 | in.read();
+        in.read(bytes, 0, len);
+        String title = new String(bytes, 0, len, StandardCharsets.UTF_8);
+
+        len = in.read() << 8 | in.read();
+        in.read(bytes, 0, len);
+        String content = new String(bytes, 0, len, StandardCharsets.UTF_8);
+
+        in.read(bytes, 0, 10);
+        Date deadline = Date.valueOf(new String(bytes, 0, 10, StandardCharsets.UTF_8));
+
         Assignment assignment = new Assignment();
-        assignment.setTitle(in.readUTF());
-        assignment.setContent(in.readUTF());
-        assignment.setDeadline(Date.valueOf(in.readUTF()));
+        assignment.setTitle(title);
+        assignment.setContent(content);
+        assignment.setDeadline(deadline);
+
         assignmentRepository.add(assignment);
       }
     } catch (Exception e) {
@@ -123,14 +133,31 @@ public class App {
   }
 
   void saveAssignment() {
-    try (DataOutputStream out = new DataOutputStream("assignment.data")) {
+    try (FileOutputStream out = new FileOutputStream("assignment.data")) {
 
-      out.writeShort(assignmentRepository.size());
+      // 저장할 데이터 개수를 2바이트로 출력한다.
+      out.write(assignmentRepository.size() >> 8);
+      out.write(assignmentRepository.size());
 
       for (Assignment assignment : assignmentRepository) {
-        out.writeUTF(assignment.getTitle());
-        out.writeUTF(assignment.getContent());
-        out.writeUTF(assignment.getDeadline().toString());
+        // assignment 객체에서 값을 꺼내 바이트 배열로 만든 다음에 출력한다.
+        String title = assignment.getTitle();
+        byte[] bytes = title.getBytes(StandardCharsets.UTF_8);
+        // 바이트의 개수를 2바이트로 출력한다.
+        out.write(bytes.length >> 8);
+        out.write(bytes.length);
+        // 문자열의 바이트 배열을 출력한다.
+        out.write(bytes);
+
+        String content = assignment.getContent();
+        bytes = content.getBytes(StandardCharsets.UTF_8);
+        out.write(bytes.length >> 8);
+        out.write(bytes.length);
+        out.write(bytes);
+
+        String deadline = assignment.getDeadline().toString();
+        bytes = deadline.getBytes(StandardCharsets.UTF_8);
+        out.write(bytes);
       }
 
     } catch (Exception e) {
