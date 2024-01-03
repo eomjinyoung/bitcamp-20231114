@@ -295,19 +295,27 @@
   - static/non-static nested 클래스 문법을 활용하는 방법
   - local/anonymous 클래스 문법을 활용하는 방법
 
+## 29. 기존의 컬렉션 클래스 및 인터페이스를 자바 컬렉션 API로 교체하기
+
+- java.util 패키지에서 제공하는 컬렉션 API로 교체
+
+## 30. 리팩토링: App 클래스
+
+- main() 메서드에 들어 있는 코드를 기능에 따라 묶어 여러 메서드로 분리
+- 공유하는 변수는 인스턴스 필드로 전환
 
 
-
-
-
-
-
-
-
-## 27. File I/O API를 이용하여 데이터를 바이너리 형식으로 입출력하기
+## 31. File I/O API를 이용하여 데이터를 바이너리 형식으로 입출력하기
 
 - FileInputStream/FileOutputStream 사용법
 - 바이너리 형식으로 데이터를 입출력하는 방법
+
+
+
+
+
+
+
 
 ## 28. 상속을 이용하여 primitive type과 String 출력 기능을 추가하기
 

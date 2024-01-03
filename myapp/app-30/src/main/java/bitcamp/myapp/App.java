@@ -38,7 +38,6 @@ public class App {
 
   App() {
     prepareMenu();
-    loadAssignment();
   }
 
   public static void main(String[] args) throws Exception {
@@ -89,14 +88,5 @@ public class App {
         System.out.println("예외 발생!");
       }
     }
-    saveAssignment();
-  }
-
-  void loadAssignment() {
-
-  }
-
-  void saveAssignment() {
-    
   }
 }
