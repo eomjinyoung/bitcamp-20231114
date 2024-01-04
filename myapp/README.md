@@ -322,14 +322,7 @@
   - BufferedDataInputStream = DataInputStream + 버퍼 기능
   - BufferedDataOutputStream = DataOutputStream + 버퍼 기능
 
-
-
-
-
-
-
-
-## 30. 입출력 기능 확장에 상속 대신 Decorator 패턴을 적용하기
+## 34. 입출력 기능 확장에 상속 대신 Decorator 패턴을 적용하기
 
 - 상속 vs Decorator 패턴(GoF)
   - 기존 코드를 손대지 않고 기능 확장하는 방법
@@ -339,11 +332,12 @@
   - BufferedInputStream, DataInputStream, FileInputStream
 - BufferedDataOutputStream 분해
   - BufferedOutputStream, DataOutputStream, FileOutputStream
+- Java I/O Stream API로 대체하기
 
-## 31. Java Stream API 로 교체하기
 
-- 입출력 관련 클래스를 자바 스트림 클래스로 교체
-  - java.io.\* 패키지의 클래스 사용
+
+
+
 
 ## 32. 인스턴스를 통째로 입출력하기(객체 직렬화)
 
