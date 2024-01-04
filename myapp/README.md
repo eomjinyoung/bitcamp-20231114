@@ -316,18 +316,18 @@
   - DataInputStream = FileInputStream 클래스 + primitive type/String 값 읽기
   - DataOutputStream = FileOutputStream 클래스 + primitive type/String 값 쓰기
 
-
-
-
-
-
-
-
-## 29. 입출력 성능을 높이기 위해 버퍼 기능 추가하기
+## 33. 입출력 성능을 높이기 위해 버퍼 기능 추가하기
 
 - 기존의 클래스에 버퍼 기능을 추가한다.
   - BufferedDataInputStream = DataInputStream + 버퍼 기능
   - BufferedDataOutputStream = DataOutputStream + 버퍼 기능
+
+
+
+
+
+
+
 
 ## 30. 입출력 기능 확장에 상속 대신 Decorator 패턴을 적용하기
 
