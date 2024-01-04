@@ -1,5 +1,6 @@
 package bitcamp.myapp;
 
+import bitcamp.io.BufferedDataInputStream;
 import bitcamp.io.BufferedDataOutputStream;
 import bitcamp.io.DataInputStream;
 import bitcamp.io.DataOutputStream;
@@ -103,7 +104,7 @@ public class App {
   }
 
   void loadAssignment() {
-    try (DataInputStream in = new DataInputStream("assignment.data")) {
+    try (BufferedDataInputStream in = new BufferedDataInputStream("assignment.data")) {
 
       long start = System.currentTimeMillis();
       int size = in.readInt();
