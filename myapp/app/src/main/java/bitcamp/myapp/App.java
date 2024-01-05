@@ -108,19 +108,6 @@ public class App {
     saveData("greeting.data", greetingRepository);
   }
 
-//  <E> void loadData(String filepath, List<E> dataList) {
-//    try (ObjectInputStream in = new ObjectInputStream(
-//        new BufferedInputStream(new FileInputStream(filepath)))) {
-//
-//      List<E> list = (List<E>) in.readObject();
-//      dataList.addAll(list);
-//
-//    } catch (Exception e) {
-//      System.out.printf("%s 파일 로딩 중 오류 발생!\n", filepath);
-//      e.printStackTrace();
-//    }
-//  }
-
   <E> List<E> loadData(String filepath) {
     try (ObjectInputStream in = new ObjectInputStream(
         new BufferedInputStream(new FileInputStream(filepath)))) {
@@ -145,4 +132,17 @@ public class App {
       e.printStackTrace();
     }
   }
+
+//  void saveData(String filepath, List<? extends CsvString> dataList) {
+//    try (FileWriter out = new FileWriter(filepath)) {
+//
+//      for (CsvString csvObject : dataList) {
+//        out.write(csvObject.toCsvString() + "\n");
+//      }
+//
+//    } catch (Exception e) {
+//      System.out.printf("%s 파일 저장 중 오류 발생!\n", filepath);
+//      e.printStackTrace();
+//    }
+//  }
 }

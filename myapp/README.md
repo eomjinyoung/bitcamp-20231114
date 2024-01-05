@@ -343,6 +343,7 @@
 ## 36. 리팩토링 - 중복 코드 정리
 
 - 데이터 읽고 쓰는 중복 코드 정리
+- serialVersionUID 스태틱 필드 사용하기
 
 ## 37. character I/O stream API를 사용하여 CSV 텍스트 형식으로 입출력하기
 
