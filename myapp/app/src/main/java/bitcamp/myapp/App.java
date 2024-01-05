@@ -19,14 +19,13 @@ import bitcamp.myapp.handler.member.MemberModifyHandler;
 import bitcamp.myapp.handler.member.MemberViewHandler;
 import bitcamp.myapp.vo.Assignment;
 import bitcamp.myapp.vo.Board;
+import bitcamp.myapp.vo.CsvString;
 import bitcamp.myapp.vo.Member;
 import bitcamp.util.Prompt;
 import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -43,10 +42,6 @@ public class App {
   MenuGroup mainMenu;
 
   App() {
-//    loadData("assignment.data", assignmentRepository);
-//    loadData("member.data", memberRepository);
-//    loadData("board.data", boardRepository);
-//    loadData("greeting.data", greetingRepository);
     assignmentRepository = loadData("assignment.data");
     memberRepository = loadData("member.data");
     boardRepository = loadData("board.data");
@@ -102,10 +97,10 @@ public class App {
         System.out.println("예외 발생!");
       }
     }
-    saveData("assignment.data", assignmentRepository);
-    saveData("member.data", memberRepository);
-    saveData("board.data", boardRepository);
-    saveData("greeting.data", greetingRepository);
+    saveData("assignment.csv", assignmentRepository);
+    saveData("member.csv", memberRepository);
+    saveData("board.csv", boardRepository);
+    saveData("greeting.csv", greetingRepository);
   }
 
   <E> List<E> loadData(String filepath) {
@@ -121,28 +116,16 @@ public class App {
     return new ArrayList<E>();
   }
 
-  void saveData(String filepath, List<?> dataList) {
-    try (ObjectOutputStream out = new ObjectOutputStream(
-        new BufferedOutputStream(new FileOutputStream(filepath)))) {
+  void saveData(String filepath, List<? extends CsvString> dataList) {
+    try (FileWriter out = new FileWriter(filepath)) {
 
-      out.writeObject(dataList);
+      for (CsvString csvObject : dataList) {
+        out.write(csvObject.toCsvString() + "\n");
+      }
 
     } catch (Exception e) {
       System.out.printf("%s 파일 저장 중 오류 발생!\n", filepath);
       e.printStackTrace();
     }
   }
-
-//  void saveData(String filepath, List<? extends CsvString> dataList) {
-//    try (FileWriter out = new FileWriter(filepath)) {
-//
-//      for (CsvString csvObject : dataList) {
-//        out.write(csvObject.toCsvString() + "\n");
-//      }
-//
-//    } catch (Exception e) {
-//      System.out.printf("%s 파일 저장 중 오류 발생!\n", filepath);
-//      e.printStackTrace();
-//    }
-//  }
 }
