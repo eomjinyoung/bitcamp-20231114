@@ -35,10 +35,10 @@ public class App {
 
   Prompt prompt = new Prompt(System.in);
 
-  List<Board> boardRepository = new ArrayList<>();
+  List<Board> boardRepository;
   List<Assignment> assignmentRepository;
-  List<Member> memberRepository = new ArrayList<>();
-  List<Board> greetingRepository = new ArrayList<>();
+  List<Member> memberRepository;
+  List<Board> greetingRepository;
 
   MenuGroup mainMenu;
 
