@@ -1,8 +1,9 @@
 package bitcamp.myapp.vo;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Assignment {
+public class Assignment implements Serializable {
 
   private String title;
   private String content;

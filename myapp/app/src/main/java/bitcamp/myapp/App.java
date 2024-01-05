@@ -27,7 +27,8 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.sql.Date;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -108,20 +109,14 @@ public class App {
   void loadAssignment() {
     try (FileInputStream in0 = new FileInputStream("assignment.data");
         BufferedInputStream in1 = new BufferedInputStream(in0);
-        DataInputStream in = new DataInputStream(in1)) {
+        ObjectInputStream in = new ObjectInputStream(in1)) {
 
-      long start = System.currentTimeMillis();
       int size = in.readInt();
 
       for (int i = 0; i < size; i++) {
-        Assignment assignment = new Assignment();
-        assignment.setTitle(in.readUTF());
-        assignment.setContent(in.readUTF());
-        assignment.setDeadline(Date.valueOf(in.readUTF()));
+        Assignment assignment = (Assignment) in.readObject();
         assignmentRepository.add(assignment);
       }
-      long end = System.currentTimeMillis();
-      System.out.printf("걸린 시간: %d\n", end - start);
 
     } catch (Exception e) {
       System.out.println("과제 데이터 로딩 중 오류 발생!");
@@ -132,18 +127,13 @@ public class App {
   void saveAssignment() {
     try (FileOutputStream out0 = new FileOutputStream("assignment.data");
         BufferedOutputStream out1 = new BufferedOutputStream(out0);
-        DataOutputStream out = new DataOutputStream(out1)) {
-      long start = System.currentTimeMillis();
+        ObjectOutputStream out = new ObjectOutputStream(out1)) {
+
       out.writeInt(assignmentRepository.size());
 
       for (Assignment assignment : assignmentRepository) {
-        out.writeUTF(assignment.getTitle());
-        out.writeUTF(assignment.getContent());
-        out.writeUTF(assignment.getDeadline().toString());
+        out.writeObject(assignment);
       }
-
-      long end = System.currentTimeMillis();
-      System.out.printf("걸린 시간: %d\n", end - start);
 
     } catch (Exception e) {
       System.out.println("과제 데이터 저장 중 오류 발생!");
