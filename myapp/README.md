@@ -340,6 +340,11 @@
   - java.io.Serializable 인터페이스 사용법
   - transient modifier 사용법
 
+## 36. 리팩토링
+
+- 데이터 읽고 쓰는 코드가 중복된 것을 정리
+
+
 
 
 
