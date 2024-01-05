@@ -20,7 +20,7 @@ public class AssignmentListHandler extends AbstractMenuHandler {
     System.out.printf("%-20s\t%s\n", "과제", "제출마감일");
 
     Iterator<Assignment> iterator = this.objectRepository.iterator();
-
+    
     while (iterator.hasNext()) {
       Assignment assignment = iterator.next();
       System.out.printf("%-20s\t%s\n", assignment.getTitle(), assignment.getDeadline());

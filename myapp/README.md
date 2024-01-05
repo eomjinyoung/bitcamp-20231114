@@ -334,16 +334,16 @@
   - BufferedOutputStream, DataOutputStream, FileOutputStream
 - Java I/O Stream API로 대체하기
 
-
-
-
-
-
-## 32. 인스턴스를 통째로 입출력하기(객체 직렬화)
+## 35. 인스턴스를 통째로 입출력하기(객체 직렬화)
 
 - ObjectInputStream/ObjectOutputStream 사용법
   - java.io.Serializable 인터페이스 사용법
   - transient modifier 사용법
+
+
+
+
+
 
 ## 33. character stream API를 사용하여 CSV 텍스트 형식으로 입출력하기
 

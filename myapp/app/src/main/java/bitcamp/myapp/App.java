@@ -37,22 +37,22 @@ public class App {
 
   Prompt prompt = new Prompt(System.in);
 
-  List<Board> boardRepository = new LinkedList<>();
-  List<Assignment> assignmentRepository = new LinkedList<>();
+  List<Board> boardRepository = new ArrayList<>();
+  List<Assignment> assignmentRepository;
   List<Member> memberRepository = new ArrayList<>();
   List<Board> greetingRepository = new ArrayList<>();
 
   MenuGroup mainMenu;
 
   App() {
-    prepareMenu();
     loadAssignment();
     loadMember();
     loadBoard();
     loadGreeting();
+    prepareMenu();
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     new App().run();
   }
 
@@ -111,14 +111,10 @@ public class App {
         BufferedInputStream in1 = new BufferedInputStream(in0);
         ObjectInputStream in = new ObjectInputStream(in1)) {
 
-      int size = in.readInt();
-
-      for (int i = 0; i < size; i++) {
-        Assignment assignment = (Assignment) in.readObject();
-        assignmentRepository.add(assignment);
-      }
+      assignmentRepository = (List<Assignment>) in.readObject();
 
     } catch (Exception e) {
+      assignmentRepository = new LinkedList<>();
       System.out.println("과제 데이터 로딩 중 오류 발생!");
       e.printStackTrace();
     }
@@ -129,11 +125,7 @@ public class App {
         BufferedOutputStream out1 = new BufferedOutputStream(out0);
         ObjectOutputStream out = new ObjectOutputStream(out1)) {
 
-      out.writeInt(assignmentRepository.size());
-
-      for (Assignment assignment : assignmentRepository) {
-        out.writeObject(assignment);
-      }
+      out.writeObject(assignmentRepository);
 
     } catch (Exception e) {
       System.out.println("과제 데이터 저장 중 오류 발생!");
