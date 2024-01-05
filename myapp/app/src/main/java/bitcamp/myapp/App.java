@@ -23,8 +23,6 @@ import bitcamp.myapp.vo.Member;
 import bitcamp.util.Prompt;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -134,38 +132,23 @@ public class App {
   }
 
   void loadMember() {
-    try (DataInputStream in = new DataInputStream(
+    try (ObjectInputStream in = new ObjectInputStream(
         new BufferedInputStream(new FileInputStream("member.data")))) {
-      int size = in.readShort();
 
-      for (
-          int i = 0;
-          i < size; i++) {
-        Member member = new Member();
-        member.setName(in.readUTF());
-        member.setEmail(in.readUTF());
-        member.setPassword(in.readUTF());
-        member.setCreatedDate(new java.util.Date(in.readLong()));
-        memberRepository.add(member);
-      }
+      memberRepository = (List<Member>) in.readObject();
+
     } catch (Exception e) {
+      memberRepository = new ArrayList<>();
       System.out.println("회원 데이터 로딩 중 오류 발생!");
       e.printStackTrace();
     }
   }
 
   void saveMember() {
-    try (DataOutputStream out = new DataOutputStream(
+    try (ObjectOutputStream out = new ObjectOutputStream(
         new BufferedOutputStream(new FileOutputStream("member.data")))) {
 
-      out.writeShort(memberRepository.size());
-
-      for (Member member : memberRepository) {
-        out.writeUTF(member.getName());
-        out.writeUTF(member.getEmail());
-        out.writeUTF(member.getPassword());
-        out.writeLong(member.getCreatedDate().getTime());
-      }
+      out.writeObject(memberRepository);
 
     } catch (Exception e) {
       System.out.println("회원 데이터 저장 중 오류 발생!");
@@ -174,36 +157,23 @@ public class App {
   }
 
   void loadBoard() {
-    try (DataInputStream in = new DataInputStream(
+    try (ObjectInputStream in = new ObjectInputStream(
         new BufferedInputStream(new FileInputStream("board.data")))) {
-      int size = in.readShort();
 
-      for (int i = 0; i < size; i++) {
-        Board board = new Board();
-        board.setTitle(in.readUTF());
-        board.setContent(in.readUTF());
-        board.setWriter(in.readUTF());
-        board.setCreatedDate(new java.util.Date(in.readLong()));
-        boardRepository.add(board);
-      }
+      boardRepository = (List<Board>) in.readObject();
+
     } catch (Exception e) {
+      boardRepository = new LinkedList<>();
       System.out.println("게시글 데이터 로딩 중 오류 발생!");
       e.printStackTrace();
     }
   }
 
   void saveBoard() {
-    try (DataOutputStream out = new DataOutputStream(
+    try (ObjectOutputStream out = new ObjectOutputStream(
         new BufferedOutputStream(new FileOutputStream("board.data")))) {
 
-      out.writeShort(boardRepository.size());
-
-      for (Board board : boardRepository) {
-        out.writeUTF(board.getTitle());
-        out.writeUTF(board.getContent());
-        out.writeUTF(board.getWriter());
-        out.writeLong(board.getCreatedDate().getTime());
-      }
+      out.writeObject(boardRepository);
 
     } catch (Exception e) {
       System.out.println("게시글 데이터 저장 중 오류 발생!");
@@ -212,36 +182,23 @@ public class App {
   }
 
   void loadGreeting() {
-    try (DataInputStream in = new DataInputStream(
+    try (ObjectInputStream in = new ObjectInputStream(
         new BufferedInputStream(new FileInputStream("greeting.data")))) {
-      int size = in.readShort();
 
-      for (int i = 0; i < size; i++) {
-        Board board = new Board();
-        board.setTitle(in.readUTF());
-        board.setContent(in.readUTF());
-        board.setWriter(in.readUTF());
-        board.setCreatedDate(new java.util.Date(in.readLong()));
-        greetingRepository.add(board);
-      }
+      greetingRepository = (List<Board>) in.readObject();
+
     } catch (Exception e) {
+      greetingRepository = new LinkedList<>();
       System.out.println("가입인사 데이터 로딩 중 오류 발생!");
       e.printStackTrace();
     }
   }
 
   void saveGreeting() {
-    try (DataOutputStream out = new DataOutputStream(
+    try (ObjectOutputStream out = new ObjectOutputStream(
         new BufferedOutputStream(new FileOutputStream("greeting.data")))) {
 
-      out.writeShort(greetingRepository.size());
-
-      for (Board board : greetingRepository) {
-        out.writeUTF(board.getTitle());
-        out.writeUTF(board.getContent());
-        out.writeUTF(board.getWriter());
-        out.writeLong(board.getCreatedDate().getTime());
-      }
+      out.writeObject(greetingRepository);
 
     } catch (Exception e) {
       System.out.println("가입인사 데이터 저장 중 오류 발생!");

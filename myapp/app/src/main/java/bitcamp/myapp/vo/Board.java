@@ -1,8 +1,9 @@
 package bitcamp.myapp.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Board {
+public class Board implements Serializable {
 
   private String title;
   private String content;
