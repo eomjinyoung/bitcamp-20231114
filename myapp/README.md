@@ -349,21 +349,17 @@
 
 - CSV 형식으로 데이터를 읽고 쓰는 법
 - FileReader/FileWriter 사용법
+- GRASP의 Information Expert 패턴 적용
+  - toCsvString() 메서드 정의
+  - createFromCsv() 메서드 정의
+- GoF의 Factory Method 패턴 적용
+  - createFromCsv() 메서드 정의
+- Reflection API 사용
+  - createFromCsv() 메서드 정보 알아내기 및 호출하기
 
 
 
 
-
-
-
-## 34. 리팩토링: Factory Method 패턴(GoF), Information Expert 패턴(GRASP)
-
-- CSV 데이터 생성을 Board 클래스에 맡기기
-  - Information Expert 패턴 적용
-- CSV 데이터를 가지로 Board 클래스 생성하기
-  - Factory Method 패턴 적용
-  - Reflection API 사용법
-    - Class, Method 사용법
 
 ## 35. JSON 형식으로 입출력하기
 
