@@ -340,20 +340,20 @@
   - java.io.Serializable 인터페이스 사용법
   - transient modifier 사용법
 
-## 36. 리팩토링
+## 36. 리팩토링 - 중복 코드 정리
 
-- 데이터 읽고 쓰는 코드가 중복된 것을 정리
+- 데이터 읽고 쓰는 중복 코드 정리
 
-
-
-
-
-
-
-## 33. character stream API를 사용하여 CSV 텍스트 형식으로 입출력하기
+## 37. character I/O stream API를 사용하여 CSV 텍스트 형식으로 입출력하기
 
 - CSV 형식으로 데이터를 읽고 쓰는 법
 - FileReader/FileWriter 사용법
+
+
+
+
+
+
 
 ## 34. 리팩토링: Factory Method 패턴(GoF), Information Expert 패턴(GRASP)
 
