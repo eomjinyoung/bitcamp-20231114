@@ -3,7 +3,7 @@ package bitcamp.myapp.vo;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Member implements Serializable, CsvString {
+public class Member implements Serializable {
 
   private static final long serialVersionUID = 100L;
 
@@ -22,12 +22,6 @@ public class Member implements Serializable, CsvString {
     obj.setPassword(values[2]);
     obj.setCreatedDate(new Date(Long.valueOf(values[3])));
     return obj;
-  }
-
-  @Override
-  public String toCsvString() {
-    return String.format("%s,%s,%s,%d", this.email, this.name, this.password,
-        this.createdDate.getTime());
   }
 
   // CSV 문자열을 가지고 객체에 저장하기

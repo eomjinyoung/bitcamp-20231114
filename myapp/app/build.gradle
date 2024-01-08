@@ -8,6 +8,9 @@ repositories {
 }
 
 dependencies {
+    // JSON 라이브러리
+    implementation 'com.google.code.gson:gson:2.10.1'
+
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'com.google.guava:guava:32.1.1-jre'

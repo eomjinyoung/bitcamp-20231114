@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/assignment.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/board.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/greeting.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/member.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/실습프로젝트2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/실습프로젝트2.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assignment.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/board.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/greeting.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/member.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assignment.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/assignment.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/board.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/board.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/greeting.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/greeting.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/member.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/member.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Assignment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/CsvString.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Member.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,6 +106,9 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/java/bitcamp/myapp&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/eomjinyoung/git/bitcamp-study/myapp/settings.gradle&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
