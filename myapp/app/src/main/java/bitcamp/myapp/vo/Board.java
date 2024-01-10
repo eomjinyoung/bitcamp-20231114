@@ -23,6 +23,16 @@ public class Board implements Serializable {
     return obj;
   }
 
+  @Override
+  public String toString() {
+    return "Board{" +
+        "title='" + title + '\'' +
+        ", content='" + content + '\'' +
+        ", writer='" + writer + '\'' +
+        ", createdDate=" + createdDate +
+        '}';
+  }
+
   public String getTitle() {
     return title;
   }

@@ -24,6 +24,16 @@ public class Member implements Serializable {
     return obj;
   }
 
+  @Override
+  public String toString() {
+    return "Member{" +
+        "email='" + email + '\'' +
+        ", name='" + name + '\'' +
+        ", password='" + password + '\'' +
+        ", createdDate=" + createdDate +
+        '}';
+  }
+
   // CSV 문자열을 가지고 객체에 저장하기
   // 방법1) 직접 인스턴스에 저장하기
   public void setFromCsv(String csv) {
