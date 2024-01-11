@@ -1,6 +1,7 @@
 package bitcamp.myapp;
 
 import bitcamp.menu.MenuGroup;
+import bitcamp.myapp.dao.AssignmentDao;
 import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.handler.HelpHandler;
 import bitcamp.myapp.handler.assignment.AssignmentAddHandler;
@@ -18,7 +19,6 @@ import bitcamp.myapp.handler.member.MemberDeleteHandler;
 import bitcamp.myapp.handler.member.MemberListHandler;
 import bitcamp.myapp.handler.member.MemberModifyHandler;
 import bitcamp.myapp.handler.member.MemberViewHandler;
-import bitcamp.myapp.vo.Assignment;
 import bitcamp.myapp.vo.Member;
 import bitcamp.util.Prompt;
 import com.google.gson.GsonBuilder;
@@ -28,23 +28,21 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class App {
 
   Prompt prompt = new Prompt(System.in);
 
-  List<Assignment> assignmentRepository = new LinkedList<>();
   List<Member> memberRepository = new ArrayList<>();
 
   BoardDao boardDao = new BoardDao("board.json");
   BoardDao greetingDao = new BoardDao("greeting.json");
+  AssignmentDao assignmentDao = new AssignmentDao("assignment.json");
 
   MenuGroup mainMenu;
 
   App() {
-    assignmentRepository = loadData("assignment.json", Assignment.class);
     memberRepository = loadData("member.json", Member.class);
     prepareMenu();
   }
@@ -57,11 +55,11 @@ public class App {
     mainMenu = MenuGroup.getInstance("메인");
 
     MenuGroup assignmentMenu = mainMenu.addGroup("과제");
-    assignmentMenu.addItem("등록", new AssignmentAddHandler(assignmentRepository, prompt));
-    assignmentMenu.addItem("조회", new AssignmentViewHandler(assignmentRepository, prompt));
-    assignmentMenu.addItem("변경", new AssignmentModifyHandler(assignmentRepository, prompt));
-    assignmentMenu.addItem("삭제", new AssignmentDeleteHandler(assignmentRepository, prompt));
-    assignmentMenu.addItem("목록", new AssignmentListHandler(assignmentRepository, prompt));
+    assignmentMenu.addItem("등록", new AssignmentAddHandler(assignmentDao, prompt));
+    assignmentMenu.addItem("조회", new AssignmentViewHandler(assignmentDao, prompt));
+    assignmentMenu.addItem("변경", new AssignmentModifyHandler(assignmentDao, prompt));
+    assignmentMenu.addItem("삭제", new AssignmentDeleteHandler(assignmentDao, prompt));
+    assignmentMenu.addItem("목록", new AssignmentListHandler(assignmentDao, prompt));
 
     MenuGroup boardMenu = mainMenu.addGroup("게시글");
     boardMenu.addItem("등록", new BoardAddHandler(boardDao, prompt));
@@ -97,7 +95,6 @@ public class App {
         System.out.println("예외 발생!");
       }
     }
-    saveData("assignment.json", assignmentRepository);
     saveData("member.json", memberRepository);
   }
 

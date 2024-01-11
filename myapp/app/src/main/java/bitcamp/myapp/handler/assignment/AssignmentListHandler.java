@@ -1,29 +1,31 @@
 package bitcamp.myapp.handler.assignment;
 
 import bitcamp.menu.AbstractMenuHandler;
+import bitcamp.myapp.dao.AssignmentDao;
 import bitcamp.myapp.vo.Assignment;
 import bitcamp.util.Prompt;
-import java.util.Iterator;
 import java.util.List;
 
 public class AssignmentListHandler extends AbstractMenuHandler {
 
-  private List<Assignment> objectRepository;
+  private AssignmentDao assignmentDao;
 
-  public AssignmentListHandler(List<Assignment> objectRepository, Prompt prompt) {
+  public AssignmentListHandler(AssignmentDao assignmentDao, Prompt prompt) {
     super(prompt);
-    this.objectRepository = objectRepository;
+    this.assignmentDao = assignmentDao;
   }
 
   @Override
   protected void action() {
-    System.out.printf("%-20s\t%s\n", "과제", "제출마감일");
+    System.out.printf("%-4s\t%-20s\t%s\n", "번호", "과제", "제출마감일");
 
-    Iterator<Assignment> iterator = this.objectRepository.iterator();
-    
-    while (iterator.hasNext()) {
-      Assignment assignment = iterator.next();
-      System.out.printf("%-20s\t%s\n", assignment.getTitle(), assignment.getDeadline());
+    List<Assignment> list = assignmentDao.findAll();
+
+    for (Assignment assignment : list) {
+      System.out.printf("%-4d\t%-20s\t%s\n",
+          assignment.getNo(),
+          assignment.getTitle(),
+          assignment.getDeadline());
     }
   }
 }
