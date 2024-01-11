@@ -4,6 +4,9 @@ import bitcamp.menu.MenuGroup;
 import bitcamp.myapp.dao.AssignmentDao;
 import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.dao.MemberDao;
+import bitcamp.myapp.dao.json.AssignmentDaoImpl;
+import bitcamp.myapp.dao.json.BoardDaoImpl;
+import bitcamp.myapp.dao.json.MemberDaoImpl;
 import bitcamp.myapp.handler.HelpHandler;
 import bitcamp.myapp.handler.assignment.AssignmentAddHandler;
 import bitcamp.myapp.handler.assignment.AssignmentDeleteHandler;
@@ -31,10 +34,10 @@ public class App {
 
   List<Member> memberRepository = new ArrayList<>();
 
-  BoardDao boardDao = new BoardDao("board.json");
-  BoardDao greetingDao = new BoardDao("greeting.json");
-  AssignmentDao assignmentDao = new AssignmentDao("assignment.json");
-  MemberDao memberDao = new MemberDao("member.json");
+  BoardDao boardDao = new BoardDaoImpl("board.json");
+  BoardDao greetingDao = new BoardDaoImpl("greeting.json");
+  AssignmentDao assignmentDao = new AssignmentDaoImpl("assignment.json");
+  MemberDao memberDao = new MemberDaoImpl("member.json");
 
   MenuGroup mainMenu;
 
