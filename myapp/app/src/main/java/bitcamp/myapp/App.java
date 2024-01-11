@@ -1,6 +1,7 @@
 package bitcamp.myapp;
 
 import bitcamp.menu.MenuGroup;
+import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.handler.HelpHandler;
 import bitcamp.myapp.handler.assignment.AssignmentAddHandler;
 import bitcamp.myapp.handler.assignment.AssignmentDeleteHandler;
@@ -18,7 +19,6 @@ import bitcamp.myapp.handler.member.MemberListHandler;
 import bitcamp.myapp.handler.member.MemberModifyHandler;
 import bitcamp.myapp.handler.member.MemberViewHandler;
 import bitcamp.myapp.vo.Assignment;
-import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.Member;
 import bitcamp.util.Prompt;
 import com.google.gson.GsonBuilder;
@@ -35,18 +35,17 @@ public class App {
 
   Prompt prompt = new Prompt(System.in);
 
-  List<Board> boardRepository = new ArrayList<>();
   List<Assignment> assignmentRepository = new LinkedList<>();
   List<Member> memberRepository = new ArrayList<>();
-  List<Board> greetingRepository = new LinkedList<>();
+
+  BoardDao boardDao = new BoardDao("board.json");
+  BoardDao greetingDao = new BoardDao("greeting.json");
 
   MenuGroup mainMenu;
 
   App() {
     assignmentRepository = loadData("assignment.json", Assignment.class);
     memberRepository = loadData("member.json", Member.class);
-    boardRepository = loadData("board.json", Board.class);
-    greetingRepository = loadData("greeting.json", Board.class);
     prepareMenu();
   }
 
@@ -65,11 +64,11 @@ public class App {
     assignmentMenu.addItem("목록", new AssignmentListHandler(assignmentRepository, prompt));
 
     MenuGroup boardMenu = mainMenu.addGroup("게시글");
-    boardMenu.addItem("등록", new BoardAddHandler(boardRepository, prompt));
-    boardMenu.addItem("조회", new BoardViewHandler(boardRepository, prompt));
-    boardMenu.addItem("변경", new BoardModifyHandler(boardRepository, prompt));
-    boardMenu.addItem("삭제", new BoardDeleteHandler(boardRepository, prompt));
-    boardMenu.addItem("목록", new BoardListHandler(boardRepository, prompt));
+    boardMenu.addItem("등록", new BoardAddHandler(boardDao, prompt));
+    boardMenu.addItem("조회", new BoardViewHandler(boardDao, prompt));
+    boardMenu.addItem("변경", new BoardModifyHandler(boardDao, prompt));
+    boardMenu.addItem("삭제", new BoardDeleteHandler(boardDao, prompt));
+    boardMenu.addItem("목록", new BoardListHandler(boardDao, prompt));
 
     MenuGroup memberMenu = mainMenu.addGroup("회원");
     memberMenu.addItem("등록", new MemberAddHandler(memberRepository, prompt));
@@ -79,11 +78,11 @@ public class App {
     memberMenu.addItem("목록", new MemberListHandler(memberRepository, prompt));
 
     MenuGroup greetingMenu = mainMenu.addGroup("가입인사");
-    greetingMenu.addItem("등록", new BoardAddHandler(greetingRepository, prompt));
-    greetingMenu.addItem("조회", new BoardViewHandler(greetingRepository, prompt));
-    greetingMenu.addItem("변경", new BoardModifyHandler(greetingRepository, prompt));
-    greetingMenu.addItem("삭제", new BoardDeleteHandler(greetingRepository, prompt));
-    greetingMenu.addItem("목록", new BoardListHandler(greetingRepository, prompt));
+    greetingMenu.addItem("등록", new BoardAddHandler(greetingDao, prompt));
+    greetingMenu.addItem("조회", new BoardViewHandler(greetingDao, prompt));
+    greetingMenu.addItem("변경", new BoardModifyHandler(greetingDao, prompt));
+    greetingMenu.addItem("삭제", new BoardDeleteHandler(greetingDao, prompt));
+    greetingMenu.addItem("목록", new BoardListHandler(greetingDao, prompt));
 
     mainMenu.addItem("도움말", new HelpHandler(prompt));
   }
@@ -100,8 +99,6 @@ public class App {
     }
     saveData("assignment.json", assignmentRepository);
     saveData("member.json", memberRepository);
-    saveData("board.json", boardRepository);
-    saveData("greeting.json", greetingRepository);
   }
 
   <E> List<E> loadData(String filepath, Class<E> clazz) {
