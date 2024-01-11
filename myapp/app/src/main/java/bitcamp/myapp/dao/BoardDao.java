@@ -5,20 +5,28 @@ import java.util.List;
 
 public class BoardDao extends AbstractDao<Board> {
 
+  private int lastKey;
+
   public BoardDao(String filepath) {
     super(filepath);
+
+    // 마지막 게시글의 식별 번호를 알아낸다.
+    lastKey = list.getLast().getNo();
   }
 
   public void add(Board board) {
+    board.setNo(++lastKey);
     this.list.add(board);
     saveData();
   }
 
   public int delete(int no) {
-    if (no < 0 || no >= this.list.size()) {
+    int index = indexOf(no);
+    if (index == -1) {
       return 0;
     }
-    this.list.remove(no);
+
+    list.remove(index);
     saveData();
     return 1;
   }
@@ -28,18 +36,29 @@ public class BoardDao extends AbstractDao<Board> {
   }
 
   public Board findBy(int no) {
-    if (no < 0 || no >= list.size()) {
+    int index = indexOf(no);
+    if (index == -1) {
       return null;
     }
-    return list.get(no);
+    return list.get(index);
   }
 
-  public int update(int no, Board board) {
-    if (no < 0 || no >= list.size()) {
+  public int update(Board board) {
+    int index = indexOf(board.getNo());
+    if (index == -1) {
       return 0;
     }
-    list.set(no, board);
+    list.set(index, board);
     saveData();
     return 1;
+  }
+
+  private int indexOf(int no) {
+    for (int i = 0; i < list.size(); i++) {
+      if (list.get(i).getNo() == no) {
+        return i;
+      }
+    }
+    return -1;
   }
 }

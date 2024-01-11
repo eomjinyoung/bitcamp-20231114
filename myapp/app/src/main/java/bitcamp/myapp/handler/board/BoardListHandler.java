@@ -17,12 +17,13 @@ public class BoardListHandler extends AbstractMenuHandler {
 
   @Override
   protected void action() {
-    System.out.printf("%-20s\t%10s\t%s\n", "Title", "Writer", "Date");
+    System.out.printf("%-4s\t%-20s\t%10s\t%s\n", "No", "Title", "Writer", "Date");
 
     List<Board> list = boardDao.findAll();
 
     for (Board board : list) {
-      System.out.printf("%-20s\t%10s\t%3$tY-%3$tm-%3$td\n",
+      System.out.printf("%-4d\t%-20s\t%10s\t%4$tY-%4$tm-%4$td\n",
+          board.getNo(),
           board.getTitle(),
           board.getWriter(),
           board.getCreatedDate());
