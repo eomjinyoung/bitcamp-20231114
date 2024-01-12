@@ -25,6 +25,7 @@ import bitcamp.myapp.handler.member.MemberModifyHandler;
 import bitcamp.myapp.handler.member.MemberViewHandler;
 import bitcamp.myapp.vo.Member;
 import bitcamp.util.Prompt;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +48,23 @@ public class ClientApp {
 
   public static void main(String[] args) {
     System.out.println("[과제관리 시스템]");
+
+    try {
+      // 1) 서버와 연결한 후 연결 정보 준비
+      // => new Socket(서버주소, 포트번호)
+      //    - 서버 주소: IP 주소, 도메인명
+      //    - 포트 번호: 서버 포트 번호
+      // => 로컬 컴퓨터를 가리키는 주소
+      //   - IP 주소: 127.0.0.1
+      //   - 도메인명: localhost
+      System.out.println("서버 연결 중...");
+      Socket socket = new Socket("localhost", 8888);
+      System.out.println("서버와 연결되었음!");
+
+    } catch (Exception e) {
+      System.out.println("통신 오류!");
+      e.printStackTrace();
+    }
     //new ClientApp().run();
   }
 

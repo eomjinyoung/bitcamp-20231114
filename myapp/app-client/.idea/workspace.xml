@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="702def4e-6b27-4a33-a7cb-a53eef45dc1e" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app-39/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app-39/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app-server/src/main/java/bitcamp/menu/AbstractMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app-server/src/main/java/bitcamp/menu/AbstractMenuHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app-server/src/main/java/bitcamp/menu/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app-server/src/main/java/bitcamp/menu/MenuGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app-server/src/main/java/bitcamp/menu/MenuHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app-server/src/main/java/bitcamp/menu/MenuItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app-server/src/main/java/bitcamp/myapp/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app-server/src/main/java/bitcamp/myapp/ServerApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
