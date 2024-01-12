@@ -56,9 +56,10 @@ public class ServerApp {
       System.out.println(command);
       System.out.println(value);
 
+      out.writeUTF("200");
+
       String json = new GsonBuilder().setDateFormat("yyyy-MM-dd").create()
           .toJson(boardDao.findAll());
-
       out.writeUTF(json);
       System.out.println("클라이언트로 데이터 전송!");
 
