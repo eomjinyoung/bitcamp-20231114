@@ -25,14 +25,10 @@ import bitcamp.myapp.handler.member.MemberModifyHandler;
 import bitcamp.myapp.handler.member.MemberViewHandler;
 import bitcamp.myapp.vo.Member;
 import bitcamp.util.Prompt;
-import java.util.ArrayList;
-import java.util.List;
 
 public class App {
 
   Prompt prompt = new Prompt(System.in);
-
-  List<Member> memberRepository = new ArrayList<>();
 
   BoardDao boardDao = new BoardDaoImpl("board.json");
   BoardDao greetingDao = new BoardDaoImpl("greeting.json");

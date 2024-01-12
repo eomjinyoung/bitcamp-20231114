@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-client/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-client/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-client/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-39/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-39/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/menu/AbstractMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/menu/AbstractMenuHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/menu/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/menu/MenuGroup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/menu/MenuHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/menu/MenuItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/myapp/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/myapp/ServerApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +36,9 @@
           <activation />
         </task>
         <task path="$PROJECT_DIR$/app-server">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/app-client">
           <activation />
         </task>
         <projects_view>
@@ -96,6 +108,7 @@
     "Gradle.myapp:app [:app:QueueTest.main()].executor": "Run",
     "Gradle.myapp:app [:app:StackTest.main()].executor": "Run",
     "Gradle.myapp:app [:app:Test.main()].executor": "Run",
+    "Gradle.myapp:app-client [run].executor": "Run",
     "Gradle.myapp:app-server [run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -130,7 +143,7 @@
       <recent name="bitcamp.myapp.handler.member" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.myapp:app-client [run]">
+  <component name="RunManager" selected="Gradle.myapp:app-server [run]">
     <configuration name="ClientApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bitcamp.myapp.ClientApp" />
       <module name="myapp.app-client.main" />
@@ -253,8 +266,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.myapp:app-client [run]" />
         <item itemvalue="Gradle.myapp:app-server [run]" />
+        <item itemvalue="Gradle.myapp:app-client [run]" />
         <item itemvalue="Gradle.myapp [run]" />
         <item itemvalue="애플리케이션.ClientApp" />
         <item itemvalue="애플리케이션.DaoTest" />
