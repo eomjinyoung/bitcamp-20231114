@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-client/src/main/java/bitcamp/myapp/ClientApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-client/src/main/java/bitcamp/myapp/ClientApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/myapp/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/myapp/ServerApp.java" afterDir="false" />
     </list>
@@ -152,7 +151,7 @@
       <recent name="bitcamp.myapp.handler.member" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.myapp:app-client [run]">
+  <component name="RunManager" selected="Gradle.myapp:app-server [run]">
     <configuration name="ClientApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bitcamp.myapp.ClientApp" />
       <module name="myapp.app-client.main" />
