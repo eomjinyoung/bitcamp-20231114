@@ -28,7 +28,7 @@ public class BoardDaoImpl implements BoardDao {
   @Override
   public void add(Board board) {
     try {
-      out.writeUTF("board");
+      out.writeUTF(dataName);
       out.writeUTF("add");
       out.writeUTF(gson.toJson(board));
 
@@ -46,7 +46,7 @@ public class BoardDaoImpl implements BoardDao {
   @Override
   public int delete(int no) {
     try {
-      out.writeUTF("board");
+      out.writeUTF(dataName);
       out.writeUTF("delete");
       out.writeUTF(gson.toJson(no));
 
@@ -67,7 +67,7 @@ public class BoardDaoImpl implements BoardDao {
   @Override
   public List<Board> findAll() {
     try {
-      out.writeUTF("board");
+      out.writeUTF(dataName);
       out.writeUTF("findAll");
       out.writeUTF("");
 
@@ -89,7 +89,7 @@ public class BoardDaoImpl implements BoardDao {
   @Override
   public Board findBy(int no) {
     try {
-      out.writeUTF("board");
+      out.writeUTF(dataName);
       out.writeUTF("findBy");
       out.writeUTF(gson.toJson(no));
 
@@ -110,7 +110,7 @@ public class BoardDaoImpl implements BoardDao {
   @Override
   public int update(Board board) {
     try {
-      out.writeUTF("board");
+      out.writeUTF(dataName);
       out.writeUTF("update");
       out.writeUTF(gson.toJson(board));
 
