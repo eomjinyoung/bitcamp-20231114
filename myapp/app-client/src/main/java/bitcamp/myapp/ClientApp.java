@@ -64,7 +64,7 @@ public class ClientApp {
       //   - IP 주소: 127.0.0.1
       //   - 도메인명: localhost
       System.out.println("서버 연결 중...");
-      Socket socket = new Socket("192.168.0.54", 8888);
+      Socket socket = new Socket("localhost", 8888);
       System.out.println("서버와 연결되었음!");
 
       DataInputStream in = new DataInputStream(socket.getInputStream());

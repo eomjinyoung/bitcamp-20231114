@@ -7,15 +7,6 @@
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-client/src/main/java/bitcamp/myapp/ClientApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-client/src/main/java/bitcamp/myapp/ClientApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-client/src/main/java/bitcamp/myapp/dao/json/AbstractDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-client/src/main/java/bitcamp/myapp/dao/json/AssignmentDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-client/src/main/java/bitcamp/myapp/dao/json/BoardDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-client/src/main/java/bitcamp/myapp/dao/json/MemberDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-server/assignment.json" beforeDir="false" afterPath="$PROJECT_DIR$/app-server/assignment.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-server/board.json" beforeDir="false" afterPath="$PROJECT_DIR$/app-server/board.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/myapp/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/myapp/ServerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/util/AnsiEscape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-server/src/main/java/bitcamp/util/Prompt.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
