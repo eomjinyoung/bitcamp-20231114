@@ -57,7 +57,7 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
     saveData();
     return 1;
   }
-  
+
   private int indexOf(int no) {
     for (int i = 0; i < list.size(); i++) {
       if (list.get(i).getNo() == no) {

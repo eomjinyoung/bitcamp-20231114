@@ -1,6 +1,5 @@
 plugins {
     id 'application'
-    id 'eclipse'
 }
 
 repositories {
@@ -8,6 +7,12 @@ repositories {
 }
 
 dependencies {
+    // VO 객체와 DAO 인터페이스
+    implementation project(':app-common')
+
+    // DAO Stub 객체
+    implementation project(':app-api')
+
     // JSON 라이브러리
     implementation 'com.google.code.gson:gson:2.10.1'
 
@@ -35,18 +40,6 @@ tasks.withType(JavaCompile).configureEach {
     // 프로젝트의 소스 파일 인코딩을 gradle에게 알려준다.
     // $javac -encoding UTF-8 ..
     options.encoding = 'UTF-8'
-}
-
-// eclipse 프로젝트 이름을 설정하기(Eclipse로 컴파일 할 때)
-eclipse {
-    project {
-        name = "myapp"
-    }
-    jdt {
-        sourceCompatibility = 21
-        targetCompatibility = 21
-        javaRuntimeName = "JavaSE-21"
-    }
 }
 
 run {

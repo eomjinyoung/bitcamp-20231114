@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../eomcs-java/eomcs-java-lang"
+		},
+		{
+			"path": "../bitcamp-20230424"
 		}
 	],
 	"settings": {

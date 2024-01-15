@@ -122,7 +122,7 @@ public class ClientApp {
   void close() {
     try (Socket socket = this.socket;
         DataInputStream in = this.in;
-        DataOutputStream out = this.out;) {
+        DataOutputStream out = this.out) {
 
       out.writeUTF("quit");
       System.out.println(in.readUTF());

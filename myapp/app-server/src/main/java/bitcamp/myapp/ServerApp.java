@@ -36,8 +36,8 @@ public class ServerApp {
   void run() {
     System.out.println("[과제관리 서버시스템]");
 
-    try {
-      ServerSocket serverSocket = new ServerSocket(8888);
+    try (ServerSocket serverSocket = new ServerSocket(8888)) {
+
       System.out.println("서버 실행!");
 
       while (true) {
@@ -50,11 +50,11 @@ public class ServerApp {
     }
   }
 
-  void service(Socket socket) throws Exception {
+  void service(Socket socket) {
 
     try (Socket s = socket;
         DataInputStream in = new DataInputStream(socket.getInputStream());
-        DataOutputStream out = new DataOutputStream(socket.getOutputStream());) {
+        DataOutputStream out = new DataOutputStream(socket.getOutputStream())) {
 
       System.out.println("클라이언트와 연결됨!");
 
