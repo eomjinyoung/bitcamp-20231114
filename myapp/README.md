@@ -383,6 +383,13 @@
 - 네트워크 프로그래밍 방법
   - Client와 Server 개념
   - 프로토콜에 따라 애플리케이션 간에 데이터를 주고 받기
+- Reflection API를 사용하는 방법
+  - 서버의 DAO 메서드 호출을 자동화 하는 방법
+
+## 38. DAO 프록시 객체를 자동 생성하기
+
+- java.lang.reflect.Proxy 클래스 사용법
+- 프록시 객체의 구동원리 이해
   - GoF의 프록시 패턴의 원리 이해 및 적용
   - 분산 컴퓨팅의 개념과 주요 기술 이해
 
@@ -390,16 +397,8 @@
 
 
 
-## 38. DAO 프록시 객체를 자동 생성하기
-
-- java.lang.reflect.Proxy 클래스 사용법
-- 프록시 객체의 구동원리 이해
-
-## 39. Reflection API를 활용하여 DAO 메서드 호출을 자동화하기
-
-- Reflection API를 사용하는 방법
-- 서버의 DAO 메서드 호출을 자동화 하는 방법
-
+  - Connection-Oriented vs Connectionless
+    - Stateful vs Stateless
 
 ## 41. 여러 클라이언트의 요청을 순차적으로 처리하기: Stateful 방식
 
