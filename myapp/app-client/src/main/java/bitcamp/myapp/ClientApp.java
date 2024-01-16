@@ -3,10 +3,8 @@ package bitcamp.myapp;
 import bitcamp.menu.MenuGroup;
 import bitcamp.myapp.dao.AssignmentDao;
 import bitcamp.myapp.dao.BoardDao;
+import bitcamp.myapp.dao.DaoProxyGenerator;
 import bitcamp.myapp.dao.MemberDao;
-import bitcamp.myapp.dao.network.AssignmentDaoImpl;
-import bitcamp.myapp.dao.network.BoardDaoImpl;
-import bitcamp.myapp.dao.network.MemberDaoImpl;
 import bitcamp.myapp.handler.HelpHandler;
 import bitcamp.myapp.handler.assignment.AssignmentAddHandler;
 import bitcamp.myapp.handler.assignment.AssignmentDeleteHandler;
@@ -61,10 +59,11 @@ public class ClientApp {
       in = new DataInputStream(socket.getInputStream());
       out = new DataOutputStream(socket.getOutputStream());
 
-      boardDao = new BoardDaoImpl("board", in, out);
-      greetingDao = new BoardDaoImpl("greeting", in, out);
-      assignmentDao = new AssignmentDaoImpl("assignment", in, out);
-      memberDao = new MemberDaoImpl("member", in, out);
+      DaoProxyGenerator daoGenerator = new DaoProxyGenerator(in, out);
+      boardDao = daoGenerator.create(BoardDao.class, "board");
+      greetingDao = daoGenerator.create(BoardDao.class, "greeting");
+      assignmentDao = daoGenerator.create(AssignmentDao.class, "assignment");
+      memberDao = daoGenerator.create(MemberDao.class, "member");
 
     } catch (Exception e) {
       System.out.println("통신 오류!");
