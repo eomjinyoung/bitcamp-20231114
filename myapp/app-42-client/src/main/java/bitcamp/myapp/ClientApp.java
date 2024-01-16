@@ -53,7 +53,7 @@ public class ClientApp {
 
   void prepareNetwork() {
     try {
-      socket = new Socket("localhost", 8888);
+      socket = new Socket("192.168.0.12", 8888);
       System.out.println("서버와 연결되었음!");
 
       in = new DataInputStream(socket.getInputStream());

@@ -403,24 +403,24 @@
 - Reflection API를 사용하여 메서드 정보를 추출하기
 - GoF의 Factory Method 패턴 활용 
 
+## 43. 여러 클라이언트의 요청을 순차적으로 처리하기: Stateless 방식
 
-
-
-
-
+- Stateless 방식으로 통신하는 방법
   - Connection-Oriented vs Connectionless
-    - Stateful vs Stateless
+  - Stateful vs Stateless
+- Stateless 방식의 구동 원리와 Stateful 방식 대비 이점
+- Stateless 방식의 문제점
+
+
+
+
 
 ## 41. 여러 클라이언트의 요청을 순차적으로 처리하기: Stateful 방식
 
 - 클라이언트 요청을 순차적으로 처리하는 방법
 - 구동 원리와 문제점
 
-## 42. 여러 클라이언트의 요청을 순차적으로 처리하기: Stateless 방식
 
-- Stateless 방식으로 통신하는 방법
-- 구동 원리와 Stateful 방식 대비 이점
-- Stateless 방식의 문제점
 
 ## 43. 여러 클라이언트 요청을 동시에 처리하기: Thread 적용
 
