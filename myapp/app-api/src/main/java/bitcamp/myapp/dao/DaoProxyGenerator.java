@@ -1,14 +1,11 @@
 package bitcamp.myapp.dao;
 
-import bitcamp.myapp.vo.Assignment;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.lang.reflect.Proxy;
-import java.util.ArrayList;
-import java.util.List;
+import java.lang.reflect.Type;
 
 public class DaoProxyGenerator {
 
@@ -43,20 +40,14 @@ public class DaoProxyGenerator {
               throw new Exception(entity);
             }
 
-            Class<?> returnType = method.getReturnType();
-            System.out.println(returnType.getName());
+            Type returnType = method.getGenericReturnType();
 
-            if (returnType == List.class) {
-
-              return (List<Assignment>) gson.fromJson(entity,
-                  TypeToken.getParameterized(ArrayList.class, Assignment.class));
-
-            } else if (returnType == void.class) {
+            if (returnType == void.class) {
               return null;
-
             } else {
               return gson.fromJson(entity, returnType);
             }
+
 
           } catch (Exception e) {
             e.printStackTrace();

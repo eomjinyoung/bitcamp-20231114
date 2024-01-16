@@ -400,6 +400,8 @@
 ## 42. DAO 프록시 객체(스텁 객체)를 자동 생성하기
 
 - java.lang.reflect.Proxy 클래스 사용법
+- Reflection API를 사용하여 메서드 정보를 추출하기
+- GoF의 Factory Method 패턴 활용 
 
 
 

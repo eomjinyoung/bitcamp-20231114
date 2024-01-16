@@ -60,6 +60,7 @@ public class ClientApp {
       out = new DataOutputStream(socket.getOutputStream());
 
       DaoProxyGenerator daoGenerator = new DaoProxyGenerator(in, out);
+
       boardDao = daoGenerator.create(BoardDao.class, "board");
       greetingDao = daoGenerator.create(BoardDao.class, "greeting");
       assignmentDao = daoGenerator.create(AssignmentDao.class, "assignment");
