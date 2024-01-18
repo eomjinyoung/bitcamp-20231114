@@ -855,6 +855,11 @@
 - 강의 내용
   - 복습(1)
   - 네트워크 프로그래밍(com.eomcs.net.*)
+  - 입출력 스트림 API 사용법(com.eomcs.io.*)
 - 실습 프로젝트
   - 
 - 학습 점검 목록
+  - Connection-Oriented 통신 방법과 Connectionless 통신 방법을 설명할 수 있는가? []
+  - Stateful 방식과 Stateless 방식을 설명할 수 있는가? []
+  - File 클래스를 사용하여 파일과 디렉토리 정보를 다룰 수 있는가? []
+  - 재귀호출을 사용하여 하위 디렉토리를 탐색할 수 있는가? []
