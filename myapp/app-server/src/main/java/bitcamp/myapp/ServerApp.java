@@ -43,7 +43,7 @@ public class ServerApp {
       while (true) {
         // 기존 방식: main 스레드에서 실행
 //        service(serverSocket.accept());
-        
+          
         // 개선: main 스레드에서 분리하여 실행
         Socket socket = serverSocket.accept();
         new Thread(() -> {
