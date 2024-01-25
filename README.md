@@ -941,3 +941,19 @@
   - 멀티스레딩 프로그래밍(com.eomcs.concurrent.*)
 - 실습 프로젝트
 - 학습 점검 목록
+  - 스레드의 생명주기를 설명할 수 있는가? []
+  - sleep(), join() 메서드의 사용법을 아는가? []
+  - 스레드 우선순위를 설명할 수 있는가? [] 
+  - critical section(critical region)을 설명할 수 있는가? []
+  - Thread safe를 설명할 수 있는가? []
+  - critical section을 thread safe로 만드는 방법을 설명할 수 있는가? []
+  - semaphore(n)와 mutex를 설명할 수 있는가? []
+  - synchronized 메서드 또는 블록의 동작을 이해하는가? []
+
+### 51일(2024-01-25,목)
+
+- 강의 내용
+  - 복습(1)
+  - 멀티스레딩 프로그래밍(com.eomcs.concurrent.*)
+- 실습 프로젝트
+- 학습 점검 목록
