@@ -16,6 +16,10 @@ public class ThreadPool implements Pooling<WorkerThread> {
     }
     WorkerThread thread = new WorkerThread(this);
     thread.start();
+    try {
+      Thread.sleep(500); // 스레드가 wait 할 시간을 확보한다.
+    } catch (Exception e) {
+    }
     System.out.printf("새 스레드를 만들어 리턴!(%s)\n", thread.getName());
     return thread;
   }
