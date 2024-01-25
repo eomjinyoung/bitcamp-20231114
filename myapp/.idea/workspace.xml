@@ -286,8 +286,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.myapp:app-client [run]" />
         <item itemvalue="Gradle.myapp:app-server [run]" />
+        <item itemvalue="Gradle.myapp:app-client [run]" />
         <item itemvalue="Gradle.myapp:app-server [build]" />
         <item itemvalue="Gradle.myapp [build]" />
         <item itemvalue="Gradle.myapp:app-client [build]" />
