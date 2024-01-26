@@ -432,17 +432,17 @@
 
 - Excutors/ExcutorService 사용법
 
-
-
-
-
-
-## 46. DBMS 도입하기
+## 47. DBMS 도입하기
 
 - DBMS 설치 및 사용법
 - SQL 및 JDBC Driver 개념과 사용법
-- 회원 및 게시판 테이블 정의 및 예제 데이터 입력 SQL 준비
+- 테이블 정의 및 예제 데이터 입력 SQL 준비
 - DBMS와 연동하여 작업하는 DAO 구현
+
+
+
+
+
 
 ## 47. SQL 삽입 공격 차단하기
 
