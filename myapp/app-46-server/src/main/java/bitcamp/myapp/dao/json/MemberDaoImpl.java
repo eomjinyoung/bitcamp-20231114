@@ -1,23 +1,23 @@
 package bitcamp.myapp.dao.json;
 
-import bitcamp.myapp.dao.AssignmentDao;
-import bitcamp.myapp.vo.Assignment;
+import bitcamp.myapp.dao.MemberDao;
+import bitcamp.myapp.vo.Member;
 import java.util.List;
 
-public class AssignmentDaoImpl extends AbstractDao<Assignment> implements AssignmentDao {
+public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
 
   private int lastKey;
 
-  public AssignmentDaoImpl(String filepath) {
+  public MemberDaoImpl(String filepath) {
     super(filepath);
 
     lastKey = list.getLast().getNo();
   }
 
   @Override
-  public void add(Assignment assignment) {
-    assignment.setNo(++lastKey);
-    list.add(assignment);
+  public void add(Member member) {
+    member.setNo(++lastKey);
+    this.list.add(member);
     saveData();
   }
 
@@ -34,12 +34,12 @@ public class AssignmentDaoImpl extends AbstractDao<Assignment> implements Assign
   }
 
   @Override
-  public List<Assignment> findAll() {
-    return list.subList(0, list.size());
+  public List<Member> findAll() {
+    return this.list.subList(0, list.size());
   }
 
   @Override
-  public Assignment findBy(int no) {
+  public Member findBy(int no) {
     int index = indexOf(no);
     if (index == -1) {
       return null;
@@ -48,13 +48,12 @@ public class AssignmentDaoImpl extends AbstractDao<Assignment> implements Assign
   }
 
   @Override
-  public int update(Assignment assignment) {
-    int index = indexOf(assignment.getNo());
+  public int update(Member member) {
+    int index = indexOf(member.getNo());
     if (index == -1) {
       return 0;
     }
-
-    list.set(index, assignment);
+    list.set(index, member);
     saveData();
     return 1;
   }
@@ -65,7 +64,6 @@ public class AssignmentDaoImpl extends AbstractDao<Assignment> implements Assign
         return i;
       }
     }
-
     return -1;
   }
 }

@@ -1,23 +1,24 @@
 package bitcamp.myapp.dao.json;
 
-import bitcamp.myapp.dao.AssignmentDao;
-import bitcamp.myapp.vo.Assignment;
+import bitcamp.myapp.dao.BoardDao;
+import bitcamp.myapp.vo.Board;
 import java.util.List;
 
-public class AssignmentDaoImpl extends AbstractDao<Assignment> implements AssignmentDao {
+public class BoardDaoImpl extends AbstractDao<Board> implements BoardDao {
 
   private int lastKey;
 
-  public AssignmentDaoImpl(String filepath) {
+  public BoardDaoImpl(String filepath) {
     super(filepath);
 
+    // 마지막 게시글의 식별 번호를 알아낸다.
     lastKey = list.getLast().getNo();
   }
 
   @Override
-  public void add(Assignment assignment) {
-    assignment.setNo(++lastKey);
-    list.add(assignment);
+  public void add(Board board) {
+    board.setNo(++lastKey);
+    this.list.add(board);
     saveData();
   }
 
@@ -34,12 +35,12 @@ public class AssignmentDaoImpl extends AbstractDao<Assignment> implements Assign
   }
 
   @Override
-  public List<Assignment> findAll() {
-    return list.subList(0, list.size());
+  public List<Board> findAll() {
+    return this.list.subList(0, list.size());
   }
 
   @Override
-  public Assignment findBy(int no) {
+  public Board findBy(int no) {
     int index = indexOf(no);
     if (index == -1) {
       return null;
@@ -48,13 +49,12 @@ public class AssignmentDaoImpl extends AbstractDao<Assignment> implements Assign
   }
 
   @Override
-  public int update(Assignment assignment) {
-    int index = indexOf(assignment.getNo());
+  public int update(Board board) {
+    int index = indexOf(board.getNo());
     if (index == -1) {
       return 0;
     }
-
-    list.set(index, assignment);
+    list.set(index, board);
     saveData();
     return 1;
   }
@@ -65,7 +65,6 @@ public class AssignmentDaoImpl extends AbstractDao<Assignment> implements Assign
         return i;
       }
     }
-
     return -1;
   }
 }
