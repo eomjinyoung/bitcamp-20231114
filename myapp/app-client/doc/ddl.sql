@@ -37,7 +37,7 @@ where board_no = 3;
 delete from boards where board_no=3;
 
 
-drop table assignment;
+drop table assignments;
 
 create table assignments(
   assignment_no int primary key auto_increment,
@@ -45,3 +45,14 @@ create table assignments(
   content text not null,
   deadline date not null
 );
+
+insert into assignments(assignment_no,title,content,deadline) 
+  values(1,'과제1','내용1','2024-1-1');
+insert into assignments(assignment_no,title,content,deadline) 
+  values(2,'과제2','내용2','2024-2-2');
+insert into assignments(assignment_no,title,content,deadline) 
+  values(3,'과제3','내용3','2024-3-3');
+insert into assignments(assignment_no,title,content,deadline) 
+  values(4,'과제4','내용4','2024-4-4');
+insert into assignments(assignment_no,title,content,deadline) 
+  values(5,'과제5','내용5','2024-5-5');
