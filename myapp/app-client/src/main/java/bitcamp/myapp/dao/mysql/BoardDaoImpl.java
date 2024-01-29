@@ -39,7 +39,7 @@ public class BoardDaoImpl implements BoardDao {
       return stmt.executeUpdate(String.format("delete from boards where board_no=%d", no));
 
     } catch (Exception e) {
-      throw new DaoException("데이터 입력 오류", e);
+      throw new DaoException("데이터 삭제 오류", e);
     }
   }
 
@@ -100,7 +100,7 @@ public class BoardDaoImpl implements BoardDao {
           board.getTitle(), board.getContent(), board.getWriter(), board.getNo()));
 
     } catch (Exception e) {
-      throw new DaoException("데이터 입력 오류", e);
+      throw new DaoException("데이터 변경 오류", e);
     }
   }
 }

@@ -56,3 +56,13 @@ insert into assignments(assignment_no,title,content,deadline)
   values(4,'과제4','내용4','2024-4-4');
 insert into assignments(assignment_no,title,content,deadline) 
   values(5,'과제5','내용5','2024-5-5');
+
+drop table members;
+
+create table members(
+  member_no int primary key auto_increment,
+  email varchar(255) not null,
+  name varchar(255) not null,
+  password varchar(100) not null,
+  created_date datetime null default now()
+);
