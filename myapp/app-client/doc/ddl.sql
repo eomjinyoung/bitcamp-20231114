@@ -66,3 +66,14 @@ create table members(
   password varchar(100) not null,
   created_date datetime null default now()
 );
+
+insert into members(email,name,password,created_date)
+  values('user1@test.com','user1',sha2('1111',256),'2024-1-1');
+insert into members(email,name,password,created_date)
+  values('user2@test.com','user2',sha2('1111',256),'2024-2-2');
+insert into members(email,name,password,created_date)
+  values('user3@test.com','user3',sha2('1111',256),'2024-3-3');
+insert into members(email,name,password,created_date)
+  values('user4@test.com','user4',sha2('1111',256),'2024-4-4');
+insert into members(email,name,password,created_date)
+  values('user5@test.com','user5',sha2('1111',256),'2024-5-5');
