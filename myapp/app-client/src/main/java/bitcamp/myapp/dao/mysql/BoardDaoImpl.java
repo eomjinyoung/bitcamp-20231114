@@ -24,8 +24,8 @@ public class BoardDaoImpl implements BoardDao {
     try {
       Statement stmt = con.createStatement();
       stmt.executeUpdate(String.format(
-          "insert into boards(title,content,writer) values('%s','%s','%s')",
-          board.getTitle(), board.getContent(), board.getWriter()));
+          "insert into boards(title,content,writer,category) values('%s','%s','%s',%d)",
+          board.getTitle(), board.getContent(), board.getWriter(), this.category));
 
     } catch (Exception e) {
       throw new DaoException("데이터 입력 오류", e);
@@ -47,7 +47,7 @@ public class BoardDaoImpl implements BoardDao {
   public List<Board> findAll() {
     try {
       Statement stmt = con.createStatement();
-      ResultSet rs = stmt.executeQuery("select * from boards");
+      ResultSet rs = stmt.executeQuery("select * from boards where category=" + this.category);
 
       ArrayList<Board> list = new ArrayList<>();
 

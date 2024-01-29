@@ -77,3 +77,8 @@ insert into members(email,name,password,created_date)
   values('user4@test.com','user4',sha2('1111',256),'2024-4-4');
 insert into members(email,name,password,created_date)
   values('user5@test.com','user5',sha2('1111',256),'2024-5-5');
+
+alter table boards
+  add column category int not null;
+
+update boards set category=1;
