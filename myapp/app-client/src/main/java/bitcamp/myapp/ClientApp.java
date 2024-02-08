@@ -11,7 +11,6 @@ public class ClientApp {
   int port;
 
   public static void main(String[] args) {
-    System.out.println("[과제관리 시스템]");
     new ClientApp()
         .server("localhost")
         .port(8888)
