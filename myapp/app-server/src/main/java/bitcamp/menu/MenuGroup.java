@@ -6,8 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-// Composite 패턴에서 '복합 객체(composite object)' 역할을 하는 클래스
-// - 다른 Menu 객체를 포함한다.
 public class MenuGroup extends AbstractMenu {
 
   private List<Menu> menus = new LinkedList<>();
@@ -16,23 +14,25 @@ public class MenuGroup extends AbstractMenu {
     super(title, breadcrumb);
   }
 
-  // GoF의 Factory Method 디자인패턴!
   public static MenuGroup getInstance(String title) {
     return new MenuGroup(title, new Stack<String>());
   }
 
-  @Override // 인터페이스나 수퍼 클래스의 메서드를 정의하겠다고 컴파일러에게 알린다.
-  public void execute(Prompt prompt) {
-    // 메뉴를 실행할 때 메뉴의 제목을 breadcrumb 경로에 추가한다.
+  @Override
+  public void execute(Prompt prompt) throws Exception {
+
     breadcrumb.push(this.title);
 
-    this.printMenu();
+    this.printMenu(prompt);
 
     while (true) {
-      String input = prompt.input("%s> ", this.getMenuPath());
+
+      prompt.printf("%s>", this.getMenuPath());
+      prompt.end();
+      String input = prompt.input();
 
       if (input.equals("menu")) {
-        this.printMenu();
+        this.printMenu(prompt);
         continue;
       } else if (input.equals("0")) {
         break;
@@ -56,17 +56,17 @@ public class MenuGroup extends AbstractMenu {
     breadcrumb.pop();
   }
 
-  private void printMenu() {
-    System.out.printf("[%s]\n", this.getTitle());
+  private void printMenu(Prompt prompt) {
+    prompt.printf("[%s]\n", this.getTitle());
 
     Iterator<Menu> iterator = this.menus.iterator();
     int i = 1;
     while (iterator.hasNext()) {
       Menu menu = iterator.next();
-      System.out.printf("%d. %s\n", i++, menu.getTitle());
+      prompt.printf("%d. %s\n", i++, menu.getTitle());
     }
 
-    System.out.printf("0. %s\n", "이전");
+    prompt.printf("0. %s\n", "이전");
   }
 
   public void add(Menu menu) {
