@@ -30,7 +30,7 @@ public class Prompt implements AutoCloseable {
     try {
       printf(str, args);
       end();
-      return input();
+      return in.readUTF();
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
@@ -78,26 +78,6 @@ public class Prompt implements AutoCloseable {
     // 버퍼에서 꺼낸 문자열을 클라이언트로 전송한다.
     // 즉 서버의 응답이 완료된다.
     out.writeUTF(content);
-  }
-
-  public String input() throws Exception {
-    return in.readUTF();
-  }
-
-  public int inputInt() throws Exception {
-    return Integer.parseInt(this.input());
-  }
-
-  public float inputFloat() throws Exception {
-    return Float.parseFloat(this.input());
-  }
-
-  public boolean inputBoolean() throws Exception {
-    return Boolean.parseBoolean(this.input());
-  }
-
-  public Date inputDate() throws Exception {
-    return Date.valueOf(this.input());
   }
 
   public void close() throws Exception {

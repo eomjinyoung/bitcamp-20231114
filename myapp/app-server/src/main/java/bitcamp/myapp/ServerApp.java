@@ -100,7 +100,7 @@ public class ServerApp {
     greetingMenu.addItem("삭제", new BoardDeleteHandler(greetingDao));
     greetingMenu.addItem("목록", new BoardListHandler(greetingDao));
 
-    mainMenu.addItem("도움말", new HelpHandler(prompt));
+    mainMenu.addItem("도움말", new HelpHandler());
   }
 
   void run() {
