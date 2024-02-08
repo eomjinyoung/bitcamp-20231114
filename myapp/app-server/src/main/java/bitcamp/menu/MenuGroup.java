@@ -4,29 +4,28 @@ import bitcamp.util.Prompt;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 public class MenuGroup extends AbstractMenu {
 
   private List<Menu> menus = new LinkedList<>();
 
-  private MenuGroup(String title, Stack<String> breadcrumb) {
-    super(title, breadcrumb);
+  private MenuGroup(String title) {
+    super(title);
   }
 
   public static MenuGroup getInstance(String title) {
-    return new MenuGroup(title, new Stack<String>());
+    return new MenuGroup(title);
   }
 
   @Override
   public void execute(Prompt prompt) throws Exception {
 
-    breadcrumb.push(this.title);
+    prompt.pushPath(this.title);
 
     this.printMenu(prompt);
 
     while (true) {
-      String input = prompt.input("%s>", this.getMenuPath());
+      String input = prompt.input("%s>", prompt.getFullPath());
 
       if (input.equals("menu")) {
         this.printMenu(prompt);
@@ -50,7 +49,7 @@ public class MenuGroup extends AbstractMenu {
     }
 
     // 메뉴를 나갈 때 breadcrumb 메뉴 경로에서 메뉴 제목을 제거한다.
-    breadcrumb.pop();
+    prompt.popPath();
   }
 
   private void printMenu(Prompt prompt) {
@@ -71,13 +70,13 @@ public class MenuGroup extends AbstractMenu {
   }
 
   public MenuItem addItem(String title, MenuHandler handler) {
-    MenuItem menuItem = new MenuItem(title, this.breadcrumb, handler);
+    MenuItem menuItem = new MenuItem(title, handler);
     this.add(menuItem);
     return menuItem;
   }
 
   public MenuGroup addGroup(String title) {
-    MenuGroup menuGroup = new MenuGroup(title, this.breadcrumb);
+    MenuGroup menuGroup = new MenuGroup(title);
     this.add(menuGroup);
     return menuGroup;
   }

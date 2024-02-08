@@ -1127,7 +1127,7 @@
   - 복습(1)
 - 과제
   - 개인 과제
-    - SQL 삽입 공격 차단 적용
+    - Application Server 아키텍처로 전환
 - 실습 프로젝트
-  - 48. SQL 삽입 공격 차단하기
+  - 49. Application Server 아키텍처로 전환하기
 - 학습 점검 목록

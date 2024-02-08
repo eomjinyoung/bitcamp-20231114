@@ -7,6 +7,7 @@ import bitcamp.myapp.dao.MemberDao;
 import bitcamp.myapp.dao.mysql.AssignmentDaoImpl;
 import bitcamp.myapp.dao.mysql.BoardDaoImpl;
 import bitcamp.myapp.dao.mysql.MemberDaoImpl;
+import bitcamp.myapp.handler.AboutHandler;
 import bitcamp.myapp.handler.HelpHandler;
 import bitcamp.myapp.handler.assignment.AssignmentAddHandler;
 import bitcamp.myapp.handler.assignment.AssignmentDeleteHandler;
@@ -30,10 +31,12 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ServerApp {
 
-  Prompt prompt = new Prompt(System.in);
+  ExecutorService executorService = Executors.newCachedThreadPool();
 
   BoardDao boardDao;
   BoardDao greetingDao;
@@ -55,8 +58,8 @@ public class ServerApp {
   void prepareDatabase() {
     try {
       Connection con = DriverManager.getConnection(
-          //"jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
-          "jdbc:mysql://db-ld27b-kr.vpc-pub-cdb.ntruss.com/studydb", "study", "Bitcamp!@#123");
+          "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
+      //"jdbc:mysql://db-ld27b-kr.vpc-pub-cdb.ntruss.com/studydb", "study", "Bitcamp!@#123");
 
       boardDao = new BoardDaoImpl(con, 1);
       greetingDao = new BoardDaoImpl(con, 2);
@@ -101,6 +104,7 @@ public class ServerApp {
     greetingMenu.addItem("목록", new BoardListHandler(greetingDao));
 
     mainMenu.addItem("도움말", new HelpHandler());
+    mainMenu.addItem("...대하여", new AboutHandler());
   }
 
   void run() {
@@ -108,7 +112,7 @@ public class ServerApp {
 
       while (true) {
         Socket socket = serverSocket.accept();
-        processRequest(socket);
+        executorService.execute(() -> processRequest(socket));
       }
 
     } catch (Exception e) {

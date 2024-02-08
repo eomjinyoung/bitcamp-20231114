@@ -444,7 +444,7 @@
 - SQL 삽입 공격의 원리 이해
 - PreparedStatement 사용법
 
-## 49. Application Server 아키텍터로 전환하기
+## 49. Application Server 아키텍처로 전환하기
 
 - 애플리케이션 서버 아키텍처의 특징과 구현
 - Executor를 이용하여 스레드를 풀링하기
