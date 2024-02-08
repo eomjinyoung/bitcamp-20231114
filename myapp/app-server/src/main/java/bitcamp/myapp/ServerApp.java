@@ -23,6 +23,7 @@ import bitcamp.myapp.handler.member.MemberDeleteHandler;
 import bitcamp.myapp.handler.member.MemberListHandler;
 import bitcamp.myapp.handler.member.MemberModifyHandler;
 import bitcamp.myapp.handler.member.MemberViewHandler;
+import bitcamp.util.NetPrompt;
 import bitcamp.util.Prompt;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -120,13 +121,15 @@ public class ServerApp {
   void processRequest(Socket socket) {
     try (Socket s = socket;
         DataOutputStream out = new DataOutputStream(s.getOutputStream());
-        DataInputStream in = new DataInputStream(s.getInputStream())) {
+        DataInputStream in = new DataInputStream(s.getInputStream());
+        NetPrompt prompt = new NetPrompt(in, out)) {
 
-      out.writeUTF("[과제관리 시스템]");
-      String request = in.readUTF();
-      if (request.equals("quit")) {
-        out.writeUTF("[[quit!]]");
-      }
+      prompt.println("[과제관리 시스템]");
+      prompt.println("환영합니다!");
+      prompt.println("반가워요");
+      prompt.end();
+
+      String request = prompt.input();
       System.out.println(request);
 
     } catch (Exception e) {
