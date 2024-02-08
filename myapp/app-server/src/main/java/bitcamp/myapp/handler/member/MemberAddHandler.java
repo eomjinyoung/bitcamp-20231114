@@ -10,17 +10,16 @@ public class MemberAddHandler extends AbstractMenuHandler {
 
   private MemberDao memberDao;
 
-  public MemberAddHandler(MemberDao memberDao, Prompt prompt) {
-    super(prompt);
+  public MemberAddHandler(MemberDao memberDao) {
     this.memberDao = memberDao;
   }
 
   @Override
-  protected void action() {
+  protected void action(Prompt prompt) {
     Member member = new Member();
-    member.setEmail(this.prompt.input("이메일? "));
-    member.setName(this.prompt.input("이름? "));
-    member.setPassword(this.prompt.input("암호? "));
+    member.setEmail(prompt.input("이메일? "));
+    member.setName(prompt.input("이름? "));
+    member.setPassword(prompt.input("암호? "));
     member.setCreatedDate(new Date());
 
     memberDao.add(member);

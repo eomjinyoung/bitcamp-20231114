@@ -9,14 +9,13 @@ public class MemberModifyHandler extends AbstractMenuHandler {
 
   private MemberDao memberDao;
 
-  public MemberModifyHandler(MemberDao memberDao, Prompt prompt) {
-    super(prompt);
+  public MemberModifyHandler(MemberDao memberDao) {
     this.memberDao = memberDao;
   }
 
   @Override
-  protected void action() {
-    int no = this.prompt.inputInt("번호? ");
+  protected void action(Prompt prompt) {
+    int no = prompt.inputInt("번호? ");
 
     Member old = memberDao.findBy(no);
     if (old == null) {
@@ -26,12 +25,12 @@ public class MemberModifyHandler extends AbstractMenuHandler {
 
     Member member = new Member();
     member.setNo(old.getNo());
-    member.setEmail(this.prompt.input("이메일(%s)? ", old.getEmail()));
-    member.setName(this.prompt.input("이름(%s)? ", old.getName()));
-    member.setPassword(this.prompt.input("새 암호? "));
+    member.setEmail(prompt.input("이메일(%s)? ", old.getEmail()));
+    member.setName(prompt.input("이름(%s)? ", old.getName()));
+    member.setPassword(prompt.input("새 암호? "));
     member.setCreatedDate(old.getCreatedDate());
 
     memberDao.update(member);
-    System.out.println("회원을 변경했습니다.");
+    prompt.println("회원을 변경했습니다.");
   }
 }

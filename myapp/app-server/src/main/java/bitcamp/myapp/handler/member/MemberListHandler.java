@@ -10,19 +10,18 @@ public class MemberListHandler extends AbstractMenuHandler {
 
   private MemberDao memberDao;
 
-  public MemberListHandler(MemberDao memberDao, Prompt prompt) {
-    super(prompt);
+  public MemberListHandler(MemberDao memberDao) {
     this.memberDao = memberDao;
   }
 
   @Override
-  protected void action() {
-    System.out.printf("%-4s\t%-10s\t%30s\t%s\n", "번호", "이름", "이메일", "가입일");
+  protected void action(Prompt prompt) {
+    prompt.printf("%-4s\t%-10s\t%30s\t%s\n", "번호", "이름", "이메일", "가입일");
 
     List<Member> list = memberDao.findAll();
 
     for (Member member : list) {
-      System.out.printf("%-4d\t%-10s\t%30s\t%4$tY-%4$tm-%4$td\n",
+      prompt.printf("%-4d\t%-10s\t%30s\t%4$tY-%4$tm-%4$td\n",
           member.getNo(),
           member.getName(),
           member.getEmail(),
