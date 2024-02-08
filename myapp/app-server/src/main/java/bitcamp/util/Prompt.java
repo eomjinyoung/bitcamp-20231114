@@ -27,7 +27,13 @@ public class Prompt implements AutoCloseable {
   }
 
   public String input(String str, Object... args) {
-    return keyIn.nextLine();
+    try {
+      printf(str, args);
+      end();
+      return input();
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public int inputInt(String str, Object... args) {
