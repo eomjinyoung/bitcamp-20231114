@@ -19,17 +19,28 @@ public class AssignmentDaoImpl implements AssignmentDao {
 
   @Override
   public void add(Assignment assignment) {
-    try (PreparedStatement pstmt = con.prepareStatement(
-        "insert into assignments(title,content,deadline) values(?,?,?)")) {
+    try {
+      con.setAutoCommit(false);
+      try (PreparedStatement pstmt = con.prepareStatement(
+          "insert into assignments(title,content,deadline) values(?,?,?)")) {
 
-      pstmt.setString(1, assignment.getTitle());
-      pstmt.setString(2, assignment.getContent());
-      pstmt.setDate(3, assignment.getDeadline());
+        pstmt.setString(1, assignment.getTitle());
+        pstmt.setString(2, assignment.getContent());
+        pstmt.setDate(3, assignment.getDeadline());
 
-      pstmt.executeUpdate();
+        pstmt.executeUpdate();
+        pstmt.executeUpdate();
+      }
+      con.rollback();
 
     } catch (Exception e) {
       throw new DaoException("데이터 입력 오류", e);
+      
+    } finally {
+      try {
+        con.setAutoCommit(true);
+      } catch (Exception e) {
+      }
     }
   }
 
