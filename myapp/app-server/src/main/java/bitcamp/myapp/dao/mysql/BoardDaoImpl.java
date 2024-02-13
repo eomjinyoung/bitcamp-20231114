@@ -12,11 +12,11 @@ import java.util.List;
 
 public class BoardDaoImpl implements BoardDao {
 
-  DBConnectionPool threadConnection;
+  DBConnectionPool connectionPool;
   int category;
 
-  public BoardDaoImpl(DBConnectionPool threadConnection, int category) {
-    this.threadConnection = threadConnection;
+  public BoardDaoImpl(DBConnectionPool connectionPool, int category) {
+    this.connectionPool = connectionPool;
     this.category = category;
   }
 
@@ -24,7 +24,7 @@ public class BoardDaoImpl implements BoardDao {
   public void add(Board board) {
     Connection con = null;
     try {
-      con = threadConnection.getConnection();
+      con = connectionPool.getConnection();
 
       try (PreparedStatement pstmt = con.prepareStatement(
           "insert into boards(title,content,writer,category) values(?,?,?,?)")) {
@@ -46,7 +46,7 @@ public class BoardDaoImpl implements BoardDao {
   public int delete(int no) {
     Connection con = null;
     try {
-      con = threadConnection.getConnection();
+      con = connectionPool.getConnection();
 
       try (PreparedStatement pstmt = con.prepareStatement(
           "delete from boards where board_no=?")) {
@@ -63,7 +63,7 @@ public class BoardDaoImpl implements BoardDao {
   public List<Board> findAll() {
     Connection con = null;
     try {
-      con = threadConnection.getConnection();
+      con = connectionPool.getConnection();
 
       try (PreparedStatement pstmt = con.prepareStatement(
           "select board_no, title, writer, created_date"
@@ -97,7 +97,7 @@ public class BoardDaoImpl implements BoardDao {
   public Board findBy(int no) {
     Connection con = null;
     try {
-      con = threadConnection.getConnection();
+      con = connectionPool.getConnection();
 
       try (PreparedStatement pstmt = con.prepareStatement(
           "select * from boards where board_no=?")) {
@@ -127,7 +127,7 @@ public class BoardDaoImpl implements BoardDao {
   public int update(Board board) {
     Connection con = null;
     try {
-      con = threadConnection.getConnection();
+      con = connectionPool.getConnection();
 
       try (PreparedStatement pstmt = con.prepareStatement(
           "update boards set title=?, content=?, writer=? where board_no=?")) {

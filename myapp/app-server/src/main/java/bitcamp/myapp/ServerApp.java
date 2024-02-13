@@ -37,7 +37,7 @@ public class ServerApp {
 
   ExecutorService executorService = Executors.newCachedThreadPool();
 
-  DBConnectionPool threadConnection;
+  DBConnectionPool connectionPool;
 
   BoardDao boardDao;
   BoardDao greetingDao;
@@ -62,13 +62,13 @@ public class ServerApp {
 //
       //"jdbc:mysql://db-ld27b-kr.vpc-pub-cdb.ntruss.com/studydb", "study", "Bitcamp!@#123");
 
-      threadConnection = new DBConnectionPool(
+      connectionPool = new DBConnectionPool(
           "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
 
-      boardDao = new BoardDaoImpl(threadConnection, 1);
-      greetingDao = new BoardDaoImpl(threadConnection, 2);
-      assignmentDao = new AssignmentDaoImpl(threadConnection);
-      memberDao = new MemberDaoImpl(threadConnection);
+      boardDao = new BoardDaoImpl(connectionPool, 1);
+      greetingDao = new BoardDaoImpl(connectionPool, 2);
+      assignmentDao = new AssignmentDaoImpl(connectionPool);
+      memberDao = new MemberDaoImpl(connectionPool);
 
     } catch (Exception e) {
       System.out.println("통신 오류!");
@@ -80,32 +80,32 @@ public class ServerApp {
     mainMenu = MenuGroup.getInstance("메인");
 
     MenuGroup assignmentMenu = mainMenu.addGroup("과제");
-    assignmentMenu.addItem("등록", new AssignmentAddHandler(threadConnection, assignmentDao));
-    assignmentMenu.addItem("조회", new AssignmentViewHandler(assignmentDao));
-    assignmentMenu.addItem("변경", new AssignmentModifyHandler(assignmentDao));
-    assignmentMenu.addItem("삭제", new AssignmentDeleteHandler(assignmentDao));
-    assignmentMenu.addItem("목록", new AssignmentListHandler(assignmentDao));
+    assignmentMenu.addItem("등록", new AssignmentAddHandler(connectionPool, assignmentDao));
+    assignmentMenu.addItem("조회", new AssignmentViewHandler(connectionPool, assignmentDao));
+    assignmentMenu.addItem("변경", new AssignmentModifyHandler(connectionPool, assignmentDao));
+    assignmentMenu.addItem("삭제", new AssignmentDeleteHandler(connectionPool, assignmentDao));
+    assignmentMenu.addItem("목록", new AssignmentListHandler(connectionPool, assignmentDao));
 
     MenuGroup boardMenu = mainMenu.addGroup("게시글");
-    boardMenu.addItem("등록", new BoardAddHandler(threadConnection, boardDao));
-    boardMenu.addItem("조회", new BoardViewHandler(boardDao));
-    boardMenu.addItem("변경", new BoardModifyHandler(boardDao));
-    boardMenu.addItem("삭제", new BoardDeleteHandler(boardDao));
-    boardMenu.addItem("목록", new BoardListHandler(boardDao));
+    boardMenu.addItem("등록", new BoardAddHandler(connectionPool, boardDao));
+    boardMenu.addItem("조회", new BoardViewHandler(connectionPool, boardDao));
+    boardMenu.addItem("변경", new BoardModifyHandler(connectionPool, boardDao));
+    boardMenu.addItem("삭제", new BoardDeleteHandler(connectionPool, boardDao));
+    boardMenu.addItem("목록", new BoardListHandler(connectionPool, boardDao));
 
     MenuGroup memberMenu = mainMenu.addGroup("회원");
-    memberMenu.addItem("등록", new MemberAddHandler(memberDao));
-    memberMenu.addItem("조회", new MemberViewHandler(memberDao));
-    memberMenu.addItem("변경", new MemberModifyHandler(memberDao));
-    memberMenu.addItem("삭제", new MemberDeleteHandler(memberDao));
-    memberMenu.addItem("목록", new MemberListHandler(memberDao));
+    memberMenu.addItem("등록", new MemberAddHandler(connectionPool, memberDao));
+    memberMenu.addItem("조회", new MemberViewHandler(connectionPool, memberDao));
+    memberMenu.addItem("변경", new MemberModifyHandler(connectionPool, memberDao));
+    memberMenu.addItem("삭제", new MemberDeleteHandler(connectionPool, memberDao));
+    memberMenu.addItem("목록", new MemberListHandler(connectionPool, memberDao));
 
     MenuGroup greetingMenu = mainMenu.addGroup("가입인사");
-    greetingMenu.addItem("등록", new BoardAddHandler(threadConnection, greetingDao));
-    greetingMenu.addItem("조회", new BoardViewHandler(greetingDao));
-    greetingMenu.addItem("변경", new BoardModifyHandler(greetingDao));
-    greetingMenu.addItem("삭제", new BoardDeleteHandler(greetingDao));
-    greetingMenu.addItem("목록", new BoardListHandler(greetingDao));
+    greetingMenu.addItem("등록", new BoardAddHandler(connectionPool, greetingDao));
+    greetingMenu.addItem("조회", new BoardViewHandler(connectionPool, greetingDao));
+    greetingMenu.addItem("변경", new BoardModifyHandler(connectionPool, greetingDao));
+    greetingMenu.addItem("삭제", new BoardDeleteHandler(connectionPool, greetingDao));
+    greetingMenu.addItem("목록", new BoardListHandler(connectionPool, greetingDao));
 
     mainMenu.addItem("도움말", new HelpHandler());
     mainMenu.addItem("...대하여", new AboutHandler());
