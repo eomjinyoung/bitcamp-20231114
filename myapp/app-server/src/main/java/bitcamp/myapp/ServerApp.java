@@ -29,8 +29,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -57,14 +55,14 @@ public class ServerApp {
 
   void prepareDatabase() {
     try {
-      Connection con = DriverManager.getConnection(
-          "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
+//      Connection con = DriverManager.getConnection(
+//          "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
       //"jdbc:mysql://db-ld27b-kr.vpc-pub-cdb.ntruss.com/studydb", "study", "Bitcamp!@#123");
 
-      boardDao = new BoardDaoImpl(con, 1);
-      greetingDao = new BoardDaoImpl(con, 2);
-      assignmentDao = new AssignmentDaoImpl(con);
-      memberDao = new MemberDaoImpl(con);
+      boardDao = new BoardDaoImpl(1);
+      greetingDao = new BoardDaoImpl(2);
+      assignmentDao = new AssignmentDaoImpl();
+      memberDao = new MemberDaoImpl();
 
     } catch (Exception e) {
       System.out.println("통신 오류!");

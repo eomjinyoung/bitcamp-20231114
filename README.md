@@ -1131,3 +1131,17 @@
 - 실습 프로젝트
   - 49. Application Server 아키텍처로 전환하기
 - 학습 점검 목록
+  - Application Architecture에 대해 설명할 수 있는가? []
+  - StringWriter의 동작 원리를 설명할 수 있는가? []
+
+### 62일(2024-02-13,화)
+
+- 강의 내용
+  - 복습(1)
+  - AS(Application Server) 아키텍처에서 DB Connection 관리하는 방법
+- 과제
+  - 개인 과제
+
+- 실습 프로젝트
+  - 50. 여러 스레드가 DB 커넥션을 공유할 때의 문제점과 해결책 I
+- 학습 점검 목록
