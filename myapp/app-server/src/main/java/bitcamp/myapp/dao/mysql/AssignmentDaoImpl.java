@@ -3,8 +3,8 @@ package bitcamp.myapp.dao.mysql;
 import bitcamp.myapp.dao.AssignmentDao;
 import bitcamp.myapp.dao.DaoException;
 import bitcamp.myapp.vo.Assignment;
+import bitcamp.util.ThreadConnection;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -12,12 +12,17 @@ import java.util.List;
 
 public class AssignmentDaoImpl implements AssignmentDao {
 
+  ThreadConnection threadConnection;
+
+  public AssignmentDaoImpl(ThreadConnection threadConnection) {
+    this.threadConnection = threadConnection;
+  }
+
   @Override
   public void add(Assignment assignment) {
     Connection con = null;
     try {
-      con = DriverManager.getConnection(
-          "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
+      con = threadConnection.get(); // 현재 스레드에 보관된 Connection 객체를 꺼낸다. 없으면 만들어준다.
 
       con.setAutoCommit(false);
       try (PreparedStatement pstmt = con.prepareStatement(
@@ -34,16 +39,6 @@ public class AssignmentDaoImpl implements AssignmentDao {
 
     } catch (Exception e) {
       throw new DaoException("데이터 입력 오류", e);
-
-    } finally {
-      try {
-        con.setAutoCommit(true);
-      } catch (Exception e) {
-      }
-      try {
-        con.close();
-      } catch (Exception e) {
-      }
     }
   }
 
@@ -51,8 +46,7 @@ public class AssignmentDaoImpl implements AssignmentDao {
   public int delete(int no) {
     Connection con = null;
     try {
-      con = DriverManager.getConnection(
-          "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
+      con = threadConnection.get(); // 현재 스레드에 보관된 Connection 객체를 꺼낸다. 없으면 만들어준다.
 
       try (PreparedStatement pstmt = con.prepareStatement(
           "delete from assignments where assignment_no=?")) {
@@ -62,11 +56,6 @@ public class AssignmentDaoImpl implements AssignmentDao {
       }
     } catch (Exception e) {
       throw new DaoException("데이터 삭제 오류", e);
-    } finally {
-      try {
-        con.close();
-      } catch (Exception e) {
-      }
     }
   }
 
@@ -74,8 +63,7 @@ public class AssignmentDaoImpl implements AssignmentDao {
   public List<Assignment> findAll() {
     Connection con = null;
     try {
-      con = DriverManager.getConnection(
-          "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
+      con = threadConnection.get(); // 현재 스레드에 보관된 Connection 객체를 꺼낸다. 없으면 만들어준다.
 
       try (PreparedStatement pstmt = con.prepareStatement(
           "select assignment_no, title, deadline from assignments order by assignment_no desc");
@@ -95,11 +83,6 @@ public class AssignmentDaoImpl implements AssignmentDao {
       }
     } catch (Exception e) {
       throw new DaoException("데이터 가져오기 오류", e);
-    } finally {
-      try {
-        con.close();
-      } catch (Exception e) {
-      }
     }
   }
 
@@ -107,8 +90,7 @@ public class AssignmentDaoImpl implements AssignmentDao {
   public Assignment findBy(int no) {
     Connection con = null;
     try {
-      con = DriverManager.getConnection(
-          "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
+      con = threadConnection.get(); // 현재 스레드에 보관된 Connection 객체를 꺼낸다. 없으면 만들어준다.
 
       try (PreparedStatement pstmt = con.prepareStatement(
           "select * from assignments where assignment_no=?")) {
@@ -130,11 +112,6 @@ public class AssignmentDaoImpl implements AssignmentDao {
       }
     } catch (Exception e) {
       throw new DaoException("데이터 가져오기 오류", e);
-    } finally {
-      try {
-        con.close();
-      } catch (Exception e) {
-      }
     }
   }
 
@@ -142,8 +119,8 @@ public class AssignmentDaoImpl implements AssignmentDao {
   public int update(Assignment assignment) {
     Connection con = null;
     try {
-      con = DriverManager.getConnection(
-          "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
+      con = threadConnection.get(); // 현재 스레드에 보관된 Connection 객체를 꺼낸다. 없으면 만들어준다.
+
       try (PreparedStatement pstmt = con.prepareStatement(
           "update assignments set title=?, content=?, deadline=? where assignment_no=?")) {
 
@@ -156,11 +133,6 @@ public class AssignmentDaoImpl implements AssignmentDao {
       }
     } catch (Exception e) {
       throw new DaoException("데이터 변경 오류", e);
-    } finally {
-      try {
-        con.close();
-      } catch (Exception e) {
-      }
     }
   }
 }

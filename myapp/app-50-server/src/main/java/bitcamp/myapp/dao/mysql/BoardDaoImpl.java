@@ -51,10 +51,6 @@ public class BoardDaoImpl implements BoardDao {
       throw new DaoException("데이터 입력 오류", e);
     } finally {
       try {
-        con.setAutoCommit(true);
-      } catch (Exception e) {
-      }
-      try {
         con.close();
       } catch (Exception e) {
       }

@@ -37,10 +37,6 @@ public class AssignmentDaoImpl implements AssignmentDao {
 
     } finally {
       try {
-        con.setAutoCommit(true);
-      } catch (Exception e) {
-      }
-      try {
         con.close();
       } catch (Exception e) {
       }
