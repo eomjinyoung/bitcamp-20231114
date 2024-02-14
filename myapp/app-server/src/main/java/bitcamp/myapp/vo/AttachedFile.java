@@ -29,4 +29,9 @@ public class AttachedFile {
   public void setBoardNo(int boardNo) {
     this.boardNo = boardNo;
   }
+
+  public AttachedFile filePath(String filePath) {
+    this.filePath = filePath;
+    return this;
+  }
 }

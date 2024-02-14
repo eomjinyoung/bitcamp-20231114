@@ -24,7 +24,8 @@ public class BoardDaoImpl implements BoardDao {
   public void add(Board board) {
     try (Connection con = connectionPool.getConnection();
         PreparedStatement pstmt = con.prepareStatement(
-            "insert into boards(title,content,writer,category) values(?,?,?,?)")) {
+            "insert into boards(title,content,writer,category) values(?,?,?,?)",
+            PreparedStatement.RETURN_GENERATED_KEYS)) {
 
       pstmt.setString(1, board.getTitle());
       pstmt.setString(2, board.getContent());
@@ -32,6 +33,12 @@ public class BoardDaoImpl implements BoardDao {
       pstmt.setInt(4, category);
 
       pstmt.executeUpdate();
+
+      // 자동 생성된 PK 값을 가져와서 Board 객체에 저장한다.
+      try (ResultSet keyRs = pstmt.getGeneratedKeys()) {
+        keyRs.next();
+        board.setNo(keyRs.getInt(1));
+      }
 
 
     } catch (Exception e) {

@@ -2,9 +2,11 @@ package bitcamp.myapp;
 
 import bitcamp.menu.MenuGroup;
 import bitcamp.myapp.dao.AssignmentDao;
+import bitcamp.myapp.dao.AttachedFileDao;
 import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.dao.MemberDao;
 import bitcamp.myapp.dao.mysql.AssignmentDaoImpl;
+import bitcamp.myapp.dao.mysql.AttachedFileDaoImpl;
 import bitcamp.myapp.dao.mysql.BoardDaoImpl;
 import bitcamp.myapp.dao.mysql.MemberDaoImpl;
 import bitcamp.myapp.handler.AboutHandler;
@@ -45,6 +47,7 @@ public class ServerApp {
   BoardDao greetingDao;
   AssignmentDao assignmentDao;
   MemberDao memberDao;
+  AttachedFileDao attachedFileDao;
 
   MenuGroup mainMenu;
 
@@ -72,6 +75,7 @@ public class ServerApp {
       greetingDao = new BoardDaoImpl(connectionPool, 2);
       assignmentDao = new AssignmentDaoImpl(connectionPool);
       memberDao = new MemberDaoImpl(connectionPool);
+      attachedFileDao = new AttachedFileDaoImpl(connectionPool);
 
     } catch (Exception e) {
       System.out.println("통신 오류!");
@@ -90,7 +94,7 @@ public class ServerApp {
     assignmentMenu.addItem("목록", new AssignmentListHandler(assignmentDao));
 
     MenuGroup boardMenu = mainMenu.addGroup("게시글");
-    boardMenu.addItem("등록", new BoardAddHandler(txManager, boardDao));
+    boardMenu.addItem("등록", new BoardAddHandler(txManager, boardDao, attachedFileDao));
     boardMenu.addItem("조회", new BoardViewHandler(boardDao));
     boardMenu.addItem("변경", new BoardModifyHandler(boardDao));
     boardMenu.addItem("삭제", new BoardDeleteHandler(boardDao));
@@ -104,7 +108,7 @@ public class ServerApp {
     memberMenu.addItem("목록", new MemberListHandler(memberDao));
 
     MenuGroup greetingMenu = mainMenu.addGroup("가입인사");
-    greetingMenu.addItem("등록", new BoardAddHandler(txManager, greetingDao));
+    greetingMenu.addItem("등록", new BoardAddHandler(txManager, greetingDao, attachedFileDao));
     greetingMenu.addItem("조회", new BoardViewHandler(greetingDao));
     greetingMenu.addItem("변경", new BoardModifyHandler(greetingDao));
     greetingMenu.addItem("삭제", new BoardDeleteHandler(greetingDao));
@@ -124,7 +128,7 @@ public class ServerApp {
     } catch (Exception e) {
       System.out.println("서버 소켓 생성 오류!");
       e.printStackTrace();
-      
+
     } finally {
       connectionPool.closeAll();
     }
