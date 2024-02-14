@@ -35,3 +35,16 @@ public class BoardViewHandler extends AbstractMenuHandler {
     }
   }
 }
+/*
+[조회]
+번호? 7
+번호: 7
+제목: a2
+내용: aa2
+작성자: a
+작성일: 2024-02-14 00:00:00
+첨부파일:
+  a1.gif
+  a2.gif
+  a3.gif
+ */
