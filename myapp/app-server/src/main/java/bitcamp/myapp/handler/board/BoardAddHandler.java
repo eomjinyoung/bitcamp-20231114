@@ -58,6 +58,7 @@ public class BoardAddHandler extends AbstractMenuHandler {
         txManager.rollback();
       } catch (Exception e2) {
       }
+      prompt.println("게시글 등록 오류!");
     }
   }
 }
