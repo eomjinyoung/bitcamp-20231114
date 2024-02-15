@@ -3,8 +3,11 @@ package bitcamp.myapp.handler.board;
 import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.myapp.dao.AttachedFileDao;
 import bitcamp.myapp.dao.BoardDao;
+import bitcamp.myapp.vo.AttachedFile;
 import bitcamp.myapp.vo.Board;
 import bitcamp.util.Prompt;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BoardModifyHandler extends AbstractMenuHandler {
 
@@ -34,7 +37,27 @@ public class BoardModifyHandler extends AbstractMenuHandler {
       board.setWriter(prompt.input("작성자(%s)? ", oldBoard.getWriter()));
       board.setCreatedDate(oldBoard.getCreatedDate());
 
+      prompt.println("첨부파일:");
+
+      List<AttachedFile> files = attachedFileDao.findAllByBoardNo(no);
+      for (AttachedFile file : files) {
+        if (prompt.input("  %s 삭제하시겠습니까? (y/N)", file.getFilePath()).equalsIgnoreCase("y")) {
+          attachedFileDao.delete(file.getNo());
+        }
+      }
+
+      List<AttachedFile> newFiles = new ArrayList<>();
+      while (true) {
+        String filepath = prompt.input("추가할 파일?(종료: 그냥 엔터) ");
+        if (filepath.length() == 0) {
+          break;
+        }
+        newFiles.add(new AttachedFile().filePath(filepath).boardNo(no));
+      }
+
       boardDao.update(board);
+      attachedFileDao.addAll(newFiles);
+      
       prompt.println("게시글을 변경했습니다.");
 
     } catch (Exception e) {

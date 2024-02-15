@@ -34,4 +34,9 @@ public class AttachedFile {
     this.filePath = filePath;
     return this;
   }
+
+  public AttachedFile boardNo(int boardNo) {
+    this.boardNo = boardNo;
+    return this;
+  }
 }
