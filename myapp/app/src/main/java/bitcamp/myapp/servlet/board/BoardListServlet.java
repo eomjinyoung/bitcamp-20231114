@@ -28,24 +28,47 @@ public class BoardListServlet extends GenericServlet {
   public void service(ServletRequest servletRequest, ServletResponse servletResponse)
       throws ServletException, IOException {
 
-    servletResponse.setContentType("text/plain;charset=UTF-8");
+    servletResponse.setContentType("text/html;charset=UTF-8");
     PrintWriter out = servletResponse.getWriter();
 
+    out.println("<!DOCTYPE html>");
+    out.println("<html lang='en'>");
+    out.println("<head>");
+    out.println("  <meta charset='UTF-8'>");
+    out.println("  <title>비트캠프 데브옵스 5기</title>");
+    out.println("</head>");
+    out.println("<body>");
+    out.println("<h1>게시글</h1>");
+
     try {
-      out.printf("%-4s\t%-20s\t%10s\t%s\t%s\n", "No", "Title", "Writer", "Date", "Files");
+      out.println("<table border='1'>");
+      out.println("    <thead>");
+      out.println("    <tr> <th>번호</th> <th>제목</th> <th>작성자</th> <th>등록일</th> <th>첨부파일</th> </tr>");
+      out.println("    </thead>");
+      out.println("    <tbody>");
 
       List<Board> list = boardDao.findAll();
 
       for (Board board : list) {
-        out.printf("%-4d\t%-20s\t%10s\t%4$tY-%4$tm-%4$td\t%5$d\n",
+        out.printf("<tr> <td>%d</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%d</td> </tr>\n",
             board.getNo(),
             board.getTitle(),
             board.getWriter().getName(),
             board.getCreatedDate(),
             board.getFileCount());
       }
+
+      out.println("    </tbody>");
+      out.println("</table>");
+
     } catch (Exception e) {
-      out.println("목록 오류!");
+      out.println("<p>목록 오류!</p>");
+      out.println("<pre>");
+      e.printStackTrace(out);
+      out.println("</pre>");
     }
+
+    out.println("</body>");
+    out.println("</html>");
   }
 }
