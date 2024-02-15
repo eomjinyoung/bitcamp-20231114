@@ -38,9 +38,12 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
+import org.apache.catalina.webresources.DirResourceSet;
+import org.apache.catalina.webresources.StandardRoot;
 
 public class App {
 
@@ -84,6 +87,20 @@ public class App {
         new File("src/main/webapp").getAbsolutePath() // 웹 애플리케이션 파일이 있는 실제 경로
     );
     ctx.setReloadable(true);
+
+    // 웹 애플리케이션 기타 정보 설정
+    WebResourceRoot resources = new StandardRoot(ctx);
+
+    // 웹 애플리케이션의 서블릿 클래스 등록
+    resources.addPreResources(new DirResourceSet(
+        resources, // 루트 웹 애플리케이션 정보
+        "/WEB-INF/classes", // 서블릿 클래스 파일의 위치 정보
+        new File("build/classes/java/main").getAbsolutePath(), // 서블릿 클래스 파일이 있는 실제 경로
+        "/" // 웹 애플리케이션 내부 경로
+    ));
+
+    // 웹 애플리케이션 설정 정보를 웹 애플리케이션 환경 정보에 등록
+    ctx.setResources(resources);
 
     // 톰캣 서버 구동
     tomcat.start();
