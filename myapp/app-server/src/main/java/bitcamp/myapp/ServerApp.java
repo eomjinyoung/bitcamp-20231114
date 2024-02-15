@@ -17,6 +17,7 @@ import bitcamp.myapp.handler.assignment.AssignmentListHandler;
 import bitcamp.myapp.handler.assignment.AssignmentModifyHandler;
 import bitcamp.myapp.handler.assignment.AssignmentViewHandler;
 import bitcamp.myapp.handler.auth.LoginHandler;
+import bitcamp.myapp.handler.auth.LogoutHandler;
 import bitcamp.myapp.handler.board.BoardAddHandler;
 import bitcamp.myapp.handler.board.BoardDeleteHandler;
 import bitcamp.myapp.handler.board.BoardListHandler;
@@ -88,6 +89,7 @@ public class ServerApp {
     mainMenu = MenuGroup.getInstance("메인");
 
     mainMenu.addItem("로그인", new LoginHandler(memberDao));
+    mainMenu.addItem("로그아웃", new LogoutHandler());
 
     MenuGroup assignmentMenu = mainMenu.addGroup("과제");
     assignmentMenu.addItem("등록", new AssignmentAddHandler(txManager, assignmentDao));

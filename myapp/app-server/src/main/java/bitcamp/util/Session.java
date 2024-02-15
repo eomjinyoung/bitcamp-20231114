@@ -15,4 +15,8 @@ public class Session {
     return attrMap.get(name);
   }
 
+  public void invalidate() {
+    attrMap.clear();
+  }
+
 }
