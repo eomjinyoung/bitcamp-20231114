@@ -20,6 +20,7 @@ public class LoginHandler extends AbstractMenuHandler {
 
     Member member = memberDao.findByEmailAndPassword(email, password);
     if (member != null) {
+      prompt.getSession().setAttribute("loginUser", member);
       prompt.printf("%s 님 환영합니다.\n", member.getName());
     } else {
       prompt.println("이메일 또는 암호가 맞지 않습니다.");
