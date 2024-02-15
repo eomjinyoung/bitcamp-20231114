@@ -13,6 +13,9 @@ dependencies {
     // JSON 라이브러리
     //implementation 'com.google.code.gson:gson:2.10.1'
 
+    // 임베디드 Tomcat 서버
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.85'
+
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'com.google.guava:guava:32.1.1-jre'
@@ -25,7 +28,7 @@ java {
 }
 
 application {
-    mainClass = 'bitcamp.myapp.ClientApp'
+    mainClass = 'bitcamp.myapp.App'
 }
 
 tasks.named('test') {

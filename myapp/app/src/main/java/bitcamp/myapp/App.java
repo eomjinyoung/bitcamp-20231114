@@ -33,12 +33,16 @@ import bitcamp.util.Prompt;
 import bitcamp.util.TransactionManager;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import org.apache.catalina.connector.Connector;
+import org.apache.catalina.core.StandardContext;
+import org.apache.catalina.startup.Tomcat;
 
-public class ServerApp {
+public class App {
 
   ExecutorService executorService = Executors.newCachedThreadPool();
 
@@ -53,14 +57,41 @@ public class ServerApp {
 
   MenuGroup mainMenu;
 
-  ServerApp() {
+  App() {
     prepareDatabase();
     prepareMenu();
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     System.out.println("과제관리 시스템 서버 실행!");
-    new ServerApp().run();
+
+    // 톰캣 서버를 구동시키는 객체 준비
+    Tomcat tomcat = new Tomcat();
+
+    // 서버의 포트 번호 설정
+    tomcat.setPort(8888);
+
+    // 톰캣 서버를 실행하는 동안 사용할 임시 폴더 지정
+    tomcat.setBaseDir("./temp");
+
+    // 톰캣 서버의 연결 정보를 설정
+    Connector connector = tomcat.getConnector();
+    connector.setURIEncoding("UTF-8");
+
+    // 톰캣 서버에 배포할 웹 애플리케이션의 환경 정보 준비
+    StandardContext ctx = (StandardContext) tomcat.addWebapp(
+        "/", // 컨텍스트 경로(웹 애플리케이션 경로)
+        new File("src/main/webapp").getAbsolutePath() // 웹 애플리케이션 파일이 있는 실제 경로
+    );
+    ctx.setReloadable(true);
+
+    // 톰캣 서버 구동
+    tomcat.start();
+
+    // 톰캣 서버를 구동한 후 종료될 때까지 JVM을 끝내지 말고 기다린다.
+    tomcat.getServer().await();
+
+    System.out.println("서버 종료!");
   }
 
   void prepareDatabase() {
