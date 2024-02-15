@@ -20,6 +20,8 @@ public class LoginHandler extends AbstractMenuHandler {
 
     Member member = memberDao.findByEmailAndPassword(email, password);
     if (member != null) {
+//      prompt.setLoginUser(member);
+//      prompt.setAttribute("loginUser", member);
       prompt.getSession().setAttribute("loginUser", member);
       prompt.printf("%s 님 환영합니다.\n", member.getName());
     } else {

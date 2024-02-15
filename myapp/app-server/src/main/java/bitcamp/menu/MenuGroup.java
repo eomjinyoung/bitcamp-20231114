@@ -55,6 +55,8 @@ public class MenuGroup extends AbstractMenu {
   }
 
   private String getLoginUsername(Prompt prompt) {
+//    Member loginUser = prompt.getLoginUser();
+//    Member loginUser = (Member) prompt.getAttribute("loginUser");
     Member loginUser = (Member) prompt.getSession().getAttribute("loginUser");
     if (loginUser != null) {
       return AnsiEscape.ANSI_BOLD_RED + loginUser.getName() + ":" + AnsiEscape.ANSI_CLEAR;
