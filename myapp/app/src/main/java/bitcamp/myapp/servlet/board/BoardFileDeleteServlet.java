@@ -5,30 +5,25 @@ import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.dao.mysql.AttachedFileDaoImpl;
 import bitcamp.myapp.dao.mysql.BoardDaoImpl;
 import bitcamp.myapp.vo.AttachedFile;
-import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.Member;
 import bitcamp.util.DBConnectionPool;
-import bitcamp.util.TransactionManager;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/add")
-public class BoardAddServlet extends HttpServlet {
+@WebServlet("/board/file/delete")
+public class BoardFileDeleteServlet extends HttpServlet {
 
-  private TransactionManager txManager;
   private BoardDao boardDao;
   private AttachedFileDao attachedFileDao;
 
-  public BoardAddServlet() {
+  public BoardFileDeleteServlet() {
     DBConnectionPool connectionPool = new DBConnectionPool(
         "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
-    txManager = new TransactionManager(connectionPool);
     this.boardDao = new BoardDaoImpl(connectionPool, 1);
     this.attachedFileDao = new AttachedFileDaoImpl(connectionPool);
   }
@@ -57,44 +52,33 @@ public class BoardAddServlet extends HttpServlet {
       return;
     }
 
-    Board board = new Board();
-    board.setTitle(request.getParameter("title"));
-    board.setContent(request.getParameter("content"));
-    board.setWriter(loginUser);
-
-    ArrayList<AttachedFile> attachedFiles = new ArrayList<>();
-    String[] files = request.getParameterValues("files");
-    if (files != null) {
-      for (String file : files) {
-        if (file.length() == 0) {
-          continue;
-        }
-        attachedFiles.add(new AttachedFile().filePath(file));
-      }
-    }
-
     try {
-      txManager.startTransaction();
+      int fileNo = Integer.parseInt(request.getParameter("no"));
 
-      boardDao.add(board);
-
-      if (attachedFiles.size() > 0) {
-        for (AttachedFile attachedFile : attachedFiles) {
-          attachedFile.setBoardNo(board.getNo());
-        }
-        attachedFileDao.addAll(attachedFiles);
+      AttachedFile file = attachedFileDao.findByNo(fileNo);
+      if (file == null) {
+        out.println("<p>첨부파일 번호가 유효하지 않습니다.</p>");
+        out.println("</body>");
+        out.println("</html>");
+        return;
       }
 
-      txManager.commit();
+      Member writer = boardDao.findBy(file.getBoardNo()).getWriter();
+      if (writer.getNo() != loginUser.getNo()) {
+        out.println("<p>권한이 없습니다.</p>");
+        out.println("</body>");
+        out.println("</html>");
+        return;
+      }
 
-      out.println("<p>게시글을 등록했습니다.</p>");
+      attachedFileDao.delete(fileNo);
+      out.println("<script>");
+      out.println("  location.href = document.referrer;");
+      out.println("</script>");
+//      out.println("<p>첨부파일을 삭제했습니다!</p>");
 
     } catch (Exception e) {
-      try {
-        txManager.rollback();
-      } catch (Exception e2) {
-      }
-      out.println("<p>게시글 등록 오류!</p>");
+      out.println("<p>삭제 오류!</p>");
       out.println("<pre>");
       e.printStackTrace(out);
       out.println("</pre>");

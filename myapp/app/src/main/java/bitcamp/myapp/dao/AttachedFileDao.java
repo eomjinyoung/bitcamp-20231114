@@ -14,4 +14,6 @@ public interface AttachedFileDao {
   int deleteAll(int boardNo);
 
   List<AttachedFile> findAllByBoardNo(int boardNo);
+
+  AttachedFile findByNo(int no);
 }
