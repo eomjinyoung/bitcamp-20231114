@@ -6,25 +6,29 @@ import bitcamp.myapp.dao.mysql.AttachedFileDaoImpl;
 import bitcamp.myapp.dao.mysql.BoardDaoImpl;
 import bitcamp.myapp.vo.AttachedFile;
 import bitcamp.myapp.vo.Board;
+import bitcamp.myapp.vo.Member;
 import bitcamp.util.DBConnectionPool;
+import bitcamp.util.TransactionManager;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/view")
-public class BoardViewServlet extends HttpServlet {
+@WebServlet("/board/update")
+public class BoardUpdateServlet extends HttpServlet {
 
+  private TransactionManager txManager;
   private BoardDao boardDao;
   private AttachedFileDao attachedFileDao;
 
-  public BoardViewServlet() {
+  public BoardUpdateServlet() {
     DBConnectionPool connectionPool = new DBConnectionPool(
         "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
+    txManager = new TransactionManager(connectionPool);
     this.boardDao = new BoardDaoImpl(connectionPool, 1);
     this.attachedFileDao = new AttachedFileDaoImpl(connectionPool);
   }
@@ -45,6 +49,14 @@ public class BoardViewServlet extends HttpServlet {
     out.println("<body>");
     out.println("<h1>게시글</h1>");
 
+    Member loginUser = (Member) request.getSession().getAttribute("loginUser");
+    if (loginUser == null) {
+      out.println("<p>로그인하시기 바랍니다!</p>");
+      out.println("</body>");
+      out.println("</html>");
+      return;
+    }
+
     try {
       int no = Integer.parseInt(request.getParameter("no"));
 
@@ -56,38 +68,41 @@ public class BoardViewServlet extends HttpServlet {
         return;
       }
 
-      List<AttachedFile> files = attachedFileDao.findAllByBoardNo(no);
+      board.setTitle(request.getParameter("title"));
+      board.setContent(request.getParameter("content"));
 
-      out.println("<form action='/board/update'>");
-      out.println("<div>");
-      out.printf("  번호: <input readonly name='no' type='text' value='%d'>\n", board.getNo());
-      out.println("</div>");
-      out.println("<div>");
-      out.printf("  제목: <input name='title' type='text' value='%s'>\n", board.getTitle());
-      out.println("</div>");
-      out.println("<div>");
-      out.printf("  내용: <textarea name='content'>%s</textarea>\n", board.getContent());
-      out.println("</div>");
-      out.println("<div>");
-      out.printf("  작성자: <input readonly type='text' value='%s'>\n", board.getWriter().getName());
-      out.println("</div>");
-      out.println("<div>");
-      out.println("  첨부파일: <input multiple name='files' type='file'>");
-      out.println("  <ul>");
-      for (AttachedFile file : files) {
-        out.printf("    <li>%s <a href='/board/file/delete?no=%d'>삭제</a></li>\n",
-            file.getFilePath(),
-            file.getNo());
+      ArrayList<AttachedFile> attachedFiles = new ArrayList<>();
+      String[] files = request.getParameterValues("files");
+      if (files != null) {
+        for (String file : files) {
+          if (file.length() == 0) {
+            continue;
+          }
+          attachedFiles.add(new AttachedFile().filePath(file));
+        }
       }
-      out.println("  </ul>");
-      out.println("</div>");
-      out.println("<div>");
-      out.println("  <button>변경</button>");
-      out.println("</div>");
-      out.println("</form>");
+
+      txManager.startTransaction();
+
+      boardDao.update(board);
+
+      if (attachedFiles.size() > 0) {
+        for (AttachedFile attachedFile : attachedFiles) {
+          attachedFile.setBoardNo(board.getNo());
+        }
+        attachedFileDao.addAll(attachedFiles);
+      }
+
+      txManager.commit();
+
+      out.println("<p>게시글을 변경했습니다.</p>");
 
     } catch (Exception e) {
-      out.println("<p>조회 오류!</p>");
+      try {
+        txManager.rollback();
+      } catch (Exception e2) {
+      }
+      out.println("<p>게시글 등록 오류!</p>");
       out.println("<pre>");
       e.printStackTrace(out);
       out.println("</pre>");
