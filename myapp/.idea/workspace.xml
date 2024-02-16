@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/auth/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/auth/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/board/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +125,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/java/bitcamp/myapp",
-    "last_opened_file_path": "/Users/eomjinyoung/git/bitcamp-study/myapp/app-client/src/main/java/bitcamp/myapp",
+    "last_opened_file_path": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/webapp/auth",
     "project.structure.last.edited": "프로젝트",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -128,11 +134,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/webapp/auth" />
+      <recent name="$PROJECT_DIR$/app/src/main/webapp/board" />
+      <recent name="$PROJECT_DIR$/app/src/main/webapp" />
       <recent name="$PROJECT_DIR$/app-client/src/main/java/bitcamp/myapp" />
       <recent name="$PROJECT_DIR$/app-server" />
-      <recent name="$PROJECT_DIR$/app-client" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/app/src/test/resources" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="bitcamp.myapp.Prompt" />
@@ -140,11 +146,11 @@
       <recent name="bitcamp.myapp.AssignmentMenu" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="bitcamp.myapp.servlet.auth" />
       <recent name="bitcamp.myapp.servlet.board" />
       <recent name="bitcamp.myapp.handler.auth" />
       <recent name="bitcamp.myapp.dao.mysql" />
       <recent name="bitcamp.myapp.dao" />
-      <recent name="bitcamp.util" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.myapp [run]">
