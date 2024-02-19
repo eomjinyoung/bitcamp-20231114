@@ -9,7 +9,7 @@ public interface BoardDao {
 
   int delete(int no);
 
-  List<Board> findAll();
+  List<Board> findAll(int category);
 
   Board findBy(int no);
 

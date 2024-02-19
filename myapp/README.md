@@ -504,6 +504,10 @@
 - 세션을 이용해 로그인을 다루는 방법
 
 
+## 58. 리스너 및 웹 애플리케이션 저장소 활용하기
+
+- ServletContextListener 활용법
+- ServletContext 활용법
 
 
 
