@@ -1,8 +1,8 @@
-package bitcamp.myapp.servlet.member;
+package bitcamp.myapp.servlet.assignment;
 
-import bitcamp.myapp.dao.MemberDao;
-import bitcamp.myapp.dao.mysql.MemberDaoImpl;
-import bitcamp.myapp.vo.Member;
+import bitcamp.myapp.dao.AssignmentDao;
+import bitcamp.myapp.dao.mysql.AssignmentDaoImpl;
+import bitcamp.myapp.vo.Assignment;
 import bitcamp.util.DBConnectionPool;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/member/view")
-public class MemberViewServlet extends HttpServlet {
+@WebServlet("/assignment/view")
+public class AssignmentViewServlet extends HttpServlet {
 
-  private MemberDao memberDao;
+  private AssignmentDao assignmentDao;
 
-  public MemberViewServlet() {
+  public AssignmentViewServlet() {
     DBConnectionPool connectionPool = new DBConnectionPool(
         "jdbc:mysql://localhost/studydb", "study", "Bitcamp!@#123");
-    this.memberDao = new MemberDaoImpl(connectionPool);
+    this.assignmentDao = new AssignmentDaoImpl(connectionPool);
   }
 
   @Override
@@ -37,38 +37,36 @@ public class MemberViewServlet extends HttpServlet {
     out.println("  <title>비트캠프 데브옵스 5기</title>");
     out.println("</head>");
     out.println("<body>");
-    out.println("<h1>회원</h1>");
+    out.println("<h1>과제</h1>");
 
     try {
       int no = Integer.parseInt(request.getParameter("no"));
 
-      Member member = memberDao.findBy(no);
-      if (member == null) {
-        out.println("<p>회원 번호가 유효하지 않습니다.</p>");
+      Assignment assignment = assignmentDao.findBy(no);
+      if (assignment == null) {
+        out.println("<p>과제 번호가 유효하지 않습니다.</p>");
         out.println("</body>");
         out.println("</html>");
         return;
       }
 
-      out.println("<form action='/member/update'>");
+      out.println("<form action='/assignment/update'>");
       out.println("<div>");
-      out.printf("  번호: <input readonly name='no' type='text' value='%d'>\n", member.getNo());
+      out.printf("  번호: <input readonly name='no' type='text' value='%d'>\n", assignment.getNo());
       out.println("</div>");
       out.println("<div>");
-      out.printf("  이메일: <input name='email' type='text' value='%s'>\n", member.getEmail());
+      out.printf("  과제명: <input name='title' type='text' value='%s'>\n", assignment.getTitle());
       out.println("</div>");
       out.println("<div>");
-      out.printf("  이름: <input name='name' type='text' value='%s'>\n", member.getName());
+      out.printf("  내용: <textarea name='content'>%s</textarea>\n", assignment.getContent());
       out.println("</div>");
       out.println("<div>");
-      out.println("  암호: <input name='password' type='password'>");
-      out.println("</div>");
-      out.println("<div>");
-      out.printf("  가입일: <input readonly type='text' value='%s'>\n", member.getCreatedDate());
+      out.printf("  제출마감일: <input name='deadline' type='text' value='%s'>\n",
+          assignment.getDeadline());
       out.println("</div>");
       out.println("<div>");
       out.println("  <button>변경</button>");
-      out.printf("  <a href='/member/delete?no=%d'>[삭제]</a>\n", no);
+      out.printf("  <a href='/assignment/delete?no=%d'>[삭제]</a>\n", no);
       out.println("</div>");
       out.println("</form>");
 
@@ -82,4 +80,5 @@ public class MemberViewServlet extends HttpServlet {
     out.println("</body>");
     out.println("</html>");
   }
+
 }
