@@ -24,7 +24,7 @@ import javax.servlet.annotation.WebFilter;
 // => 필터를 정의할 때 순서에 의존하는 방식으로 프로그래밍 하지 말라.
 // => 필터의 실행 순서에 상관없이 각 필터가 독립적으로 동작하도록 작성하라.
 
-@WebFilter("/ex02/a/*")
+//@WebFilter("/ex02/a/*")
 public class Filter02 implements Filter {
 
   @Override
