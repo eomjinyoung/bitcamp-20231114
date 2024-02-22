@@ -10,6 +10,9 @@ dependencies {
     // 임베디드 Tomcat 서버
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.85'
 
+    // multipart/form-data 파일 업로드 처리
+    implementation 'commons-fileupload:commons-fileupload:1.5'
+
     testImplementation libs.junit.jupiter
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
