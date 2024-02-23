@@ -1325,5 +1325,6 @@
 - 실습 프로젝트
   - 59. GET/POST 요청을 구분하기
   - 60. refresh/redirect 다루기
+  - 61. forward/include 다루기
 - 최종 팀 프로젝트
 - 학습 점검 목록
