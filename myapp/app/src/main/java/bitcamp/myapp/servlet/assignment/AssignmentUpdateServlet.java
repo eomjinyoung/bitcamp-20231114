@@ -55,7 +55,8 @@ public class AssignmentUpdateServlet extends HttpServlet {
       assignment.setDeadline(Date.valueOf(request.getParameter("deadline")));
 
       assignmentDao.update(assignment);
-      out.println("<p>과제를 변경했습니다.</p>");
+      response.sendRedirect("list");
+      return;
 
     } catch (Exception e) {
       out.println("<p>과제 변경 오류!</p>");

@@ -40,8 +40,10 @@ public class AssignmentDeleteServlet extends HttpServlet {
 
       if (assignmentDao.delete(no) == 0) {
         out.println("<p>과제 번호가 유효하지 않습니다.</p>");
+        response.setHeader("Refresh", "1;url=list");
       } else {
-        out.println("<p>과제를 삭제했습니다.</p>");
+        response.sendRedirect("list");
+        return;
       }
 
     } catch (Exception e) {

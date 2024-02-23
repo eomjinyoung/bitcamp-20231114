@@ -45,7 +45,8 @@ public class AssignmentAddServlet extends HttpServlet {
 
       assignmentDao.add(assignment);
 
-      out.println("<p>과제를 등록했습니다.</p>");
+      response.sendRedirect("/assignment/list");
+      return;
 
     } catch (Exception e) {
       out.println("<p>과제 등록 오류!</p>");

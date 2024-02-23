@@ -40,8 +40,10 @@ public class MemberDeleteServlet extends HttpServlet {
 
       if (memberDao.delete(no) == -1) {
         out.println("<p>회원 번호가 유효하지 않습니다.</p>");
+        response.setHeader("Refresh", "1;url=list");
       } else {
-        out.println("<p>회원을 삭제했습니다.</p>");
+        response.sendRedirect("list");
+        return;
       }
 
     } catch (Exception e) {
