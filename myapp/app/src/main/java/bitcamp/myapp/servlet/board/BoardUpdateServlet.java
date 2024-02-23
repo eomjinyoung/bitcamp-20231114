@@ -103,7 +103,8 @@ public class BoardUpdateServlet extends HttpServlet {
 
       txManager.commit();
 
-      out.println("<p>변경했습니다.</p>");
+      response.sendRedirect("/board/list?category=" + category);
+      return;
 
     } catch (Exception e) {
       try {

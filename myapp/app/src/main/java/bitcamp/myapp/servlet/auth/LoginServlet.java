@@ -45,8 +45,10 @@ public class LoginServlet extends HttpServlet {
       if (member != null) {
         request.getSession().setAttribute("loginUser", member);
         out.printf("<p>%s 님 환영합니다.</p>\n", member.getName());
+        response.setHeader("Refresh", "1;url=/index.html");
       } else {
         out.println("<p>이메일 또는 암호가 맞지 않습니다.</p>");
+        response.setHeader("Refresh", "1;url=/auth/form.html");
       }
     } catch (Exception e) {
       out.println("<p>로그인 오류!</p>");

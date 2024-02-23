@@ -134,7 +134,8 @@ public class BoardAddServlet extends HttpServlet {
 
       txManager.commit();
 
-      out.println("<p>등록했습니다.</p>");
+      response.sendRedirect("/board/list?category=" + category);
+      return;
 
     } catch (Exception e) {
       try {

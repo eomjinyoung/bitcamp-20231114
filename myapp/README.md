@@ -519,15 +519,16 @@
 - HttpServlet의 doGet(), doPost를 이용하여 GET 요청과 POST 요청을 구분하여 처리하기
 - 로그인, 게시글 등록 및 변경, 회원 등록 및 변경, 과제 등록 및 변경에 적용
 
+## 60. refresh/redirect 다루기
 
+- 로그인 후 refresh 하기
+- 로그아웃 후 redirect 하기
+- 데이터 등록/변경/삭제 후 목록 페이지로 이동할 때 redirect 하기
 
-## 60. forward/include/refresh/redirect 다루기
+## 61. forward/include 다루기
 
 - 오류 메시지 출력에 forward 및 refresh 사용하기
 - 상단 메뉴 및 하단 정보 출력에 include 사용하기
-- 등록 완료 후 목록 페이지로 이동할 때 redirect 사용하기
-
-
 
 
 
