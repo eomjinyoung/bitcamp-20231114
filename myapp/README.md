@@ -527,8 +527,8 @@
 
 ## 61. forward/include 다루기
 
-- 오류 메시지 출력에 forward 및 refresh 사용하기
 - 상단 메뉴 및 하단 정보 출력에 include 사용하기
+- 오류 메시지 출력에 forward 사용하기
 
 
 
