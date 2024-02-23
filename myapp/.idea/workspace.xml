@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="" />
+    <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/java/com/eomcs/web/ex08/Servlet01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/java/com/eomcs/web/ex08/Servlet02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/java/com/eomcs/web/ex08/Servlet03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/java/com/eomcs/web/ex08/Servlet100.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/auth/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/auth/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/auth/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/auth/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardAddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardAddServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardDeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardDeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardFileDeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardFileDeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardFormServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardUpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardUpdateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardViewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/board/BoardViewServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/auth/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/auth/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servlet-app/app/src/main/java/com/eomcs/web/ex06/Servlet04.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/java/com/eomcs/web/ex06/Servlet04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servlet-app/app/src/main/java/com/eomcs/web/ex06/Servlet05.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/java/com/eomcs/web/ex06/Servlet05.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servlet-app/app/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

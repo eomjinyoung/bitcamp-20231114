@@ -514,6 +514,20 @@
   - 웹애플리케이션에서 공유할 객체를 보관하기에 적절하다.
   - 예) DB 커넥션, DAO, 트랜잭션 관리자 등
 
+## 59. GET/POST 요청을 구분하기
+
+- HttpServlet의 doGet(), doPost를 이용하여 GET 요청과 POST 요청을 구분하여 처리하기
+- 로그인, 게시글 등록 및 변경, 회원 등록 및 변경, 과제 등록 및 변경에 적용
+
+
+
+## 60. forward/include/refresh/redirect 다루기
+
+- 오류 메시지 출력에 forward 및 refresh 사용하기
+- 상단 메뉴 및 하단 정보 출력에 include 사용하기
+- 등록 완료 후 목록 페이지로 이동할 때 redirect 사용하기
+
+
 
 
 
@@ -563,11 +577,7 @@
 
 - 네이버 클라우드의 Image Optimizer 사용법
 
-## 62. forward/include/refresh/redirect 다루기
 
-- 오류 메시지 출력에 forward 및 refresh 사용하기
-- 상단 메뉴 및 하단 정보 출력에 include 사용하기
-- 등록 완료 후 목록 페이지로 이동할 때 redirect 사용하기
 
 ## 63. 쿠키와 ServletContext 보관소 활용하기
 
