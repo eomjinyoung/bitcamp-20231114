@@ -14,22 +14,49 @@
     애플리케이션 소개
   </description>
 
+  <context-param>
+    <param-name>jdbc.driver</param-name>
+    <param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>jdbc.url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/studydb</param-value>
+  </context-param>
+  <context-param>
+    <param-name>jdbc.username</param-name>
+    <param-value>study</param-value>
+  </context-param>
+  <context-param>
+    <param-name>jdbc.password</param-name>
+    <param-value>1111</param-value>
+  </context-param>
+
   <servlet>
-    <servlet-name>Servlet01</servlet-name>
-    <description>
-      서블릿 설명
-    </description>
-    <servlet-class>com.eomcs.web.ex01.Servlet01</servlet-class>
+    <servlet-name>Servlet03</servlet-name>
+    <servlet-class>com.eomcs.web.ex06.Servlet03</servlet-class>
+    <init-param>
+      <param-name>jdbc.driver</param-name>
+      <param-value>com.mysql.jdbc.Driver</param-value>
+    </init-param>
+    <init-param>
+      <param-name>jdbc.url</param-name>
+      <param-value>jdbc:mysql://localhost:3306/studydb</param-value>
+    </init-param>
+    <init-param>
+      <param-name>jdbc.username</param-name>
+      <param-value>study</param-value>
+    </init-param>
+    <init-param>
+      <param-name>jdbc.password</param-name>
+      <param-value>1111</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>Servlet01</servlet-name>
-    <url-pattern>/ex01/first</url-pattern>
+    <servlet-name>Servlet03</servlet-name>
+    <url-pattern>/ex06/s3</url-pattern>
   </servlet-mapping>
 
-  <servlet-mapping>
-    <servlet-name>Servlet01</servlet-name>
-    <url-pattern>/first</url-pattern>
-  </servlet-mapping>
 
 </web-app>
