@@ -59,44 +59,44 @@ public class LoginServlet extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    String email = request.getParameter("email");
-    String password = request.getParameter("password");
-
-    response.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = response.getWriter();
-
-    out.println("<!DOCTYPE html>");
-    out.println("<html lang='en'>");
-    out.println("<head>");
-    out.println("  <meta charset='UTF-8'>");
-    out.println("  <title>비트캠프 데브옵스 5기</title>");
-    out.println("</head>");
-    out.println("<body>");
-
-    request.getRequestDispatcher("/header").include(request, response);
-
-    out.println("<h1>로그인</h1>");
-
     try {
+      String email = request.getParameter("email");
+      String password = request.getParameter("password");
       Member member = memberDao.findByEmailAndPassword(email, password);
+
+      response.setContentType("text/html;charset=UTF-8");
+      PrintWriter out = response.getWriter();
+
+      out.println("<!DOCTYPE html>");
+      out.println("<html lang='en'>");
+      out.println("<head>");
+      out.println("  <meta charset='UTF-8'>");
+      out.println("  <title>비트캠프 데브옵스 5기</title>");
+      out.println("</head>");
+      out.println("<body>");
+
+      request.getRequestDispatcher("/header").include(request, response);
+
+      out.println("<h1>로그인</h1>");
+
       if (member != null) {
         request.getSession().setAttribute("loginUser", member);
         out.printf("<p>%s 님 환영합니다.</p>\n", member.getName());
         response.setHeader("Refresh", "1;url=/index.html");
+
       } else {
         out.println("<p>이메일 또는 암호가 맞지 않습니다.</p>");
         response.setHeader("Refresh", "1;url=/auth/login");
       }
+      request.getRequestDispatcher("/footer").include(request, response);
+
+      out.println("</body>");
+      out.println("</html>");
+
     } catch (Exception e) {
-      out.println("<p>로그인 오류!</p>");
-      out.println("<pre>");
-      e.printStackTrace(out);
-      out.println("</pre>");
+      request.setAttribute("message", "로그인 오류!");
+      request.setAttribute("exception", e);
+      request.getRequestDispatcher("/error").forward(request, response);
     }
-
-    request.getRequestDispatcher("/footer").include(request, response);
-
-    out.println("</body>");
-    out.println("</html>");
   }
 }

@@ -1328,3 +1328,18 @@
   - 61. forward/include 다루기
 - 최종 팀 프로젝트
 - 학습 점검 목록
+  - GET/POST 프로토콜의 특징을 이해하고 프로젝트에 적용할 수 있는가? []
+  - refresh와 redirect의 특징을 설명할 수 있는가? []
+  - forward/include의 특징을 설명할 수 있는가? []
+
+### 71일(2024-02-26,월)
+
+- 강의 내용
+  - 복습(1)
+  - forward/include와 ServletRequest, ServletResponse 공유
+- 과제
+  - 개인 과제
+- 실습 프로젝트
+  - 61. forward/include 다루기(계속)
+- 최종 팀 프로젝트
+- 학습 점검 목록

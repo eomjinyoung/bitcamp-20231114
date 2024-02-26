@@ -34,6 +34,8 @@ public class HeaderServlet extends HttpServlet {
       out.println("  <a href='/auth/logout'>로그아웃</a>");
     }
 
+    out.println("  <a href='/about.html'>소개</a>");
+
     out.println("</header>");
 
   }

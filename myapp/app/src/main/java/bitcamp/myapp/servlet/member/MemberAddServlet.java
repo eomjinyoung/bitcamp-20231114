@@ -76,30 +76,9 @@ public class MemberAddServlet extends HttpServlet {
       response.sendRedirect("list");
 
     } catch (Exception e) {
-      response.setContentType("text/html;charset=UTF-8");
-      PrintWriter out = response.getWriter();
-
-      out.println("<!DOCTYPE html>");
-      out.println("<html lang='en'>");
-      out.println("<head>");
-      out.println("  <meta charset='UTF-8'>");
-      out.println("  <title>비트캠프 데브옵스 5기</title>");
-      out.println("</head>");
-      out.println("<body>");
-
-      request.getRequestDispatcher("/header").include(request, response);
-
-      out.println("<h1>회원</h1>");
-
-      out.println("<p>회원등록 오류!</p>");
-      out.println("<pre>");
-      e.printStackTrace(out);
-      out.println("</pre>");
-
-      request.getRequestDispatcher("/footer").include(request, response);
-
-      out.println("</body>");
-      out.println("</html>");
+      request.setAttribute("message", "등록 오류!");
+      request.setAttribute("exception", e);
+      request.getRequestDispatcher("/error").forward(request, response);
     }
   }
 }
