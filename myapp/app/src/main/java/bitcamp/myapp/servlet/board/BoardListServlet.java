@@ -25,34 +25,33 @@ public class BoardListServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    int category = Integer.valueOf(request.getParameter("category"));
-    String title = category == 1 ? "게시글" : "가입인사";
-
-    response.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = response.getWriter();
-
-    out.println("<!DOCTYPE html>");
-    out.println("<html lang='en'>");
-    out.println("<head>");
-    out.println("  <meta charset='UTF-8'>");
-    out.println("  <title>비트캠프 데브옵스 5기</title>");
-    out.println("</head>");
-    out.println("<body>");
-
-    request.getRequestDispatcher("/header").include(request, response);
-
-    out.printf("<h1>%s</h1>\n", title);
-
-    out.printf("<a href='/board/add?category=%d'>새 글</a>\n", category);
-
+    String title = "";
     try {
+      int category = Integer.valueOf(request.getParameter("category"));
+      title = category == 1 ? "게시글" : "가입인사";
+
+      List<Board> list = boardDao.findAll(category);
+
+      response.setContentType("text/html;charset=UTF-8");
+      PrintWriter out = response.getWriter();
+
+      out.println("<!DOCTYPE html>");
+      out.println("<html lang='en'>");
+      out.println("<head>");
+      out.println("  <meta charset='UTF-8'>");
+      out.println("  <title>비트캠프 데브옵스 5기</title>");
+      out.println("</head>");
+      out.println("<body>");
+
+      request.getRequestDispatcher("/header").include(request, response);
+
+      out.printf("<h1>%s</h1>\n", title);
+      out.printf("<a href='/board/add?category=%d'>새 글</a>\n", category);
       out.println("<table border='1'>");
       out.println("    <thead>");
       out.println("    <tr> <th>번호</th> <th>제목</th> <th>작성자</th> <th>등록일</th> <th>첨부파일</th> </tr>");
       out.println("    </thead>");
       out.println("    <tbody>");
-
-      List<Board> list = boardDao.findAll(category);
 
       for (Board board : list) {
         out.printf(
@@ -68,16 +67,15 @@ public class BoardListServlet extends HttpServlet {
       out.println("    </tbody>");
       out.println("</table>");
 
+      request.getRequestDispatcher("/footer").include(request, response);
+
+      out.println("</body>");
+      out.println("</html>");
+
     } catch (Exception e) {
-      out.println("<p>목록 오류!</p>");
-      out.println("<pre>");
-      e.printStackTrace(out);
-      out.println("</pre>");
+      request.setAttribute("message", String.format("%s 목록 오류!", title));
+      request.setAttribute("exception", e);
+      request.getRequestDispatcher("/error").forward(request, response);
     }
-
-    request.getRequestDispatcher("/footer").include(request, response);
-
-    out.println("</body>");
-    out.println("</html>");
   }
 }
