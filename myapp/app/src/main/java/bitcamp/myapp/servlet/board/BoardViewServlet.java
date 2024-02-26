@@ -43,6 +43,9 @@ public class BoardViewServlet extends HttpServlet {
     out.println("  <title>비트캠프 데브옵스 5기</title>");
     out.println("</head>");
     out.println("<body>");
+
+    request.getRequestDispatcher("/header").include(request, response);
+
     out.printf("<h1>%s</h1>\n", title);
 
     try {
@@ -51,6 +54,9 @@ public class BoardViewServlet extends HttpServlet {
       Board board = boardDao.findBy(no);
       if (board == null) {
         out.println("<p>번호가 유효하지 않습니다.</p>");
+
+        request.getRequestDispatcher("/footer").include(request, response);
+
         out.println("</body>");
         out.println("</html>");
         return;
@@ -99,6 +105,8 @@ public class BoardViewServlet extends HttpServlet {
       e.printStackTrace(out);
       out.println("</pre>");
     }
+
+    request.getRequestDispatcher("/footer").include(request, response);
 
     out.println("</body>");
     out.println("</html>");

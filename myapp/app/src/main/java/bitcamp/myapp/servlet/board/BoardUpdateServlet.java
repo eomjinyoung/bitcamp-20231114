@@ -47,6 +47,9 @@ public class BoardUpdateServlet extends HttpServlet {
     out.println("  <title>비트캠프 데브옵스 5기</title>");
     out.println("</head>");
     out.println("<body>");
+
+    request.getRequestDispatcher("/header").include(request, response);
+
     out.printf("<h1>%s</h1>\n", title);
 
     Member loginUser = (Member) request.getSession().getAttribute("loginUser");
@@ -63,11 +66,17 @@ public class BoardUpdateServlet extends HttpServlet {
       Board board = boardDao.findBy(no);
       if (board == null) {
         out.println("<p>번호가 유효하지 않습니다.</p>");
+
+        request.getRequestDispatcher("/footer").include(request, response);
+
         out.println("</body>");
         out.println("</html>");
         return;
       } else if (board.getWriter().getNo() != loginUser.getNo()) {
         out.println("<p>권한이 없습니다.</p>");
+
+        request.getRequestDispatcher("/footer").include(request, response);
+
         out.println("</body>");
         out.println("</html>");
         return;
@@ -116,6 +125,8 @@ public class BoardUpdateServlet extends HttpServlet {
       e.printStackTrace(out);
       out.println("</pre>");
     }
+
+    request.getRequestDispatcher("/footer").include(request, response);
 
     out.println("</body>");
     out.println("</html>");
