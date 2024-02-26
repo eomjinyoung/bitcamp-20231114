@@ -9,18 +9,24 @@ import bitcamp.util.TransactionManager;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.UUID;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
+@MultipartConfig(maxFileSize = 1024 * 1024 * 10)
 @WebServlet("/board/add")
 public class BoardAddServlet extends HttpServlet {
 
   private TransactionManager txManager;
   private BoardDao boardDao;
   private AttachedFileDao attachedFileDao;
+  private String uploadDir;
 
   @Override
   public void init() {
@@ -28,6 +34,7 @@ public class BoardAddServlet extends HttpServlet {
     this.boardDao = (BoardDao) this.getServletContext().getAttribute("boardDao");
     this.attachedFileDao = (AttachedFileDao) this.getServletContext()
         .getAttribute("attachedFileDao");
+    uploadDir = this.getServletContext().getRealPath("/upload/board");
   }
 
   @Override
@@ -52,7 +59,9 @@ public class BoardAddServlet extends HttpServlet {
 
     out.printf("<h1>%s</h1>\n", title);
 
-    out.printf("<form action='/board/add?category=%d' method='post'>\n", category);
+    out.printf(
+        "<form action='/board/add?category=%d' method='post' enctype='multipart/form-data'>\n",
+        category);
     out.printf("<input name='category' type='hidden' value='%d'>\n", category);
     out.println("<div>");
     out.println("      제목: <input name='title' type='text'>");
@@ -82,7 +91,9 @@ public class BoardAddServlet extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
+    request.setCharacterEncoding("UTF-8");
     String title = "";
+
     try {
       int category = Integer.valueOf(request.getParameter("category"));
       title = category == 1 ? "게시글" : "가입인사";
@@ -101,14 +112,14 @@ public class BoardAddServlet extends HttpServlet {
       ArrayList<AttachedFile> attachedFiles = new ArrayList<>();
 
       if (category == 1) {
-        String[] files = request.getParameterValues("files");
-        if (files != null) {
-          for (String file : files) {
-            if (file.length() == 0) {
-              continue;
-            }
-            attachedFiles.add(new AttachedFile().filePath(file));
+        Collection<Part> parts = request.getParts();
+        for (Part part : parts) {
+          if (!part.getName().equals("files") || part.getSize() == 0) {
+            continue;
           }
+          String filename = UUID.randomUUID().toString();
+          part.write(this.uploadDir + "/" + filename);
+          attachedFiles.add(new AttachedFile().filePath(filename));
         }
       }
 
