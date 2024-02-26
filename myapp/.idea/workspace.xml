@@ -5,68 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app-61-web/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/doc/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/doc/ddl.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/dao/AssignmentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/dao/AttachedFileDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/dao/BoardDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/dao/DaoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/dao/MemberDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/dao/mysql/AssignmentDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/dao/mysql/AttachedFileDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/dao/mysql/BoardDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/dao/mysql/MemberDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/listener/ContextLoaderListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/ErrorServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/FooterServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/HeaderServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/HomeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/assignment/AssignmentAddServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/assignment/AssignmentDeleteServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/assignment/AssignmentListServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/assignment/AssignmentUpdateServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/assignment/AssignmentViewServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/auth/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/auth/LogoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/board/BoardAddServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/board/BoardDeleteServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/board/BoardFileDeleteServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/board/BoardListServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/board/BoardUpdateServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/board/BoardViewServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/member/MemberAddServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/member/MemberDeleteServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/member/MemberListServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/member/MemberUpdateServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/servlet/member/MemberViewServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/vo/Assignment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/vo/AttachedFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/myapp/vo/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/util/ConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/util/ConnectionProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/util/DBConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/java/bitcamp/util/TransactionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/resources/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/main/webapp/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/test/java/bitcamp/myapp/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-61-web/src/test/resources/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/0c8022a7-78fb-4fd5-b545-6beb830e41bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/img/default-photo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/63e8a9b7-6e9f-4341-a864-f3e1bbc84aae" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/69dd3b09-5a16-4537-b0a0-597a01507afd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/doc/ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/doc/ddl.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/MemberDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/MemberDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/member/MemberAddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/member/MemberAddServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/member/MemberDeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/member/MemberDeleteServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/member/MemberListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/member/MemberListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/member/MemberUpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/member/MemberUpdateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/member/MemberViewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/member/MemberViewServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,52 +99,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Gradle.myapp [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp [classes].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp [run].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:App.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:DaoTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:QueueTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:StackTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:Test.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-api [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-client [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-client [classes].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-client [run].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-common [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-common [classes].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-server [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-server [run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/java/bitcamp/myapp&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/webapp/assignment&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.myapp [build].executor": "Run",
+    "Gradle.myapp [classes].executor": "Run",
+    "Gradle.myapp [clean].executor": "Run",
+    "Gradle.myapp [run].executor": "Run",
+    "Gradle.myapp:app [:app:App.main()].executor": "Run",
+    "Gradle.myapp:app [:app:DaoTest.main()].executor": "Run",
+    "Gradle.myapp:app [:app:QueueTest.main()].executor": "Run",
+    "Gradle.myapp:app [:app:StackTest.main()].executor": "Run",
+    "Gradle.myapp:app [:app:Test.main()].executor": "Run",
+    "Gradle.myapp:app-api [build].executor": "Run",
+    "Gradle.myapp:app-client [build].executor": "Run",
+    "Gradle.myapp:app-client [classes].executor": "Run",
+    "Gradle.myapp:app-client [run].executor": "Run",
+    "Gradle.myapp:app-common [build].executor": "Run",
+    "Gradle.myapp:app-common [classes].executor": "Run",
+    "Gradle.myapp:app-server [build].executor": "Run",
+    "Gradle.myapp:app-server [run].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/java/bitcamp/myapp",
+    "last_opened_file_path": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/webapp/upload",
+    "project.structure.last.edited": "프로젝트",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/webapp/upload" />
       <recent name="$PROJECT_DIR$/app/src/main/webapp/assignment" />
       <recent name="$PROJECT_DIR$/app/src/main/webapp/member" />
       <recent name="$PROJECT_DIR$/app/src/main/webapp/auth" />
       <recent name="$PROJECT_DIR$/app/src/main/webapp/board" />
-      <recent name="$PROJECT_DIR$/app/src/main/webapp" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="bitcamp.myapp.Prompt" />
       <recent name="bitcamp.myapp.BoardMenu" />
       <recent name="bitcamp.myapp.AssignmentMenu" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/temp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="bitcamp.myapp.servlet" />
