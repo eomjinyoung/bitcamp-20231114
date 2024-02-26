@@ -45,14 +45,12 @@ create table members(
   email varchar(255) not null,
   name varchar(255) not null,
   password varchar(100) not null,
-  photo varchar(255) null,
   created_date datetime null default now()
 );
 
 alter table members
   add constraint primary key (member_no),
-  modify column member_no int not null auto_increment,
-  add constraint members_uk unique (email);
+  modify column member_no int not null auto_increment;
 
 alter table boards
   add constraint boards_fk foreign key (writer) references members(member_no);

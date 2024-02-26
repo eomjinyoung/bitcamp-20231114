@@ -503,7 +503,6 @@
 - 웹 기술을 도입하여 애플리케이션을 만드는 방법
 - 세션을 이용해 로그인을 다루는 방법
 
-
 ## 58. 리스너 및 웹 애플리케이션 저장소 활용하기
 
 - ServletContextListener 활용법
@@ -529,6 +528,14 @@
 
 - 상단 메뉴 및 하단 정보 출력에 include 사용하기
 - 오류 메시지 출력에 forward 사용하기
+
+## 62. 파일 업로드 다루기 - multipart/form-data POST 요청 파라미터 인코딩
+
+- Servlet API를 이용하여 multipart/form-data 파라미터를 다루는 방법
+- 회원 사진 추가
+  - DDL 변경
+  
+
 
 
 
@@ -561,9 +568,7 @@
 - apache.org의 라이브러리를 이용하여 multipart/form-data 파라미터를 다루는 방법
 - 네이버클라우드 mysql DBMS 사용하기
 
-## 58. 파일 업로드 다루기 II - multipart/form-data POST 요청 파라미터 인코딩
 
-- Servlet API를 이용하여 multipart/form-data 파라미터를 다루는 방법
 
 ## 59. 서블릿 컨테이너 삽입하기
 

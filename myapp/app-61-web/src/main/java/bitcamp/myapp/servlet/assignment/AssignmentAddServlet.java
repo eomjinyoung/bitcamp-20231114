@@ -1,29 +1,24 @@
-package bitcamp.myapp.servlet.member;
+package bitcamp.myapp.servlet.assignment;
 
-import bitcamp.myapp.dao.MemberDao;
-import bitcamp.myapp.vo.Member;
+import bitcamp.myapp.dao.AssignmentDao;
+import bitcamp.myapp.vo.Assignment;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.UUID;
+import java.sql.Date;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 
-@MultipartConfig(maxFileSize = 1024 * 1024 * 10)
-@WebServlet("/member/add")
-public class MemberAddServlet extends HttpServlet {
+@WebServlet("/assignment/add")
+public class AssignmentAddServlet extends HttpServlet {
 
-  private MemberDao memberDao;
-  private String uploadDir;
+  private AssignmentDao assignmentDao;
 
   @Override
   public void init() {
-    this.memberDao = (MemberDao) this.getServletContext().getAttribute("memberDao");
-    uploadDir = this.getServletContext().getRealPath("/upload");
+    assignmentDao = (AssignmentDao) this.getServletContext().getAttribute("assignmentDao");
   }
 
   @Override
@@ -45,20 +40,17 @@ public class MemberAddServlet extends HttpServlet {
 
     out.println("<h1>과제 관리 시스템</h1>");
 
-    out.println("<h2>회원</h2>");
+    out.println("<h2>과제</h2>");
 
-    out.println("<form action='/member/add' method='post' enctype='multipart/form-data'>");
+    out.println("<form action='/assignment/add' method='post'>");
     out.println("  <div>");
-    out.println("        이메일: <input name='email' type='text'>");
+    out.println("        과제: <input name='title' type='text'>");
     out.println("  </div>");
     out.println("  <div>");
-    out.println("        이름: <input name='name' type='text'>");
+    out.println("        내용: <textarea name='content'></textarea>");
     out.println("  </div>");
     out.println("  <div>");
-    out.println("        암호: <input name='password' type='password'>");
-    out.println("  </div>");
-    out.println("  <div>");
-    out.println("        사진: <input name='photo' type='file'>");
+    out.println("        제출 마감일: <input name='deadline' type='date'>");
     out.println("  </div>");
     out.println("  <div>");
     out.println("    <button>등록</button>");
@@ -74,27 +66,17 @@ public class MemberAddServlet extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-
     try {
-      request.setCharacterEncoding("UTF-8");
+      Assignment assignment = new Assignment();
+      assignment.setTitle(request.getParameter("title"));
+      assignment.setContent(request.getParameter("content"));
+      assignment.setDeadline(Date.valueOf(request.getParameter("deadline")));
 
-      Member member = new Member();
-      member.setEmail(request.getParameter("email"));
-      member.setName(request.getParameter("name"));
-      member.setPassword(request.getParameter("password"));
-
-      Part photoPart = request.getPart("photo");
-      if (photoPart.getSize() > 0) {
-        String filename = UUID.randomUUID().toString();
-        member.setPhoto(filename);
-        photoPart.write(this.uploadDir + "/" + filename);
-      }
-
-      memberDao.add(member);
-      response.sendRedirect("list");
+      assignmentDao.add(assignment);
+      response.sendRedirect("/assignment/list");
 
     } catch (Exception e) {
-      request.setAttribute("message", "등록 오류!");
+      request.setAttribute("message", "과제 등록 오류!");
       request.setAttribute("exception", e);
       request.getRequestDispatcher("/error").forward(request, response);
     }
