@@ -60,4 +60,13 @@
   </servlet-mapping>
   -->
 
+  <servlet>
+    <servlet-name>ex12.Servlet01</servlet-name>
+    <servlet-class>com.eomcs.web.ex12.Servlet01</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex12.Servlet01</servlet-name>
+    <url-pattern>/ex12/s01</url-pattern>
+  </servlet-mapping>
+
 </web-app>
