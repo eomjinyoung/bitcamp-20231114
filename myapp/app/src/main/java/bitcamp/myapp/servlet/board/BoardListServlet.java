@@ -1,10 +1,7 @@
 package bitcamp.myapp.servlet.board;
 
 import bitcamp.myapp.dao.BoardDao;
-import bitcamp.myapp.vo.Board;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,57 +22,18 @@ public class BoardListServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    String title = "";
+    String boardName = "";
     try {
       int category = Integer.valueOf(request.getParameter("category"));
-      title = category == 1 ? "게시글" : "가입인사";
-
-      List<Board> list = boardDao.findAll(category);
-
-      response.setContentType("text/html;charset=UTF-8");
-      PrintWriter out = response.getWriter();
-
-      out.println("<!DOCTYPE html>");
-      out.println("<html lang='en'>");
-      out.println("<head>");
-      out.println("  <meta charset='UTF-8'>");
-      out.println("  <title>비트캠프 데브옵스 5기</title>");
-      out.println("</head>");
-      out.println("<body>");
-
-      request.getRequestDispatcher("/header").include(request, response);
-
-      out.printf("<h1>%s</h1>\n", title);
-      out.printf("<a href='/board/add?category=%d'>새 글</a>\n", category);
-      out.println("<table border='1'>");
-      out.println("    <thead>");
-      out.println("    <tr> <th>번호</th> <th>제목</th> <th>작성자</th> <th>등록일</th> <th>첨부파일</th> </tr>");
-      out.println("    </thead>");
-      out.println("    <tbody>");
-
-      for (Board board : list) {
-        out.printf(
-            "<tr> <td>%d</td> <td><a href='/board/view?category=%d&no=%1$d'>%s</a></td> <td>%s</td> <td>%s</td> <td>%d</td> </tr>\n",
-            board.getNo(),
-            category,
-            board.getTitle(),
-            board.getWriter().getName(),
-            board.getCreatedDate(),
-            board.getFileCount());
-      }
-
-      out.println("    </tbody>");
-      out.println("</table>");
-
-      request.getRequestDispatcher("/footer").include(request, response);
-
-      out.println("</body>");
-      out.println("</html>");
+      request.setAttribute("boardName", category == 1 ? "게시글" : "가입인사");
+      request.setAttribute("list", boardDao.findAll(category));
+      request.setAttribute("category", category);
+      request.getRequestDispatcher("/board/list.jsp").forward(request, response);
 
     } catch (Exception e) {
-      request.setAttribute("message", String.format("%s 목록 오류!", title));
+      request.setAttribute("message", String.format("%s 목록 오류!", boardName));
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error").forward(request, response);
+      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 }

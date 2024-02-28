@@ -40,11 +40,11 @@ public class BoardUpdateServlet extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    String title = "";
+    String boardName = "";
 
     try {
       int category = Integer.valueOf(request.getParameter("category"));
-      title = category == 1 ? "게시글" : "가입인사";
+      boardName = category == 1 ? "게시글" : "가입인사";
 
       Member loginUser = (Member) request.getSession().getAttribute("loginUser");
       if (loginUser == null) {
@@ -92,9 +92,9 @@ public class BoardUpdateServlet extends HttpServlet {
         txManager.rollback();
       } catch (Exception e2) {
       }
-      request.setAttribute("message", String.format("%s 변경 오류!", title));
+      request.setAttribute("message", String.format("%s 변경 오류!", boardName));
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error").forward(request, response);
+      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 }
