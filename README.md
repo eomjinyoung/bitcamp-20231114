@@ -1376,9 +1376,8 @@
   - 쿠키 및 세션을 다루는 방법
   - 서블릿을 배치하는 방법
   - ServletContext, HttpSession, ServletRequest, JspContext 저장소 사용법
-- 과제
-  - 개인 과제
 - 실습 프로젝트
+  - 64. 필터 활용하기
 - 최종 팀 프로젝트
 - 학습 점검 목록
 
