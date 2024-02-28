@@ -1378,6 +1378,7 @@
   - ServletContext, HttpSession, ServletRequest, JspContext 저장소 사용법
 - 실습 프로젝트
   - 64. 필터 활용하기
+  - 65. JSP를 이용하여 MVC 모델2 구조로 변경하기
 - 최종 팀 프로젝트
 - 학습 점검 목록
 
