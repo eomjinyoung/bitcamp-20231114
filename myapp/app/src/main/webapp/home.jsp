@@ -10,31 +10,12 @@
 </head>
 <body>
 
-<jsp:include page="/header"></jsp:include>
+<jsp:include page="/header.jsp"></jsp:include>
 
 <h1>과제 관리 시스템</h1>
+<p>환영합니다! 교육 센터 과제 관리 시스템입니다.</p>
 
-<h2>회원</h2>
-
-<form action='/member/add' method='post' enctype='multipart/form-data'>
-  <div>
-        이메일: <input name='email' type='text'>
-  </div>
-  <div>
-        이름: <input name='name' type='text'>
-  </div>
-  <div>
-        암호: <input name='password' type='password'>
-  </div>
-  <div>
-        사진: <input name='photo' type='file'>
-  </div>
-  <div>
-    <button>등록</button>
-  </div>
-</form>
-
-<jsp:include page="/footer"></jsp:include>
+<jsp:include page="/footer.jsp"></jsp:include>
 
 </body>
 </html>
