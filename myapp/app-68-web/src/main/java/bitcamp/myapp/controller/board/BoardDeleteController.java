@@ -31,7 +31,6 @@ public class BoardDeleteController implements PageController {
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
     int category = Integer.valueOf(request.getParameter("category"));
-    String boardName = category == 1 ? "게시글" : "가입인사";
 
     try {
       Member loginUser = (Member) request.getSession().getAttribute("loginUser");

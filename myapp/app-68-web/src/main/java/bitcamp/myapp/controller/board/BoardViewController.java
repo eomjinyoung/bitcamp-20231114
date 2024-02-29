@@ -19,18 +19,15 @@ public class BoardViewController implements PageController {
 
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    String boardName = "";
 
     int category = Integer.valueOf(request.getParameter("category"));
-    boardName = category == 1 ? "게시글" : "가입인사";
-
     int no = Integer.parseInt(request.getParameter("no"));
     Board board = boardDao.findBy(no);
     if (board == null) {
       throw new Exception("번호가 유효하지 않습니다.");
     }
 
-    request.setAttribute("boardName", boardName);
+    request.setAttribute("boardName", category == 1 ? "게시글" : "가입인사");
     request.setAttribute("category", category);
     request.setAttribute("board", board);
     if (category == 1) {

@@ -15,7 +15,6 @@ public class BoardListController implements PageController {
 
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    String boardName = "";
     int category = Integer.valueOf(request.getParameter("category"));
     request.setAttribute("boardName", category == 1 ? "게시글" : "가입인사");
     request.setAttribute("list", boardDao.findAll(category));

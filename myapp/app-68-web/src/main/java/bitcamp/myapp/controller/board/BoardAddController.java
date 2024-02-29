@@ -33,8 +33,7 @@ public class BoardAddController implements PageController {
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
     int category = Integer.valueOf(request.getParameter("category"));
-    String boardName = category == 1 ? "게시글" : "가입인사";
-    request.setAttribute("boardName", boardName);
+    request.setAttribute("boardName", category == 1 ? "게시글" : "가입인사");
     request.setAttribute("category", category);
 
     if (request.getMethod().equals("GET")) {
