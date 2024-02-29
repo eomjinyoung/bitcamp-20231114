@@ -43,7 +43,7 @@ public class BoardAddServlet extends HttpServlet {
     int category = Integer.valueOf(request.getParameter("category"));
     request.setAttribute("boardName", category == 1 ? "게시글" : "가입인사");
     request.setAttribute("category", category);
-    request.getRequestDispatcher("/board/form.jsp").forward(request, response);
+    request.setAttribute("viewUrl", "/board/form.jsp");
   }
 
   @Override
@@ -94,16 +94,14 @@ public class BoardAddServlet extends HttpServlet {
 
       txManager.commit();
 
-      response.sendRedirect("/board/list?category=" + category);
+      request.setAttribute("viewUrl", "redirect:list?category=" + category);
 
     } catch (Exception e) {
       try {
         txManager.rollback();
       } catch (Exception e2) {
       }
-      request.setAttribute("message", String.format("%s 등록 오류!", boardName));
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 }

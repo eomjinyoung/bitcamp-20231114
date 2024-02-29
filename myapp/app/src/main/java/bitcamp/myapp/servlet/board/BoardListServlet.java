@@ -28,12 +28,10 @@ public class BoardListServlet extends HttpServlet {
       request.setAttribute("boardName", category == 1 ? "게시글" : "가입인사");
       request.setAttribute("list", boardDao.findAll(category));
       request.setAttribute("category", category);
-      request.getRequestDispatcher("/board/list.jsp").forward(request, response);
+      request.setAttribute("viewUrl", "/board/list.jsp");
 
     } catch (Exception e) {
-      request.setAttribute("message", String.format("%s 목록 오류!", boardName));
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 }
