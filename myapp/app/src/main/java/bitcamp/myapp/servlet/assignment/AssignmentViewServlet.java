@@ -31,12 +31,10 @@ public class AssignmentViewServlet extends HttpServlet {
       }
 
       request.setAttribute("assignment", assignment);
-      request.getRequestDispatcher("/assignment/view.jsp").forward(request, response);
+      request.setAttribute("viewUrl", "/assignment/view.jsp");
 
     } catch (Exception e) {
-      request.setAttribute("message", "조회 오류!");
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 

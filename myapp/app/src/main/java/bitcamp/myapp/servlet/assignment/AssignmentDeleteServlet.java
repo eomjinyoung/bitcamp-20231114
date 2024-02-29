@@ -28,12 +28,10 @@ public class AssignmentDeleteServlet extends HttpServlet {
         throw new Exception("과제 번호가 유효하지 않습니다.");
       }
 
-      response.sendRedirect("list");
+      request.setAttribute("viewUrl", "redirect:list");
 
     } catch (Exception e) {
-      request.setAttribute("message", "삭제 오류!");
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 }

@@ -13,7 +13,7 @@
 
 <h2>과제</h2>
 
-<form action='/assignment/add' method='post'>
+<form action='/app/assignment/add' method='post'>
   <div>
         과제: <input name='title' type='text'>
   </div>

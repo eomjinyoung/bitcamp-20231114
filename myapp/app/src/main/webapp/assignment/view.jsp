@@ -12,7 +12,7 @@
 
 <h1>과제</h1>
 
-<form action='/assignment/update' method='post'>
+<form action='/app/assignment/update' method='post'>
 <div>
   번호: <input readonly name='no' type='text' value='${assignment.no}'>
 </div>
@@ -27,7 +27,7 @@
 </div>
 <div>
   <button>변경</button>
-  <a href='/assignment/delete?no=${assignment.no}'>[삭제]</a>
+  <a href='/app/assignment/delete?no=${assignment.no}'>[삭제]</a>
 </div>
 </form>
 
