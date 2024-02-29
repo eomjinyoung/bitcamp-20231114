@@ -54,12 +54,10 @@ public class MemberUpdateServlet extends HttpServlet {
       }
 
       memberDao.update(member);
-      response.sendRedirect("list");
+      request.setAttribute("viewUrl", "redirect:list");
 
     } catch (Exception e) {
-      request.setAttribute("message", "변경 오류!");
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 }

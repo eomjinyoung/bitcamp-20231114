@@ -29,14 +29,11 @@ public class MemberViewServlet extends HttpServlet {
       if (member == null) {
         throw new Exception("회원 번호가 유효하지 않습니다.");
       }
-
       request.setAttribute("member", member);
-      request.getRequestDispatcher("/member/view.jsp").forward(request, response);
+      request.setAttribute("viewUrl", "/member/view.jsp");
 
     } catch (Exception e) {
-      request.setAttribute("message", "조회 오류!");
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 }

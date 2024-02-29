@@ -29,7 +29,7 @@ public class MemberAddServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    request.getRequestDispatcher("/member/form.jsp").forward(request, response);
+    request.setAttribute("viewUrl", "/member/form.jsp");
 
   }
 
@@ -51,12 +51,10 @@ public class MemberAddServlet extends HttpServlet {
       }
 
       memberDao.add(member);
-      response.sendRedirect("list");
+      request.setAttribute("viewUrl", "redirect:list");
 
     } catch (Exception e) {
-      request.setAttribute("message", "등록 오류!");
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 }
