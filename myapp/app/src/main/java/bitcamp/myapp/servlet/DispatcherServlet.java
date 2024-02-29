@@ -3,9 +3,11 @@ package bitcamp.myapp.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,6 +35,14 @@ public class DispatcherServlet extends HttpServlet {
 
       request.getRequestDispatcher("/error.jsp").forward(request, response);
       return;
+    }
+
+    // 페이지 컨트롤러에서 만든 쿠키가 있다면 응답에 포함시킨다.
+    List<Cookie> cookies = (List<Cookie>) request.getAttribute("cookies");
+    if (cookies != null) {
+      for (Cookie cookie : cookies) {
+        response.addCookie(cookie);
+      }
     }
 
     // 페이지 컨트롤러가 알려준 JSP로 포워딩 한다.

@@ -3,6 +3,7 @@ package bitcamp.myapp.servlet.auth;
 import bitcamp.myapp.dao.MemberDao;
 import bitcamp.myapp.vo.Member;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -34,7 +35,7 @@ public class LoginServlet extends HttpServlet {
       }
     }
 
-    request.getRequestDispatcher("/auth/form.jsp").forward(request, response);
+    request.setAttribute("viewUrl", "/auth/form.jsp");
 
   }
 
@@ -46,16 +47,21 @@ public class LoginServlet extends HttpServlet {
       String email = request.getParameter("email");
       String password = request.getParameter("password");
 
+      // include 서블릿에서는 쿠키를 응답헤더에 추가할 수 없다.
+      // => 프론트 컨트롤러가 추가하게 하라!
+      //
+      ArrayList<Cookie> cookies = new ArrayList<>();
       String saveEmail = request.getParameter("saveEmail");
       if (saveEmail != null) {
         Cookie cookie = new Cookie("email", email);
         cookie.setMaxAge(60 * 60 * 24 * 7);
-        response.addCookie(cookie);
+        cookies.add(cookie);
       } else {
         Cookie cookie = new Cookie("email", "");
         cookie.setMaxAge(0);
-        response.addCookie(cookie);
+        cookies.add(cookie);
       }
+      request.setAttribute("cookies", cookies);
 
       Member member = memberDao.findByEmailAndPassword(email, password);
 
@@ -63,12 +69,10 @@ public class LoginServlet extends HttpServlet {
         request.getSession().setAttribute("loginUser", member);
       }
 
-      request.getRequestDispatcher("/auth/login.jsp").forward(request, response);
+      request.setAttribute("viewUrl", "/auth/login.jsp");
 
     } catch (Exception e) {
-      request.setAttribute("message", "로그인 오류!");
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 }

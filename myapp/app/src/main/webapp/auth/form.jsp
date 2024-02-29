@@ -11,7 +11,7 @@
 
 <h1>로그인</h1>
 
-<form action='/auth/login' method='post'>
+<form action='/app/auth/login' method='post'>
 <div>
     이메일: <input name='email' type='text'
     value='${email}'>
