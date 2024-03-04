@@ -39,9 +39,9 @@ pageContext.setAttribute("s4", "윤봉길");
 <%=s4%><br>
 
 <%-- 보관소에 없는 객체를 꺼내려 하면 예외 발생! --%>
-<%-- 
+
 <jsp:useBean id="s5" type="java.lang.String" scope="page"/>
---%>
+
 
 </body>
 </html>
@@ -58,10 +58,10 @@ jsp:useBean 문법:
    - 값을 꺼내는 보관소를 가리킨다.
 => 예) 
 태그: 
-  <jsp:useBean id="s4" type="java.lang.String" scope="page"/>
+  <jsp:useBean id="s5" type="java.lang.String" scope="page"/>
 자바코드: 
-  String s4 = (String) pageContext.getAttribute("s4");
-  if (s4 == null) {
+  String s5 = (String) pageContext.getAttribute("s5");
+  if (s5 == null) {
     throw new Exception("객체 꺼내기 오류");
   }
  --%>
