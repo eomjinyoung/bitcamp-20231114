@@ -51,14 +51,12 @@ static { // 스태틱 블록
   class JSP클래스 {
     
     멤버선언
-    
+
     void _jspService() {
       ...
     }
   }
 --%>
-
-
 
 
 

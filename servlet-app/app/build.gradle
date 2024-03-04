@@ -13,6 +13,9 @@ dependencies {
     // multipart/form-data 파일 업로드 처리
     implementation 'commons-fileupload:commons-fileupload:1.5'
 
+    // JSTL 라이브러리
+    implementation 'javax.servlet:jstl:1.2'
+
     testImplementation libs.junit.jupiter
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

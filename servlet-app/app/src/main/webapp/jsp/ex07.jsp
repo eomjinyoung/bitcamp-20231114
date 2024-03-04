@@ -10,7 +10,7 @@
     autoFlush="false"%>
 <%@ page import="java.sql.Connection"%>
 <%@ page import="java.sql.Statement"%>
-<!DOCTYPE html>
+<!DOCYTPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 <body>
 <h1>지시문(directive element)</h1>
 <%
-for (int i = 0; i < 1000; i++) {
+for (int i = 0; i < 9000; i++) {
   out.print(". "); 
 }
 %>
