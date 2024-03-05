@@ -12,7 +12,7 @@
 
 <h1>과제</h1>
 
-<a href='/app/assignment/add'>새 과제</a>
+<a href='/app/assignment/form'>새 과제</a>
 <table border='1'>
   <thead>
     <tr> <th>번호</th> <th>과제</th> <th>제출마감일</th> </tr>

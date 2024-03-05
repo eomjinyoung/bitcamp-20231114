@@ -17,6 +17,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -147,6 +148,8 @@ public class DispatcherServlet extends HttpServlet {
           args[i] = Boolean.parseBoolean(paramValue);
         } else if (param.getType() == char.class) {
           args[i] = paramValue.charAt(0);
+        } else if (param.getType() == Date.class) {
+          args[i] = Date.valueOf(paramValue);
         } else {
           args[i] = paramValue;
         }
