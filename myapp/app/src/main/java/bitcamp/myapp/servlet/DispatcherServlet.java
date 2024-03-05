@@ -55,14 +55,17 @@ public class DispatcherServlet extends HttpServlet {
   protected void service(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    // URL에서 요청한 페이지 컨트롤러를 실행한다.
-    Object controller = controllerMap.get(request.getPathInfo());
-    if (controller == null) {
-      throw new ServletException(request.getPathInfo() + " 요청 페이지를 찾을 수 없습니다.");
-    }
-
     try {
-      Method requestHandler = findRequestHandler(controller);
+      // URL 요청을 처리할 request handler를 찾는다.
+      Object controller = null;
+      Method requestHandler = null;
+      for (Object obj : controllers) {
+        requestHandler = findRequestHandler(obj, request.getPathInfo());
+        if (requestHandler != null) {
+          controller = obj;
+          break;
+        }
+      }
       if (requestHandler == null) {
         throw new Exception(request.getPathInfo() + " 요청 페이지를 찾을 수 없습니다.");
       }
@@ -89,11 +92,11 @@ public class DispatcherServlet extends HttpServlet {
     }
   }
 
-  private Method findRequestHandler(Object controller) {
+  private Method findRequestHandler(Object controller, String path) {
     Method[] methods = controller.getClass().getDeclaredMethods();
     for (Method m : methods) {
       RequestMapping requestMapping = m.getAnnotation(RequestMapping.class);
-      if (requestMapping != null) {
+      if (requestMapping != null && requestMapping.value().equals(path)) {
         return m;
       }
     }
