@@ -16,22 +16,17 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@MultipartConfig(maxFileSize = 1024 * 1024 * 10)
-@WebServlet("/app/*")
-public class DispatcherServlet extends HttpServlet {
+//@MultipartConfig(maxFileSize = 1024 * 1024 * 10)
+//@WebServlet("/app/*")
+public class DispatcherServlet0 extends HttpServlet {
 
-  private Map<String, RequestHandler> requestHandlerMap = new HashMap<>();
   private List<Object> controllers = new ArrayList<>();
 
   @Override
@@ -52,8 +47,6 @@ public class DispatcherServlet extends HttpServlet {
 
     String memberUploadDir = this.getServletContext().getRealPath("/upload");
     controllers.add(new MemberController(memberDao, memberUploadDir));
-
-    prepareRequestHandlers(controllers);
   }
 
   @Override
@@ -62,7 +55,7 @@ public class DispatcherServlet extends HttpServlet {
 
     try {
       // URL 요청을 처리할 request handler를 찾는다.
-      RequestHandler requestHandler = requestHandlerMap.get(request.getPathInfo());
+      RequestHandler requestHandler = findRequestHandler(request.getPathInfo());
       if (requestHandler == null) {
         throw new Exception(request.getPathInfo() + " 요청 페이지를 찾을 수 없습니다.");
       }
@@ -90,16 +83,17 @@ public class DispatcherServlet extends HttpServlet {
     }
   }
 
-  private void prepareRequestHandlers(List<Object> controllers) {
+  private RequestHandler findRequestHandler(String path) {
     for (Object controller : controllers) {
       Method[] methods = controller.getClass().getDeclaredMethods();
       for (Method m : methods) {
         RequestMapping requestMapping = m.getAnnotation(RequestMapping.class);
-        if (requestMapping != null) {
-          requestHandlerMap.put(requestMapping.value(), new RequestHandler(controller, m));
+        if (requestMapping != null && requestMapping.value().equals(path)) {
+          return new RequestHandler(controller, m);
         }
       }
     }
+    return null;
   }
 
 }
