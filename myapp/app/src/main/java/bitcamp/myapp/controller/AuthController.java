@@ -1,22 +1,21 @@
-package bitcamp.myapp.controller.auth;
+package bitcamp.myapp.controller;
 
-import bitcamp.myapp.controller.RequestMapping;
 import bitcamp.myapp.dao.MemberDao;
 import bitcamp.myapp.vo.Member;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LoginController {
+public class AuthController {
 
   MemberDao memberDao;
 
-  public LoginController(MemberDao memberDao) {
+  public AuthController(MemberDao memberDao) {
     this.memberDao = memberDao;
   }
 
-  @RequestMapping
-  public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+  @RequestMapping("/auth/login")
+  public String login(HttpServletRequest request, HttpServletResponse response) throws Exception {
     if (request.getMethod().equals("GET")) {
       Cookie[] cookies = request.getCookies();
       if (cookies != null) {
@@ -49,5 +48,11 @@ public class LoginController {
       request.getSession().setAttribute("loginUser", member);
     }
     return "/auth/login.jsp";
+  }
+
+  @RequestMapping("/auth/logout")
+  public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    request.getSession().invalidate();
+    return "redirect:/index.html";
   }
 }
