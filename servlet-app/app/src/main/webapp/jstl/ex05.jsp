@@ -17,7 +17,7 @@
 
 <c:set var="name" value="홍길동"/>
 <c:set var="age" value="16"/>
-<c:set var="gender" value="man"/>
+<c:set var="gender" value="woman"/>
 
 <c:if test="${not empty name}">
     <p>${name}님 환영합니다!

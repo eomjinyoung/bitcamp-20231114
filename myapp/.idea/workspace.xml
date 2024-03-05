@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/java/com/eomcs/web/vo/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/java/com/eomcs/web/vo/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../servlet-app/app/src/main/webapp/jsp/ex12.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/webapp/jsp/ex12.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../servlet-app/app/src/main/webapp/jsp/ex13.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../servlet-app/app/src/main/webapp/jsp/ex13.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
