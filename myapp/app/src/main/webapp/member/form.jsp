@@ -24,7 +24,7 @@
         암호: <input name='password' type='password'>
   </div>
   <div>
-        사진: <input name='photo' type='file'>
+        사진: <input name='file' type='file'>
   </div>
   <div>
     <button>등록</button>
