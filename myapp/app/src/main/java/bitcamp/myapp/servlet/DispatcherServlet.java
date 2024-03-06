@@ -3,6 +3,7 @@ package bitcamp.myapp.servlet;
 import bitcamp.myapp.controller.AssignmentController;
 import bitcamp.myapp.controller.AuthController;
 import bitcamp.myapp.controller.BoardController;
+import bitcamp.myapp.controller.CookieValue;
 import bitcamp.myapp.controller.HomeController;
 import bitcamp.myapp.controller.MemberController;
 import bitcamp.myapp.controller.RequestMapping;
@@ -30,9 +31,11 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @MultipartConfig(maxFileSize = 1024 * 1024 * 10)
 @WebServlet("/app/*")
@@ -142,7 +145,18 @@ public class DispatcherServlet extends HttpServlet {
         args[i] = response;
       } else if (methodParam.getType() == Map.class) {
         args[i] = map;
+      } else if (methodParam.getType() == HttpSession.class) {
+        args[i] = request.getSession();
       } else {
+        CookieValue cookieValueAnno = methodParam.getAnnotation(CookieValue.class);
+        if (cookieValueAnno != null) {
+          String value = getCookieValue(cookieValueAnno.value(), request);
+          if (value != null) {
+            args[i] = valueOf(value, methodParam.getType());
+          }
+          continue; // 다음 파라미터로 간다.
+        }
+
         RequestParam requestParam = methodParam.getAnnotation(RequestParam.class);
         if (requestParam != null) {
           // 클라이언트가 보낸 요청 파라미터 값을 원한다면
@@ -150,12 +164,12 @@ public class DispatcherServlet extends HttpServlet {
           String requestParameterName = requestParam.value();
           String requestParameterValue = request.getParameter(requestParameterName);
           args[i] = valueOf(requestParameterValue, methodParam.getType());
-
-        } else {
-          // 파라미터 타입이 도메인 클래스일 경우 해당 클래스의 객체를 준비하여
-          // 그 객체에 요청 파라미터 값들을 담은 다음에 저장한다..
-          args[i] = createValueObject(methodParam.getType(), request);
+          continue;
         }
+
+        // 파라미터 타입이 도메인 클래스일 경우 해당 클래스의 객체를 준비하여
+        // 그 객체에 요청 파라미터 값들을 담은 다음에 저장한다..
+        args[i] = createValueObject(methodParam.getType(), request);
       }
     }
 
@@ -225,6 +239,18 @@ public class DispatcherServlet extends HttpServlet {
       }
     }
     return obj;
+  }
+
+  private String getCookieValue(String name, HttpServletRequest request) {
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null) {
+      for (Cookie cookie : cookies) {
+        if (cookie.getName().equals(name)) {
+          return cookie.getValue();
+        }
+      }
+    }
+    return null;
   }
 
 }
