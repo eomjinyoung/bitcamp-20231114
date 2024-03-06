@@ -20,16 +20,8 @@ public class AssignmentController {
   }
 
   @RequestMapping("/assignment/add")
-  public String add(
-      @RequestParam("title") String title,
-      @RequestParam("content") String content,
-      @RequestParam("deadline") Date deadline) throws Exception {
-
-    Assignment assignment = new Assignment();
-    assignment.setTitle(title);
-    assignment.setContent(content);
-    assignment.setDeadline(deadline);
-
+  public String add(Assignment assignment) throws Exception {
+    System.out.println(assignment);
     assignmentDao.add(assignment);
     return "redirect:list";
   }
