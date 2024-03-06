@@ -10,11 +10,10 @@ import javax.servlet.http.Part;
 public class MemberController {
 
   private MemberDao memberDao;
-  private String uploadDir;
+  private String uploadDir = System.getProperty("member.upload.dir");
 
-  public MemberController(MemberDao memberDao, String uploadDir) {
+  public MemberController(MemberDao memberDao) {
     this.memberDao = memberDao;
-    this.uploadDir = uploadDir;
   }
 
   @RequestMapping("/member/form")
