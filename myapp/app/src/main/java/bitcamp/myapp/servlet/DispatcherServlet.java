@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -73,9 +74,18 @@ public class DispatcherServlet extends HttpServlet {
         throw new Exception(request.getPathInfo() + " 요청 페이지를 찾을 수 없습니다.");
       }
 
-      Object[] args = prepareRequestHandlerArguments(requestHandler.handler, request, response);
+      // 페이지 컨트롤러가 작업한 결과를 담을 보관소를 준비한다.
+      Map<String, Object> map = new HashMap<>();
+      Object[] args = prepareRequestHandlerArguments(requestHandler.handler, request, response,
+          map);
 
       String viewUrl = (String) requestHandler.handler.invoke(requestHandler.controller, args);
+
+      // 페이지 컨트롤러의 작업이 끝난 후 map 객체에 보관된 값을 JSP가 사용할 수 있도록
+      // ServletRequest 보관소로 옮긴다.
+      for (Entry<String, Object> entry : map.entrySet()) {
+        request.setAttribute(entry.getKey(), entry.getValue());
+      }
 
       // 페이지 컨트롤러가 알려준 JSP로 포워딩 한다.
       if (viewUrl.startsWith("redirect:")) {
@@ -112,7 +122,8 @@ public class DispatcherServlet extends HttpServlet {
   private Object[] prepareRequestHandlerArguments(
       Method handler,
       HttpServletRequest request,
-      HttpServletResponse response) throws Exception {
+      HttpServletResponse response,
+      Map<String, Object> map) throws Exception {
 
     // 요청 핸들러의 파라미터 정보를 알아낸다.
     Parameter[] methodParams = handler.getParameters();
@@ -129,6 +140,8 @@ public class DispatcherServlet extends HttpServlet {
       } else if (methodParam.getType() == HttpServletResponse.class
           || methodParam.getType() == ServletResponse.class) {
         args[i] = response;
+      } else if (methodParam.getType() == Map.class) {
+        args[i] = map;
       } else {
         RequestParam requestParam = methodParam.getAnnotation(RequestParam.class);
         if (requestParam != null) {
