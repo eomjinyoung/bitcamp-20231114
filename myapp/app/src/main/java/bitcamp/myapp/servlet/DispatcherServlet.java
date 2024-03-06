@@ -21,6 +21,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +37,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 @MultipartConfig(maxFileSize = 1024 * 1024 * 10)
 @WebServlet("/app/*")
@@ -162,8 +164,29 @@ public class DispatcherServlet extends HttpServlet {
           // 클라이언트가 보낸 요청 파라미터 값을 원한다면
           // 그 값을 메서드의 파라미터 타입으로 변환한 후 저장한다.
           String requestParameterName = requestParam.value();
-          String requestParameterValue = request.getParameter(requestParameterName);
-          args[i] = valueOf(requestParameterValue, methodParam.getType());
+
+          if (methodParam.getType() == Part[].class) {
+            Collection<Part> parts = request.getParts();
+            List<Part> fileParts = new ArrayList<>();
+            for (Part part : parts) {
+              if (part.getName().equals(requestParameterName)) {
+                fileParts.add(part);
+              }
+            }
+            args[i] = fileParts.toArray(new Part[0]);
+
+          } else if (methodParam.getType() == Part.class) {
+            Collection<Part> parts = request.getParts();
+            for (Part part : parts) {
+              if (part.getName().equals(requestParameterName)) {
+                args[i] = part;
+                break;
+              }
+            }
+          } else {
+            String requestParameterValue = request.getParameter(requestParameterName);
+            args[i] = valueOf(requestParameterValue, methodParam.getType());
+          }
           continue;
         }
 
