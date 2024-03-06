@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
@@ -178,17 +176,17 @@ public class BoardController {
   }
 
   @RequestMapping("/board/delete")
-  public String delete(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-    int category = Integer.valueOf(request.getParameter("category"));
+  public String delete(
+      @RequestParam("category") int category,
+      @RequestParam("no") int no,
+      HttpSession session) throws Exception {
 
     try {
-      Member loginUser = (Member) request.getSession().getAttribute("loginUser");
+      Member loginUser = (Member) session.getAttribute("loginUser");
       if (loginUser == null) {
         throw new Exception("로그인하시기 바랍니다!");
       }
 
-      int no = Integer.parseInt(request.getParameter("no"));
       Board board = boardDao.findBy(no);
       if (board == null) {
         throw new Exception("번호가 유효하지 않습니다.");
@@ -220,16 +218,16 @@ public class BoardController {
   }
 
   @RequestMapping("/board/file/delete")
-  public String fileDelete(HttpServletRequest request, HttpServletResponse response)
-      throws Exception {
-    int category = Integer.valueOf(request.getParameter("category"));
+  public String fileDelete(
+      @RequestParam("category") int category,
+      @RequestParam("no") int fileNo,
+      HttpSession session) throws Exception {
 
-    Member loginUser = (Member) request.getSession().getAttribute("loginUser");
+    Member loginUser = (Member) session.getAttribute("loginUser");
     if (loginUser == null) {
       throw new Exception("로그인하시기 바랍니다!");
     }
 
-    int fileNo = Integer.parseInt(request.getParameter("no"));
     AttachedFile file = attachedFileDao.findByNo(fileNo);
     if (file == null) {
       throw new Exception("첨부파일 번호가 유효하지 않습니다.");
