@@ -5,6 +5,7 @@ import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.vo.AttachedFile;
 import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.Member;
+import bitcamp.util.Component;
 import bitcamp.util.TransactionManager;
 import java.io.File;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+@Component
 public class BoardController {
 
   private TransactionManager txManager;
