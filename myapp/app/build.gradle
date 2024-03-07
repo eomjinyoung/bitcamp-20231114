@@ -19,6 +19,9 @@ dependencies {
     // JSTL 라이브러리
     implementation 'javax.servlet:jstl:1.2'
 
+    // Spring IoC 컨테이너
+    implementation 'org.springframework:spring-context:5.3.32'
+    
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'com.google.guava:guava:32.1.1-jre'

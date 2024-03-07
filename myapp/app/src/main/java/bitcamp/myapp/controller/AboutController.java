@@ -1,6 +1,6 @@
 package bitcamp.myapp.controller;
 
-import bitcamp.util.Component;
+import org.springframework.stereotype.Component;
 
 @Component
 public class AboutController {

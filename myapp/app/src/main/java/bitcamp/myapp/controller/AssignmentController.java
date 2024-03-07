@@ -2,8 +2,8 @@ package bitcamp.myapp.controller;
 
 import bitcamp.myapp.dao.AssignmentDao;
 import bitcamp.myapp.vo.Assignment;
-import bitcamp.util.Component;
 import java.util.Map;
+import org.springframework.stereotype.Component;
 
 @Component
 public class AssignmentController {
