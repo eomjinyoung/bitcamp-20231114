@@ -4,6 +4,7 @@ import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.dao.DaoException;
 import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.Member;
+import bitcamp.util.Component;
 import bitcamp.util.DBConnectionPool;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +12,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class BoardDaoImpl implements BoardDao {
 
   DBConnectionPool connectionPool;

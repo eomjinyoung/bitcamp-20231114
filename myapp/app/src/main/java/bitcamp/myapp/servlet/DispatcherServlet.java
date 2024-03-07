@@ -1,10 +1,9 @@
 package bitcamp.myapp.servlet;
 
+import bitcamp.context.ApplicationContext;
 import bitcamp.myapp.controller.CookieValue;
 import bitcamp.myapp.controller.RequestMapping;
 import bitcamp.myapp.controller.RequestParam;
-import bitcamp.util.Component;
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -35,8 +34,8 @@ import javax.servlet.http.Part;
 public class DispatcherServlet extends HttpServlet {
 
   private Map<String, RequestHandler> requestHandlerMap = new HashMap<>();
-  private List<Object> controllers = new ArrayList<>();
-  private Map<String, Object> beanMap;
+  private ApplicationContext applicationContext;
+
 
   @Override
   public void init() throws ServletException {
@@ -44,16 +43,11 @@ public class DispatcherServlet extends HttpServlet {
       System.setProperty("board.upload.dir", this.getServletContext().getRealPath("/upload/board"));
       System.setProperty("member.upload.dir", this.getServletContext().getRealPath("/upload"));
 
-      beanMap = (Map<String, Object>) this.getServletContext().getAttribute("beanMap");
+      applicationContext = new ApplicationContext(
+          (ApplicationContext) this.getServletContext().getAttribute("applicationContext"),
+          "bitcamp.myapp.controller");
 
-//      controllers.add(new HomeController());
-//      controllers.add(new AssignmentController(assignmentDao));
-//      controllers.add(new AuthController(memberDao));
-//      controllers.add(new BoardController(txManager, boardDao, attachedFileDao));
-//      controllers.add(new MemberController(memberDao));
-
-      preparePageControllers();
-      prepareRequestHandlers(controllers);
+      prepareRequestHandlers(applicationContext.getBeans());
 
     } catch (Exception e) {
       throw new ServletException(e);
@@ -104,58 +98,7 @@ public class DispatcherServlet extends HttpServlet {
     }
   }
 
-  private void preparePageControllers() throws Exception {
-    File classpath = new File("./build/classes/java/main");
-    //System.out.println(classpath.getCanonicalPath());
-    findComponents(classpath, "");
-  }
-
-  private void findComponents(File dir, String packageName) throws Exception {
-    File[] files = dir.listFiles(file ->
-        file.isDirectory() || (file.isFile()
-            && !file.getName().contains("$")
-            && file.getName().endsWith(".class")));
-
-    if (packageName.length() > 0) {
-      packageName += ".";
-    }
-    for (File file : files) {
-      if (file.isFile()) {
-        Class<?> clazz = Class.forName(packageName + file.getName().replace(".class", ""));
-        Component compAnno = clazz.getAnnotation(Component.class);
-        if (compAnno != null) {
-          Constructor<?> constructor = clazz.getConstructors()[0];
-          Parameter[] params = constructor.getParameters();
-          Object[] args = getArguments(params);
-          controllers.add(constructor.newInstance(args));
-          System.out.println(clazz.getName() + " 객체 생성!");
-        }
-      } else {
-        findComponents(file, packageName + file.getName());
-      }
-    }
-  }
-
-  private Object[] getArguments(Parameter[] params) {
-    Object[] args = new Object[params.length];
-    for (int i = 0; i < params.length; i++) {
-      args[i] = findBean(params[i].getType());
-    }
-    return args;
-  }
-
-  private Object findBean(Class<?> type) {
-    Collection<Object> objs = beanMap.values();
-    for (Object obj : objs) {
-      if (type.isInstance(obj)) {
-        //System.out.printf("%s ==> %s\n", type.getName(), obj.getClass().getName());
-        return obj;
-      }
-    }
-    return null;
-  }
-
-  private void prepareRequestHandlers(List<Object> controllers) {
+  private void prepareRequestHandlers(Collection<Object> controllers) {
     for (Object controller : controllers) {
       Method[] methods = controller.getClass().getDeclaredMethods();
       for (Method m : methods) {

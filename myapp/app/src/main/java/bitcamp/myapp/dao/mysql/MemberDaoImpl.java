@@ -3,6 +3,7 @@ package bitcamp.myapp.dao.mysql;
 import bitcamp.myapp.dao.DaoException;
 import bitcamp.myapp.dao.MemberDao;
 import bitcamp.myapp.vo.Member;
+import bitcamp.util.Component;
 import bitcamp.util.DBConnectionPool;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +11,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class MemberDaoImpl implements MemberDao {
 
   DBConnectionPool connectionPool;
@@ -119,7 +121,7 @@ public class MemberDaoImpl implements MemberDao {
         pstmt.setString(4, member.getPassword());
         pstmt.setInt(5, member.getNo());
       }
-      
+
       return pstmt.executeUpdate();
 
     } catch (Exception e) {
