@@ -1,6 +1,5 @@
 package bitcamp.myapp.servlet;
 
-import bitcamp.context.ApplicationContext;
 import bitcamp.myapp.controller.CookieValue;
 import bitcamp.myapp.controller.RequestMapping;
 import bitcamp.myapp.controller.RequestParam;
@@ -28,6 +27,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @MultipartConfig(maxFileSize = 1024 * 1024 * 10)
 @WebServlet(urlPatterns = "/app/*", loadOnStartup = 1)
@@ -43,11 +44,12 @@ public class DispatcherServlet extends HttpServlet {
       System.setProperty("board.upload.dir", this.getServletContext().getRealPath("/upload/board"));
       System.setProperty("member.upload.dir", this.getServletContext().getRealPath("/upload"));
 
-      applicationContext = new ApplicationContext(
-          (ApplicationContext) this.getServletContext().getAttribute("applicationContext"),
-          "bitcamp.myapp.controller");
+      ApplicationContext parent = (ApplicationContext) this.getServletContext()
+          .getAttribute("applicationContext");
+      applicationContext = new ClassPathXmlApplicationContext(
+          new String[]{"config/app-servlet.xml"}, parent);
 
-      prepareRequestHandlers(applicationContext.getBeans());
+      //prepareRequestHandlers(applicationContext.getBeans());
 
     } catch (Exception e) {
       throw new ServletException(e);

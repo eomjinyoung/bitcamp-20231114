@@ -11,6 +11,7 @@ public class AssignmentController {
   private AssignmentDao assignmentDao;
 
   public AssignmentController(AssignmentDao assignmentDao) {
+    System.out.println("AssignmentController() 호출됨!");
     this.assignmentDao = assignmentDao;
   }
 

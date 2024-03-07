@@ -15,6 +15,7 @@ public class MemberController {
   private String uploadDir = System.getProperty("member.upload.dir");
 
   public MemberController(MemberDao memberDao) {
+    System.out.println("MemberController() 호출됨!");
     this.memberDao = memberDao;
   }
 

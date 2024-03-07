@@ -17,6 +17,7 @@ public class AttachedFileDaoImpl implements AttachedFileDao {
   DBConnectionPool connectionPool;
 
   public AttachedFileDaoImpl(DBConnectionPool connectionPool) {
+    System.out.println("AttachedFileDaoImpl() 호출됨!");
     this.connectionPool = connectionPool;
   }
 
