@@ -51,7 +51,7 @@ public class BoardController {
   @RequestMapping("/board/add")
   public String add(
       Board board,
-      @RequestParam("attachedFiles") Part[] files,
+      @RequestParam(value = "attachedFiles", required = false) Part[] files,
       HttpSession session,
       Map<String, Object> map) throws Exception {
 
@@ -134,7 +134,7 @@ public class BoardController {
   @RequestMapping("/board/update")
   public String update(
       Board board,
-      @RequestParam("attachedFiles") Part[] files,
+      @RequestParam(value = "attachedFiles", required = false) Part[] files,
       HttpSession session,
       Map<String, Object> map) throws Exception {
 
