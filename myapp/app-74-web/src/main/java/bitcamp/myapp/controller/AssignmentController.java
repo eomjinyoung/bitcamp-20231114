@@ -3,11 +3,9 @@ package bitcamp.myapp.controller;
 import bitcamp.myapp.dao.AssignmentDao;
 import bitcamp.myapp.vo.Assignment;
 import java.util.Map;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.stereotype.Component;
 
-@Controller
+@Component
 public class AssignmentController {
 
   private AssignmentDao assignmentDao;

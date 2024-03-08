@@ -6,11 +6,9 @@ import java.io.File;
 import java.util.Map;
 import java.util.UUID;
 import javax.servlet.http.Part;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.stereotype.Component;
 
-@Controller
+@Component
 public class MemberController {
 
   private MemberDao memberDao;
