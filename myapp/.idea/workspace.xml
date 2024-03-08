@@ -5,81 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app-74-web/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/doc/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/doc/ddl.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/controller/AboutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/controller/AssignmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/controller/BoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/controller/MemberController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/dao/AssignmentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/dao/AttachedFileDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/dao/BoardDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/dao/DaoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/dao/MemberDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/dao/mysql/AssignmentDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/dao/mysql/AttachedFileDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/dao/mysql/BoardDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/dao/mysql/MemberDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/vo/Assignment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/vo/AttachedFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/vo/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/util/ConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/util/ConnectionProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/util/DBConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/util/TransactionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/resources/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/resources/config/app-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/resources/config/application-context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/about.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/assignment/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/assignment/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/assignment/view.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/auth/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/auth/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/board/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/board/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/board/view.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/error.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/home.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/img/default-photo.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/member/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/member/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/member/view.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/upload/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/main/webapp/upload/board/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/test/java/bitcamp/myapp/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-74-web/src/test/resources/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AboutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AboutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AssignmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AssignmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/CookieValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/controller/CookieValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/RequestMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/controller/RequestMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/RequestParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/controller/RequestParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/filter/CharacterEncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/filter/CharacterEncodingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/listener/ContextLoaderListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/listener/ContextLoaderListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/servlet/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/servlet/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-74-web/src/main/java/bitcamp/myapp/servlet/RequestHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/resources/config/app-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/config/app-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/board/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/board/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/board/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/board/view.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

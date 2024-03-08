@@ -11,7 +11,12 @@
         http://www.springframework.org/schema/mvc
         https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+  <!-- 스프링 WebMVC의 DispatcherServlet이 멀티파트 파라미터를 처리할 때 사용할 객체를 준비한다.-->
+  <bean class="org.springframework.web.multipart.support.StandardServletMultipartResolver"
+    id="multipartResolver"/>
+
   <context:component-scan base-package="bitcamp.myapp.controller"/>
+
   <mvc:annotation-driven/>
 
 </beans>
