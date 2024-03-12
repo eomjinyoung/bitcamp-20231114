@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +38,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="myapp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="myapp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="myapp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -132,7 +149,7 @@
       <recent name="bitcamp.myapp.controller.board" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.myapp [run]">
+  <component name="RunManager" selected="Gradle.myapp [build]">
     <configuration name="ScoreTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bitcamp.myapp.servlet.ScoreTest" />
       <module name="myapp.app.main" />
@@ -217,9 +234,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.myapp [build]" />
         <item itemvalue="Gradle.myapp [run]" />
         <item itemvalue="애플리케이션.ScoreTest" />
-        <item itemvalue="Gradle.myapp [build]" />
       </list>
     </recent_temporary>
   </component>
