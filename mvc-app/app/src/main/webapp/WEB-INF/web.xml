@@ -11,26 +11,22 @@
 
   <display-name>java-spring-webmvc</display-name>
 
-  <!-- Spring Web MVC의 프론트 컨트롤러 역할을 수행할 서블릿을 지정한다. -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/app-servlet.xml</param-value>
+  </context-param>
 
-  <!-- DispatcherServlet 배치하기 : 방법1-->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
 
-  <!-- => DispatcherServlet은 자체적으로 IoC 컨테이너(기본: XmlWebApplicationContext)를 보유하고 있다.
-       => 파라미터를 사용하여 IoC 컨테이너의 설정 파일을 지정해야 한다.
-          초기화 파라미터명: contextConfigLocation
-          초기화 파라미터값: 예) /WEB-INF/app-servlet.xml
-       => 설정하고 싶지 않다면 init-value를 비워둬라.
-  -->
   <servlet>
     <servlet-name>app</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>/WEB-INF/app-servlet.xml</param-value>
+      <param-value></param-value>
     </init-param>
-    <!-- 서블릿을 요청하지 않아도 웹 애플리케이션을 시작시킬 때 자동 생성되어
-         IoC 컨테이너를 준비할 수 있도록
-         다음 옵션을 붙인다. -->
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>

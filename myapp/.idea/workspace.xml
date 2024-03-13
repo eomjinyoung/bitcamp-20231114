@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../mvc-app/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/app/src/main/java/bitcamp/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/app/src/main/resources/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/app/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/app/src/main/webapp/WEB-INF/app-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/app/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/app/src/main/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mvc-app/app/src/test/resources/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvc-app/app/src/main/java/bitcamp/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mvc-app/app/src/main/java/bitcamp/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvc-app/app/src/main/webapp/WEB-INF/app-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mvc-app/app/src/main/webapp/WEB-INF/app-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvc-app/app/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mvc-app/app/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

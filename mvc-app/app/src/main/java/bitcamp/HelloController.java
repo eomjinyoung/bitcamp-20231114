@@ -13,6 +13,7 @@ public class HelloController {
   // 표시하려면 다음과 같이 @RequestMapping 애노테이션을 붙여야 한다.
   //    @RequestMapping(요청URL)
   // => 예)
+  //    @RequestMapping(value={"/hello"})
   //    @RequestMapping(value="/hello")
   //    @RequestMapping("/hello")
   //    @RequestMapping(path="/hello")
