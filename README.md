@@ -1512,9 +1512,33 @@
 - 강의 내용
   - 복습(1)
   - Spring IoC 컨테이너 사용법(계속)
+  - Use-case 모델 
 - 실습 프로젝트
-  - 75. Spring WebMVC 프레임워크 도입하기
 - 최종 팀 프로젝트
   - 주요 기능 UI 프로토타입 발표 2차
     - CRUD 화면 제시
+  - DB 모델링
+- 학습 점검 목록
+  - @Autowired 를 이용하여 의존객체를 주입하는 방법을 설명할 수 있는가? []
+  - BeanPostProcessor 동작 원리와 사용법을 설명할 수 있는가? []
+  - 생성자를 통해 의존 객체를 주입하는 방법을 설명할 수 있는가? []
+  - 의존 객체를 주입할 때 생성자, 셋터, 필드 주입 방식의 특징을 설명할 수 있는가? []
+  - @Qualifier, @Resource 애노테이션을 사용할 수 있는가? []
+  - @Component 를 이용하여 객체 생성을 자동화 할 수 있는가? []
+  - @Controller, @Service, @Repository 의 용도를 설명할 수 있는가? []
+  - XML 대신 Java Config를 사용해서 IoC 컨테이너의 동작을 설정할 수 있는가? []
+  - @Bean, @Configuration 의 용도를 설명할 수 있는가? []
+  - @PropertySource, @Value를 이용하여 .properties 파일의 값을 다룰 수 있는가? []
+  - @ComponentScan 사용법을 설명할 수 있는가? []
+  - Actor와 Use-case의 개념을 설명할 수 있는가? []
+  - Actor를 식별 할 수 있는가? []
+
+### 82일(2024-03-13,수)
+
+- 강의 내용
+  - 복습(1)
+  - Use-case 모델(계속)
+- 실습 프로젝트
+- 최종 팀 프로젝트
+  - DB 모델링
 - 학습 점검 목록
