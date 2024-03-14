@@ -1,5 +1,6 @@
 package bitcamp.web.listener;
 
+import bitcamp.config.AdminConfig;
 import bitcamp.config.AppConfig;
 import bitcamp.config.RootConfig;
 import javax.servlet.ServletContext;
@@ -27,15 +28,25 @@ public class WebInitListener implements ServletContextListener {
 
     AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
     rootContext.register(RootConfig.class);
+    rootContext.refresh();
 
     AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
+    appContext.setParent(rootContext);
     appContext.register(AppConfig.class);
+    appContext.refresh();
 
     Dynamic 서블릿설정 = sc.addServlet("app", new DispatcherServlet(appContext));
     서블릿설정.addMapping("/app/*");
     서블릿설정.setLoadOnStartup(1);
 
+    AnnotationConfigWebApplicationContext adminContext = new AnnotationConfigWebApplicationContext();
+    adminContext.setParent(rootContext);
+    adminContext.register(AdminConfig.class);
+    adminContext.refresh();
 
+    Dynamic 서블릿설정2 = sc.addServlet("admin", new DispatcherServlet(adminContext));
+    서블릿설정2.addMapping("/admin/*");
+    서블릿설정2.setLoadOnStartup(1);
 
   }
 }
