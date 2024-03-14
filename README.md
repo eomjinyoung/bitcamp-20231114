@@ -1538,6 +1538,21 @@
 - 강의 내용
   - 복습(1)
   - Use-case 모델(계속)
+  - Spring WebMVC 사용법
+- 실습 프로젝트
+- 최종 팀 프로젝트
+  - DB 모델링
+- 학습 점검 목록
+  - 서블릿 기반 웹프로젝트에 Spring WebMVC를 적용할 수 있는가? []
+  - DispatcherServlet의 IoC 컨테이너 설정 방법을 설명할 수 있는가? []
+  - ContextLoaderListener의 IoC 컨테이너 설정 방법을 설명할 수 있는가? []
+  - DispatcherServlet의 IoC 컨테이너와 ContextLoaderListener의 IoC 컨테이너의 관계를 설명할 수 있는가? []
+
+### 83일(2024-03-14,목)
+
+- 강의 내용
+  - 복습(1)
+  - Spring WebMVC 사용법
 - 실습 프로젝트
 - 최종 팀 프로젝트
   - DB 모델링
