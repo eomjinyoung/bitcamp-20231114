@@ -1557,3 +1557,17 @@
 - 최종 팀 프로젝트
   - DB 모델링
 - 학습 점검 목록
+  - ServletContainerInitializer의 구동 원리를 설명할 수 있는가? []
+  - SpringServletContainerInitializer 클래스의 구동 원리를 설명할 수 있는가? []
+  - WebApplicationInitializer의 구동 원리를 설명할 수 있는가? []
+  - WebApplicationIntializer를 활용하여 ContextLoaderListener와 DispatcherServlet을 설정할 수 있는가? []
+
+### 84일(2024-03-15,금)
+
+- 강의 내용
+  - 복습(1)
+  - Spring WebMVC 사용법(계속)
+- 실습 프로젝트
+- 최종 팀 프로젝트
+  - DB 모델링
+- 학습 점검 목록

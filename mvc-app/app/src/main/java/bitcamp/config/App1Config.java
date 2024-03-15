@@ -4,10 +4,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.FilterType;
 
-@ComponentScan(
-    value="bitcamp.web",
-    excludeFilters = @Filter(type= FilterType.REGEX, pattern = "bitcamp.web.admin.*")
-)
-public class AppConfig {
+@ComponentScan("bitcamp.app1")
+public class App1Config {
 
 }
