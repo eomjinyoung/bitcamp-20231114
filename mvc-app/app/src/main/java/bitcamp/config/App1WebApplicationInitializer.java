@@ -6,7 +6,6 @@ import javax.servlet.ServletRegistration.Dynamic;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
 public class App1WebApplicationInitializer extends
     AbstractAnnotationConfigDispatcherServletInitializer {
 
