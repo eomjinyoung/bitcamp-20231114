@@ -1580,7 +1580,30 @@
   - 요청 프로토콜의 Content-Type 헤더의 값으로 요청을 구분할 수 있는가? []
   - @RequestBody, @ResponseBody의 사용법을 설명할 수 있는가? []
   
-### 84일(2024-03-15,금)
+### 85일(2024-03-18,월)
+
+- 강의 내용
+  - 복습(1)
+  - Spring WebMVC 사용법(계속)
+- 실습 프로젝트
+- 최종 팀 프로젝트
+  - DB 모델링
+- 학습 점검 목록
+  - request handler의 파라미터로 다룰 수 있는 타입을 설명할 수 있는가? []
+  - @RequestParam 사용법을 아는가? []
+  - request handler에서 요청 파라미터 값을 객체로 받는 방법을 아는가? []
+  - 객체가 포함하는 있는 객체에 요청 파라미터 값을 받는 방법을 아는가? []
+  - 프로퍼티 에디터를 사용하여 요청 파라미터의 문자열을 다른 타입으로 변환할 수 있는가? []
+  - @ControllerAdvice, @InitBinder 사용법을 설명할 수 있는가? []
+  - @RequestHeader 사용법을 아는가? []
+  - User-Agent 요청 헤더를 다룰 수 있는가? []
+  - @CookieValue를 사용하여 쿠키를 다룰 수 있는가? []
+  - multipart/form-data 형식의 요청 파라미터 값을 다룰 수 있는가? []
+  - @RequestBody 사용법을 아는가? []
+  - request handler의 리턴 타입으로 String, HttpEntity, ResponseEntity를 사용하는 방법을 아는가? []
+  - request handler에서 view url을 리턴하는 방법을 아는가? []
+
+### 86일(2024-03-19,화)
 
 - 강의 내용
   - 복습(1)

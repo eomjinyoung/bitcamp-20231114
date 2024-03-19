@@ -12,7 +12,7 @@ import org.springframework.web.multipart.support.StandardServletMultipartResolve
 @ComponentScan("bitcamp.app1")
 public class App1Config {
 
-  @Bean
+  //@Bean
   MultipartResolver multipartResolver() {
     return new StandardServletMultipartResolver();
     //return new CommonsMultipartResolver();

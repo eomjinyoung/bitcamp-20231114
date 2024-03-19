@@ -26,8 +26,8 @@ public class Controller04_8 {
 
   // ServletContext는 메서드의 아규먼트로 받을 수 없다.
   // 의존 객체로 주입 받아야 한다.
-  //@Autowired
-  //ServletContext sc;
+  @Autowired
+  ServletContext sc;
 
   @Autowired
   ApplicationContext ctx;
@@ -45,8 +45,8 @@ public class Controller04_8 {
     String filename = null;
     if (photo != null && photo.getSize() > 0) {
       filename = UUID.randomUUID().toString();
-      //String path = sc.getRealPath("/upload/" + filename);
-      //photo.write(path);
+      String path = sc.getRealPath("/upload/" + filename);
+      photo.write(path);
     }
 
     return "<html><head><title>c04_8/h1</title></head><body>" + "<h1>업로드 결과</h1>" + "<p>이름:" + name
@@ -69,8 +69,8 @@ public class Controller04_8 {
     String filename = null;
     if (photo != null && !photo.isEmpty()) {
       filename = UUID.randomUUID().toString();
-      //String path = sc.getRealPath("/upload/" + filename);
-      //photo.transferTo(new File(path));
+      String path = sc.getRealPath("/upload/" + filename);
+      photo.transferTo(new File(path));
     }
 
     return "<html><head><title>c04_8/h2</title></head><body>" + "<h1>업로드 결과</h1>" + "<p>이름:" + name
@@ -101,8 +101,8 @@ public class Controller04_8 {
     for (MultipartFile f : photo) {
       if (!f.isEmpty()) {
         String filename = UUID.randomUUID().toString();
-        //String path = sc.getRealPath("/upload/" + filename);
-        //f.transferTo(new File(path));
+        String path = sc.getRealPath("/upload/" + filename);
+        f.transferTo(new File(path));
         out.printf("<p><img src='../../upload/%s'></p>\n", filename);
       }
     }

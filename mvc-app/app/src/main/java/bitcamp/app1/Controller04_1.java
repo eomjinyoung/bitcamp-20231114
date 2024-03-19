@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/c04_1")
 public class Controller04_1 {
-  /*
   // 프론트 컨트롤러(DispatcherServlet)로부터 받고 싶은 값이 있다면
   // 요청 핸들러를 정의할 때 받고 싶은 타입의 파라미터를 선언하라!
   // 그러면 프론트 컨트롤러가 메서드를 호출할 때 해당 타입의 값을 넘겨줄 것이다.
@@ -57,5 +56,4 @@ public class Controller04_1 {
     out.printf("ServletResponse == HttpServletResponse : %b\n", response == response2);
   }
 
-   */
 }
