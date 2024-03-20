@@ -1612,3 +1612,20 @@
 - 최종 팀 프로젝트
   - DB 모델링
 - 학습 점검 목록
+  - request handler에서 redirect, forward, include를 처리하는 방법을 설명할 수 있는가? []
+  - request handler에서 뷰 컴포넌트가 사용할 값을 리턴하는 방법을 설명할 수 있는가? []
+  - ViewResolver의 역할과 동작 과정을 설명할 수 있는가? []
+  - view name 이 절대 경로일 때와 상대 경로일 때에 따라 계산되는 URL을 설명할 수 있는가? []
+  - request handler가 view name을 리턴하지 않을 때 계산되는 view URL을 설명할 수 있는가? []
+  - @PathVariable을 사용하여 URL에서 값을 추출하는 방법을 설명할 수 있는가? []
+  - @MatrixVariable 사용법을 설명할 수 있는가? []
+
+### 87일(2024-03-20,수)
+
+- 강의 내용
+  - 복습(1)
+  - Spring WebMVC 사용법(계속)
+- 실습 프로젝트
+- 최종 팀 프로젝트
+  - DB 모델링
+- 학습 점검 목록

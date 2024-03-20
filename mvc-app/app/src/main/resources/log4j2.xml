@@ -18,7 +18,7 @@
   <Loggers>
 
     <!-- Root => 모든 대상에 적용할 기본 로그 출력 형식과 레벨 -->
-    <Root level="trace" additivity="false">
+    <Root level="debug" additivity="false">
       <AppenderRef ref="stdout" /> <!-- 로그를 출력할 때 사용할 출력 방식 지정 -->
     </Root>
   </Loggers>
