@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="" />
+    <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AboutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AboutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AssignmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AssignmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/about.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/assignment/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/assignment/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/assignment/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/assignment/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/assignment/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/assignment/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/auth/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/auth/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/auth/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/auth/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/board/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/board/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/board/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/board/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/board/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/board/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/member/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/member/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/member/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/member/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/member/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/WEB-INF/jsp/member/view.jsp" afterDir="false" />
+    </list>
     <list id="8fdbd381-122d-4262-90ab-be4499feb56a" name="tjdah 님이 변경한 내용" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

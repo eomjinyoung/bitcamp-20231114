@@ -1641,6 +1641,9 @@
 - 강의 내용
   - 복습(1)
 - 실습 프로젝트
+  - 76. Spring WebMVC를 Java Config로 설정하기
+  - 77. Spring WebMVC의 기본 ViewResolver를 InternalResourceViewResolver로 교체하기
+  - 
 - 최종 팀 프로젝트
   - DB 모델링
 - 학습 점검 목록

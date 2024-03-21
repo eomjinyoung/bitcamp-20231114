@@ -621,10 +621,6 @@
 - mybatis 프레임워크의 구동 원리 및 사용법
 - GoF의 Proxy 패턴을 이용하여 SqlSessionFactory 객체의 기능을 변경하는 방법
 
-## 53. 리스너 실행에 Facade 패턴 적용하기
-
-- GoF의 Facade 패턴의 동작원리 이해와 적용하는 방법
-- ActionListener 실행에 Facade 객체를 사용
 
 ## 60. 첨부파일을 네이버 클라우드의 스토리지 서비스에 저장하기
 
