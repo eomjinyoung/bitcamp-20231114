@@ -5,24 +5,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/GlobalControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/GlobalControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/06bc38f0-3c39-4262-a230-04475c4ef607" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/2e4e7b69-84ff-470b-b59f-cbae0835325a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/332af56f-fa85-4d84-967e-01c355ddaa50" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/4852dce9-c486-4697-8bb0-119ca89ce58a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/5bf598bf-3084-45e8-94ca-06ba68fa79da" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/70721f08-6b37-415b-a131-8d207dfc05b8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/73725b52-8dc9-4fb1-8942-e0201bb27a9c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/7bce0ede-b25a-44b1-a827-28fc9769b670" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/7cb3b996-35b0-421c-9241-75f424fbb5ab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/9f91d776-2094-4b60-b07c-90cb781610b3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/aae9b895-fd07-41d6-bddd-5a0e6e45be09" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/b88fddb4-bc43-43f6-919a-a3266d4ec4a6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/f86d9468-ad32-4269-a766-961cb46164db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/upload/board/fb273f19-b827-43c4-b32c-8a3041040a45" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/doc/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/doc/ddl.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/config/AppWebApplicationInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/config/RootConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/controller/AboutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/controller/AssignmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/controller/BoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/controller/GlobalControllerAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/controller/MemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/dao/AssignmentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/dao/AttachedFileDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/dao/BoardDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/dao/DaoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/dao/MemberDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/dao/mysql/AssignmentDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/dao/mysql/AttachedFileDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/dao/mysql/BoardDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/dao/mysql/MemberDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/vo/Assignment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/vo/AttachedFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/vo/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/util/ConnectionPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/util/ConnectionProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/util/DBConnectionPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/util/TransactionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/resources/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/resources/config/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/about.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/assignment/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/assignment/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/assignment/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/auth/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/auth/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/board/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/board/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/board/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/img/default-photo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/member/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/member/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/member/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/upload/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/main/webapp/upload/board/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/test/java/bitcamp/myapp/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-76-web/src/test/resources/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppWebApplicationInitializer1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/config/AppWebApplicationInitializer1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppWebApplicationInitializer2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/config/AppWebApplicationInitializer2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppWebApplicationInitializer3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-76-web/src/main/java/bitcamp/myapp/config/AppWebApplicationInitializer3.java" afterDir="false" />
     </list>
     <list id="8fdbd381-122d-4262-90ab-be4499feb56a" name="tjdah 님이 변경한 내용" comment="" />
     <option name="SHOW_DIALOG" value="false" />

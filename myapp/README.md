@@ -610,8 +610,9 @@
 - @ControllerAdvice, @InitBinder 사용하여 파라미터의 PropertyEditor를 등록하는 방법
 - 예외가 발생했을 때 출력될 오류 페이지를 설정하는 방법 : @ExceptionHandler
 
+## 77. Spring WebMVC의 기본 ViewResolver를 InternalResourceViewResolver로 교체하기
 
-- InternalResourceViewResolver를 설정하는 방법
+- InternalResourceViewResolver를 설정하고 다루는 방법
 
 
 
@@ -665,34 +666,8 @@
 
 - 직접 제작한 트랜잭션 프록시 객체 대신 Spring에서 제공하는 클래스 및 애노테이션 사용하기
 
-## 75. 애노테이션으로 request handler 표시하기
 
-- PageController 인터페이스를 사용하는 대신에 애노테이션으로 호출될 메서드를 표시하는 방법
 
-## 76. CRUD 기능을 한 개의 페이지 컨트롤러로 합치기
-
-- CRUD 관련 메서드를 한 개의 클래스로 합치는 방법
-- 요청 별로 메서드를 구분하여 호출하는 방법
-
-## 77. 요청 파라미터를 자동 주입하기
-
-- 클라이언트가 보낸 요청 파라미터를 요청 핸들러에 자동으로 주입하는 방법
-
-## 78. Spring WebMVC 프레임워크 도입하기
-
-- Spring WebMVC 프레임워크 사용법
-- DispatcherServlet을 등록하는 다양한 방법
-- WebApplicationInitializer 동작 메커니즘 이해
-
-## 79. Spring IoC 컨테이너를 Root Context와 Servlet Context로 분리하기
-
-- ContextLoaderListener의 IoC 컨테이너 역할 이해
-- DispatcherServlet의 IoC 컨테이너의 역할 이해
-- 설정하는 방법
-
-## 80. Spring WebMVC 활용하기
-
-- Spring WebMVC 사용법
 
 ## 81. SpringBoot(2.7.x) 적용하기
 
