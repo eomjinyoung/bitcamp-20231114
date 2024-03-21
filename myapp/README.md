@@ -606,7 +606,8 @@
 
 - Java Config를 이용하여 Spring WebMVC를 설정하는 방법
 - Log4j2 적용하는 방법
-- @GetMapping, @PostMapping, MultipartFile 적용하는 방법
+- @GetMapping, @PostMapping, Model, MultipartFile 적용하는 방법
+- @ControllerAdvice, @InitBinder 사용하여 파라미터의 PropertyEditor를 등록하는 방법
 - InternalResourceViewResolver를 설정하는 방법
 - 예외가 발생했을 때 출력될 오류 페이지를 설정하는 방법
 

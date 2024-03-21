@@ -12,7 +12,7 @@
 
 <h1>${boardName}</h1>
 
-<form action='/app/board/add?category=${category}' method='post' enctype='multipart/form-data'>
+<form action='/app/board/add' method='post' enctype='multipart/form-data'>
   <input name='category' type='hidden' value='${category}'>
   <div>
         제목: <input name='title' type='text'>

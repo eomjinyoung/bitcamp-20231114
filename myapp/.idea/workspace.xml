@@ -5,25 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/GlobalControllerAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/06bc38f0-3c39-4262-a230-04475c4ef607" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/2e4e7b69-84ff-470b-b59f-cbae0835325a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/332af56f-fa85-4d84-967e-01c355ddaa50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/4852dce9-c486-4697-8bb0-119ca89ce58a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/5bf598bf-3084-45e8-94ca-06ba68fa79da" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/70721f08-6b37-415b-a131-8d207dfc05b8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/73725b52-8dc9-4fb1-8942-e0201bb27a9c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/7bce0ede-b25a-44b1-a827-28fc9769b670" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/7cb3b996-35b0-421c-9241-75f424fbb5ab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/9f91d776-2094-4b60-b07c-90cb781610b3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/aae9b895-fd07-41d6-bddd-5a0e6e45be09" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/b88fddb4-bc43-43f6-919a-a3266d4ec4a6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/fb273f19-b827-43c4-b32c-8a3041040a45" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppWebApplicationInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppWebApplicationInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/RootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/RootConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AboutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AboutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AssignmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AssignmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/AssignmentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/AssignmentDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/AttachedFileDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/AttachedFileDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/BoardDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/BoardDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/MemberDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/MemberDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/DBConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/DBConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/TransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/TransactionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/webapp/board/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/webapp/board/form.jsp" afterDir="false" />
     </list>
     <list id="8fdbd381-122d-4262-90ab-be4499feb56a" name="tjdah 님이 변경한 내용" comment="" />
     <option name="SHOW_DIALOG" value="false" />
