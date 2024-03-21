@@ -602,7 +602,11 @@
   - ContextLoaderListener 사용법
   - DispatcherServlet 사용법
 
+## 76. Spring WebMVC를 Java Config로 설정하기
 
+- Java Config를 이용하여 Spring WebMVC를 설정하는 방법
+- InternalResourceViewResolver를 설정하는 방법
+- 예외가 발생했을 때 출력될 오류 페이지를 설정하는 방법
 
 
 
