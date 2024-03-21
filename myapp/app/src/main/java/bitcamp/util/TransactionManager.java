@@ -1,8 +1,9 @@
 package bitcamp.util;
 
 import java.sql.Connection;
+import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class TransactionManager {
 
   ConnectionPool connectionPool;

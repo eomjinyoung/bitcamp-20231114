@@ -1,24 +1,34 @@
 package bitcamp.myapp.config;
 
+import java.io.File;
+import java.util.EnumSet;
+import javax.servlet.DispatcherType;
+import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration.Dynamic;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class AppWebApplicationInitializer implements WebApplicationInitializer {
 
   @Override
   public void onStartup(ServletContext servletContext) throws ServletException {
-
+    AbstractAnnotationConfigDispatcherServletInitializer a;
     AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
     rootContext.register(RootConfig.class);
     rootContext.refresh();
+    rootContext.setServletContext(servletContext);
     servletContext.addListener(new ContextLoaderListener(rootContext));
-/*
+
     AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
     appContext.register(AppConfig.class);
     appContext.setParent(rootContext);
+    appContext.setServletContext(servletContext);
     appContext.refresh();
     Dynamic registration = servletContext.addServlet("app", new DispatcherServlet(appContext));
     registration.addMapping("/app/*");
@@ -39,6 +49,6 @@ public class AppWebApplicationInitializer implements WebApplicationInitializer {
         false,
         new String[]{"app"}
     );
-*/
+
   }
 }

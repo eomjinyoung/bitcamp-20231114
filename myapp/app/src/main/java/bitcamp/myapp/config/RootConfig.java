@@ -4,8 +4,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 
 @ComponentScan(value = {
-    "bitcamp.util.*"//,
-    // "bitcamp.myapp.dao.*"
+    "bitcamp.myapp.dao",
+    "bitcamp.util"
 })
 @PropertySource({
     "classpath:config/jdbc.properties"
