@@ -9,7 +9,6 @@ import bitcamp.util.TransactionManager;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
@@ -47,10 +46,10 @@ public class BoardController {
   @GetMapping("form")
   public String form(
       int category,
-      Map<String, Object> map) throws Exception {
+      Model model) throws Exception {
 
-    map.put("boardName", category == 1 ? "게시글" : "가입인사");
-    map.put("category", category);
+    model.addAttribute("boardName", category == 1 ? "게시글" : "가입인사");
+    model.addAttribute("category", category);
     return "/board/form.jsp";
   }
 
@@ -59,11 +58,9 @@ public class BoardController {
       Board board,
       MultipartFile[] attachedFiles,
       HttpSession session,
-      Map<String, Object> map) throws Exception {
+      Model model) throws Exception {
 
-    int category = board.getCategory();
-    map.put("boardName", category == 1 ? "게시글" : "가입인사");
-    map.put("category", category);
+    model.addAttribute("category", board.getCategory());
 
     try {
       Member loginUser = (Member) session.getAttribute("loginUser");
@@ -73,7 +70,7 @@ public class BoardController {
       board.setWriter(loginUser);
 
       ArrayList<AttachedFile> files = new ArrayList<>();
-      if (category == 1) {
+      if (board.getCategory() == 1) {
         for (MultipartFile file : attachedFiles) {
           if (file.getSize() == 0) {
             continue;
@@ -137,6 +134,8 @@ public class BoardController {
       HttpSession session,
       Model model) throws Exception {
 
+    model.addAttribute("category", board.getCategory());
+
     try {
       Member loginUser = (Member) session.getAttribute("loginUser");
       if (loginUser == null) {
@@ -172,7 +171,7 @@ public class BoardController {
         attachedFileDao.addAll(files);
       }
       txManager.commit();
-      return "redirect:list?category=" + board.getCategory();
+      return "redirect:list";
 
     } catch (Exception e) {
       try {
@@ -223,14 +222,14 @@ public class BoardController {
   }
 
   @GetMapping("file/delete")
-  public String fileDelete(int category, int fileNo, HttpSession session) throws Exception {
+  public String fileDelete(int category, int no, HttpSession session) throws Exception {
 
     Member loginUser = (Member) session.getAttribute("loginUser");
     if (loginUser == null) {
       throw new Exception("로그인하시기 바랍니다!");
     }
 
-    AttachedFile file = attachedFileDao.findByNo(fileNo);
+    AttachedFile file = attachedFileDao.findByNo(no);
     if (file == null) {
       throw new Exception("첨부파일 번호가 유효하지 않습니다.");
     }
@@ -240,7 +239,7 @@ public class BoardController {
       throw new Exception("권한이 없습니다.");
     }
 
-    attachedFileDao.delete(fileNo);
+    attachedFileDao.delete(no);
     new File(this.uploadDir + "/" + file.getFilePath()).delete();
 
     return "redirect:../view?category=" + category + "&no=" + file.getBoardNo();

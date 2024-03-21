@@ -17,7 +17,9 @@
 </c:if>
 
 <c:if test="${not empty detail}">
-  <pre>${detail}</pre>
+  <pre>
+  ${detail}
+  </pre>
 </c:if>
 
 <jsp:include page="/footer.jsp"></jsp:include>
