@@ -10,5 +10,10 @@
       </set>
     </option>
     <option name="configurationPath" value="" />
+    <option name="exclusions">
+      <set>
+        <option value=".*\.xml" />
+      </set>
+    </option>
   </component>
 </project>

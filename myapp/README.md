@@ -614,12 +614,15 @@
 
 - InternalResourceViewResolver를 설정하고 다루는 방법
 
-
-
-## 52. Mybatis SQL-mapper 프레임워크 사용하기
+## 78. Mybatis SQL-mapper 프레임워크 사용하기
 
 - mybatis 프레임워크의 구동 원리 및 사용법
-- GoF의 Proxy 패턴을 이용하여 SqlSessionFactory 객체의 기능을 변경하는 방법
+- Spring Framework에 적용하는 방법
+- Mybatis의 Log4j 활성화 하기
+
+## 79. DAO 구현체 자동 생성하기
+
+- Mybatis의 Spring 연동 플러그인을 사용하여 DAO를 자동 생성하는 방법
 
 
 ## 60. 첨부파일을 네이버 클라우드의 스토리지 서비스에 저장하기
@@ -635,10 +638,7 @@
 
 
 
-## 69. Mybatis + Spring IoC 컨테이너 = DAO 구현체 자동 생성
 
-- Mybatis의 Spring 연동 플러그인을 사용하여 DAO를 자동 생성하는 방법
-- Mybatis의 Log4j 활성화 하기
 
 ## 70. Controller에서 비즈니스 로직 분리하기: 서비스 컴포넌트 도입
 
