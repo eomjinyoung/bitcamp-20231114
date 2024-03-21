@@ -14,6 +14,8 @@ import java.util.UUID;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BoardController {
 
+  private final Log log = LogFactory.getLog(this.getClass());
   private TransactionManager txManager;
   private BoardDao boardDao;
   private AttachedFileDao attachedFileDao;
@@ -31,7 +34,7 @@ public class BoardController {
       BoardDao boardDao,
       AttachedFileDao attachedFileDao,
       ServletContext sc) {
-    System.out.println("BoardController() 호출됨!");
+    log.debug("BoardController() 호출됨!");
     this.txManager = txManager;
     this.boardDao = boardDao;
     this.attachedFileDao = attachedFileDao;

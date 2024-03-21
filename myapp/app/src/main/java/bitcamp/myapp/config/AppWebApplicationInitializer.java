@@ -4,11 +4,19 @@ import java.io.File;
 import javax.servlet.Filter;
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletRegistration.Dynamic;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class AppWebApplicationInitializer extends
     AbstractAnnotationConfigDispatcherServletInitializer {
+
+  private final Log log = LogFactory.getLog(this.getClass());
+
+  public AppWebApplicationInitializer() {
+    log.debug("생성자 호출됨!");
+  }
 
   @Override
   protected Class<?>[] getRootConfigClasses() {

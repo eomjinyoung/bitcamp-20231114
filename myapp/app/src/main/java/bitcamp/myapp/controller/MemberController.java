@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.UUID;
 import javax.servlet.ServletContext;
 import javax.servlet.http.Part;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,11 +16,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MemberController {
 
+  private final Log log = LogFactory.getLog(this.getClass());
   private MemberDao memberDao;
   private String uploadDir;
 
   public MemberController(MemberDao memberDao, ServletContext sc) {
-    System.out.println("MemberController() 호출됨!");
+    log.debug("MemberController() 호출됨!");
     this.memberDao = memberDao;
     this.uploadDir = sc.getRealPath("/upload");
   }
