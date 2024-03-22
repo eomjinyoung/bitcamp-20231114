@@ -3,8 +3,18 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="Mapper1">
-  <select id="sql1" resultType="bitcamp.myapp.vo.Member">
+<mapper namespace="MemberDao">
+
+  <insert id="add" parameterType="bitcamp.myapp.vo.Member">
+    insert into members(email,name,password,photo)
+    values(#{email},#{name},sha2(#{password},256),#{photo})
+  </insert>
+
+  <delete id="delete" parameterType="int">
+    delete from members where member_no=#{value}
+  </delete>
+
+  <select id="findAll" resultType="bitcamp.myapp.vo.Member">
     select
       member_no as no,
       email,
@@ -13,5 +23,43 @@
       created_date as createdDate
     from
       members
+  </select>
+
+  <select id="findBy" resultType="bitcamp.myapp.vo.Member" parameterType="int">
+    select
+      member_no as no,
+      email,
+      name,
+      photo,
+      created_date as createdDate
+    from
+      members
+    where
+      member_no=#{value}
+  </select>
+
+  <update id="update" parameterType="bitcamp.myapp.vo.Member">
+    update members set
+      email=#{email},
+      name=#{name},
+      photo=#{photo}
+    <if test="password != ''">
+      , password=sha2(#{password},256)
+    </if>
+    where
+      member_no=#{no}
+  </update>
+
+  <select id="findByEmailAndPassword" resultType="bitcamp.myapp.vo.Member" parameterType="map">
+    select
+      member_no as no,
+      email,
+      name,
+      created_date as createdDate
+    from
+      members
+    where
+      email= #{email}
+      and password=sha2(#{password},256)
   </select>
 </mapper>
