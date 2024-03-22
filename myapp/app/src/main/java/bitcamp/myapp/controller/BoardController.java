@@ -101,9 +101,6 @@ public class BoardController {
     model.addAttribute("boardName", category == 1 ? "게시글" : "가입인사");
     model.addAttribute("category", category);
     model.addAttribute("board", board);
-    if (category == 1) {
-      model.addAttribute("files", attachedFileDao.findAllByBoardNo(no));
-    }
   }
 
   @PostMapping("update")
