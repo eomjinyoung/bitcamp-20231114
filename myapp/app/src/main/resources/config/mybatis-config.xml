@@ -20,6 +20,7 @@
 
   <mappers>
     <mapper resource="mapper/MemberMapper.xml"/>
+    <mapper resource="mapper/AssignmentMapper.xml"/>
   </mappers>
 
 
