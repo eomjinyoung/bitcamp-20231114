@@ -5,7 +5,22 @@
 
 <mapper namespace="BoardDao">
 
-  <insert id="add" parameterType="bitcamp.myapp.vo.Board">
+  <resultMap id="BoardMap" type="bitcamp.myapp.vo.Board">
+    <id column="board_no" property="no"/>
+    <result column="title" property="title"/>
+    <result column="content" property="content"/>
+    <result column="created_date" property="createdDate"/>
+    <result column="file_count" property="fileCount"/>
+    <result column="category" property="category"/>
+
+    <association property="writer" javaType="bitcamp.myapp.vo.Member">
+      <id column="member_no" property="no"/>
+      <result column="name" property="name"/>
+    </association>
+  </resultMap>
+
+  <insert id="add" parameterType="bitcamp.myapp.vo.Board"
+    useGeneratedKeys="true" keyColumn="board_no" keyProperty="no">
     insert into boards(title,content,writer,category) 
     values(#{title},#{content},#{writer.no},#{category})
   </insert>
@@ -15,12 +30,12 @@
     where board_no=#{value}
   </delete>
 
-  <select id="findAll" resultType="bitcamp.myapp.vo.Board" parameterType="int">
+  <select id="findAll" resultMap="BoardMap" parameterType="int">
     select  
-      b.board_no as no,
+      b.board_no,
       b.title,  
-      b.created_date createdDate,
-      count(file_no) fileCount,
+      b.created_date,
+      count(file_no) file_count,
       m.member_no,
       m.name
     from
@@ -34,17 +49,18 @@
       board_no desc
   </select>
 
-  <select id="findBy" resultType="bitcamp.myapp.vo.Board" parameterType="int">
-    select"
-      b.board_no as no,
+  <select id="findBy" resultMap="BoardMap" parameterType="int">
+    select
+      b.board_no,
       b.title,  
       b.content,
-      b.created_date as createdDate,
+      b.created_date,
       m.member_no,  
       m.name  
     from
       boards b inner join members m on b.writer=m.member_no  
-    where board_no=#{value}
+    where
+      board_no=#{value}
   </select>
 
   <update id="update" parameterType="bitcamp.myapp.vo.Board">

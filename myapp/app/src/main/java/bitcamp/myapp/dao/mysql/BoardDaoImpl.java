@@ -37,7 +37,7 @@ public class BoardDaoImpl implements BoardDao {
   @Override
   public List<Board> findAll(int category) {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-      return sqlSession.selectList("BoardDao.findAll");
+      return sqlSession.selectList("BoardDao.findAll", category);
     }
   }
 

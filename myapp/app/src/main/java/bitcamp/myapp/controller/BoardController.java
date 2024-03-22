@@ -197,9 +197,10 @@ public class BoardController {
 
       txManager.startTransaction();
       attachedFileDao.deleteAll(no);
-      boardDao.delete(no);
       txManager.commit();
 
+      boardDao.delete(no);
+      
       for (AttachedFile file : files) {
         new File(this.uploadDir + "/" + file.getFilePath()).delete();
       }
