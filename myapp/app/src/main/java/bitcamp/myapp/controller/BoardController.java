@@ -13,6 +13,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -29,6 +31,8 @@ public class BoardController {
   private BoardDao boardDao;
   private AttachedFileDao attachedFileDao;
   private String uploadDir;
+  @Autowired
+  private ApplicationContext ctx;
 
   public BoardController(
       BoardDao boardDao,
@@ -44,6 +48,12 @@ public class BoardController {
   public void form(int category, Model model) throws Exception {
     model.addAttribute("boardName", category == 1 ? "게시글" : "가입인사");
     model.addAttribute("category", category);
+
+    // IoC 컨테이너에 들어 있는 객체들
+    String[] beanNames = ctx.getBeanDefinitionNames();
+    for (String beanName : beanNames) {
+      log.debug(ctx.getBean(beanName).getClass().getSimpleName());
+    }
   }
 
   @Transactional

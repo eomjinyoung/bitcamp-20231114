@@ -5,59 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/0791abe7-408a-4d81-8e21-dde6343b83cd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/0aaa9029-5def-4006-8068-5fabaf967120" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/0b749150-c999-41d5-95f7-2be6c5ad97ba" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/11deebf2-020b-4dd8-9fc8-27812955a2ea" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/128d2bc6-b246-4a7d-aa2c-4392ff16ccab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/14a104c0-3a7f-4614-b49a-c3ca7fbbee49" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/237f03ef-945c-4e79-af0f-3ca93c2c60b9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/274358af-3e8d-4492-8aab-4ca5715e5a89" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/2c1f6fd1-ac51-40d9-8dd6-d38da7abab10" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/2c3ebde4-b9c1-488f-b956-588d4791d9af" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/2d63d23b-b3e1-4b86-9847-758605e36b2e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/303f39e0-88a5-46b4-b3e9-215330b2f250" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/3c1b44d1-ab20-4193-b278-b264a49bab26" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/44640bea-1920-4423-b675-010fd22d6ee2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/44fcc265-40ef-4abd-ac44-71076d9ddbde" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/47698c7c-48a5-4b21-887e-8ab0bc30a9d3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/48ddb5ac-9eff-4bdc-877d-dc015c265fde" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/53be6060-b15f-4466-999a-87ebc152791c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/65d7dd0a-832b-4632-8621-e83e469af09a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/712e53a0-d8e4-4eb9-afc0-beb65a0f0467" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/7208feea-850f-43c8-b732-574e398cc02f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/7c1bdc4c-fc77-431d-afc5-cedaf0b54ed5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/7f6a3f88-d4ab-4aaf-af7d-861d5b07b81d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/81fc565c-7d90-4813-9357-24b613206ca3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/83f24e4f-ad82-46cf-818b-14333fadf754" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/96458f6f-e830-4f3e-b96c-d9c13aa2c6a5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/9a3b5397-35c3-49c8-b3b8-1458702ecf22" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/9ac6f13b-9180-4759-a3a3-a9a0b553bd10" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/9f7030a0-5be4-42cd-9be9-a7c541e9865b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/a53c31a1-d0ab-4587-adbb-749b30cddd1e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/a53faa54-bd53-4a72-93d3-8cadef08e771" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/aa2971cd-546e-40ba-a893-0d223a381091" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/af303717-dd7e-4086-bd1a-be6780d95ce0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/b04b61cd-7ff2-4777-829c-f29501d3deb8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/b29b6ef5-c700-4b17-bca3-39fdeb9800ed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/bcd85411-59fc-4639-abda-6c9bf627a19d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/c935de77-3730-4a5c-82e3-aa23da2814f9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/d29df21e-aea3-46a6-8922-df32da59818a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/d833b467-8647-4419-8019-972e94b83f71" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/dc9f00f3-cf8e-4f3b-82d1-f44e09425712" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/e0af60b0-aa63-49bf-9a13-48377538e5f5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/e13b117a-5797-4857-8323-d655ede117f7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/e3788a5b-ac48-4d5c-82ef-6b18da76b050" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/e81ddd42-1883-445e-b67f-37be7da8f1bf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/ed87a004-a220-4996-a41c-cd040fa84afe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/RootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/config/RootConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/AssignmentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/AssignmentDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/AttachedFileDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/AttachedFileDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/BoardDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/BoardDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/MemberDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/MemberDaoImpl.java" afterDir="false" />
     </list>
     <list id="8fdbd381-122d-4262-90ab-be4499feb56a" name="tjdah 님이 변경한 내용" comment="" />
     <option name="SHOW_DIALOG" value="false" />
