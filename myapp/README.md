@@ -626,8 +626,17 @@
   - 'mybatis-spring' 라이브러리 추가
   - 'spring-jdbc' 라이브러리 추가
 
+## 80. @Transactional을 사용하여 트랜잭션 다루기
 
-## 79. DAO 구현체 자동 생성하기
+- @Transactional 사용법
+  - @EnableTransactionManagement 용도 이해 
+- @Transactional이 붙은 메서드의 구동 원리 이해
+  - - 프록시 패턴 기술을 사용하여 트랜잭션 코드를 삽입
+
+
+
+
+## 81. DAO 구현체 자동 생성하기
 
 - Mybatis의 Spring 연동 플러그인을 사용하여 DAO를 자동 생성하는 방법
 
@@ -651,24 +660,6 @@
 
 - Controller에서 비즈니스 로직을 분리하는 이유
 - 서비스 컴포넌트의 역할 이해
-
-## 71. 트랜잭션 제어 코드를 캡슐화하기: Spring의 TransactionTemplate 모방 구현
-
-- 트랜잭션 제어 코드를 캡슐화하여 반복적인 코드 작업을 줄이는 방법
-- Spring의 TransactionTemplate 클래스를 모방하여 내부 메커니즘을 이해하기
-
-## 72. Spring의 TransactionTemplate 으로 교체하기
-
-- 직접 만든 TransactionTemplate 대신 Spring에서 제공하는 클래스 사용하기
-
-## 73. 애노테이션을 사용하여 트랜잭션 제어하기
-
-- 프록시 패턴 기술을 사용하여 트랜잭션 코드를 삽입하기
-
-## 74. Spring의 @Transactional 로 교체하기
-
-- 직접 제작한 트랜잭션 프록시 객체 대신 Spring에서 제공하는 클래스 및 애노테이션 사용하기
-
 
 
 

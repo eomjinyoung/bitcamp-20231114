@@ -1658,6 +1658,8 @@
   - 복습(1)
 - 실습 프로젝트
   - 78. Mybatis SQL-mapper 프레임워크 사용하기(계속)
+  - 79. Mybatis 설정을 XML에서 Java Config로 바꾸기
+  - 80. @Transactional을 사용하여 트랜잭션 다루기
 - 최종 팀 프로젝트
   - DB 모델링
 - 학습 점검 목록
