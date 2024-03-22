@@ -1636,7 +1636,7 @@
   - request handler가 리턴한 객체를 JSON 데이터로 자동 변환하여 응답할 수 있는가? []
   - 서블릿 또는 request handler에서 예외가 발생했을 때 오류를 출력할 페이지를 설정할 수 있는가? []
 
-### 87일(2024-03-20,수)
+### 88일(2024-03-21,목)
 
 - 강의 내용
   - 복습(1)
@@ -1644,6 +1644,20 @@
   - 76. Spring WebMVC를 Java Config로 설정하기
   - 77. Spring WebMVC의 기본 ViewResolver를 InternalResourceViewResolver로 교체하기
   - 78. Mybatis SQL-mapper 프레임워크 사용하기
+- 최종 팀 프로젝트
+  - DB 모델링
+- 학습 점검 목록
+  - 웹 프로젝트에 Spring WebMVC를 설정할 수 있는가? []
+  - XML 설정 및 Java Config 설정을 모두 다룰 수 있는가? []
+  - Mybatis Persistence Framework의 구동 원리를 설명할 수 있는가? []
+  - Mybatis를 Spring WebMVC 프로젝트에 적용할 수 있는가? []
+
+### 89일(2024-03-22,금)
+
+- 강의 내용
+  - 복습(1)
+- 실습 프로젝트
+  - 78. Mybatis SQL-mapper 프레임워크 사용하기(계속)
 - 최종 팀 프로젝트
   - DB 모델링
 - 학습 점검 목록

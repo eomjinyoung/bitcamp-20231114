@@ -620,6 +620,11 @@
 - Spring Framework에 적용하는 방법
 - Mybatis의 Log4j 활성화 하기
 
+## 79. Mybatis 설정을 XML에서 Java Config로 바꾸기
+
+- Java Config로 Mybatis를 설정하는 방법
+
+
 ## 79. DAO 구현체 자동 생성하기
 
 - Mybatis의 Spring 연동 플러그인을 사용하여 DAO를 자동 생성하는 방법
