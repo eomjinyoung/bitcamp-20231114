@@ -623,6 +623,8 @@
 ## 79. Mybatis 설정을 XML에서 Java Config로 바꾸기
 
 - Java Config로 Mybatis를 설정하는 방법
+  - 'mybatis-spring' 라이브러리 추가
+  - 'spring-jdbc' 라이브러리 추가
 
 
 ## 79. DAO 구현체 자동 생성하기
