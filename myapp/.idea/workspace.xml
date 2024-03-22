@@ -5,27 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/14e6a010-81d1-47b2-b4c3-2cca8679ef9e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/327c9af0-964e-401f-8ca0-1fdf74e8625d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/3821b312-e73e-4976-8595-b061c7aaa1af" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/47e77ccc-2fb5-4440-906f-24101188c5b2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/48b05afb-e1d2-4fdd-9aff-49fdea15c93a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/4e241f99-140c-4531-8cbf-dd89da26652b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/82e4fc33-6d3c-40f3-8733-9626fbfbfb2b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/9b281465-9093-4abf-8181-73a1e51e7a9d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/9f33cb24-a7a2-423e-9fb1-6370c5a1ed32" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/a4f92614-8149-4587-93ac-0c99fc9909cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/a5c745ce-3d6a-4b6c-a489-63e817d00105" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/bd08836f-e929-433c-8f49-fa3296f9ecbb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/be86654f-97a3-44cb-9a0b-35d099e1a322" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/c35f718e-bd68-4747-a562-2961093fe95f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/ca6c6426-6961-42e0-b06e-d44f43662724" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/webapp/upload/board/e1b4c5c4-3133-4d7d-875a-f86d4610490a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/AttachedFileDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/mysql/AttachedFileDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/config/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/config/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/mapper/AttachedFileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/mapper/AttachedFileMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/ConnectionPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/ConnectionProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/DBConnectionPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/util/TransactionManager.java" beforeDir="false" />
     </list>
     <list id="8fdbd381-122d-4262-90ab-be4499feb56a" name="tjdah 님이 변경한 내용" comment="" />
     <option name="SHOW_DIALOG" value="false" />
