@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,6 +46,7 @@ public class BoardController {
     model.addAttribute("category", category);
   }
 
+  @Transactional
   @PostMapping("add")
   public String add(
       Board board,
@@ -62,13 +64,19 @@ public class BoardController {
 
     ArrayList<AttachedFile> files = new ArrayList<>();
     if (board.getCategory() == 1) {
+//      int count = 0;
       for (MultipartFile file : attachedFiles) {
         if (file.getSize() == 0) {
           continue;
         }
         String filename = UUID.randomUUID().toString();
         file.transferTo(new File(this.uploadDir + "/" + filename));
+//        if (++count > 2) {
+//          files.add(new AttachedFile().filePath(
+//              "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789"));
+//        } else {
         files.add(new AttachedFile().filePath(filename));
+//        }
       }
     }
 
@@ -103,6 +111,7 @@ public class BoardController {
     model.addAttribute("board", board);
   }
 
+  @Transactional
   @PostMapping("update")
   public String update(
       Board board,
@@ -148,6 +157,7 @@ public class BoardController {
 
   }
 
+  @Transactional
   @GetMapping("delete")
   public String delete(int category, int no, HttpSession session) throws Exception {
 

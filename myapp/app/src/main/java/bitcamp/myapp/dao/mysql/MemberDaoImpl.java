@@ -23,14 +23,14 @@ public class MemberDaoImpl implements MemberDao {
 
   @Override
   public void add(Member member) {
-    try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+    try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       sqlSession.insert("MemberDao.add", member);
     }
   }
 
   @Override
   public int delete(int no) {
-    try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+    try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       return sqlSession.delete("MemberDao.delete", no);
     }
   }
@@ -51,7 +51,7 @@ public class MemberDaoImpl implements MemberDao {
 
   @Override
   public int update(Member member) {
-    try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+    try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       return sqlSession.update("MemberDao.update", member);
     }
   }

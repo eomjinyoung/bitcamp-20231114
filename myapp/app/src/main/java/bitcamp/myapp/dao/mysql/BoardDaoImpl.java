@@ -22,14 +22,14 @@ public class BoardDaoImpl implements BoardDao {
 
   @Override
   public void add(Board board) {
-    try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+    try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       sqlSession.insert("BoardDao.add", board);
     }
   }
 
   @Override
   public int delete(int no) {
-    try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+    try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       return sqlSession.delete("BoardDao.delete", no);
     }
   }
@@ -50,7 +50,7 @@ public class BoardDaoImpl implements BoardDao {
 
   @Override
   public int update(Board board) {
-    try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+    try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       return sqlSession.update("BoardDao.update", board);
     }
   }
