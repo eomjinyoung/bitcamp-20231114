@@ -58,7 +58,7 @@
       member_no=#{no}
   </update>
 
-  <select id="findByEmailAndPassword" resultMap="MemberMap" parameterType="map">
+  <select id="findByEmailAndPassword" resultMap="MemberMap">
     select
       member_no,
       email,

@@ -637,7 +637,18 @@
 
 - Mybatis의 Spring 연동 플러그인을 사용하여 DAO를 자동 생성하는 방법
 
+## 82. Controller에서 비즈니스 로직 분리하기: 서비스 컴포넌트 도입
 
+- Controller에서 비즈니스 로직을 분리하는 이유
+- 서비스 컴포넌트의 역할 이해
+
+## 83. 뷰 템플릿 기술을 Thymeleaf 로 교체하기
+
+- Thymeleaf 사용법
+
+## 83. Lombok 적용하기
+
+- Lombok 사용법
 
 
 
@@ -650,30 +661,10 @@
 
 - 네이버 클라우드의 Image Optimizer 사용법
 
-
-
-
-
-
-
-## 70. Controller에서 비즈니스 로직 분리하기: 서비스 컴포넌트 도입
-
-- Controller에서 비즈니스 로직을 분리하는 이유
-- 서비스 컴포넌트의 역할 이해
-
-
-
 ## 81. SpringBoot(2.7.x) 적용하기
 
 - SpringBoot 사용법
 
-## 82. 뷰 템플릿 기술을 Thymeleaf 로 교체하기
-
-- Thymeleaf 사용법
-
-## 83. Lombok 적용하기
-
-- Lombok 사용법
 
 ## 84. SpringSecurity 적용하기
 
