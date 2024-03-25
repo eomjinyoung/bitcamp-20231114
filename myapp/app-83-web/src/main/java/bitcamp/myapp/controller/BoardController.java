@@ -68,7 +68,9 @@ public class BoardController implements InitializingBean {
         files.add(AttachedFile.builder().filePath(filename).build());
       }
     }
-    board.setFiles(files);
+    if (files.size() > 0) {
+      board.setFiles(files);
+    }
 
     boardService.add(board);
 
@@ -128,8 +130,10 @@ public class BoardController implements InitializingBean {
         files.add(AttachedFile.builder().filePath(filename).build());
       }
     }
-    board.setFiles(files);
-    //AttachedFile f = new AttachedFile()
+    if (files.size() > 0) {
+      board.setFiles(files);
+    }
+
     boardService.update(board);
 
     return "redirect:list";

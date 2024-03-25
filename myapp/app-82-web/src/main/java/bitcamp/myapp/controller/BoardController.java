@@ -69,7 +69,9 @@ public class BoardController {
         files.add(new AttachedFile().filePath(filename));
       }
     }
-    board.setFiles(files);
+    if (files.size() > 0) {
+      board.setFiles(files);
+    }
 
     boardService.add(board);
 
@@ -129,7 +131,9 @@ public class BoardController {
         files.add(new AttachedFile().filePath(filename));
       }
     }
-    board.setFiles(files);
+    if (files.size() > 0) {
+      board.setFiles(files);
+    }
 
     boardService.update(board);
 
