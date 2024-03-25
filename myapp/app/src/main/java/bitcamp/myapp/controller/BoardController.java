@@ -12,7 +12,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,15 +24,15 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/board")
 public class BoardController {
 
-  private final Log log = LogFactory.getLog(this.getClass());
-  private BoardService boardService;
+  private static final Log log = LogFactory.getLog(BoardController.class);
+  private final BoardService boardService;
+  private final ApplicationContext ctx;
   private String uploadDir;
-  @Autowired
-  private ApplicationContext ctx;
 
-  public BoardController(BoardService boardService, ServletContext sc) {
+  public BoardController(BoardService boardService, ApplicationContext ctx, ServletContext sc) {
     log.debug("BoardController() 호출됨!");
     this.boardService = boardService;
+    this.ctx = ctx;
     this.uploadDir = sc.getRealPath("/upload/board");
   }
 
@@ -66,7 +65,7 @@ public class BoardController {
         }
         String filename = UUID.randomUUID().toString();
         file.transferTo(new File(this.uploadDir + "/" + filename));
-        files.add(new AttachedFile().filePath(filename));
+        files.add(AttachedFile.builder().filePath(filename).build());
       }
     }
     board.setFiles(files);
@@ -126,7 +125,10 @@ public class BoardController {
         }
         String filename = UUID.randomUUID().toString();
         file.transferTo(new File(this.uploadDir + "/" + filename));
-        files.add(new AttachedFile().filePath(filename));
+        AttachedFile attachedFile = AttachedFile.builder()
+            .filePath(filename)
+            .build();
+        files.add(attachedFile);
       }
     }
     board.setFiles(files);

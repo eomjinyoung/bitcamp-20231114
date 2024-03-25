@@ -2,6 +2,7 @@ package bitcamp.myapp.controller;
 
 import bitcamp.myapp.service.AssignmentService;
 import bitcamp.myapp.vo.Assignment;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
@@ -10,20 +11,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@RequiredArgsConstructor
 @Controller
 @RequestMapping("/assignment")
 public class AssignmentController {
 
-  private final Log log = LogFactory.getLog(this.getClass());
-  private AssignmentService assignmentService;
-
-  public AssignmentController(AssignmentService assignmentService) {
-    log.debug("AssignmentController() 호출됨!");
-    this.assignmentService = assignmentService;
-  }
+  private static final Log log = LogFactory.getLog(AssignmentController.class);
+  private final AssignmentService assignmentService;
 
   @GetMapping("form")
   public void form() throws Exception {
+    Assignment a = new Assignment();
   }
 
   @PostMapping("add")
@@ -41,6 +39,7 @@ public class AssignmentController {
   @GetMapping("view")
   public void view(int no, Model model) throws Exception {
     Assignment assignment = assignmentService.get(no);
+
     if (assignment == null) {
       throw new Exception("과제 번호가 유효하지 않습니다.");
     }

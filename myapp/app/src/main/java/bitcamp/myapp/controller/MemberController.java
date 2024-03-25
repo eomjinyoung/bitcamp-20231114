@@ -18,8 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/member")
 public class MemberController {
 
-  private final Log log = LogFactory.getLog(this.getClass());
-  private MemberService memberService;
+  private static final Log log = LogFactory.getLog(MemberController.class);
+  private final MemberService memberService;
   private String uploadDir;
 
   public MemberController(MemberService memberService, ServletContext sc) {

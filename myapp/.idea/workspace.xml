@@ -5,10 +5,85 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/service/AssignmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/service/impl/DefaultAssignmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/doc/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/doc/ddl.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/config/AppWebApplicationInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/config/RootConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/controller/AboutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/controller/AssignmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/controller/BoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/controller/GlobalControllerAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/controller/MemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/dao/AssignmentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/dao/AttachedFileDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/dao/BoardDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/dao/MemberDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/service/AssignmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/service/BoardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/service/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/service/impl/DefaultAssignmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/service/impl/DefaultBoardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/service/impl/DefaultMemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/vo/Assignment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/vo/AttachedFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/java/bitcamp/myapp/vo/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/resources/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/resources/config/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/resources/mapper/AssignmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/resources/mapper/AttachedFileMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/resources/mapper/BoardMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/resources/mapper/MemberMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/about.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/assignment/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/assignment/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/assignment/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/auth/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/auth/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/board/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/board/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/board/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/member/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/member/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/jsp/member/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/img/default-photo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/upload/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/main/webapp/upload/board/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/test/java/bitcamp/myapp/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-82-web/src/test/resources/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AboutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AboutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AssignmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AssignmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/service/impl/DefaultAssignmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/service/impl/DefaultAssignmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/service/impl/DefaultBoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/service/impl/DefaultBoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/service/impl/DefaultMemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/service/impl/DefaultMemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/AttachedFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/AttachedFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Member.java" afterDir="false" />
     </list>
     <list id="8fdbd381-122d-4262-90ab-be4499feb56a" name="tjdah 님이 변경한 내용" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,43 +166,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Gradle.myapp [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp [classes].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp [run].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp 빌드.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:App.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:DaoTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:QueueTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:ScoreTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:StackTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app [:app:Test.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-api [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-client [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-client [classes].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-client [run].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-common [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-common [classes].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-server [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.myapp:app-server [run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/java/bitcamp/myapp&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/resources/mapper&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.saveactions&quot;,
-    &quot;애플리케이션.ScoreTest.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.myapp [build].executor": "Run",
+    "Gradle.myapp [classes].executor": "Run",
+    "Gradle.myapp [clean].executor": "Run",
+    "Gradle.myapp [run].executor": "Run",
+    "Gradle.myapp 빌드.executor": "Run",
+    "Gradle.myapp:app [:app:App.main()].executor": "Run",
+    "Gradle.myapp:app [:app:DaoTest.main()].executor": "Run",
+    "Gradle.myapp:app [:app:QueueTest.main()].executor": "Run",
+    "Gradle.myapp:app [:app:ScoreTest.main()].executor": "Run",
+    "Gradle.myapp:app [:app:StackTest.main()].executor": "Run",
+    "Gradle.myapp:app [:app:Test.main()].executor": "Run",
+    "Gradle.myapp:app-api [build].executor": "Run",
+    "Gradle.myapp:app-client [build].executor": "Run",
+    "Gradle.myapp:app-client [classes].executor": "Run",
+    "Gradle.myapp:app-client [run].executor": "Run",
+    "Gradle.myapp:app-common [build].executor": "Run",
+    "Gradle.myapp:app-common [classes].executor": "Run",
+    "Gradle.myapp:app-server [build].executor": "Run",
+    "Gradle.myapp:app-server [run].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/java/bitcamp/myapp",
+    "last_opened_file_path": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/resources/mapper",
+    "project.structure.last.edited": "프로젝트",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "애플리케이션.ScoreTest.executor": "Run"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/resources/mapper" />
@@ -209,6 +284,28 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="myapp [classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="classes" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="myapp [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -232,6 +329,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.myapp [classes]" />
       <item itemvalue="Gradle.myapp [run]" />
       <item itemvalue="Gradle.myapp [build]" />
       <item itemvalue="애플리케이션.ScoreTest" />
@@ -239,6 +337,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.myapp [run]" />
+        <item itemvalue="Gradle.myapp [classes]" />
         <item itemvalue="Gradle.myapp [build]" />
         <item itemvalue="애플리케이션.ScoreTest" />
       </list>
