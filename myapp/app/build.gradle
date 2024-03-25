@@ -52,7 +52,7 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.32'
     // => 단위 테스트 소스에 삽입된 lombok 애노테이션을 처리할 라이브러리를 지정한다.
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
-    
+
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'com.google.guava:guava:32.1.1-jre'

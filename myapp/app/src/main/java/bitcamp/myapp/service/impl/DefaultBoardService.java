@@ -7,8 +7,6 @@ import bitcamp.myapp.vo.AttachedFile;
 import bitcamp.myapp.vo.Board;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class DefaultBoardService implements BoardService {
 
-  private static final Log log = LogFactory.getLog(DefaultBoardService.class);
   private final BoardDao boardDao;
   private final AttachedFileDao attachedFileDao;
 

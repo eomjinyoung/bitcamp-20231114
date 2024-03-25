@@ -10,10 +10,6 @@ public class AboutController {
 
   private static final Log log = LogFactory.getLog(AboutController.class);
 
-  public AboutController() {
-    log.debug("AboutController() 호출됨!");
-  }
-
   @GetMapping("/about")
   public void about() {
   }

@@ -10,10 +10,6 @@ public class HomeController {
 
   private static final Log log = LogFactory.getLog(HomeController.class);
 
-  public HomeController() {
-    log.debug("HomeController() 호출됨!");
-  }
-
   @GetMapping("/home")
   public void home() {
   }
