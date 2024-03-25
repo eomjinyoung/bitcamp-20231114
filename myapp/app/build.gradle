@@ -35,7 +35,10 @@ dependencies {
     implementation 'org.mybatis:mybatis:3.5.15'
 
     // Mybatis를 Spring 프레임워크와 더 쉽게 연동하고자 할 때 사용하는 라이브러리
-    implementation 'org.mybatis:mybatis-spring:3.0.3'
+    // => Mybatis 3.5를 Spring 6.0.x와 연동시켜주는 라이브러리
+    //implementation 'org.mybatis:mybatis-spring:3.0.3'
+    // => Mybatis 3.5를 Spring 5.x와 연동시켜주는 라이브러리
+    implementation 'org.mybatis:mybatis-spring:2.1.2'
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

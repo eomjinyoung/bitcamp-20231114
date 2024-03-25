@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="AttachedFileDao">
+<mapper namespace="bitcamp.myapp.dao.AttachedFileDao">
 
   <resultMap id="AttachedFileMap" type="AttachedFile">
     <id column="file_no" property="no"/>

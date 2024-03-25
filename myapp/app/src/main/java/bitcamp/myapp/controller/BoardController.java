@@ -50,10 +50,10 @@ public class BoardController {
     model.addAttribute("category", category);
 
     // IoC 컨테이너에 들어 있는 객체들
-    String[] beanNames = ctx.getBeanDefinitionNames();
-    for (String beanName : beanNames) {
-      log.debug(ctx.getBean(beanName).getClass().getSimpleName());
-    }
+//    String[] beanNames = ctx.getBeanDefinitionNames();
+//    for (String beanName : beanNames) {
+//      log.debug(ctx.getBean(beanName).getClass().getSimpleName());
+//    }
   }
 
   @Transactional

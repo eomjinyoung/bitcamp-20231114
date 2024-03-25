@@ -1663,3 +1663,8 @@
 - 최종 팀 프로젝트
   - DB 모델링
 - 학습 점검 목록
+  - Mybatis의 <resultMap/>, <association/>, <collection/> 태그를 설명할 수 있는가? []
+  - Mybatis의 <typeAliases/> 태그를 설명할 수 있는가? []
+  - Mybatis 설정을 XML 대신 Java Config로 바꿀 수 있는가? []
+  - Spring 프레임워크의 @Transactional 애노테이션으로 트랜잭션을 다룰 수 있는가? []
+  - Spring 프레임워크에서 @Transactional을 어떻게 처리하는지 그 구동원리를 설명할 수 있는가? [] 
