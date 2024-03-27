@@ -10,7 +10,7 @@
 
 <h1>로그인</h1>
 
-<form action='/app/auth/login' method='post'>
+<form action="login" data-th-action="@{login}" method='post'>
   <div>
     이메일: <input data-th-value='${email}' name='email' type='text'
                 value="hong@test.com">
