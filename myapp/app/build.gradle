@@ -7,6 +7,9 @@ repositories {
 }
 
 dependencies {
+    // AWS S3 API 라이브러리
+    implementation 'com.amazonaws:aws-java-sdk-s3:1.12.688'
+    
     // MySQL JDBC Driver
     implementation 'com.mysql:mysql-connector-j:8.3.0'
 
