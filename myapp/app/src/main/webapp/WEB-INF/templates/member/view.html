@@ -14,8 +14,11 @@
       method='post'>
   <div>
     사진:
-    <a data-th-href="@{'/upload/' + *{photo}}" data-th-if="*{photo}">
-      <img data-th-src="@{'/upload/' + *{photo}}" height='80px'></a><br>
+    <a data-th-href="@{'https://kr.object.ncloudstorage.com/bitcamp-devops5-118/member/' + *{photo}}"
+       data-th-if="*{photo}">
+      <img
+          data-th-src="@{'https://kr.object.ncloudstorage.com/bitcamp-devops5-118/member/' + *{photo}}"
+          height='80px'></a><br>
     <a data-th-unless="*{photo}" href='/img/default-photo.jpeg'>
       <img height='80px' src='/img/default-photo.jpeg'></a><br>
     <input name='file' type='file'>
