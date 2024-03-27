@@ -16,9 +16,11 @@
 
   <!-- 로그 출력을 적용할 대상과 로그 출력 레벨을 지정한다. -->
   <Loggers>
-
+<!--    <Logger name="wire" level="INFO" additivity="false">-->
+<!--      <AppenderRef ref="stdout"/>-->
+<!--    </Logger>-->
     <!-- Root => 모든 대상에 적용할 기본 로그 출력 형식과 레벨 -->
-    <Root level="debug" additivity="false">
+    <Root level="info" additivity="false">
       <AppenderRef ref="stdout" /> <!-- 로그를 출력할 때 사용할 출력 방식 지정 -->
     </Root>
   </Loggers>
