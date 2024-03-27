@@ -1692,8 +1692,13 @@
   - 84. 뷰 템플릿 기술을 Thymeleaf 로 교체하기
 - 최종 팀 프로젝트
   - DB 테이블 생성 및 샘플 데이터 입력 및 테스트
+- 학습 점검 목록
+  - Lombok의 주요 애노테이션에 대해 설명할 수 있는가? []
+  - Spring 웹 프로젝트에 Thymeleaf 를 적용할 수 있는가? []
+  - Thymeleaf의 구동원리를 설명할 수 있는가? []
+  - InternalResourceViewResolver와 ThymeleafViewResolver를 동시에 적용할 수 있는가? []
 
-### 91일(2024-03-26,화)
+### 92일(2024-03-27,수)
 
 - 강의 내용
   - 복습(1)
