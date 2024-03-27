@@ -650,21 +650,22 @@
 
 - Thymeleaf 사용법
 
-
 ## 85. 첨부파일을 네이버 클라우드의 스토리지 서비스에 저장하기
 
 - 네이버 스토리지 서비스 사용법
 - 첨부파일을 스토리지 서비스에 업로드하는 방법
 
-
-
-## 61. 네이버 클라우드의 Image Optimizer를 이용하여 썸네일 이미지 다루기
+## 86. 네이버 클라우드의 Image Optimizer를 이용하여 썸네일 이미지 다루기
 
 - 네이버 클라우드의 Image Optimizer 사용법
 
-## 81. SpringBoot(2.7.x) 적용하기
+## 87. SpringBoot(2.7.x) 적용하기
 
 - SpringBoot 사용법
+
+
+
+
 
 
 ## 84. SpringSecurity 적용하기

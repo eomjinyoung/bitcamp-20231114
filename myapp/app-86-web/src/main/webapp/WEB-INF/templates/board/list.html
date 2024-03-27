@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>비트캠프 데브옵스 5기</title>
+</head>
+<body>
+
+<div data-th-replace="header :: header">머리말</div>
+
+<h1 data-th-text="${boardName}">게시글</h1>
+<a data-th-href="@{form(category=${category})}" href="form.html">새 글</a>
+<table border='1'>
+  <thead>
+  <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>작성자</th>
+    <th>등록일</th>
+    <th>첨부파일</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr data-th-each="board : ${list}" data-th-object="${board}">
+    <td data-th-text="*{no}">1</td>
+    <td><a data-th-href="@{view(category=${category},no=*{no})}" data-th-text="*{title}"
+           href="view.html">제목입니다.</a></td>
+    <td data-th-text="*{writer.name}">홍길동</td>
+    <td data-th-text="${#dates.format(board.createdDate,'yyyy-MM-dd')}">2024-03-27</td>
+    <td data-th-text="*{fileCount}">29</td>
+  </tr>
+
+  </tbody>
+</table>
+
+<div data-th-replace="footer :: footer">꼬리말</div>
+
+</body>
+</html>
