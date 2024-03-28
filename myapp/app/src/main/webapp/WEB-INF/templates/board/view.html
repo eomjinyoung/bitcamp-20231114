@@ -30,7 +30,8 @@
     첨부파일: <input multiple name='attachedFiles' type='file'>
     <ul data-th-if="*{files[0].filePath}">
       <li data-th-each="file : *{files}" data-th-object="${file}">
-        <a data-th-href="@{'/upload/board/' + *{filePath}}" data-th-text="*{filePath}"
+        <a data-th-href="@{'https://kr.object.ncloudstorage.com/bitcamp-devops5-118/board/' + *{filePath}}"
+           data-th-text="*{filePath}"
            href="file.html">a.gif</a>
         [<a data-th-href="@{file/delete(category=${category},no=*{no})}"
             href="file-delete.html">삭제</a>]
