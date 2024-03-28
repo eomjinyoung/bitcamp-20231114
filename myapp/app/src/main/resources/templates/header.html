@@ -8,18 +8,18 @@
 
 <header data-th-fragment="header">
   <img src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png'>
-  <a href='/app/assignment/list'>과제</a>
-  <a href='/app/board/list?category=1'>게시글</a>
-  <a href='/app/member/list'>회원</a>
-  <a href='/app/board/list?category=2'>가입인사</a>
+  <a data-th-href="@{/assignment/list}" href="assignment/list">과제</a>
+  <a data-th-href="@{/board/list(category=1)}" href="board/list">게시글</a>
+  <a data-th-href="@{/member/list}" href="member/list">회원</a>
+  <a data-th-href="@{/board/list(category=2)}" href="board/list2">가입인사</a>
 
   <span data-th-if="${session.loginUser != null}"
         data-th-text="${session.loginUser.name}">홍길동</span>
-  <a data-th-if="${session.loginUser != null}" href='/app/auth/logout'>로그아웃</a>
+  <a data-th-href="@{/auth/logout}" data-th-if="${session.loginUser != null}" href="auth/logout">로그아웃</a>
 
-  <a data-th-if="${session.loginUser == null}" href='/app/auth/form'>로그인</a>
+  <a data-th-href="@{/auth/form}" data-th-if="${session.loginUser == null}" href="auth/form">로그인</a>
 
-  <a href='/app/about'>소개</a>
+  <a data-th-href="@{/about}" href="about">소개</a>
 </header>
 
 </body>
