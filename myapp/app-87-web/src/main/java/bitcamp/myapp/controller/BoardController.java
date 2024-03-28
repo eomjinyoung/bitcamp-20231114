@@ -42,10 +42,7 @@ public class BoardController {
   public String add(
       Board board,
       MultipartFile[] attachedFiles,
-      HttpSession session,
-      Model model) throws Exception {
-
-    model.addAttribute("category", board.getCategory());
+      HttpSession session) throws Exception {
 
     Member loginUser = (Member) session.getAttribute("loginUser");
     if (loginUser == null) {
@@ -69,7 +66,7 @@ public class BoardController {
 
     boardService.add(board);
 
-    return "redirect:list";
+    return "redirect:list?category=" + board.getCategory();
 
   }
 
@@ -96,10 +93,7 @@ public class BoardController {
   public String update(
       Board board,
       MultipartFile[] attachedFiles,
-      HttpSession session,
-      Model model) throws Exception {
-
-    model.addAttribute("category", board.getCategory());
+      HttpSession session) throws Exception {
 
     Member loginUser = (Member) session.getAttribute("loginUser");
     if (loginUser == null) {
@@ -130,7 +124,7 @@ public class BoardController {
 
     boardService.update(board);
 
-    return "redirect:list";
+    return "redirect:list?category=" + board.getCategory();
 
   }
 
