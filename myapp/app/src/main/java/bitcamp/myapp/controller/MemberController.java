@@ -69,6 +69,9 @@ public class MemberController implements InitializingBean {
     int numOfRecord = memberService.countAll();
     int numOfPage = numOfRecord / pageSize + ((numOfRecord % pageSize) > 0 ? 1 : 0);
 
+    log.debug(String.format("numOfRecord: %s", numOfRecord));
+    log.debug(String.format("numOfPage: %s", numOfPage));
+
     if (pageNo > numOfPage) {
       pageNo = numOfPage;
     }
