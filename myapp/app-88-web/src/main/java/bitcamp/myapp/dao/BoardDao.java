@@ -1,24 +1,25 @@
 package bitcamp.myapp.dao;
 
-import bitcamp.myapp.vo.Assignment;
+import bitcamp.myapp.vo.Board;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
-public interface AssignmentDao {
+public interface BoardDao {
 
-  void add(Assignment assignment);
+  void add(Board board);
 
   int delete(int no);
 
-  List<Assignment> findAll(
+  List<Board> findAll(
+      @Param("category") int category,
       @Param("offset") int offset,
       @Param("rowCount") int rowCount);
 
-  Assignment findBy(int no);
+  Board findBy(int no);
 
-  int update(Assignment assignment);
+  int update(Board board);
 
-  int countAll();
+  int countAll(int category);
 }

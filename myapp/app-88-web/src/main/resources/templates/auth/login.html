@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta content="1;url=/index.html" data-th-if="${session.loginUser != null}" http-equiv="Refresh">
+  <meta content="1;url=/auth/form" data-th-if="${session.loginUser == null}"
+        http-equiv="Refresh">
+  <title>비트캠프 데브옵스 5기</title>
+</head>
+<body>
+
+<div data-th-replace="header :: header">머리말</div>
+
+<h1>로그인</h1>
+<p data-th-if="${session.loginUser != null}">[[${session.loginUser.name}]] 님 환영합니다.</p>
+<p data-th-if="${session.loginUser == null}">이메일 또는 암호가 맞지 않습니다.</p>
+
+<div data-th-replace="footer :: footer">꼬리말</div>
+
+</body>
+</html>
