@@ -8,17 +8,19 @@ public interface BoardService {
 
   void add(Board board);
 
-  List<Board> list(int category);
+  List<Board> list(int category, int pageNo, int pageSize);
 
   Board get(int no);
 
   int update(Board board);
 
   int delete(int no);
-  
+
   List<AttachedFile> getAttachedFiles(int no);
 
   AttachedFile getAttachedFile(int fileNo);
 
   int deleteAttachedFile(int fileNo);
+
+  int countAll(int category);
 }
