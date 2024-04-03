@@ -61,3 +61,21 @@ insert into assignments(assignment_no,title,content,deadline)
   values(5,'과제5','내용5','2024-5-5');
 
 
+-- boards2 테이블 데이터
+insert into boards2(board_no,title,content,writer) values
+  (1, '제목1x','내용',101),
+  (2, '제목2x','내용',101),
+  (3, '제목3x','내용',101),
+  (4, '제목4x','내용',101),
+  (5, '제목5x','내용',101),
+  (6, '제목6x','내용',102),
+  (7, '제목7x','내용',102),
+  (8, '제목8x','내용',102),
+  (9, '제목9x','내용',102);
+
+ -- board2_files 테이블 데이터
+ insert into board_files2(file_no,file_path,board_no) values
+   (1,'a1x.gif', 1), (2,'a2x.gif', 1), (3,'a3x.gif', 1),
+   (4,'b1x.gif', 2), (5,'b2x.gif', 2),
+   (6,'c1x.gif', 4), (7,'c2x.gif', 4), (8,'c3x.gif', 4), (9,'c4x.gif', 4),
+   (10,'d1x.gif', 5);

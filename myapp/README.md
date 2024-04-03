@@ -672,6 +672,12 @@
 - summernote 활용법
 - 게시판에 적용하기
 
+## 90. summernote 응용 - 콘텐트에 포함된 이미지 파일 별도 저장
+
+- 콘텐트에 포함된 이미지 파일을 object storage에 별도 저장하기
+- DB 테이블에 보관하기
+
+
 
 
 ## 84. SpringSecurity 적용하기
