@@ -21,7 +21,7 @@
   </thead>
   <tbody>
   <tr data-th-each="member : ${list}" data-th-object="${member}">
-    <td data-th-data="*{no}">100</td>
+    <td data-th-text="*{no}">100</td>
     <td>
       <img data-th-if="*{photo}"
            data-th-src="@{'https://rljiyddk2675.edge.naverncp.com/68i0l8DhXa/member/' + *{photo}(type=f,w=20,h=20,ttype=jpg)}"

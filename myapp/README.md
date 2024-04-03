@@ -712,10 +712,6 @@
 
 - JWT 를 활용하여 사용자를 인증하는 방법
 
-## 92. WYSIWYG 자바스클립트 편집기 사용하기 - summernote 활용
-
-- summernote 활용법
-- 게시판에 적용하기
 
 ## 93. SNS 로그인 적용하기 - Facebook 로그인
 
