@@ -5,21 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a84827e7-6d13-4c5e-bb9d-79b24217473a" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/controller/Board2Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/AttachedFile2Dao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao/Board2Dao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/service/Board2Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/service/impl/DefaultBoard2Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/bitcamp/myapp/dao/AttachedFile2Dao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/bitcamp/myapp/dao/Board2Dao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/templates/board2/form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/templates/board2/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/templates/board2/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/실습프로젝트9.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/실습프로젝트9.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/doc/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/doc/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/doc/ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/doc/ddl.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/config/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/config/ncp.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/config/ncp.properties" afterDir="false" />
     </list>
     <list id="8fdbd381-122d-4262-90ab-be4499feb56a" name="tjdah 님이 변경한 내용" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +130,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/java/bitcamp/myapp",
-    "last_opened_file_path": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/resources/bitcamp/myapp/dao",
+    "last_opened_file_path": "/Users/eomjinyoung/git/bitcamp-study/myapp/app/src/main/resources/config",
     "project.structure.last.edited": "프로젝트",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -145,11 +140,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/resources/config" />
+      <recent name="$PROJECT_DIR$/app/src/main/resources" />
       <recent name="$PROJECT_DIR$/app/src/main/resources/bitcamp/myapp/dao" />
       <recent name="$PROJECT_DIR$/app/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/app/src/main/resources/static" />
-      <recent name="$PROJECT_DIR$/app/src/main/resources" />
-      <recent name="$PROJECT_DIR$/app/src/main/resources/config" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="bitcamp.myapp.Prompt" />
@@ -204,6 +199,11 @@
     </configuration>
     <configuration name="myapp [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
+        <option name="env">
+          <map>
+            <entry key="spring.profiles.active" value="dev" />
+          </map>
+        </option>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />

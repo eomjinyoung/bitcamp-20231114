@@ -675,8 +675,11 @@
 ## 90. summernote 응용 - 콘텐트에 포함된 이미지 파일 별도 저장
 
 - 콘텐트에 포함된 이미지 파일을 object storage에 별도 저장하기
-- DB 테이블에 보관하기
-
+- application.properties 파일을 운영모드와 개발모드로 분리하기
+  - application-prod.properties(운영모드)
+  - application-dev.properties(개발모드)
+- 보안 정보를 담은 .properties 파일을 프로젝트에서 분리하기
+  - @PropertySource("${HOME}/config/ncp-secret.properties")
 
 
 
