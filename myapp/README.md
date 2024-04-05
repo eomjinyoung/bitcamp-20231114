@@ -680,7 +680,7 @@
   - application-dev.properties(개발모드)
 - 보안 정보를 담은 .properties 파일을 프로젝트에서 분리하기
   - @PropertySource("${HOME}/config/ncp-secret.properties")
-
+ 
 
 
 ## 84. SpringSecurity 적용하기
