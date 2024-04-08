@@ -28,7 +28,6 @@
 <h1>게시글2</h1>
 
 <form action="add" data-th-action="@{add}" enctype='multipart/form-data' method='post'>
-  <input type="hidden" id="filenames" name="filenames">
   <div>
     제목: <input name='title' type='text'>
   </div>
@@ -44,24 +43,22 @@
 <div data-th-replace="footer :: footer">꼬리말</div>
 
 <script>
-  let filenames = [];
-
   $(document).ready(function() {
-
     $('#summernote').summernote({
       height: 300,
       width: 500,
       callbacks: {
         onInit: function() {
-          console.log('Summernote is launched');
+          console.log('Summernote 생성됨!');
         },
         onImageUpload: function(files) {
+
           let data = new FormData();
           for (const file of files) {
             data.append("files", file);
           }
           $.ajax({
-            url: 'file/upload',
+            url: 'file/upload', // 절대경로: http://localhost:8888/board2/file/upload
             type: 'POST',
             dataType: 'json',
             contentType: false,
@@ -74,14 +71,14 @@
               return;
             }
 
+            // 서버에서 받은 업로드 파일 이름을 가지고 <img> 태그를 설정한다.
             for (const attachedFile of result) {
               $('#summernote').summernote('insertImage',
                 'https://kr.object.ncloudstorage.com/bitcamp-devops5-118/board/'
                 + attachedFile.filePath);
-              filenames.push(attachedFile.filePath);
             }
-            $('#filenames').val(filenames.join());
           });
+
         }
       }
     });

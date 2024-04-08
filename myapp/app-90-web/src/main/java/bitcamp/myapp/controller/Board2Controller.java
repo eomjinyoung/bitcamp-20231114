@@ -15,15 +15,19 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
 @RequiredArgsConstructor
 @Controller
 @RequestMapping("/board2")
+@SessionAttributes("attachedFiles")
 public class Board2Controller {
 
   private static final Log log = LogFactory.getLog(Board2Controller.class);
@@ -41,8 +45,8 @@ public class Board2Controller {
   @PostMapping("add")
   public String add(
       Board board,
-      String filenames,
-      HttpSession session) throws Exception {
+      HttpSession session,
+      SessionStatus sessionStatus) throws Exception {
 
     Member loginUser = (Member) session.getAttribute("loginUser");
     if (loginUser == null) {
@@ -50,21 +54,26 @@ public class Board2Controller {
     }
     board.setWriter(loginUser);
 
-    ArrayList<AttachedFile> files = new ArrayList<>();
-    for (String filename : filenames.split(",")) {
-      if (board.getContent().indexOf(filename) != -1) {
-        files.add(AttachedFile.builder().filePath(filename).build());
-        continue;
+    // 게시글 등록할 때 삽입한 이미지 목록을 세션에서 가져온다.
+    List<AttachedFile> attachedFiles = (List<AttachedFile>) session.getAttribute("attachedFiles");
+
+    for (int i = attachedFiles.size() - 1; i >= 0; i--) {
+      AttachedFile attachedFile = attachedFiles.get(i);
+      if (board.getContent().indexOf(attachedFile.getFilePath()) == -1) {
+        // Object Storage에 업로드 한 파일 중에서 게시글 콘텐트에 포함되지 않은 것은 삭제한다.
+        storageService.delete(this.bucketName, this.uploadDir, attachedFile.getFilePath());
+        log.debug(String.format("%s 파일 삭제!", attachedFile.getFilePath()));
+        attachedFiles.remove(i);
       }
-      // Object Storage에 업로드 한 파일 중에서 게시글 콘텐트에 포함되지 않은 것은 삭제한다.
-      storageService.delete(this.bucketName, this.uploadDir, filename);
-      log.debug(String.format("%s 파일 삭제!", filename));
     }
-    if (files.size() > 0) {
-      board.setFileList(files);
+    if (attachedFiles.size() > 0) {
+      board.setFileList(attachedFiles);
     }
 
     boardService.add(board);
+
+    // 게시글을 등록하는 과정에서 세션에 임시 보관한 첨부파일 목록 정보를 제거한다.
+    sessionStatus.setComplete();
 
     return "redirect:list";
   }
@@ -109,8 +118,8 @@ public class Board2Controller {
   @PostMapping("update")
   public String update(
       Board board,
-      String filenames,
-      HttpSession session) throws Exception {
+      HttpSession session,
+      SessionStatus sessionStatus) throws Exception {
 
     Member loginUser = (Member) session.getAttribute("loginUser");
     if (loginUser == null) {
@@ -125,30 +134,32 @@ public class Board2Controller {
       throw new Exception("권한이 없습니다.");
     }
 
-    ArrayList<String> filenameList = new ArrayList<>();
-    for (String filename : filenames.split(",")) {
-      filenameList.add(filename);
-    }
-    for (AttachedFile attachedFile : board.getFileList()) {
-      filenameList.add(attachedFile.getFilePath());
+    // 게시글 변경할 때 삽입한 이미지 목록을 세션에서 가져온다.
+    List<AttachedFile> attachedFiles = (List<AttachedFile>) session.getAttribute("attachedFiles");
+
+    if (old.getFileList().size() > 0) {
+      // 기존 게시글에 등록된 이미지 목록과 합친다.
+      attachedFiles.addAll(old.getFileList());
     }
 
-
-    ArrayList<AttachedFile> files = new ArrayList<>();
-    for (String filename : filenameList) {
-      if (board.getContent().indexOf(filename) != -1) {
-        files.add(AttachedFile.builder().filePath(filename).build());
-        continue;
+    for (int i = attachedFiles.size() - 1; i >= 0; i--) {
+      AttachedFile attachedFile = attachedFiles.get(i);
+      if (board.getContent().indexOf(attachedFile.getFilePath()) == -1) {
+        // Object Storage에 업로드 한 파일 중에서 게시글 콘텐트에 포함되지 않은 것은 삭제한다.
+        storageService.delete(this.bucketName, this.uploadDir, attachedFile.getFilePath());
+        log.debug(String.format("%s 파일 삭제!", attachedFile.getFilePath()));
+        attachedFiles.remove(i);
       }
-      // Object Storage에 업로드 한 파일 중에서 게시글 콘텐트에 포함되지 않은 것은 삭제한다.
-      storageService.delete(this.bucketName, this.uploadDir, filename);
-      log.debug(String.format("%s 파일 삭제!", filename));
     }
-    if (files.size() > 0) {
-      board.setFileList(files);
+
+    if (attachedFiles.size() > 0) {
+      board.setFileList(attachedFiles);
     }
 
     boardService.update(board);
+
+    // 게시글을 변경하는 과정에서 세션에 임시 보관한 첨부파일 목록 정보를 제거한다.
+    sessionStatus.setComplete();
 
     return "redirect:list";
 
@@ -208,15 +219,18 @@ public class Board2Controller {
 
   @PostMapping("file/upload")
   @ResponseBody
-  public Object fileUpload(MultipartFile[] files, HttpSession session) throws Exception {
-
+  public Object fileUpload(MultipartFile[] files, HttpSession session, Model model) throws Exception {
+    // NCP Object Storage에 저장한 파일의 이미지 이름을 보관할 컬렉션을 준비한다.
     ArrayList<AttachedFile> attachedFiles = new ArrayList<>();
 
+    // 로그인 여부를 검사한다.
     Member loginUser = (Member) session.getAttribute("loginUser");
     if (loginUser == null) {
+      // 로그인 하지 않았으면 빈 목록을 보낸다.
       return attachedFiles;
     }
 
+    // 클라이언트가 보낸 멀티파트 파일을 NCP Object Storage에 업로드한다.
     for (MultipartFile file : files) {
       if (file.getSize() == 0) {
         continue;
@@ -225,6 +239,12 @@ public class Board2Controller {
       attachedFiles.add(AttachedFile.builder().filePath(filename).build());
     }
 
+    // 업로드한 파일 목록을 세션에 보관한다.
+    model.addAttribute("attachedFiles", attachedFiles);
+
+    // 클라이언트에서 이미지 이름을 가지고 <img> 태그를 생성할 수 있도록
+    // 업로드한 파일의 이미지 정보를 보낸다.
     return attachedFiles;
   }
+
 }
