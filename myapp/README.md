@@ -678,8 +678,14 @@
 - application.properties 파일을 운영모드와 개발모드로 분리하기
   - application-prod.properties(운영모드)
   - application-dev.properties(개발모드)
+  - 실행 옵션
+    - JVM 아규먼트: `-Dspring.profiles.active=dev`
+    - 프로그램 아규먼트: `--spring.profiles.active=dev`
 - 보안 정보를 담은 .properties 파일을 프로젝트에서 분리하기
-  - @PropertySource("${HOME}/config/ncp-secret.properties")
+  - @PropertySource 설정
+    - "${user.home}/config/ncp-secret.properties"
+    - "file:${user.home}/config/ncp.properties"
+    - "file:${user.home}/config/ncp-secret.properties"
  
 
 
