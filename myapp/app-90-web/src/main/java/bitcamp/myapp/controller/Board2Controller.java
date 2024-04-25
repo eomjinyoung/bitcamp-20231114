@@ -219,7 +219,11 @@ public class Board2Controller {
 
   @PostMapping("file/upload")
   @ResponseBody
-  public Object fileUpload(MultipartFile[] files, HttpSession session, Model model) throws Exception {
+  public Object fileUpload(
+      MultipartFile[] files,
+      HttpSession session,
+      Model model) throws Exception {
+
     // NCP Object Storage에 저장한 파일의 이미지 이름을 보관할 컬렉션을 준비한다.
     ArrayList<AttachedFile> attachedFiles = new ArrayList<>();
 
@@ -240,7 +244,13 @@ public class Board2Controller {
     }
 
     // 업로드한 파일 목록을 세션에 보관한다.
-    model.addAttribute("attachedFiles", attachedFiles);
+    ArrayList<AttachedFile> oldAttachedFiles = (ArrayList<AttachedFile>) session.getAttribute("attachedFiles");
+    if (oldAttachedFiles != null) {
+      oldAttachedFiles.addAll(attachedFiles);
+      model.addAttribute("attachedFiles", oldAttachedFiles);
+    } else {
+      model.addAttribute("attachedFiles", attachedFiles);
+    }
 
     // 클라이언트에서 이미지 이름을 가지고 <img> 태그를 생성할 수 있도록
     // 업로드한 파일의 이미지 정보를 보낸다.
