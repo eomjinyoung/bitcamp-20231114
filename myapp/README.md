@@ -687,11 +687,12 @@
     - "file:${user.home}/config/ncp.properties"
     - "file:${user.home}/config/ncp-secret.properties"
  
-
-
-## 84. SpringSecurity 적용하기
+## 91. SpringSecurity 적용하기
 
 - SpringSecurity 사용법
+
+
+
 
 ## 85. AJAX 기술을 이용하여 Backend와 Frontend 분리하기 - XMLHttpRequest 활용
 
