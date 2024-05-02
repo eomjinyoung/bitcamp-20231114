@@ -690,6 +690,7 @@
 ## 91. SpringSecurity 적용하기
 
 - SpringSecurity 사용법
+  - login, logout 처리하는 방법
 - HandlerMethodArgumentResolver 사용법
 
 

@@ -31,10 +31,11 @@ public class AuthController {
     model.addAttribute("email", email);
   }
 
-  @GetMapping("logout")
+  @GetMapping("logout2")
   public String logout(HttpSession session) throws Exception {
+    log.debug("logout() 호출됨!");
     session.invalidate();
-    return "redirect:/index.html";
+    return "redirect:/";
   }
 
   @RequestMapping("loginSuccess")

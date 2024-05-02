@@ -12,6 +12,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.server.authentication.logout.DelegatingServerLogoutHandler;
+import org.springframework.security.web.server.authentication.logout.SecurityContextServerLogoutHandler;
+import org.springframework.security.web.server.authentication.logout.WebSessionServerLogoutHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -26,9 +29,10 @@ public class SecurityConfig {
   // Spring Security를 처리할 필터 체인을 준비한다.
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
     return http
         .authorizeHttpRequests(authorize -> authorize
-            .mvcMatchers("/member/form", "/member/add", "/img/**", "/home", "/", "*/list", "*/view").permitAll()
+            .mvcMatchers("/member/form", "/member/add", "/img/**", "/home", "/", "*/list", "*/view", "/logout").permitAll()
             .anyRequest().authenticated()
         )
         .formLogin(formLoginConfigurer ->
@@ -40,7 +44,9 @@ public class SecurityConfig {
               .successForwardUrl("/auth/loginSuccess") // 로그인 성공 후 포워딩 할 URL
               .permitAll() // 모든 권한 부여
         )
-        //.logout(Customizer.withDefaults())
+        .logout(Customizer.withDefaults())
+        // 1) '/logout' URL로 POST 요청을 해야 한다.
+        // 2) 서버에서 받은 CSRF 토큰을 요청 헤더에 넣어야 한다.
         .build();
   }
 

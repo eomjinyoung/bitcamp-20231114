@@ -18,11 +18,33 @@
 
   <span data-th-if="${session.loginUser != null}"
         data-th-text="${session.loginUser.name}">홍길동</span>
-  <a data-th-href="@{/auth/logout}" data-th-if="${session.loginUser != null}" href="auth/logout">로그아웃</a>
+  <a data-th-if="${session.loginUser != null}" href="auth/logout" onclick="logout(event)"
+     data-th-data-csrf="${_csrf.token}" data-th-data-csrf-header="${_csrf.headerName}"
+     data-csrf="token" data-csrf-header="headerName">로그아웃</a>
 
   <a data-th-href="@{/auth/form}" data-th-if="${session.loginUser == null}" href="auth/form">로그인</a>
 
   <a data-th-href="@{/about}" href="about">소개</a>
+  <script>
+    function logout(event) {
+      event.preventDefault();
+
+      let csrf = event.target.getAttribute('data-csrf');
+      let csrfHeader = event.target.getAttribute('data-csrf-header');
+
+      let headers = {};
+      headers[csrfHeader] = csrf;
+
+      fetch('/logout', {
+        method: 'POST',
+        headers: headers
+      })
+      .then(response => {
+        location.href = '/';
+      });
+    }
+
+  </script>
 </header>
 
 </body>
