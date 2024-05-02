@@ -690,6 +690,7 @@
 ## 91. SpringSecurity 적용하기
 
 - SpringSecurity 사용법
+- HandlerMethodArgumentResolver 사용법
 
 
 

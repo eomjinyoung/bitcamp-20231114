@@ -1964,3 +1964,14 @@
 - 최종 팀 프로젝트
   - 주요 기능 개발
 - 학습 점검 목록 
+
+### 117일(2024-05-02,목)
+
+- 강의 내용
+  - Spring Security 사용법
+  - HandlerMethodArgumentResolver 사용법
+- 실습 프로젝트 
+  - 91. SpringSecurity 적용하기(계속)
+- 최종 팀 프로젝트
+  - 주요 기능 개발
+- 학습 점검 목록 

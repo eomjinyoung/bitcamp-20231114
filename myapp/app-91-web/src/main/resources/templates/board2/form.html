@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>비트캠프 데브옵스 5기</title>
+
+  <!-- include libraries(jQuery, bootstrap) -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- include summernote css/js -->
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css"
+        rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+  <style>
+    body {
+      padding-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div data-th-replace="header :: header">머리말</div>
+
+<h1>게시글2</h1>
+
+<form action="add" data-th-action="@{add}" enctype='multipart/form-data' method='post'>
+  <div>
+    제목: <input name='title' type='text'>
+  </div>
+  <div>
+    내용: <textarea id="summernote" name='content'></textarea>
+  </div>
+
+  <div>
+    <button>등록</button>
+  </div>
+</form>
+
+<div data-th-replace="footer :: footer">꼬리말</div>
+
+<script>
+  $(document).ready(function() {
+    $('#summernote').summernote({
+      height: 300,
+      width: 500,
+      callbacks: {
+        onInit: function() {
+          console.log('Summernote 생성됨!');
+        },
+        onImageUpload: function(files) {
+
+          let data = new FormData();
+          for (const file of files) {
+            data.append("files", file);
+          }
+          $.ajax({
+            url: 'file/upload', // 절대경로: http://localhost:8888/board2/file/upload
+            type: 'POST',
+            dataType: 'json',
+            contentType: false,
+            processData: false,
+            data: data
+          })
+          .done(function(result) {
+            if (result.length == 0) {
+              alert('로그인 하세요!');
+              return;
+            }
+
+            // 서버에서 받은 업로드 파일 이름을 가지고 <img> 태그를 설정한다.
+            for (const attachedFile of result) {
+              $('#summernote').summernote('insertImage',
+                'https://kr.object.ncloudstorage.com/bitcamp-devops5-118/board/'
+                + attachedFile.filePath);
+            }
+          });
+
+        }
+      }
+    });
+
+  });
+</script>
+
+</body>
+</html>

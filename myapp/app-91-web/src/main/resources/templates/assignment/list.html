@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>비트캠프 데브옵스 5기</title>
+</head>
+<body>
+
+<div data-th-replace="header :: header">머리말</div>
+
+<h1>과제</h1>
+
+<a data-th-href="@{/assignment/form}" href="form">새 과제</a>
+<table border='1'>
+  <thead>
+  <tr>
+    <th>번호</th>
+    <th>과제</th>
+    <th>제출마감일</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr data-th-each="assignment : ${list}" data-th-object="${assignment}">
+    <td data-th-text="*{no}">101</td>
+    <td><a data-th-href="@{view(no=*{no})}"
+           data-th-text="*{title}"
+           href="view.html">자바 조건문
+      만들기</a>
+    </td>
+    <td data-th-text="*{deadline}">2024-03-27</td>
+  </tr>
+  </tbody>
+</table>
+
+<p>
+  [
+  <a data-th-if="${pageNo <= 1}">이전</a>
+  <a data-th-href="@{list(category=${category},pageNo=${pageNo - 1},pageSize=${pageSize})}"
+     data-th-if="${pageNo > 1}"
+     href="list">이전</a>
+  ]
+  [
+  <a data-th-if="${pageNo >= numOfPage}">다음</a>
+  <a data-th-href="@{list(category=${category},pageNo=${pageNo + 1},pageSize=${pageSize})}"
+     data-th-if="${pageNo < numOfPage}"
+     href="list">다음</a>
+  ]
+</p>
+
+<div data-th-replace="footer :: footer">꼬리말</div>
+
+</body>
+</html>

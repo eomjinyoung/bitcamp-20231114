@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bitcamp.myapp.dao.AssignmentDao">
+
+  <resultMap id="AssignmentMap" type="Assignment">
+    <id column="assignment_no" property="no"/>
+    <result column="title" property="title"/>
+    <result column="content" property="content"/>
+    <result column="deadline" property="deadline"/>
+  </resultMap>
+
+  <insert id="add" parameterType="Assignment">
+    insert into assignments(title,content,deadline)
+    values(#{title}, #{content}, #{deadline})
+  </insert>
+
+  <delete id="delete" parameterType="int">
+    delete from assignments
+    where assignment_no=#{value}
+  </delete>
+
+  <select id="findAll" resultMap="AssignmentMap">
+    select
+      assignment_no,
+      title,
+      deadline
+    from
+      assignments
+    order by
+      assignment_no desc
+    limit #{rowCount} offset #{offset}
+  </select>
+
+  <select id="findBy" resultMap="AssignmentMap" parameterType="int">
+    select
+      assignment_no,
+      title,
+      content,
+      deadline
+    from
+      assignments
+    where
+      assignment_no=#{value}
+  </select>
+
+  <update id="update" parameterType="Assignment">
+    update assignments set
+      title=#{title},
+      content=#{content},
+      deadline=#{deadline}
+    where
+      assignment_no=#{no}
+  </update>
+
+  <select id="countAll" resultType="int">
+    select count(*) from assignments;
+  </select>
+</mapper>
