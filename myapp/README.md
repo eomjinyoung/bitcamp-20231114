@@ -693,10 +693,7 @@
   - login, logout 처리하는 방법
 - HandlerMethodArgumentResolver 사용법
 
-
-
-
-## 85. AJAX 기술을 이용하여 Backend와 Frontend 분리하기 - XMLHttpRequest 활용
+## 92. AJAX 기술을 이용하여 Backend와 Frontend 분리하기 - XMLHttpRequest 활용
 
 - XMLHttpRequest를 이용한 AJAX 활용법
 - REST API를 구현하는 방법
