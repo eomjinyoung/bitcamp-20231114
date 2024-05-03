@@ -2,7 +2,6 @@ package bitcamp.myapp.controller;
 
 import bitcamp.myapp.security.MemberUserDetails;
 import bitcamp.myapp.service.MemberService;
-import bitcamp.myapp.vo.Member;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -10,12 +9,11 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequiredArgsConstructor
@@ -31,18 +29,12 @@ public class AuthController {
     model.addAttribute("email", email);
   }
 
-  @GetMapping("logout2")
-  public String logout(HttpSession session) throws Exception {
-    log.debug("logout() 호출됨!");
-    session.invalidate();
-    return "redirect:/";
-  }
-
   @RequestMapping("loginSuccess")
   public String loginSuccess(
       String saveEmail,
       @AuthenticationPrincipal MemberUserDetails principal,
       HttpServletResponse response,
+      CsrfToken csrfToken,
       HttpSession session) throws Exception {
     log.debug("로그인 성공!!!");
 
@@ -58,6 +50,10 @@ public class AuthController {
       cookie.setMaxAge(0);
       response.addCookie(cookie);
     }
+
+    log.debug(csrfToken.getHeaderName());
+    log.debug(csrfToken.getParameterName());
+    log.debug(csrfToken.getToken());
 
     session.setAttribute("loginUser", principal.getMember());
 
