@@ -12,8 +12,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.security.web.server.authentication.logout.DelegatingServerLogoutHandler;
 import org.springframework.security.web.server.authentication.logout.SecurityContextServerLogoutHandler;
 import org.springframework.security.web.server.authentication.logout.WebSessionServerLogoutHandler;
@@ -32,13 +30,9 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(
       HttpSecurity http
-      //,HttpSessionCsrfTokenRepository sessionCsrfRepository
-      //,CookieCsrfTokenRepository cookieCsrfRepository
       ) throws Exception {
 
     return http
-        //.csrf().csrfTokenRepository(sessionCsrfRepository).and()
-        //.csrf().csrfTokenRepository(cookieCsrfRepository).and()
         .authorizeHttpRequests(authorize -> authorize
             .mvcMatchers("/member/form", "/member/add", "/img/**", "/home", "/", "*/list", "*/view").permitAll()
             .anyRequest().authenticated()
@@ -58,37 +52,6 @@ public class SecurityConfig {
         // - POST 요청을 해야 한다.
         // - 서버에서 받은 CSRF 토큰을 요청 헤더에 넣어야 한다.
         .build();
-  }
-
-
-  //@Bean
-  HttpSessionCsrfTokenRepository sessionCsrfRepository() {
-    HttpSessionCsrfTokenRepository csrfRepository = new HttpSessionCsrfTokenRepository();
-
-    // HTTP 헤더에서 토큰을 저장할 때 사용할 이름
-//    csrfRepository.setHeaderName("X-CSRF-TOKEN"); // 기본 값: X-CSRF-TOKEN
-
-    // URL 파라미터로 토큰을 전송할 때 사용할 이름
-//    csrfRepository.setParameterName("_csrf"); // 기본 값: _csrf
-
-    // 세션에 CSRF 토큰을 저장할 때 사용할 이름
-    // => 기본 값: "org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN"
-    csrfRepository.setSessionAttributeName("CSRF_TOKEN");
-
-    return csrfRepository;
-  }
-
-  //@Bean
-  CookieCsrfTokenRepository cookieCsrfRepository() {
-    CookieCsrfTokenRepository csrfRepository = new CookieCsrfTokenRepository();
-
-    csrfRepository.setCookieHttpOnly(false); // 기본 값: true
-//    csrfRepository.setHeaderName("X-CSRF-TOKEN"); // 기본 값: X-CSRF-TOKEN
-//    csrfRepository.setParameterName("_csrf"); // 기본 값: _csrf
-//    csrfRepository.setCookieName("XSRF-TOKEN"); // 기본 값: XSRF-TOKEN
-//    csrfRepository.setCookiePath(request.getContextPath()); // 기본값: request.getContextPath()
-
-    return csrfRepository;
   }
 
   // 사용자 정보를 리턴해주는 객체

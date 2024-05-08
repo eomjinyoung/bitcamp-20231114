@@ -698,6 +698,7 @@
 - XMLHttpRequest를 이용한 AJAX 활용법
 - REST API를 구현하는 방법
 
+
 ## 86. Backend와 Frontend를 서로 다른 서버로 분리하기
 
 - Node.js 와 express를 이용하여 프론트엔드 서버 구축하는 방법
